@@ -1,0 +1,9 @@
+{
+  "name": "olimpiu-seulean-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "author": "Olimpiu Seulean",
+  "main": "index.js",
+  "scripts": {
+  }
+}
