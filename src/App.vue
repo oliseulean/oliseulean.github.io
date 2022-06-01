@@ -1,6 +1,8 @@
 <script setup />
-
-<style>
+<template>
+<p class="test">TEST PAGE</p> 
+</template>
+<style lang="scss" scoped>
 @import '@/assets/base.css';
 
 #app {
@@ -9,6 +11,10 @@
   padding: 2rem;
 
   font-weight: normal;
+}
+
+.test {
+  color: $color-orange-primary;
 }
 
 header {

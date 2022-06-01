@@ -1,0 +1,33 @@
+/*
+    Global Typography Variables
+*/
+
+$font-size-normal: 1rem;
+$font-size-medium: 1.5rem;
+$font-size-large: 2rem;
+
+@mixin font-roboto-slab() {
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin font-open-sans() {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin font-weight($weight) {
+  $weights: (
+    thin: 100,
+    normal: 400,
+    medium: 500,
+    bold: 700,
+    black: 900,
+  );
+
+  $output: $weight;
+
+  @if map-has-key($weights, $weight) {
+    $output: map-get($weights, $weight);
+  }
+
+  font-weight: $output;
+}

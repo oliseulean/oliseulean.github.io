@@ -1,0 +1,20 @@
+@import 'typography';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  @include font-open-sans();
+  @include font-weight(normal);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: $font-size-normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
