@@ -1,9 +1,36 @@
 {
-  "name": "olimpiu-seulean-portfolio",
+  "name": "oli.portfolio",
   "version": "1.0.0",
   "description": "Personal Website",
-  "author": "Olimpiu Seulean",
   "main": "index.js",
+  "author": "Olimpiu Seulean",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5050",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "sass": "^1.51.0",
+    "pinia": "^2.0.14",
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.5.1",
+    "vite": "^2.9.9"
+  },
+  "pre-commit": {
+    "run": [
+      "lint"
+    ]
   }
 }
