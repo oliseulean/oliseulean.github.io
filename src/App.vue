@@ -1,6 +1,6 @@
 <script setup />
 <template>
-<p class="test">TEST PAGE</p> 
+  <p class="test">TEST PAGE</p>
 </template>
 <style lang="scss" scoped>
 @import '@/assets/base.css';
