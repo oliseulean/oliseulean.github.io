@@ -19,12 +19,14 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/eslint-config-prettier": "^7.0.0",
-    "eslint": "^8.5.0",
+    "eslint": "^8.17.0",
     "eslint-plugin-vue": "^8.2.0",
+    "floating-vue": "^2.0.0-y.0",
     "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
     "vite": "^2.9.9",
-    "floating-vue": "^2.0.0-y.0"
+    "vue-eslint-parser": "^9.0.2",
+    "vue3-carousel": "^0.1.40"
   },
   "pre-commit": {
     "run": [

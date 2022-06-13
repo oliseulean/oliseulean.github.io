@@ -1,8 +1,5 @@
 <template>
-  <h1 
-    :style="{ color: props.color }"
-    class="app__title"
-  >
+  <h1 :style="{ color: props.color }" class="app__title">
     <slot />
   </h1>
 </template>

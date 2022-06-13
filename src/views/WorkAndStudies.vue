@@ -1,6 +1,6 @@
 <template>
   <div class="app__workAndStudies">
-    <h1 class="app__workAndStudies-title">WORK & STUDIES</h1>
+    <PageTitle :color="colors.colorWhite"> WORK & STUDIES </PageTitle>
     <div class="app__workAndStudies__container">
       <div
         v-for="experienceItem in experienceItems"
@@ -96,12 +96,15 @@ import { ref } from 'vue';
 import experienceAndStudies from '../helpers/experienceAndStudiesItems';
 import CalendarIcon from '../assets/icons/calendar.png';
 import CodingIcon from '../assets/icons/coding.png';
+import PageTitle from '../components/PageTitle.vue';
+import colorsHelper from '../helpers/colorsHelper';
 
 /*
   experience items
 */
 const experienceItems = ref(experienceAndStudies.experience);
 const universityItems = ref(experienceAndStudies.university);
+const colors = ref(colorsHelper?.colors[0]);
 </script>
 
 <style scoped lang="scss">
@@ -111,13 +114,6 @@ const universityItems = ref(experienceAndStudies.university);
   align-items: center;
   padding: 3rem 0;
   background-color: $color-dark-blue;
-
-  &-title {
-    color: $color-white;
-    background-color: transparent;
-    padding: 2rem 0 2rem 0;
-    font-size: $font-size-large-l;
-  }
 
   &__container {
     width: 80%;

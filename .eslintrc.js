@@ -5,6 +5,7 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-prettier',
   ],
+  parser: 'vue-eslint-parser',
   env: {
     node: true,
   },
