@@ -2,7 +2,7 @@
   <div class="app__technologies">
     <PageTitle
       :color="colors.colorOrangePrimary"
-      class="app__technologies-title"
+      class="app__technologies__title"
     >
       TOOLS &amp; TECHNOLOGIES
     </PageTitle>
@@ -69,9 +69,9 @@ const carousel = shallowRef({
 <style lang="scss" scoped>
 .app__technologies {
   height: auto;
-  padding: 0 5rem;
+  padding-bottom: 5rem;
 
-  &-title {
+  &__title {
     padding: 5rem 0;
   }
 }

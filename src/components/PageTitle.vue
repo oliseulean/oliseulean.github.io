@@ -17,14 +17,22 @@ const props = defineProps({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: transparent;
   @include font-weight(light);
-  font-size: $font-size-large-l;
+  font-size: $font-size-medium;
   padding: 2.5rem 0;
+
+  @include md {
+    font-size: $font-size-large;
+  }
+
+  @include lg {
+    font-size: $font-size-large-l;
+  }
 }
 </style>

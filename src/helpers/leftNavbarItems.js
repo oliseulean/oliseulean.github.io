@@ -2,7 +2,7 @@ import LinkedinIcon from '../assets/icons/linkedin.png';
 import MediumIcon from '../assets/icons/medium.png';
 import GithubIcon from '../assets/icons/github.png';
 import GmailIcon from '../assets/icons/gmail.png';
-import WhatsappIcon from '../assets/icons/whatsapp.png';
+import PhoneIcon from '../assets/icons/phone.png';
 
 export default {
   items: [
@@ -31,10 +31,10 @@ export default {
       title: 'Mail',
     },
     {
-      path: 'https://api.whatsapp.com/send?phone=0741547328',
+      path: 'tel:0741547328',
       alt: 'Whatsapp SVG',
-      icon: WhatsappIcon,
-      title: 'Whatsapp',
+      icon: PhoneIcon,
+      title: 'Phone',
     },
   ],
 };

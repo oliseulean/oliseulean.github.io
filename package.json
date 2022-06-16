@@ -26,7 +26,8 @@
     "prettier": "^2.5.1",
     "vite": "^2.9.9",
     "vue-eslint-parser": "^9.0.2",
-    "vue3-carousel": "^0.1.40"
+    "vue3-carousel": "^0.1.40",
+    "uuid": "^8.3.2"
   },
   "pre-commit": {
     "run": [

@@ -8,10 +8,12 @@ export default {
       colorWhite: '#ffffff',
       colorDarkAlt: '#334155',
       colorLight: '#f1f5f9',
-      colorBluePrimary: '#013299',
+      colorBluePrimary: '#1867C0',
       colorWhiteGray: '#afb0b1',
       colorShadowGray: '#cfcfcf',
       colorDarkBlue: '#051622',
+      colorVue: '#3EB37F',
+      colorDarkGreen: '#005000',
     },
   ],
 };

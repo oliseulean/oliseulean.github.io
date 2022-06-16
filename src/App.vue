@@ -8,6 +8,7 @@ import Land from './views/Land.vue';
 import LeftNavbar from './components/LeftNavbar.vue';
 import WorkAndStudies from './views/WorkAndStudies.vue';
 import TechnologiesCarousel from './views/TechnologiesCarousel.vue';
+import Projects from './views/Projects.vue';
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import TechnologiesCarousel from './views/TechnologiesCarousel.vue';
   <Land />
   <WorkAndStudies id="projects" />
   <TechnologiesCarousel />
+  <Projects />
 </template>
 
 <style lang="scss">
