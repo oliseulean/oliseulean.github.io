@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="hideNavbar" class="app__navigationBar">
+  <nav v-if="hideElement" class="app__navigationBar">
     <div class="app__navigationBar-content">
       <a href="https://www.google.ro" target="_blank">Resume.</a>
     </div>
@@ -7,28 +7,9 @@
 </template>
 
 <script setup>
-/*
-  imports
-*/
+import { useScrollPosition } from '../composable/useScrollPosition';
 
-import { ref, onMounted, onUnmounted } from 'vue';
-
-/*
-  handle hideArrow btn
-*/
-
-const hideNavbar = ref(false);
-
-onMounted(() => window.addEventListener('scroll', hideNavBar));
-
-onUnmounted(() => window.removeEventListener('scroll', hideNavBar));
-
-const hideNavBar = () => {
-  const currentScrollValue = window?.pageYOffset;
-  currentScrollValue > 600
-    ? (hideNavbar.value = true)
-    : (hideNavbar.value = false);
-};
+const { hideElement } = useScrollPosition();
 </script>
 
 <style lang="scss" scoped>
@@ -54,8 +35,11 @@ const hideNavBar = () => {
     background: transparent;
 
     a {
-      color: $color-orange-primary;
+      color: black;
       font-size: 1.2rem;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
       @include font-weight(bold);
       @include font-monserrat();
       padding: 0px 15px;
