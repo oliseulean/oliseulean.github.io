@@ -1,9 +1,9 @@
 <template>
   <div class="app__leftNavbar">
     <a
-      v-for="(navItem, index) in navItems"
+      v-for="navItem in storeLeftNavbar.items"
       :href="navItem.path"
-      :key="index"
+      :key="navItem.id"
       target="_blank"
       class="app__leftNavbar-link"
     >
@@ -24,14 +24,13 @@
   imports
 */
 
-import { ref } from 'vue';
-import leftNavbarItems from '../helpers/leftNavbarItems';
+import { useLeftNavbarStore } from '../stores/leftNavbar';
 
 /*
-  navItems
+  leftNavbar store
 */
 
-const navItems = ref(leftNavbarItems.items);
+const storeLeftNavbar = useLeftNavbarStore();
 </script>
 
 <style lang="scss" scoped>
@@ -66,10 +65,17 @@ const navItems = ref(leftNavbarItems.items);
     animation: 2s appear;
     transition: 0.2s ease-in-out;
     width: 20px;
+    height: 20px;
     font-size: $font-size-normal;
 
-    @include sm {
+    @include md {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include lg {
       width: 30px;
+      height: 30px;
     }
 
     &:hover {
