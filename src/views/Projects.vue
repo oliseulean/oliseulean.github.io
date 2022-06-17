@@ -64,6 +64,7 @@ const storeProjects = useProjectsStore();
 <style lang="scss" scoped>
 .app__projects {
   padding: 0 2rem;
+  padding-bottom: 7rem !important;
 
   @include sm {
     padding-left: 5rem;

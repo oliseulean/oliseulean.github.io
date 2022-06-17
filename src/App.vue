@@ -9,6 +9,8 @@ import LeftNavbar from './components/LeftNavbar.vue';
 import WorkAndStudies from './views/WorkAndStudies.vue';
 import TechnologiesCarousel from './views/TechnologiesCarousel.vue';
 import Projects from './views/Projects.vue';
+import Copyright from './views/Copyright.vue';
+import BackToTop from './components/BackToTop.vue';
 </script>
 
 <template>
@@ -18,6 +20,8 @@ import Projects from './views/Projects.vue';
   <WorkAndStudies id="projects" />
   <TechnologiesCarousel />
   <Projects />
+  <Copyright />
+  <BackToTop />
 </template>
 
 <style lang="scss">
