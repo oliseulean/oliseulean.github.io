@@ -1,7 +1,7 @@
 <template>
   <div class="app__technologies">
     <PageTitle
-      :color="colors.colorOrangePrimary"
+      :color="storeTechnologies.colors.colorOrangePrimary"
       class="app__technologies__title"
     >
       TOOLS &amp; TECHNOLOGIES
@@ -12,9 +12,17 @@
       :wrapAround="true"
       :transition="1500"
     >
-      <Slide v-for="skillItem in skillItems" :key="skillItem.id">
+      <Slide
+        v-for="storeTechnology in storeTechnologies.technologies"
+        :key="storeTechnology.id"
+      >
         <div class="carousel__item">
-          <img :src="skillItem.source" width="50" v-tooltip="skillItem.title" />
+          <img
+            :src="storeTechnology.source"
+            width="50"
+            height="50"
+            v-tooltip="storeTechnology.title"
+          />
         </div>
       </Slide>
     </Carousel>
@@ -26,18 +34,16 @@
   imports
 */
 
-import { ref, shallowRef } from 'vue';
-import skills from '../helpers/skillsItems';
+import { shallowRef } from 'vue';
 import { Carousel, Slide } from 'vue3-carousel';
 import PageTitle from '../components/PageTitle.vue';
-import colorsHelper from '../helpers/colorsHelper';
+import { useTechnologies } from '@/stores/technologies';
 
 /*
-  skills items
+  store technologies
 */
 
-const skillItems = ref(skills.skills);
-const colors = ref(colorsHelper?.colors[0]);
+const storeTechnologies = useTechnologies();
 
 /*
   carousel settings
@@ -70,6 +76,7 @@ const carousel = shallowRef({
 .app__technologies {
   height: auto;
   margin: 0 2rem;
+  padding-bottom: 2rem;
 
   @include md {
     margin: 0 4.5rem;
