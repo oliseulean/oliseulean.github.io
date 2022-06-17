@@ -51,10 +51,10 @@ const carousel = shallowRef({
   breakpoints: {
     // value and up
     200: {
-      itemsToShow: 4,
+      itemsToShow: 3,
       snapAlign: 'center',
     },
-    700: {
+    768: {
       itemsToShow: 5,
       snapAlign: 'center',
     },
@@ -69,7 +69,15 @@ const carousel = shallowRef({
 <style lang="scss" scoped>
 .app__technologies {
   height: auto;
-  padding-bottom: 5rem;
+  margin: 0 2rem;
+
+  @include md {
+    margin: 0 4.5rem;
+  }
+
+  @include lg {
+    margin: 0 5.15rem;
+  }
 
   &__title {
     padding: 5rem 0;
