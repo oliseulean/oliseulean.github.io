@@ -12,6 +12,8 @@
         :src="navItem.icon"
         :alt="navItem.alt"
         class="app__leftNavbar-icon"
+        height="30"
+        width="30"
       />
     </a>
   </div>

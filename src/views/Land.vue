@@ -15,6 +15,8 @@
           :src="DownArrowIcon"
           class="app__land__bottom-downIcon"
           alt="Down_Icon_Image"
+          width="50"
+          height="50"
         />
       </a>
     </div>
@@ -110,7 +112,19 @@ const hideArrow = () => {
       color: $color-white-gray;
       animation: 2s appear infinite;
       background-color: transparent;
-      width: 3rem;
+      width: 30px;
+      height: 30px;
+
+      @include md {
+        width: 40px;
+        height: 40px;
+      }
+
+      @include lg {
+        width: 50px;
+        height: 50px;
+      }
+      // width: 3rem;
     }
   }
 }

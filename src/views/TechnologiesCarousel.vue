@@ -22,6 +22,7 @@
             width="50"
             height="50"
             v-tooltip="storeTechnology.title"
+            alt="storeTechnology.title"
           />
         </div>
       </Slide>

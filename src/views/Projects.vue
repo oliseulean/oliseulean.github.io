@@ -13,7 +13,7 @@
         :key="storeProject.id"
       >
         <div class="app__projects__container__card-image">
-          <img :src="storeProject.imgUrl" alt="Project Image" />
+          <img :src="storeProject.imgUrl" widht="30" height="30" alt="Project Image" />
         </div>
         <div class="app__projects__container__card-heading">
           {{ storeProject.name }}
@@ -39,7 +39,7 @@
             v-tooltip="socialLinks.link"
             target="_blank"
           >
-            <img :src="socialLinks.icon" width="30" height="30" />
+            <img :src="socialLinks.icon" width="30" height="30" :alt="socialLinks.icon" />
           </a>
         </div>
       </div>
