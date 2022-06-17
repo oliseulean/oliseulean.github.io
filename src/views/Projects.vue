@@ -39,7 +39,7 @@
             v-tooltip="socialLinks.link"
             target="_blank"
           >
-            <img :src="socialLinks.icon" width="30" alt srcset />
+            <img :src="socialLinks.icon" width="30" height="30" />
           </a>
         </div>
       </div>
@@ -55,7 +55,7 @@ import PageTitle from '../components/PageTitle.vue';
 import { useProjectsStore } from '@/stores/projects';
 
 /*
-  store projects
+  projects store
 */
 
 const storeProjects = useProjectsStore();

@@ -1,42 +1,48 @@
 <template>
   <div class="app__workAndStudies">
-    <PageTitle :color="colors.colorWhite"> WORK & STUDIES </PageTitle>
+    <PageTitle :color="storeExperience.colors.colorWhite">
+      WORK & STUDIES
+    </PageTitle>
     <div class="app__workAndStudies__container">
       <div
-        v-for="experienceItem in experienceItems"
-        :key="experienceItem.id"
+        v-for="experience in storeExperience.experience"
+        :key="experience.id"
         class="app__workAndStudies__container-experience"
       >
         <h2>
           <a
-            :href="experienceItem.companyWebsite"
+            :href="experience.companyWebsite"
             target="_blank"
             class="app__workAndStudies__container-companyWebsite"
           >
-            {{ experienceItem.companyName }}
+            {{ experience.companyName }}
           </a>
-          - {{ experienceItem.title }}
+          - {{ experience.title }}
         </h2>
         <h3 class="app__workAndStudies__container__duration">
           <img
             :src="CalendarIcon"
             alt="Calendar_Icon_Image"
+            height="25"
+            width="25"
             class="app__workAndStudies__container-icon"
           />
-          {{ experienceItem.duration }}
+          {{ experience.duration }}
         </h3>
         <ul class="app__workAndStudies__container__work">
           <li
-            v-for="res in experienceItem.work"
-            :key="res"
+            v-for="responsability in experience.work"
+            :key="responsability"
             class="app__workAndStudies__container__work-items"
           >
-            {{ res }}
+            {{ responsability }}
           </li>
         </ul>
         <h3 class="app__workAndStudies__container__skills">
           <img
             :src="CodingIcon"
+            width="25"
+            height="25"
             alt="Down_Icon_Image"
             class="app__workAndStudies__container-icon"
           />
@@ -45,8 +51,8 @@
 
         <ul class="app__workAndStudies__container__languages">
           <li
-            v-for="(language, index) in experienceItem.language"
-            :key="index"
+            v-for="language in experience.language"
+            :key="language"
             class="app__workAndStudies__container__languages-items"
           >
             {{ language }}
@@ -57,31 +63,31 @@
 
     <div class="app__workAndStudies__container">
       <div
-        v-for="universityItem in universityItems"
-        :key="universityItem.id"
+        v-for="university in storeExperience.university"
+        :key="university.id"
         class="app__workAndStudies__container-studies"
       >
         <h2>
           <a
-            :href="universityItem.uniWebsite"
+            :href="university.uniWebsite"
             target="_blank"
             class="app__workAndStudies__container-universityWebsite"
           >
-            {{ universityItem.uniName }}
+            {{ university.uniName }}
           </a>
-          - {{ universityItem.city }}
+          - {{ university.city }}
         </h2>
 
         <h3>
-          {{ universityItem.specialization }}
+          {{ university.specialization }}
           <h4>
             Grade:
             <span class="app__workAndStudies__container-grade">
-              {{ universityItem.grade }}
+              {{ university.grade }}
             </span>
           </h4>
         </h3>
-        <h4>{{ universityItem.thesis }}</h4>
+        <h4>{{ university.thesis }}</h4>
       </div>
     </div>
   </div>
@@ -92,19 +98,16 @@
   imports
 */
 
-import { ref } from 'vue';
-import experienceAndStudies from '../helpers/experienceAndStudiesItems';
 import CalendarIcon from '../assets/icons/calendar.png';
 import CodingIcon from '../assets/icons/coding.png';
 import PageTitle from '../components/PageTitle.vue';
-import colorsHelper from '../helpers/colorsHelper';
+import { useExperienceStore } from '../stores/experience';
 
 /*
-  experience items
+  experience store
 */
-const experienceItems = ref(experienceAndStudies.experience);
-const universityItems = ref(experienceAndStudies.university);
-const colors = ref(colorsHelper?.colors[0]);
+
+const storeExperience = useExperienceStore();
 </script>
 
 <style scoped lang="scss">

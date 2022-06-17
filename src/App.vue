@@ -6,7 +6,7 @@
 import NavbarVue from './components/Navbar.vue';
 import Land from './views/Land.vue';
 import LeftNavbar from './components/LeftNavbar.vue';
-import WorkAndStudies from './views/WorkAndStudies.vue';
+import Experience from './views/Experience.vue';
 import TechnologiesCarousel from './views/TechnologiesCarousel.vue';
 import Projects from './views/Projects.vue';
 import Copyright from './views/Copyright.vue';
@@ -17,7 +17,7 @@ import BackToTop from './components/BackToTop.vue';
   <NavbarVue />
   <LeftNavbar />
   <Land />
-  <WorkAndStudies id="projects" />
+  <Experience id="projects" />
   <TechnologiesCarousel />
   <Projects />
   <Copyright />

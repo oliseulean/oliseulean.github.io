@@ -40,7 +40,7 @@ import PageTitle from '../components/PageTitle.vue';
 import { useTechnologies } from '@/stores/technologies';
 
 /*
-  store technologies
+  technologies store
 */
 
 const storeTechnologies = useTechnologies();

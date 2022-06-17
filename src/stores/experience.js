@@ -1,8 +1,111 @@
 import { defineStore } from 'pinia';
+import colorsHelper from '../helpers/colorsHelper';
+import { v4 as uuidv4 } from 'uuid';
 
 export const useExperienceStore = defineStore({
   id: 'experience',
-  state: () => ({}),
+  state: () => ({
+    colors: colorsHelper?.colors[0],
+    experience: [
+      {
+        id: uuidv4(),
+        title: 'Software Engineer',
+        companyName: 'Garmin',
+        companyWebsite: 'https://www.garmin.com',
+        duration: 'Jul 2020 - Present',
+        work: [
+          // TBD
+        ],
+        language: [
+          'VueJs',
+          'Vuetify',
+          'JavaScript',
+          'SASS',
+          'CSS3',
+          'HTML5',
+          'Jest',
+          'Cypress',
+          'Wordpress',
+          'SEO',
+          'Accessibility',
+          'Nuxt',
+          'Express',
+          'Node.js',
+          'MySQL',
+          'ElasticSearch',
+          'Basic-Workers(Cloudflare)',
+        ],
+      },
+      {
+        id: uuidv4(),
+        title: 'Web Developer / Designer',
+        companyName: 'WEDEV IT',
+        companyWebsite: 'https://www.wedev-it.ro/',
+        duration: 'Jan 2020 - Jun 2020',
+        work: ['Building websites/e-commerce stores using a CMS (WordPress)'],
+        language: [
+          'Elementor',
+          'Wordpress',
+          'JavaScript',
+          'SEO',
+          'MySQL',
+          'HTML',
+          'CSS',
+          'PHP',
+          'Accessibility',
+        ],
+      },
+      {
+        id: uuidv4(),
+        title: 'C# Remote Learning',
+        companyName: 'iQuest Group / Naggaro',
+        companyWebsite: 'https://www.nagarro.com/en',
+        duration: 'Nov 2019 - Jan 2020',
+        work: [
+          'OOP principles and properties',
+          'SOLID principles',
+          'Objects vs Data Structures',
+          'UML',
+        ],
+        language: ['C#', 'MySQL', 'SQL Server'],
+      },
+      {
+        id: uuidv4(),
+        title: 'QA Engineer Intern',
+        companyName: 'ZYNK Software',
+        companyWebsite: 'https://www.zynksoftware.com/',
+        duration: 'Jul 2019 - Oct 2019',
+        work: [
+          'Tested each new feature in many different scenarios to catch bugs',
+          'Communicate the errors (JIRA) and the functionality problems in a manner that is easy to follow',
+          'Knowledge of Agile software development (ability to plan, design and execute test cases)',
+        ],
+        language: ['Jira', 'Testing'],
+      },
+    ],
+    university: [
+      {
+        id: uuidv4(),
+        uniName: 'UBB, Babeș-Bolyai University',
+        city: 'Cluj-Napoca',
+        specialization:
+          "Master's degree, Decision Support Systems for Business, Scolarship (2019-2021)",
+        thesis: 'Detection and recognition traffic sings using Deep Learning',
+        grade: '100%',
+        uniWebsite: 'https://www.ubbcluj.ro/ro/',
+      },
+      {
+        id: uuidv4(),
+        uniName: 'UBB, Babeș-Bolyai University',
+        city: 'Cluj-Napoca',
+        specialization:
+          "Bachelor's degree, Computer Science and Economics (2016-2019)",
+        thesis: '',
+        grade: '92.9%',
+        uniWebsite: 'https://www.ubbcluj.ro/ro/',
+      },
+    ],
+  }),
   getters: {},
   actions: {},
 });

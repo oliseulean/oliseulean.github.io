@@ -12,7 +12,7 @@ export const useProjectsStore = defineStore({
   id: 'projects',
   state: () => {
     return {
-      colors: colorsHelper.colors[0],
+      colors: colorsHelper?.colors[0],
       projects: [
         {
           id: uuidv4(),

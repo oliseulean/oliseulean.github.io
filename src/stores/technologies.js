@@ -8,7 +8,7 @@ export const useTechnologies = defineStore({
   id: 'technologies',
   state: () => {
     return {
-      colors: colorsHelper.colors[0],
+      colors: colorsHelper?.colors[0],
       technologies: [
         {
           id: uuidv4(),
