@@ -1,5 +1,12 @@
 <template>
   <div class="app__workAndStudies">
+    <img
+      class="app__workAndStudies-profilePicture"
+      src="/profile_pic.jpg"
+      width="200"
+      height="200"
+      alt="Profile_Picture"
+    />
     <PageTitle :color="storeExperience.colors.colorWhite">
       WORK & STUDIES
     </PageTitle>
@@ -117,6 +124,19 @@ const storeExperience = useExperienceStore();
   align-items: center;
   padding: 3rem 0;
   background-color: $color-dark-blue;
+
+  &-profilePicture {
+    border-radius: 50%;
+    position: relative;
+    right: 0;
+    border: 5px solid #ffa700;
+    margin-bottom: 2rem;
+
+    @include sm {
+      position: absolute;
+      right: 1rem;
+    }
+  }
 
   &__container {
     width: 80%;

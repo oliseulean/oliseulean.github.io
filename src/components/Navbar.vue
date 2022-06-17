@@ -35,7 +35,7 @@ const { hideElement } = useScrollPosition();
     background: transparent;
 
     a {
-      color: black;
+      color: $color-dark-blue;
       font-size: 1.2rem;
       text-align: center;
       margin: 0 auto;
@@ -47,7 +47,7 @@ const { hideElement } = useScrollPosition();
 
       &:hover,
       &:active {
-        color: $color-dark-blue;
+        color: $color-orange-primary;
       }
     }
   }
