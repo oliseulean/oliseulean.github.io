@@ -13,12 +13,9 @@
         :key="storeProject.id"
       >
         <div class="app__projects__container__card-image">
-          <img
-            :src="storeProject.imgUrl"
-            widht="30"
-            height="30"
-            alt="Project Image"
-          />
+          <picture>
+            <img :src="storeProject.imgUrl" alt="Project Image" width="30" height="30" />
+          </picture>
         </div>
         <div class="app__projects__container__card-heading">
           {{ storeProject.name }}

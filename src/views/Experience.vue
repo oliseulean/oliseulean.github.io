@@ -2,7 +2,7 @@
   <div class="app__workAndStudies">
     <img
       class="app__workAndStudies-profilePicture"
-      src="/profile_pic.jpg"
+      src="/profile_pic.webp"
       width="200"
       height="200"
       alt="Profile_Picture"
@@ -105,8 +105,8 @@
   imports
 */
 
-import CalendarIcon from '../assets/icons/calendar.png';
-import CodingIcon from '../assets/icons/coding.png';
+import CalendarIcon from '../assets/icons/calendar.webp';
+import CodingIcon from '../assets/icons/coding.webp';
 import PageTitle from '../components/PageTitle.vue';
 import { useExperienceStore } from '../stores/experience';
 
@@ -131,6 +131,7 @@ const storeExperience = useExperienceStore();
     right: 0;
     border: 5px solid #ffa700;
     margin-bottom: 2rem;
+    color: $color-white;
 
     @include sm {
       position: absolute;

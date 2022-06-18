@@ -1,11 +1,12 @@
 import { defineStore } from 'pinia';
 import { v4 as uuidv4 } from 'uuid';
 
-import LinkedinIcon from '../assets/icons/linkedin.png';
-import MediumIcon from '../assets/icons/medium.png';
-import GithubIcon from '../assets/icons/github.png';
-import GmailIcon from '../assets/icons/gmail.png';
-import PhoneIcon from '../assets/icons/phone.png';
+// icons
+import LinkedinIcon from '../assets/icons/linkedin.webp';
+import MediumIcon from '../assets/icons/medium.webp';
+import GithubIcon from '../assets/icons/github.webp';
+import GmailIcon from '../assets/icons/gmail.webp';
+import PhoneIcon from '../assets/icons/phone.webp';
 
 export const useLeftNavbarStore = defineStore({
   id: 'leftNavbar',
@@ -14,35 +15,35 @@ export const useLeftNavbarStore = defineStore({
       {
         id: uuidv4(),
         path: 'https://www.linkedin.com/in/seulean-olimpiu',
-        alt: 'Linkedin PNG',
+        alt: 'Linkedin webp',
         icon: LinkedinIcon,
         title: 'Linkedin',
       },
       {
         id: uuidv4(),
         path: 'https://medium.com/@olimpiuseulean',
-        alt: 'Medium PNG',
+        alt: 'Medium webp',
         icon: MediumIcon,
         title: 'Medium',
       },
       {
         id: uuidv4(),
         path: 'https://github.com/oliseulean',
-        alt: 'Github PNG',
+        alt: 'Github webp',
         icon: GithubIcon,
         title: 'Github',
       },
       {
         id: uuidv4(),
         path: 'mailto:seulean.olimpiu@gmail.com',
-        alt: 'Mail PNG',
+        alt: 'Mail webp',
         icon: GmailIcon,
         title: 'Mail',
       },
       {
         id: uuidv4(),
         path: 'tel:0741547328',
-        alt: 'Telephone PNG',
+        alt: 'Telephone webp',
         icon: PhoneIcon,
         title: 'Phone',
       },

@@ -1,10 +1,19 @@
 import { defineStore } from 'pinia';
-import TranslogImage from '../assets/icons/translog_company.png';
 import colorsHelper from '../helpers/colorsHelper';
 import { v4 as uuidv4 } from 'uuid';
-import githubIcon from '../assets/icons/github.png';
-import internetIcon from '../assets/icons/internet.png';
-import mediumIcon from '../assets/icons/medium.png';
+
+// icons
+import githubIcon from '../assets/icons/github.webp';
+import internetIcon from '../assets/icons/internet.webp';
+import mediumIcon from '../assets/icons/medium.webp';
+
+// images
+import CalendarAppImg from '../assets/images/projectsImages/calendarApp.webp';
+import GuessNumberImg from '../assets/images/projectsImages/guessNumber.webp';
+import LightHouseReportImg from '../assets/images/projectsImages/lightHouseReport.webp';
+import QuizAppImg from '../assets/images/projectsImages/quizApp.webp';
+import RecognitionAppImg from '../assets/images/projectsImages/recognition.webp';
+import TranslogImg from '../assets/images/projectsImages/translog_company.webp';
 
 const colors = colorsHelper.colors[0];
 
@@ -16,8 +25,7 @@ export const useProjectsStore = defineStore({
       projects: [
         {
           id: uuidv4(),
-          imgUrl:
-            'https://github.com/oliseulean/Google-Lighthouse-Automation-Script/raw/main/assets/desktop_report.png',
+          imgUrl: LightHouseReportImg,
           name: 'Use Python to automate Google Lighthouse Reports',
           tags: [
             {
@@ -48,7 +56,7 @@ export const useProjectsStore = defineStore({
         },
         {
           id: uuidv4(),
-          imgUrl: TranslogImage,
+          imgUrl: TranslogImg,
           name: 'TRANSGLOG T&C - company website',
           tags: [
             {
@@ -66,8 +74,7 @@ export const useProjectsStore = defineStore({
         },
         {
           id: uuidv4(),
-          imgUrl:
-            'https://github.com/oliseulean/guess-the-number-based-on-voice-recognition/raw/main/assets/guess.png',
+          imgUrl: GuessNumberImg,
           name: 'Guess the number based on voice recognition',
           tags: [
             {
@@ -90,8 +97,7 @@ export const useProjectsStore = defineStore({
         },
         {
           id: uuidv4(),
-          imgUrl:
-            'https://github.com/oliseulean/traffic-signs-recognition/raw/main/test_app.png',
+          imgUrl: RecognitionAppImg,
           name: 'Detection and Recognition Traffic Signs using Deep Learning',
           tags: [
             {
@@ -118,8 +124,7 @@ export const useProjectsStore = defineStore({
         },
         {
           id: uuidv4(),
-          imgUrl:
-            'https://github.com/oliseulean/Calendar-App-Vue-Node/raw/master/src/assets/Calendar2.jpg',
+          imgUrl: CalendarAppImg,
           name: 'Calendar-App-Vue',
           tags: [
             {
@@ -145,8 +150,7 @@ export const useProjectsStore = defineStore({
         },
         {
           id: uuidv4(),
-          imgUrl:
-            'https://github.com/oliseulean/dog-quiz-app/raw/main/quiz_app/src/assets/App.jpg',
+          imgUrl: QuizAppImg,
           name: 'Dog Quiz App',
           tags: [
             {
