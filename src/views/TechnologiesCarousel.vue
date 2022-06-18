@@ -23,6 +23,7 @@
             height="50"
             v-tooltip="storeTechnology.title"
             alt="storeTechnology.title"
+            loading="lazy"
           />
         </div>
       </Slide>

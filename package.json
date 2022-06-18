@@ -24,10 +24,10 @@
     "floating-vue": "^2.0.0-y.0",
     "pre-commit": "^1.2.2",
     "prettier": "^2.5.1",
+    "uuid": "^8.3.2",
     "vite": "^2.9.9",
     "vue-eslint-parser": "^9.0.2",
-    "vue3-carousel": "^0.1.40",
-    "uuid": "^8.3.2"
+    "vue3-carousel": "^0.1.40"
   },
   "pre-commit": {
     "run": [

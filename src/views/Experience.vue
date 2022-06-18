@@ -1,11 +1,12 @@
 <template>
-  <div class="app__workAndStudies">
+  <div class="app__workAndStudies" id="experience">
     <img
       class="app__workAndStudies-profilePicture"
       src="/profile_pic.webp"
       width="200"
       height="200"
       alt="Profile_Picture"
+      loading="lazy"
     />
     <PageTitle :color="storeExperience.colors.colorWhite">
       WORK & STUDIES
@@ -33,6 +34,7 @@
             height="25"
             width="25"
             class="app__workAndStudies__container-icon"
+            loading="lazy"
           />
           {{ experience.duration }}
         </h3>
@@ -52,6 +54,7 @@
             height="25"
             alt="Down_Icon_Image"
             class="app__workAndStudies__container-icon"
+            loading="lazy"
           />
           Skills &amp; Languages
         </h3>

@@ -14,6 +14,7 @@
         class="app__leftNavbar-icon"
         height="30"
         width="30"
+        loading="lazy"
       />
     </a>
   </div>

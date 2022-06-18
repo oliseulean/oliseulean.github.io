@@ -31,6 +31,10 @@ const scrollToTop = () => window.scrollTo(0, 0);
   border: 1px $color-dark solid;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 
+  @include md {
+    right: 0.5rem;
+  }
+
   &:hover {
     transition: 0.6s;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);

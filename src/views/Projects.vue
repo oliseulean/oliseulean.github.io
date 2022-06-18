@@ -14,7 +14,13 @@
       >
         <div class="app__projects__container__card-image">
           <picture>
-            <img :src="storeProject.imgUrl" alt="Project Image" width="30" height="30" />
+            <img
+              :src="storeProject.imgUrl"
+              alt="Project Image"
+              width="30"
+              height="30"
+              loading="lazy"
+            />
           </picture>
         </div>
         <div class="app__projects__container__card-heading">
@@ -38,7 +44,6 @@
             v-for="socialLinks in storeProject.socialLinks"
             :key="socialLinks.link"
             :href="socialLinks.link"
-            v-tooltip="socialLinks.link"
             target="_blank"
           >
             <img
@@ -46,6 +51,7 @@
               width="30"
               height="30"
               :alt="socialLinks.icon"
+              loading="lazy"
             />
           </a>
         </div>

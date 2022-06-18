@@ -2,7 +2,7 @@
   <div class="app__land">
     <div class="app__land__title">
       <h1 class="app__land__title-name">
-        hello!
+        hello! 👋🏽
         <br />I'm Olimpiu Șeulean
       </h1>
       <div class="app__land__title-typewriter">
@@ -10,15 +10,14 @@
       </div>
     </div>
     <div v-if="hideArrowButton" class="app__land__bottom">
-      <a href="#projects">
+      <a @click="scrollToExperienceSection()">
         <img
           :src="DownArrowIcon"
           class="app__land__bottom-downIcon"
           alt="Down_Icon_Image"
           width="50"
           height="50"
-        />
-      </a>
+      /></a>
     </div>
   </div>
 </template>
@@ -46,6 +45,12 @@ const hideArrow = () => {
   currentScrollValue > 100
     ? (hideArrowButton.value = false)
     : (hideArrowButton.value = true);
+};
+
+const scrollToExperienceSection = () => {
+  const el = document.getElementById('experience');
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth' });
 };
 </script>
 
@@ -108,6 +113,12 @@ const hideArrow = () => {
     position: absolute;
     bottom: 10px;
 
+    a {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
     &-downIcon {
       color: $color-white-gray;
       animation: 2s appear infinite;
@@ -124,7 +135,6 @@ const hideArrow = () => {
         width: 50px;
         height: 50px;
       }
-      // width: 3rem;
     }
   }
 }
