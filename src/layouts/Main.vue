@@ -1,13 +1,10 @@
 <script setup>
+import Land from '../views/Land.vue';
+import LeftNavbar from '../components/LeftNavbar.vue';
+
 import { defineAsyncComponent } from 'vue';
 
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
-
-const Land = defineAsyncComponent(() => import('../views/Land.vue'));
-
-const LeftNavbar = defineAsyncComponent(() =>
-  import('../components/LeftNavbar.vue')
-);
 
 const Experience = defineAsyncComponent(() =>
   import('../views/Experience.vue')
