@@ -32,7 +32,7 @@
 */
 
 import { ref, onMounted, onUnmounted } from 'vue';
-import DownArrowIcon from '/public/icons/down-arrow.webp';
+import DownArrowIcon from '/icons/down-arrow.webp';
 
 /*
   handle hideArrow btn
