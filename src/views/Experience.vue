@@ -2,7 +2,7 @@
   <div class="app__workAndStudies" id="experience">
     <img
       class="app__workAndStudies-profilePicture"
-      src="/profile_pic.webp"
+      src="/profile.webp"
       width="200"
       height="200"
       alt="Profile_Picture"
@@ -132,7 +132,6 @@ const storeExperience = useExperienceStore();
     border-radius: 50%;
     position: relative;
     right: 0;
-    border: 5px solid #ffa700;
     margin-bottom: 2rem;
     color: $color-white;
 
