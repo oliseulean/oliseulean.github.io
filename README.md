@@ -2,6 +2,15 @@
 
 Personal website portfolio.
 
+## Lighthouse report
+
+ <figure>
+ <img src="lighthouse.png" width="1996" heigth="442" alt="Lighthouse Report"/>
+ <figcaption>
+ <p></p> 
+ </figcaption>
+</figure>
+
 ## Running Locally
 
 1. Set Node version using nvm: <strong>`yarn build`</strong>.
