@@ -10,7 +10,7 @@ export default defineConfig({
     port: 5000,
     host: true,
   },
-  base: '/oliseulean.github.io/',
+  base: '/',
   plugins: [vue()],
   resolve: {
     alias: {
