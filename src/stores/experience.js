@@ -54,7 +54,9 @@ export const useExperienceStore = defineStore({
         companyName: 'WEDEV IT',
         companyWebsite: 'https://www.wedev-it.ro/',
         duration: 'Jan 2020 - Jun 2020',
-        work: ['The main responsibility of this position was to build and convert any design templates into responsive website layouts (presentation sites, online e-commerce).'],
+        work: [
+          'The main responsibility of this position was to build and convert any design templates into responsive website layouts (presentation sites, online e-commerce).',
+        ],
         language: [
           'Elementor',
           'Wordpress',
@@ -78,7 +80,7 @@ export const useExperienceStore = defineStore({
           'SOLID principles',
           'Objects vs Data Structures',
           'UML',
-          'Implemented a VendorMachine (CRUD Operations) within the C# programming language.'
+          'Implemented a VendorMachine (CRUD Operations) within the C# programming language.',
         ],
         language: ['C#', 'MySQL', 'SQL Server'],
       },
