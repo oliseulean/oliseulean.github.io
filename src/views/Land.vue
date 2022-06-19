@@ -10,14 +10,18 @@
       </div>
     </div>
     <div v-if="hideArrowButton" class="app__land__bottom">
-      <a @click="scrollToExperienceSection()">
+      <button
+        @click="scrollToExperienceSection()"
+        class="app__land__bottom-btn"
+      >
         <img
           :src="DownArrowIcon"
           class="app__land__bottom-downIcon"
           alt="Down_Icon_Image"
           width="50"
           height="50"
-      /></a>
+        />
+      </button>
     </div>
   </div>
 </template>
@@ -28,7 +32,7 @@
 */
 
 import { ref, onMounted, onUnmounted } from 'vue';
-import DownArrowIcon from '../assets/icons/down-arrow.webp';
+import DownArrowIcon from '/public/icons/down-arrow.webp';
 
 /*
   handle hideArrow btn
@@ -113,7 +117,9 @@ const scrollToExperienceSection = () => {
     position: absolute;
     bottom: 10px;
 
-    a {
+    &-btn {
+      background-color: transparent;
+      border: none;
       &:hover {
         cursor: pointer;
       }

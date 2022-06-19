@@ -3,17 +3,17 @@ import colorsHelper from '../helpers/colorsHelper';
 import { v4 as uuidv4 } from 'uuid';
 
 // icons
-import githubIcon from '../assets/icons/github.webp';
-import internetIcon from '../assets/icons/internet.webp';
-import mediumIcon from '../assets/icons/medium.webp';
+import githubIcon from '/icons/github.webp';
+import internetIcon from '/icons/internet.webp';
+import mediumIcon from '/icons/medium.webp';
 
 // images
-import CalendarAppImg from '../assets/images/projectsImages/calendarApp.webp';
-import GuessNumberImg from '../assets/images/projectsImages/guessNumber.webp';
-import LightHouseReportImg from '../assets/images/projectsImages/lightHouseReport.webp';
-import QuizAppImg from '../assets/images/projectsImages/quizApp.webp';
-import RecognitionAppImg from '../assets/images/projectsImages/recognition.webp';
-import TranslogImg from '../assets/images/projectsImages/translog_company.webp';
+import CalendarAppImg from '/images/projectsImages/calendarApp.webp';
+import GuessNumberImg from '/images/projectsImages/guessNumber.webp';
+import LightHouseReportImg from '/images/projectsImages/lightHouseReport.webp';
+import QuizAppImg from '/images/projectsImages/quizApp.webp';
+import RecognitionAppImg from '/images/projectsImages/recognition.webp';
+import TranslogImg from '/images/projectsImages/translog_company.webp';
 
 const colors = colorsHelper.colors[0];
 

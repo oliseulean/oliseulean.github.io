@@ -108,8 +108,8 @@
   imports
 */
 
-import CalendarIcon from '../assets/icons/calendar.webp';
-import CodingIcon from '../assets/icons/coding.webp';
+import CalendarIcon from '/icons/calendar.webp';
+import CodingIcon from '/icons/coding.webp';
 import PageTitle from '../components/PageTitle.vue';
 import { useExperienceStore } from '../stores/experience';
 

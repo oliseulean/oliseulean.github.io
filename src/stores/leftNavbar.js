@@ -2,11 +2,11 @@ import { defineStore } from 'pinia';
 import { v4 as uuidv4 } from 'uuid';
 
 // icons
-import LinkedinIcon from '../assets/icons/linkedin.webp';
-import MediumIcon from '../assets/icons/medium.webp';
-import GithubIcon from '../assets/icons/github.webp';
-import GmailIcon from '../assets/icons/gmail.webp';
-import PhoneIcon from '../assets/icons/phone.webp';
+import LinkedinIcon from '/icons/linkedin.webp';
+import MediumIcon from '/icons/medium.webp';
+import GithubIcon from '/icons/github.webp';
+import GmailIcon from '/icons/gmail.webp';
+import PhoneIcon from '/icons/phone.webp';
 
 export const useLeftNavbarStore = defineStore({
   id: 'leftNavbar',

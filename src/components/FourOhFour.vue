@@ -1,7 +1,7 @@
 <template>
   <div class="app__fourOhFour">
     <img
-      src="../assets/images/fourOhFour.webp"
+      src="/images/fourOhFour.webp"
       alt="404 Illustration"
       width="500"
       height="300"
