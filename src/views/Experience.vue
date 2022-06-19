@@ -206,6 +206,7 @@ const storeExperience = useExperienceStore();
       &-items {
         margin-top: 1rem;
         margin-bottom: 1rem;
+        @include font-weight(thin);
       }
     }
 
