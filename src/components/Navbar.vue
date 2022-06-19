@@ -1,7 +1,12 @@
 <template>
   <nav v-if="hideElement" class="app__navigationBar">
     <div class="app__navigationBar-content">
-      <a href="https://www.google.ro" target="_blank">Resume.</a>
+      <a
+        href="https://drive.google.com/file/d/14-KbNK_ZJr-k9Txo9cGYpEYzYgJanXD7/view?usp=sharing"
+        target="_blank"
+      >
+        Resume.📎
+      </a>
     </div>
   </nav>
 </template>
