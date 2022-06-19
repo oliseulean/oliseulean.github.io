@@ -56,47 +56,6 @@ export const useProjectsStore = defineStore({
         },
         {
           id: uuidv4(),
-          imgUrl: TranslogImg,
-          name: 'TRANSGLOG T&C - company website',
-          tags: [
-            {
-              name: '#wordpress',
-              color: `background-color: ${colors.colorDarkBlue};`,
-            },
-            {
-              name: '#seo',
-              color: `background-color: ${colors.colorBluePrimary};`,
-            },
-          ],
-          description:
-            'A personal presentation website for Translog T&C company.',
-          socialLinks: [{ link: 'https://translogtc.ro/', icon: internetIcon }],
-        },
-        {
-          id: uuidv4(),
-          imgUrl: GuessNumberImg,
-          name: 'Guess the number based on voice recognition',
-          tags: [
-            {
-              name: '#js',
-              color: `background-color: ${colors.colorOrangePrimary};`,
-            },
-            {
-              name: '#parcel',
-              color: `background-color: ${colors.colorDarkBlue};`,
-            },
-          ],
-          description:
-            'A basic VanillaJs application which is using an API for guessing a number between 1 - 100 based on voice recognition.',
-          socialLinks: [
-            {
-              link: 'https://github.com/oliseulean/guess-the-number-based-on-voice-recognition',
-              icon: githubIcon,
-            },
-          ],
-        },
-        {
-          id: uuidv4(),
           imgUrl: RecognitionAppImg,
           name: 'Detection and Recognition Traffic Signs using Deep Learning',
           tags: [
@@ -124,6 +83,24 @@ export const useProjectsStore = defineStore({
         },
         {
           id: uuidv4(),
+          imgUrl: TranslogImg,
+          name: 'TRANSLOG T&C - company website',
+          tags: [
+            {
+              name: '#wordpress',
+              color: `background-color: ${colors.colorDarkBlue};`,
+            },
+            {
+              name: '#seo',
+              color: `background-color: ${colors.colorBluePrimary};`,
+            },
+          ],
+          description:
+            'A personal presentation website for Translog T&C company.',
+          socialLinks: [{ link: 'https://translogtc.ro/', icon: internetIcon }],
+        },
+        {
+          id: uuidv4(),
           imgUrl: CalendarAppImg,
           name: 'Calendar-App-Vue',
           tags: [
@@ -144,6 +121,29 @@ export const useProjectsStore = defineStore({
           socialLinks: [
             {
               link: 'https://github.com/oliseulean/Calendar-App-Vue-Node/',
+              icon: githubIcon,
+            },
+          ],
+        },
+        {
+          id: uuidv4(),
+          imgUrl: GuessNumberImg,
+          name: 'Guess the number based on voice recognition',
+          tags: [
+            {
+              name: '#js',
+              color: `background-color: ${colors.colorOrangePrimary};`,
+            },
+            {
+              name: '#parcel',
+              color: `background-color: ${colors.colorDarkBlue};`,
+            },
+          ],
+          description:
+            'A basic VanillaJs application which is using an API for guessing a number between 1 - 100 based on voice recognition.',
+          socialLinks: [
+            {
+              link: 'https://github.com/oliseulean/guess-the-number-based-on-voice-recognition',
               icon: githubIcon,
             },
           ],
