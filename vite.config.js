@@ -1,14 +1,21 @@
-import { fileURLToPath, URL } from 'url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import path from 'path';
+
+const appName = process.env.npm_package_name;
+const appVersion = process.env.npm_package_version;
 
 export default defineConfig({
+  server: {
+    port: 5000,
+    host: true,
+  },
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': path.resolve(__dirname, './src'),
     },
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
   css: {
     preprocessorOptions: {
@@ -18,6 +25,19 @@ export default defineConfig({
     },
   },
   build: {
-    minify: false,
+    minify: true,
+    outDir: 'dist',
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
+      output: {
+        entryFileNames: `${appName}-v${appVersion}.js`,
+        chunkFileNames: `${appName}-v${appVersion}.js`,
+        assetFileNames: `${appName}-v${appVersion}.[ext]`,
+        manualChunks: undefined,
+      },
+    },
   },
 });
