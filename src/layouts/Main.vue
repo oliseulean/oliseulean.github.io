@@ -35,6 +35,5 @@ const BackToTop = defineAsyncComponent(() =>
 </template>
 
 <style lang="scss">
-@import 'floating-vue/dist/style.css';
 @import 'vue3-carousel/dist/carousel.css';
 </style>

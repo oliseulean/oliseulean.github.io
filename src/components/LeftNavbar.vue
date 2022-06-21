@@ -8,7 +8,6 @@
       class="app__leftNavbar-link"
     >
       <img
-        v-tooltip="navItem.title"
         :src="navItem.icon"
         :alt="navItem.alt"
         class="app__leftNavbar-icon"
