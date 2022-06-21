@@ -13,7 +13,7 @@ Personal website portfolio.
 
 ## Running Locally
 
-1. Set Node version using nvm: <strong>`yarn build`</strong>.
+1. Set Node version using nvm: <strong>`nvm use 18.2.0`</strong>.
 2. Run yarn to install packages: <strong>`yarn`</strong>.
 3. Run Vite dev server: <strong>`yarn dev`.</strong> Server will run at http://localhost:5000.
 4. Build js and css for release: <strong>`yarn build`.</strong>
