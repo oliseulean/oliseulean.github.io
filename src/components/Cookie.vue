@@ -44,6 +44,7 @@ const disablePlugin = () => (window['ga-disable-UA-232885625-1'] = true);
 
 :deep(.cookie__floating__content) {
   @include font-roboto-slab();
+  font-size: 0.875rem;
 }
 
 :deep(.cookie__floating__buttons) {
