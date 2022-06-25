@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import colorsHelper from '../helpers/colorsHelper';
 import { v4 as uuidv4 } from 'uuid';
 
 const constructUrl = 'https://cdn-icons-png.flaticon.com/512/';
@@ -8,7 +7,6 @@ export const useTechnologies = defineStore({
   id: 'technologies',
   state: () => {
     return {
-      colors: colorsHelper?.colors[0],
       technologies: [
         {
           id: uuidv4(),

@@ -7,7 +7,7 @@
         🏠 Go Home
       </button>
       <PageTitle
-        :color="storeProjects.colors.colorDark"
+        :color="globalStore?.colors?.colorDark"
         class="app__cookiesPolicy__inline-title"
       >
         COOKIES POLICY
@@ -320,7 +320,7 @@
 /*
   imports
 */
-import { useProjectsStore } from '@/stores/projects';
+import { useGlobalStore } from '@/stores/global';
 import { defineAsyncComponent } from 'vue';
 
 import LeftNavbar from '../components/LeftNavbar.vue';
@@ -337,10 +337,10 @@ const BackToTop = defineAsyncComponent(() =>
   import('../components/BackToTop.vue')
 );
 /*
-  projects store
+  store
 */
 
-const storeProjects = useProjectsStore();
+const globalStore = useGlobalStore();
 </script>
 
 <style scoped lang="scss">

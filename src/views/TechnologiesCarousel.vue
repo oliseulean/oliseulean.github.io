@@ -1,7 +1,7 @@
 <template>
   <div class="app__technologies">
     <PageTitle
-      :color="storeTechnologies.colors.colorOrangePrimary"
+      :color="globalStore?.colors?.colorOrangePrimary"
       class="app__technologies__title"
     >
       TOOLS &amp; TECHNOLOGIES
@@ -13,15 +13,15 @@
       :transition="1500"
     >
       <Slide
-        v-for="storeTechnology in storeTechnologies.technologies"
-        :key="storeTechnology.id"
+        v-for="storeTechnology in storeTechnologies?.technologies"
+        :key="storeTechnology?.id"
       >
         <div class="carousel__item">
           <img
-            :src="storeTechnology.source"
+            :src="storeTechnology?.source"
             width="50"
             height="50"
-            :alt="storeTechnology.alt"
+            :alt="storeTechnology?.alt"
             loading="lazy"
           />
         </div>
@@ -39,12 +39,14 @@ import { shallowRef } from 'vue';
 import { Carousel, Slide } from 'vue3-carousel';
 import PageTitle from '../components/PageTitle.vue';
 import { useTechnologies } from '@/stores/technologies';
+import { useGlobalStore } from '@/stores/global';
 
 /*
-  technologies store
+  store
 */
 
 const storeTechnologies = useTechnologies();
+const globalStore = useGlobalStore();
 
 /*
   carousel settings

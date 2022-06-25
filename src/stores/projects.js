@@ -15,13 +15,12 @@ import QuizAppImg from '/images/projectsImages/quizApp.webp';
 import RecognitionAppImg from '/images/projectsImages/recognition.webp';
 import TranslogImg from '/images/projectsImages/translog_company.webp';
 
-const colors = colorsHelper.colors[0];
+const colors = colorsHelper?.colors[0];
 
 export const useProjectsStore = defineStore({
   id: 'projects',
   state: () => {
     return {
-      colors: colorsHelper?.colors[0],
       projects: [
         {
           id: uuidv4(),

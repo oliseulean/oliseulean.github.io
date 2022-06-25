@@ -1,7 +1,7 @@
 <template>
   <div class="app__projects">
     <PageTitle
-      :color="storeProjects.colors.colorDark"
+      :color="globalStore?.colors?.colorDark"
       class="app__projects__title"
     >
       FEATURED PROJECTS
@@ -66,12 +66,14 @@
 */
 import PageTitle from '../components/PageTitle.vue';
 import { useProjectsStore } from '@/stores/projects';
+import { useGlobalStore } from '@/stores/global';
 
 /*
-  projects store
+  store
 */
 
 const storeProjects = useProjectsStore();
+const globalStore = useGlobalStore();
 </script>
 
 <style lang="scss" scoped>

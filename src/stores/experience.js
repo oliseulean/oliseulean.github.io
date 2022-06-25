@@ -1,11 +1,9 @@
 import { defineStore } from 'pinia';
-import colorsHelper from '../helpers/colorsHelper';
 import { v4 as uuidv4 } from 'uuid';
 
 export const useExperienceStore = defineStore({
   id: 'experience',
   state: () => ({
-    colors: colorsHelper?.colors[0],
     experience: [
       {
         id: uuidv4(),

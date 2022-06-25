@@ -28,13 +28,13 @@ const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
 <template>
   <Land />
   <LeftNavbar />
+  <Cookie />
   <Navbar />
   <Experience />
   <TechnologiesCarousel />
   <Projects />
   <Copyright />
   <BackToTop />
-  <Cookie />
 </template>
 
 <style lang="scss">

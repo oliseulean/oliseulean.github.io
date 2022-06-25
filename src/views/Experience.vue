@@ -8,7 +8,7 @@
       alt="Profile_Picture"
       loading="lazy"
     />
-    <PageTitle :color="storeExperience.colors.colorWhite">
+    <PageTitle :color="globalStore?.colors?.colorWhite">
       WORK & STUDIES
     </PageTitle>
     <div class="app__workAndStudies__container">
@@ -112,12 +112,14 @@ import CalendarIcon from '/icons/calendar.webp';
 import CodingIcon from '/icons/coding.webp';
 import PageTitle from '../components/PageTitle.vue';
 import { useExperienceStore } from '../stores/experience';
+import { useGlobalStore } from '@/stores/global';
 
 /*
-  experience store
+  store
 */
 
 const storeExperience = useExperienceStore();
+const globalStore = useGlobalStore();
 </script>
 
 <style scoped lang="scss">
