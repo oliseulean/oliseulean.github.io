@@ -21,7 +21,7 @@
             :src="storeTechnology.source"
             width="50"
             height="50"
-            alt="storeTechnology.title"
+            :alt="storeTechnology.alt"
             loading="lazy"
           />
         </div>
