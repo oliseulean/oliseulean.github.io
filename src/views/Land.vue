@@ -10,10 +10,7 @@
       </div>
     </div>
     <div v-if="hideArrowButton" class="app__land__bottom">
-      <button
-        @click="scrollToExperienceSection()"
-        class="app__land__bottom-btn"
-      >
+      <button @click="handlerOnBtnClick" class="app__land__bottom-btn">
         <img
           :src="DownArrowIcon"
           class="app__land__bottom-downIcon"
@@ -55,6 +52,19 @@ const scrollToExperienceSection = () => {
   const el = document.getElementById('experience');
   if (!el) return;
   el.scrollIntoView({ behavior: 'smooth' });
+};
+
+const scrollDownBtnGAEvent = () => {
+  gtag('event', 'Scroll Btn', { // eslint-disable-line
+    event_category: 'Olimpiu Seulean Portfolio',
+    event_label: 'Scroll Down Button',
+    value: 1,
+  });
+};
+
+const handlerOnBtnClick = () => {
+  scrollDownBtnGAEvent();
+  scrollToExperienceSection();
 };
 </script>
 

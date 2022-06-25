@@ -24,6 +24,7 @@ h1 {
   align-items: center;
   background-color: transparent;
   @include font-weight(light);
+  @include font-roboto-slab();
   font-size: $font-size-medium;
   padding: 2.5rem 0;
 

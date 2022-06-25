@@ -1,6 +1,6 @@
 <template>
   <div
-    @click="scrollToTop()"
+    @click="handlerOnBtnClick()"
     :class="['app__backToTopBtn', { 'go-top': hideElement }]"
   >
     <ArrowIcon />
@@ -13,7 +13,20 @@ import { useScrollPosition } from '../composable/useScrollPosition';
 
 const { hideElement } = useScrollPosition();
 
+const handlerOnBtnClick = () => {
+  backToTopGAEevent();
+  scrollToTop();
+};
+
 const scrollToTop = () => window.scrollTo(0, 0);
+
+const backToTopGAEevent = () => {
+  gtag('event', 'Back Btn', { // eslint-disable-line
+    event_category: 'Olimpiu Seulean Portfolio',
+    event_label: 'Back To Top Button',
+    value: 1,
+  });
+};
 </script>
 
 <style lang="scss" scoped>

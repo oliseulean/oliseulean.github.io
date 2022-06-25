@@ -44,7 +44,7 @@
   }
 
   &-notFound {
-    @include font-open-sans();
+    @include font-roboto-slab();
     margin-top: 1rem;
   }
 
@@ -62,7 +62,7 @@
     border: 1px solid $color-dark;
     margin-top: 1rem;
     cursor: pointer;
-    @include font-open-sans();
+    @include font-roboto-slab();
   }
 }
 </style>

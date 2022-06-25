@@ -202,11 +202,12 @@ const storeExperience = useExperienceStore();
       padding-top: 1rem;
       color: $color-white;
       font-size: $font-size-normal;
-      @include font-open-sans();
+      @include font-roboto-slab();
+
       &-items {
         margin-top: 1rem;
         margin-bottom: 1rem;
-        @include font-weight(thin);
+        @include font-weight(normal);
       }
     }
 

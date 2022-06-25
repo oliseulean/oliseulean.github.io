@@ -13,6 +13,7 @@ import getCurrentYear from '../helpers/getCurrentYear';
 
 <style scoped lang="scss">
 .app__footer {
+  @include font-roboto-slab();
   color: $color-light;
   background: $color-dark-blue;
   bottom: 0;

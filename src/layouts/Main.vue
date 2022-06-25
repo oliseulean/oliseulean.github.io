@@ -21,6 +21,8 @@ const Copyright = defineAsyncComponent(() => import('../views/Copyright.vue'));
 const BackToTop = defineAsyncComponent(() =>
   import('../components/BackToTop.vue')
 );
+
+const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
 </script>
 
 <template>
@@ -32,8 +34,10 @@ const BackToTop = defineAsyncComponent(() =>
   <Projects />
   <Copyright />
   <BackToTop />
+  <Cookie />
 </template>
 
 <style lang="scss">
 @import 'vue3-carousel/dist/carousel.css';
+@import 'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css';
 </style>

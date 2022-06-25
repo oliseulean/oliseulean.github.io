@@ -6,6 +6,7 @@
       :key="navItem.id"
       target="_blank"
       class="app__leftNavbar-link"
+      @click="leftItemsGAEevent($event)"
     >
       <img
         :src="navItem.icon"
@@ -31,6 +32,21 @@ import { useLeftNavbarStore } from '../stores/leftNavbar';
 */
 
 const storeLeftNavbar = useLeftNavbarStore();
+
+/*
+  leftNavbar dataUaEvent
+*/
+
+const leftItemsGAEevent = (e) => {
+  const getItemName = e?.target?.alt;
+  const cleanUpItemName = getItemName?.replace('webp', '');
+
+  gtag('event', `${cleanUpItemName}`, { // eslint-disable-line
+    event_category: 'Olimpiu Seulean Portfolio',
+    event_label: `${cleanUpItemName} - social`,
+    value: 1,
+  });
+};
 </script>
 
 <style lang="scss" scoped>

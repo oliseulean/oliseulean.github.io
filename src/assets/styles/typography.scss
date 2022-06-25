@@ -10,11 +10,8 @@ $font-size-large-xl: 3rem;
 $font-size-large-xxl: 4rem;
 
 @mixin font-roboto-slab() {
-  font-family: 'Roboto Slab', serif;
-}
-
-@mixin font-open-sans() {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Roboto, 'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP',
+    'Noto Sans KR', Prompt, sans-serif, 'Microsoft JhengHei';
 }
 
 @mixin font-monserrat {

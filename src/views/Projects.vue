@@ -149,7 +149,7 @@ const storeProjects = useProjectsStore();
       }
 
       &-heading {
-        @include font-open-sans();
+        @include font-roboto-slab();
         @include font-weight(bold);
         font-size: $font-size-normal;
         line-height: 1.25rem;
@@ -171,7 +171,7 @@ const storeProjects = useProjectsStore();
         margin-left: -0.5rem;
 
         &-btn {
-          @include font-open-sans();
+          @include font-roboto-slab();
           margin: 0 0.5rem 1rem;
           padding: 0.5rem 0.8rem;
           border: none;

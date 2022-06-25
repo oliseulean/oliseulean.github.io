@@ -4,6 +4,7 @@
       <a
         href="https://drive.google.com/file/d/14-KbNK_ZJr-k9Txo9cGYpEYzYgJanXD7/view?usp=sharing"
         target="_blank"
+        @click="resumeGAEvent()"
       >
         Resume.📎
       </a>
@@ -15,6 +16,14 @@
 import { useScrollPosition } from '../composable/useScrollPosition';
 
 const { hideElement } = useScrollPosition();
+
+const resumeGAEvent = () => {
+  gtag('event', 'Resume', { // eslint-disable-line
+    event_category: 'Olimpiu Seulean Portfolio',
+    event_label: 'Resume btn',
+    value: 1,
+  });
+};
 </script>
 
 <style lang="scss" scoped>

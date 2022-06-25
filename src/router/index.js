@@ -12,6 +12,14 @@ const router = createRouter({
       component: () => import('../layouts/Main.vue'),
     },
     {
+      path: '/cookies-policy',
+      name: 'CookiesPolicy',
+      meta: {
+        title: 'Cookies Policy',
+      },
+      component: () => import('../views/CookiesPolicy.vue'),
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'FourOhFour',
       meta: {
@@ -25,7 +33,7 @@ const router = createRouter({
 router.beforeEach((toRoute, fromRoute, next) => {
   const title = 'Olimpiu Seulean - Frontend Engineer';
 
-  toRoute?.meta?.title === 'Error'
+  toRoute?.meta?.title
     ? (window.document.title = `${toRoute?.meta?.title} | ${title}`)
     : (window.document.title = title);
 
