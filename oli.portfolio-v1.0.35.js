@@ -1,1 +1,0 @@
-import{r as n,o as l,a as t}from"./oli.portfolio-v1.0.3.js";const a=()=>{const e=n(!1);l(()=>window.addEventListener("scroll",o)),t(()=>window.removeEventListener("scroll",o));const o=()=>{(window==null?void 0:window.pageYOffset)>600?e.value=!0:e.value=!1};return{toggleElementVisiblityBasedOnScroll:o,hideElement:e}};export{a as u};
