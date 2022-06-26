@@ -1,7 +1,6 @@
 <template>
   <vue-cookie-accept-decline
     @clicked-accept="enablePlugin"
-    @clicked-decline="disablePlugin"
     elementId="cookies"
     position="bottom-left"
     ref="cookies"
@@ -17,23 +16,16 @@
       </router-link>
     </template>
 
-    <template #declineContent>Deny</template>
-
     <template #acceptContent>Accept</template>
   </vue-cookie-accept-decline>
 </template>
 
 <script setup>
-const getCookieStatus = localStorage['vue-cookie-accept-decline-cookies'];
+import { onMounted } from 'vue';
 
-// // we need this line in case the user comes again on the website.
-getCookieStatus === 'decline'
-  ? (window['ga-disable-UA-232885625-1'] = true)
-  : (window['ga-disable-UA-232885625-1'] = false);
+onMounted(() => (window['ga-disable-UA-232885625-1'] = true));
 
 const enablePlugin = () => (window['ga-disable-UA-232885625-1'] = false);
-
-const disablePlugin = () => (window['ga-disable-UA-232885625-1'] = true);
 </script>
 
 <style scoped lang="scss">
@@ -51,6 +43,10 @@ const disablePlugin = () => (window['ga-disable-UA-232885625-1'] = true);
   button {
     @include font-roboto-slab();
   }
+}
+
+:deep(.cookie__floating__buttons__button--decline) {
+  display: none;
 }
 
 #cookies {
