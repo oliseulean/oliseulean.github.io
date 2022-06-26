@@ -5,7 +5,7 @@ Personal website portfolio.
 ## Lighthouse report
 
  <figure>
- <img src="lighthouse.png" width="1996" heigth="442" alt="Lighthouse Report"/>
+ <img src="lighthouse.png" width="1054" heigth="432" alt="Lighthouse Report"/>
  <figcaption>
  <p></p> 
  </figcaption>
