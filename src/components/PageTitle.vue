@@ -23,7 +23,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-  @include font-weight(light);
+  @include font-weight(bold);
   @include font-roboto-slab();
   font-size: $font-size-medium;
   padding: 2.5rem 0;
