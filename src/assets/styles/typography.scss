@@ -18,10 +18,6 @@ $font-size-large-xxl: 4rem;
   font-family: 'Montserrat', sans-serif;
 }
 
-@mixin font-dm-serif {
-  font-family: 'DM Serif Display', serif;
-}
-
 @mixin font-weight($weight) {
   $weights: (
     thin: 100,

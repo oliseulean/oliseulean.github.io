@@ -179,7 +179,7 @@ const globalStore = useGlobalStore();
     h3,
     h4 {
       color: $color-white;
-      @include font-dm-serif();
+      @include font-roboto-slab();
       @include font-weight(thin);
     }
 
