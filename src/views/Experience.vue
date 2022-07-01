@@ -2,11 +2,14 @@
   <div class="app__workAndStudies" id="experience">
     <img
       class="app__workAndStudies-profilePicture"
-      src="/profile.webp"
+      ref="imgSrcRef"
+      :src="avatarPath"
       width="200"
       height="200"
       alt="Profile_Picture"
       loading="lazy"
+      @mouseover="onOverAvatar"
+      @mouseleave="onLeaveAvatar"
     />
     <PageTitle :color="globalStore?.colors?.colorWhite">
       WORK & STUDIES
@@ -104,22 +107,25 @@
 </template>
 
 <script setup>
-/*
-  imports
-*/
-
+/* imports */
 import CalendarIcon from '/icons/calendar.webp';
 import CodingIcon from '/icons/coding.webp';
 import PageTitle from '../components/PageTitle.vue';
 import { useExperienceStore } from '../stores/experience';
 import { useGlobalStore } from '@/stores/global';
+import { ref } from 'vue';
 
-/*
-  store
-*/
-
+/* store */
 const storeExperience = useExperienceStore();
 const globalStore = useGlobalStore();
+
+/* handle avatar */
+const avatarPath = ref('/profile.webp');
+const avatarSecondPath = ref('/profileSecond.webp');
+const imgSrcRef = ref(null);
+
+const onOverAvatar = () => (imgSrcRef.value.src = avatarPath.value);
+const onLeaveAvatar = () => (imgSrcRef.value.src = avatarSecondPath.value);
 </script>
 
 <style scoped lang="scss">

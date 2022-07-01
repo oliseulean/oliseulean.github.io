@@ -158,8 +158,8 @@ const globalStore = useGlobalStore();
         height: auto;
         margin: 1rem 0;
 
-        @include sm {
-          height: auto;
+        @include md {
+          min-height: 2rem;
           margin-bottom: 1rem;
         }
 
@@ -186,6 +186,8 @@ const globalStore = useGlobalStore();
 
       &-description {
         height: 100%;
+        @include font-roboto-slab();
+        font-size: 0.875rem;
       }
 
       &-github {
