@@ -12,5 +12,6 @@ module.exports = {
   rules: {
     'vue/html-quotes': ['error', 'double'],
     'vue/multi-word-component-names': 0,
+    'vue/no-extra-parens': 0,
   },
 };

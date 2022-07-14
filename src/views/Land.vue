@@ -55,7 +55,8 @@ const scrollToExperienceSection = () => {
 };
 
 const scrollDownBtnGAEvent = () => {
-  gtag('event', 'Scroll Btn', { // eslint-disable-line
+  // eslint-disable-next-line no-undef
+  gtag('event', 'Scroll Btn', {
     event_category: 'Olimpiu Seulean Portfolio',
     event_label: 'Scroll Down Button',
     value: 1,

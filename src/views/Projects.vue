@@ -77,7 +77,7 @@ const showMoreProjectsButton = computed(() => {
   return maxProjectsShown.value < storeProjects?.projects?.length;
 });
 
-const displayNameButton = (project) => {
+const displayNameButton = project => {
   return project?.wordpress === true ? 'See Website' : 'See code';
 };
 </script>

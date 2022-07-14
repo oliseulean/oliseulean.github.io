@@ -4,35 +4,35 @@
 
 // Small devices
 @mixin sm {
-    @media (min-width: #{$screen-sm}) {
-        @content;
-    }
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
 }
 
 // Medium devices
 @mixin md {
-    @media (min-width: #{$screen-md}) {
-        @content;
-    }
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
 }
 
 // Large devices
 @mixin lg {
-    @media (min-width: #{$screen-lg}) {
-        @content;
-    }
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
 }
 
 // Extra large devices
 @mixin xl {
-    @media (min-width: #{$screen-xl}) {
-        @content;
-    }
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
 }
 
 // Custom devices
 @mixin customBreakpoint($screen) {
-    @media (min-width: #{$screen + 'px'}) {
-        @content;
-    }
+  @media (min-width: #{$screen + 'px'}) {
+    @content;
+  }
 }

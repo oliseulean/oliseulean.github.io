@@ -107,25 +107,49 @@
 </template>
 
 <script setup>
-/* imports */
+/*
+ * Imports
+ */
+import { ref, onMounted, onUnmounted } from 'vue';
+
+import PageTitle from '../components/PageTitle.vue';
+
+import { useExperienceStore } from '../stores/experience';
+import { useGlobalStore } from '../stores/global';
+
 import CalendarIcon from '/icons/calendar.webp';
 import CodingIcon from '/icons/coding.webp';
-import PageTitle from '../components/PageTitle.vue';
-import { useExperienceStore } from '../stores/experience';
-import { useGlobalStore } from '@/stores/global';
-import { ref } from 'vue';
+import breakpoints from '../helpers/breakpoints';
 
-/* store */
+/*
+ * Store
+ */
 const storeExperience = useExperienceStore();
 const globalStore = useGlobalStore();
 
-/* handle avatar */
+/*
+ * Handle avatar
+ */
 const avatarPath = ref('/profile.webp');
 const avatarSecondPath = ref('/profileSecond.webp');
 const imgSrcRef = ref(null);
+const windowWidth = ref(window.innerWidth);
 
-const onOverAvatar = () => (imgSrcRef.value.src = avatarPath.value);
-const onLeaveAvatar = () => (imgSrcRef.value.src = avatarSecondPath.value);
+const onWidthChange = () => (windowWidth.value = window.innerWidth);
+onMounted(() => window.addEventListener('resize', onWidthChange));
+onUnmounted(() => window.removeEventListener('resize', onWidthChange));
+
+const onOverAvatar = () => {
+  windowWidth.value >= breakpoints['screen-lg']
+    ? imgSrcRef.value.src = avatarSecondPath.value
+    : '';
+};
+
+const onLeaveAvatar = () => {
+  windowWidth.value >= breakpoints['screen-lg']
+    ? imgSrcRef.value.src = avatarPath.value
+    : '';
+};
 </script>
 
 <style scoped lang="scss">
@@ -155,6 +179,7 @@ const onLeaveAvatar = () => (imgSrcRef.value.src = avatarSecondPath.value);
     &:first-of-type {
       padding-bottom: 0;
     }
+
     padding-bottom: 2rem;
     margin: 2rem 0;
 
@@ -165,6 +190,7 @@ const onLeaveAvatar = () => (imgSrcRef.value.src = avatarSecondPath.value);
         border-bottom: 1px solid rgba($color-white, 0.25);
         padding-bottom: 3rem;
       }
+
       h2 {
         margin-bottom: 1.5rem;
       }

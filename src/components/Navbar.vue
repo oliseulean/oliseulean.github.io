@@ -18,7 +18,8 @@ import { useScrollPosition } from '../composable/useScrollPosition';
 const { hideElement } = useScrollPosition();
 
 const resumeGAEvent = () => {
-  gtag('event', 'Resume', { // eslint-disable-line
+  /* eslint-disable-next-line no-undef */
+  gtag('event', 'Resume', {
     event_category: 'Olimpiu Seulean Portfolio',
     event_label: 'Resume btn',
     value: 1,

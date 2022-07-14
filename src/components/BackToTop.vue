@@ -8,20 +8,30 @@
 </template>
 
 <script setup>
+/*
+ * Imports
+ */
 import ArrowIcon from '../assets/icons/Arrow.vue';
 import { useScrollPosition } from '../composable/useScrollPosition';
 
+/*
+ * Handle hide element
+ */
 const { hideElement } = useScrollPosition();
 
+/*
+ * Handle @click event
+ */
 const handlerOnBtnClick = () => {
-  backToTopGAEevent();
+  backToTopGAEvent();
   scrollToTop();
 };
 
 const scrollToTop = () => window.scrollTo(0, 0);
 
-const backToTopGAEevent = () => {
-  gtag('event', 'Back Btn', { // eslint-disable-line
+const backToTopGAEvent = () => {
+  /* eslint-disable-next-line no-undef */
+  gtag('event', 'Back Btn', {
     event_category: 'Olimpiu Seulean Portfolio',
     event_label: 'Back To Top Button',
     value: 1,
