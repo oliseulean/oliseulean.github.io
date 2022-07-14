@@ -30,7 +30,7 @@ export const useProjectsStore = defineStore({
           name: 'Detection and Recognition Traffic Signs using Deep Learning',
           description:
             'In this project, I used Anaconda, Python, and TensorFlow to classify and recognize traffic signs.',
-          link: 'https://github.com/oliseulean/traffic-signs-recognition/',
+          link: 'https://github.com/oliseulean/traffic-signs-recognition',
           wordpress: false,
         },
         {
@@ -39,7 +39,7 @@ export const useProjectsStore = defineStore({
           name: 'TRANSLOG T&C - company website',
           description:
             'A personal presentation website for Translog T&C company using Wordpress.',
-          link: 'https://translogtc.ro/',
+          link: 'https://translogtc.ro',
           wordpress: true,
         },
         {
@@ -56,7 +56,7 @@ export const useProjectsStore = defineStore({
           imgUrl: CalendarAppImg,
           name: 'Calendar-App-Vue',
           description: 'A Calendar App in VueJS with Vuex & NodeJS.',
-          link: 'https://github.com/oliseulean/Calendar-App-Vue-Node/',
+          link: 'https://github.com/oliseulean/Calendar-App-Vue-Node',
           wordpress: false,
         },
         {
@@ -74,7 +74,7 @@ export const useProjectsStore = defineStore({
           name: 'Dog Quiz App',
           description:
             'I created a Dog Quiz App. There are 10 questions with only one correct answer. I fetch a breed API call to generate random pictures foreach dog breed.',
-          link: 'https://github.com/oliseulean/dog-quiz-app/',
+          link: 'https://github.com/oliseulean/dog-quiz-app',
           wordpress: false,
         },
       ],
