@@ -21,14 +21,20 @@
 </template>
 
 <script setup>
+/*
+ * Imports
+ */
 import { onMounted } from 'vue';
 
+/*
+ * Handle disable/enable GA
+ */
 onMounted(() => (window['ga-disable-UA-232885625-1'] = true));
 
 const enablePlugin = () => (window['ga-disable-UA-232885625-1'] = false);
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .cookies-link {
   color: $color-orange-primary;
   text-decoration: underline;

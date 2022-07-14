@@ -6,199 +6,232 @@
     >
       FEATURED PROJECTS
     </PageTitle>
-    <div class="app__projects__container">
-      <div
-        class="app__projects__container__card"
-        v-for="storeProject in storeProjects.projects"
-        :key="storeProject.id"
-      >
-        <div class="app__projects__container__card-image">
-          <picture>
-            <img
-              :src="storeProject.imgUrl"
-              alt="Project Image"
-              width="30"
-              height="30"
-              loading="lazy"
-            />
-          </picture>
-        </div>
-        <div class="app__projects__container__card-heading">
-          {{ storeProject.name }}
-        </div>
-        <div class="app__projects__container__card__tag">
-          <button
-            class="app__projects__container__card__tag-btn"
-            v-for="tag in storeProject.tags"
-            :key="tag.id"
-            :style="tag.color"
-          >
-            {{ tag.name }}
-          </button>
-        </div>
-        <div class="app__projects__container__card-description">
-          {{ storeProject.description }}
-        </div>
-        <div class="app__projects__container__card-github">
-          <a
-            v-for="socialLinks in storeProject.socialLinks"
-            :key="socialLinks.link"
-            :href="socialLinks.link"
-            target="_blank"
-          >
-            <img
-              :src="socialLinks.icon"
-              width="30"
-              height="30"
-              :alt="socialLinks.icon"
-              loading="lazy"
-            />
-          </a>
-        </div>
+    <div
+      class="app__projects__card"
+      v-for="project in visibleProjects"
+      :key="project.id"
+    >
+      <div class="app__projects__card__image">
+        <img
+          :src="project.imgUrl"
+          alt="Project Image"
+          width="570"
+          height="320"
+          loading="lazy"
+        />
+      </div>
+      <div class="app__projects__card__content">
+        <h3>{{ project.name }}</h3>
+        <p>
+          {{ project.description }}
+        </p>
+        <a
+          :href="project.link"
+          target="_blank"
+          class="app__projects__card__content-btn"
+        >
+          {{ displayNameButton(project) }}
+        </a>
+        <hr class="app__projects__card__content--spacer" />
       </div>
     </div>
+    <button
+      v-if="showMoreProjectsButton"
+      class="app__projects__showMoreButton"
+      @click="loadMoreProjects"
+    >
+      show more projects
+    </button>
   </div>
 </template>
 
 <script setup>
 /*
-  imports
-*/
+ * Imports
+ */
 import PageTitle from '../components/PageTitle.vue';
-import { useProjectsStore } from '@/stores/projects';
-import { useGlobalStore } from '@/stores/global';
+import { useProjectsStore } from '../stores/projects';
+import { useGlobalStore } from '../stores/global';
+import { ref, computed } from 'vue';
 
 /*
-  store
-*/
-
+ * Store
+ */
 const storeProjects = useProjectsStore();
 const globalStore = useGlobalStore();
+
+/*
+ * Handle showMore projects
+ */
+const maxProjectsShown = ref(3);
+
+const visibleProjects = computed(() => {
+  return storeProjects?.projects?.slice(0, maxProjectsShown.value);
+});
+
+const loadMoreProjects = () => {
+  return (maxProjectsShown.value += 3);
+};
+
+const showMoreProjectsButton = computed(() => {
+  return maxProjectsShown.value < storeProjects?.projects?.length;
+});
+
+const displayNameButton = (project) => {
+  return project?.wordpress === true ? 'See Website' : 'See code';
+};
 </script>
 
 <style lang="scss" scoped>
 .app__projects {
-  padding: 0 2rem;
-  padding-bottom: 7rem !important;
-
-  @include sm {
-    padding-left: 5rem;
-  }
-
-  @include lg {
-    padding: 0 5.15rem;
-  }
-
   &__title {
-    padding: 5rem 0;
+    padding: 5rem 0 2rem 0;
+
+    @include md {
+      padding: 5rem 0 2rem 0;
+    }
+
+    @include lg {
+      padding: 5rem 0;
+    }
   }
 
-  &__container {
-    padding: 0;
+  &__card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+    padding: 3.5rem 0;
 
-    &__card {
-      height: auto;
-      padding: 1rem;
-      align-items: flex-start;
-
-      display: flex;
+    @include md {
       flex-direction: column;
-      align-items: left;
-      justify-content: space-around;
-      background-color: $color-white;
-      margin: 0.5rem;
+      align-items: center;
+      padding: 0;
+    }
 
-      border-radius: 2px;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
-      transition: 0.4s ease-out;
+    @include lg {
+      flex-direction: row;
+      padding: 0 10rem 10rem 10rem;
+    }
+
+    &__image {
+      width: 100%;
+      margin: auto 0;
+      display: flex;
+      justify-content: center;
+
+      &:hover {
+        @include transition();
+      }
 
       @include sm {
-        width: calc(50% - 1rem);
-        margin: 0.5rem;
+        width: 50%;
+      }
+
+      img {
+        width: 325px;
+        height: 190px;
+
+        @include md {
+          width: 500px;
+          height: 275px;
+        }
+
+        @include lg {
+          width: 570px;
+          height: 320px;
+        }
+      }
+    }
+
+    &__content {
+      width: 100%;
+      padding: 1rem 2.5rem 0 2.5rem;
+      text-align: center;
+
+      @include md {
+        width: 100%;
+        padding: 2rem 6rem 0 6rem;
+        text-align: center;
       }
 
       @include lg {
-        width: calc(33.3333% - 2em);
-        margin: 1em;
+        width: 50%;
+        padding: 5rem;
+        text-align: left;
       }
 
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
-        transition: 0.4s ease-out;
-      }
-
-      &-image {
-        width: 100%;
-        flex-shrink: 0;
-
-        @include sm {
-          height: 250px;
-        }
-
-        @include lg {
-          width: 100%;
-        }
-
-        img {
-          width: 100%;
-          object-fit: cover;
-          height: 100%;
-        }
-      }
-
-      &-heading {
-        @include font-roboto-slab();
-        @include font-weight(bold);
-        font-size: $font-size-normal;
-        line-height: 1.25rem;
-        height: auto;
-        margin: 1rem 0;
+      &--spacer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 275px;
+        border: 0.2px solid $color-white-gray;
+        margin-top: 2rem;
 
         @include md {
-          min-height: 2rem;
-          margin-bottom: 1rem;
+          margin-top: -1rem;
         }
 
         @include lg {
-          min-height: 3.25rem;
-          margin-bottom: 0;
+          margin-top: 10rem;
         }
       }
 
-      &__tag {
-        margin-left: -0.5rem;
+      h3 {
+        font-size: $font-size-medium;
+      }
 
-        &-btn {
-          @include font-roboto-slab();
-          margin: 0 0.5rem 1rem;
-          padding: 0.5rem 0.8rem;
-          border: none;
-          outline: none;
-          color: $color-white-light;
-          border-radius: 20px;
-          letter-spacing: 0.05rem;
+      p {
+        margin-top: 1rem;
+        color: $color-shadow-middle-gray;
+      }
+
+      &-btn {
+        @include black-button();
+        text-align: center;
+        margin: 2.5rem auto;
+
+        @include md {
+          text-align: center;
         }
-      }
 
-      &-description {
-        height: 100%;
-        @include font-roboto-slab();
-        font-size: 0.875rem;
-      }
+        @include lg {
+          text-align: left;
+          margin: 2rem 0;
+        }
 
-      &-github {
-        margin-top: 2rem;
-        a:not(:first-child) {
-          img {
-            margin-left: 1rem;
-          }
+        &:hover {
+          @include transition();
         }
       }
     }
   }
+
+  &__showMoreButton {
+    margin: 3rem auto 4rem auto !important;
+    text-align: center;
+    @include black-button();
+
+    @include md {
+      margin: 0 auto 5rem auto !important;
+    }
+
+    @include lg {
+      margin: 0 auto 5rem auto !important;
+    }
+
+    &:hover {
+      @include transition();
+    }
+  }
+}
+
+/*
+ * Hide the spacer for the last elem
+ */
+div > div:last-child > div > hr {
+  border: none !important;
 }
 </style>

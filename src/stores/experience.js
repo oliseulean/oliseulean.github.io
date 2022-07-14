@@ -7,10 +7,20 @@ export const useExperienceStore = defineStore({
     experience: [
       {
         id: uuidv4(),
-        title: 'Software Engineer',
+        title: 'Front-end Engineer II',
         companyName: 'Garmin',
         companyWebsite: 'https://www.garmin.com',
-        duration: 'Jul 2020 - Present',
+        duration: 'Jul 2022 - Present',
+        work: [
+          // TBD
+        ],
+      },
+      {
+        id: uuidv4(),
+        title: 'Front-end Engineer I',
+        companyName: 'Garmin',
+        companyWebsite: 'https://www.garmin.com',
+        duration: 'Jul 2020 - Jul 2022',
         work: [
           // TBD
         ],

@@ -49,20 +49,7 @@
   }
 
   &-btn {
-    background-color: $color-dark;
-    margin-bottom: 1rem;
-    color: $color-white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    padding: 0.5rem 1.2rem;
-    display: block;
-    width: fit-content;
-    font-size: 0.9rem;
-    border: 1px solid $color-dark;
-    margin-top: 1rem;
-    cursor: pointer;
-    @include font-roboto-slab();
+    @include black-button();
   }
 }
 </style>
