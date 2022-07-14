@@ -21,8 +21,12 @@
         />
       </div>
       <div class="app__projects__card__content">
-        <h3>{{ project.name }}</h3>
-        <p>
+        <p
+          class="app__projects__card__content--projectName">
+          {{ project.name }}
+        </p>
+        <p
+          class="app__projects__card__content--projectDescription">
           {{ project.description }}
         </p>
         <a
@@ -117,13 +121,17 @@ const displayNameButton = project => {
       width: 100%;
       margin: auto 0;
       display: flex;
-      justify-content: center;
+      justify-content: center !important;
 
       &:hover {
         @include transition();
       }
 
-      @include sm {
+      @include md {
+        width: 50%;
+      }
+
+      @include lg {
         width: 50%;
       }
 
@@ -179,11 +187,13 @@ const displayNameButton = project => {
         }
       }
 
-      h3 {
+      &--projectName {
         font-size: $font-size-medium;
+        color: $color-dark;
+        @include font-weight(bold);
       }
 
-      p {
+      &--projectDescription {
         margin-top: 1rem;
         color: $color-shadow-middle-gray;
       }
