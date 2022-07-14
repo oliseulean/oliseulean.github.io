@@ -21,12 +21,10 @@
         />
       </div>
       <div class="app__projects__card__content">
-        <p
-          class="app__projects__card__content--projectName">
+        <p class="app__projects__card__content--projectName">
           {{ project.name }}
         </p>
-        <p
-          class="app__projects__card__content--projectDescription">
+        <p class="app__projects__card__content--projectDescription">
           {{ project.description }}
         </p>
         <a
