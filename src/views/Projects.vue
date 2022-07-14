@@ -136,6 +136,7 @@ const loadMoreProjectsBtnGAEvent = () => {
     width: 100%;
     flex-direction: column;
     padding: 3.5rem 0;
+    @include font-roboto-slab();
 
     @include md {
       flex-direction: column;
@@ -219,14 +220,32 @@ const loadMoreProjectsBtnGAEvent = () => {
       }
 
       &--projectName {
-        font-size: $font-size-medium;
+        font-size: 1.25rem;
         color: $color-dark;
         @include font-weight(bold);
+
+        @include md {
+          font-size: $font-size-medium;
+        }
+
+        @include lg {
+          font-size: $font-size-medium;
+        }
       }
 
       &--projectDescription {
         margin-top: 1rem;
         color: $color-shadow-middle-gray;
+        @include font-weight(thin);
+        font-size: 0.875rem;
+
+        @include md {
+          font-size: $font-size-normal;
+        }
+
+        @include lg {
+          font-size: $font-size-normal;
+        }
       }
 
       &-btn {
