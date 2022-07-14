@@ -105,7 +105,7 @@ const displayNameButton = project => {
     @include md {
       flex-direction: column;
       align-items: center;
-      padding: 0;
+      padding: 3.5rem 0;
     }
 
     @include lg {
