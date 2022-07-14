@@ -141,13 +141,13 @@ onUnmounted(() => window.removeEventListener('resize', onWidthChange));
 
 const onOverAvatar = () => {
   windowWidth.value >= breakpoints['screen-lg']
-    ? imgSrcRef.value.src = avatarSecondPath.value
+    ? (imgSrcRef.value.src = avatarSecondPath.value)
     : '';
 };
 
 const onLeaveAvatar = () => {
   windowWidth.value >= breakpoints['screen-lg']
-    ? imgSrcRef.value.src = avatarPath.value
+    ? (imgSrcRef.value.src = avatarPath.value)
     : '';
 };
 </script>
