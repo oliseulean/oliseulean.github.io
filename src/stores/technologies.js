@@ -59,7 +59,8 @@ export const useTechnologies = defineStore({
         {
           title: 'MySQL',
           alt: 'MySQL_icon',
-          source: 'https://icon-library.com/images/mysql-icon/mysql-icon-23.jpg'
+          source:
+            'https://icon-library.com/images/mysql-icon/mysql-icon-23.jpg',
         },
         {
           title: 'Wordpress',
