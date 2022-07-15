@@ -39,7 +39,7 @@ onUnmounted(() => {
   return window.addEventListener('touchmove', handleTouchMove);
 });
 
-const hideTooltipRef = ref(true);
+const hideTooltipRef = ref(null);
 
 const handleTouchMove = () => {
   return (hideTooltipRef.value = true);
