@@ -8,14 +8,20 @@
       class="app__leftNavbar-link"
       @click="leftItemsGAEvent($event)"
     >
-      <img
-        :src="navItem.icon"
-        :alt="navItem.alt"
-        class="app__leftNavbar-icon"
-        height="30"
-        width="30"
-        loading="lazy"
-      />
+      <Tooltip
+        position="right"
+        :content="navItem.title"
+        class="app__leftNavbar--tooltip"
+      >
+        <img
+          :src="navItem.icon"
+          :alt="navItem.alt"
+          class="app__leftNavbar-icon"
+          height="30"
+          width="30"
+          loading="lazy"
+        />
+      </Tooltip>
     </a>
   </div>
 </template>
@@ -24,6 +30,7 @@
 /*
  * Imports
  */
+import Tooltip from '../components/Tooltip';
 import { useLeftNavbarStore } from '../stores/leftNavbar';
 
 /*
@@ -72,6 +79,10 @@ const leftItemsGAEvent = e => {
   }
 
   @include keyframe-appear();
+
+  &--tooltip {
+    font-size: 0.875rem;
+  }
 
   &-icon {
     background-color: transparent;

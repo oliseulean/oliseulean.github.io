@@ -76,8 +76,8 @@ const handleTouchMove = () => {
 
 /* Tooltip right content */
 .right .app__tooltip__container--text {
-  top: -5px;
-  left: 110%;
+  top: 25px;
+  left: 120%;
 }
 
 /* Tooltip bottom content */
