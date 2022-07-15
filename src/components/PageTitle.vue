@@ -6,9 +6,8 @@
 
 <script setup>
 /*
-    props
-*/
-
+ * Props
+ */
 const props = defineProps({
   color: {
     type: String,

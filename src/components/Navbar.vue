@@ -13,10 +13,19 @@
 </template>
 
 <script setup>
+/*
+ * Imports
+ */
 import { useScrollPosition } from '../composable/useScrollPosition';
 
+/*
+ * Handle hide navBar
+ */
 const { hideElement } = useScrollPosition();
 
+/*
+ * Handle GA for the resume button
+ */
 const resumeGAEvent = () => {
   /* eslint-disable-next-line no-undef */
   gtag('event', 'Resume', {

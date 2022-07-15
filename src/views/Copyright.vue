@@ -8,10 +8,13 @@
 </template>
 
 <script setup>
+/*
+ * Imports
+ */
 import getCurrentYear from '../helpers/getCurrentYear';
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .app__footer {
   @include font-roboto-slab();
   color: $color-light;
@@ -23,7 +26,6 @@ import getCurrentYear from '../helpers/getCurrentYear';
   font-size: 0.8rem;
   display: block;
   margin: 0 auto;
-  text-align: center;
   padding: 1rem;
 }
 </style>

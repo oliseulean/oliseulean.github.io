@@ -1,4 +1,19 @@
+<template>
+  <Land />
+  <LeftNavbar />
+  <Cookie />
+  <Navbar />
+  <Experience />
+  <Technologies />
+  <Projects />
+  <Copyright />
+  <BackToTop />
+</template>
+
 <script setup>
+/*
+ * Imports
+ */
 import Land from '../views/Land.vue';
 import LeftNavbar from '../components/LeftNavbar.vue';
 
@@ -24,18 +39,6 @@ const BackToTop = defineAsyncComponent(() =>
 
 const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
 </script>
-
-<template>
-  <Land />
-  <LeftNavbar />
-  <Cookie />
-  <Navbar />
-  <Experience />
-  <Technologies />
-  <Projects />
-  <Copyright />
-  <BackToTop />
-</template>
 
 <style lang="scss">
 @import 'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css';

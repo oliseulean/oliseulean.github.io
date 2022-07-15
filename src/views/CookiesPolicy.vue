@@ -318,8 +318,8 @@
 
 <script setup>
 /*
-  imports
-*/
+ * Imports
+ */
 import { useGlobalStore } from '@/stores/global';
 import { defineAsyncComponent } from 'vue';
 
@@ -336,10 +336,10 @@ const Copyright = defineAsyncComponent(() => import('../views/Copyright.vue'));
 const BackToTop = defineAsyncComponent(() =>
   import('../components/BackToTop.vue')
 );
-/*
-  store
-*/
 
+/*
+ * Store
+ */
 const globalStore = useGlobalStore();
 </script>
 
@@ -372,6 +372,7 @@ const globalStore = useGlobalStore();
       flex-direction: row;
       margin-bottom: 3rem;
     }
+
     &-title {
       display: block;
       margin: auto;

@@ -25,16 +25,15 @@
 
 <script setup>
 /*
-  imports
-*/
+ * Imports
+ */
 
 import { ref, onMounted, onUnmounted } from 'vue';
 import DownArrowIcon from '/icons/down-arrow.webp';
 
 /*
-  handle hideArrow btn
-*/
-
+ * Handle hideArrow btn
+ */
 const hideArrowButton = ref(true);
 
 onMounted(() => window.addEventListener('scroll', hideArrow));
@@ -131,6 +130,7 @@ const handlerOnBtnClick = () => {
     &-btn {
       background-color: transparent;
       border: none;
+
       &:hover {
         cursor: pointer;
       }
