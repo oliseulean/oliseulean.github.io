@@ -2,7 +2,7 @@
   <div class="app__tooltip">
     <div :class="`app__tooltip__container ${props.position}`">
       <slot />
-      <span class="app__tooltip__container--text" id="tooltip">
+      <span class="app__tooltip__container--text" ref="hideTooltipRef">
         {{ props.content }}
       </span>
     </div>
@@ -13,7 +13,7 @@
 /*
  * Imports
  */
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 /*
  * Props
@@ -29,11 +29,20 @@ const props = defineProps({
   },
 });
 
-onMounted(() => window.addEventListener('touchmove', handleScroll));
-onUnmounted(() => window.addEventListener('touchmove', handleScroll));
+/*
+ * Handle tooltip on mobile
+ */
+onMounted(() => {
+  return window.addEventListener('touchmove', handleTouchMove);
+});
+onUnmounted(() => {
+  return window.addEventListener('touchmove', handleTouchMove);
+});
 
-const handleScroll = () => {
-  return (document.getElementById('tooltip').style.display = 'none');
+const hideTooltipRef = ref(true);
+
+const handleTouchMove = () => {
+  return (hideTooltipRef.value = true);
 };
 </script>
 
@@ -88,9 +97,4 @@ const handleScroll = () => {
   visibility: visible;
   opacity: 1;
 }
-
-//.app__tooltip__container:focus .app__tooltip__container--text {
-//  visibility: hidden;
-//  opacity: 0;
-//}
 </style>
