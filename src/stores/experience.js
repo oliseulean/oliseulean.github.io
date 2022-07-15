@@ -1,12 +1,13 @@
+/*
+ * Imports
+ */
 import { defineStore } from 'pinia';
-import { v4 as uuidv4 } from 'uuid';
 
 export const useExperienceStore = defineStore({
   id: 'experience',
   state: () => ({
     experience: [
       {
-        id: uuidv4(),
         title: 'Front-end Engineer II',
         companyName: 'Garmin',
         companyWebsite: 'https://www.garmin.com',
@@ -16,7 +17,6 @@ export const useExperienceStore = defineStore({
         ],
       },
       {
-        id: uuidv4(),
         title: 'Front-end Engineer I',
         companyName: 'Garmin',
         companyWebsite: 'https://www.garmin.com',
@@ -57,7 +57,6 @@ export const useExperienceStore = defineStore({
         ],
       },
       {
-        id: uuidv4(),
         title: 'Web Developer / Designer',
         companyName: 'WEDEV IT',
         companyWebsite: 'https://www.wedev-it.ro/',
@@ -78,7 +77,6 @@ export const useExperienceStore = defineStore({
         ],
       },
       {
-        id: uuidv4(),
         title: 'C# Remote Learning',
         companyName: 'iQuest Group / Naggaro',
         companyWebsite: 'https://www.nagarro.com/en',
@@ -93,7 +91,6 @@ export const useExperienceStore = defineStore({
         language: ['C#', 'MySQL', 'SQL Server'],
       },
       {
-        id: uuidv4(),
         title: 'QA Engineer Intern',
         companyName: 'ZYNK Software',
         companyWebsite: 'https://www.zynksoftware.com/',
@@ -108,7 +105,6 @@ export const useExperienceStore = defineStore({
     ],
     university: [
       {
-        id: uuidv4(),
         uniName: 'UBB, Babeș-Bolyai University',
         city: 'Cluj-Napoca',
         specialization:
@@ -118,7 +114,6 @@ export const useExperienceStore = defineStore({
         uniWebsite: 'https://www.ubbcluj.ro/ro/',
       },
       {
-        id: uuidv4(),
         uniName: 'UBB, Babeș-Bolyai University',
         city: 'Cluj-Napoca',
         specialization:

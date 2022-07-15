@@ -16,8 +16,8 @@
     </PageTitle>
     <div class="app__workAndStudies__container">
       <div
-        v-for="experience in storeExperience.experience"
-        :key="experience.id"
+        v-for="(experience, index) in storeExperience.experience"
+        :key="index"
         class="app__workAndStudies__container-experience"
       >
         <h2>
@@ -43,11 +43,11 @@
         </h3>
         <ul class="app__workAndStudies__container__work">
           <li
-            v-for="responsability in experience.work"
-            :key="responsability"
+            v-for="(experience, index) in experience.work"
+            :key="index"
             class="app__workAndStudies__container__work-items"
           >
-            {{ responsability }}
+            {{ experience }}
           </li>
         </ul>
         <h3 class="app__workAndStudies__container__skills">
@@ -64,8 +64,8 @@
 
         <ul class="app__workAndStudies__container__languages">
           <li
-            v-for="language in experience.language"
-            :key="language"
+            v-for="(language, index) in experience.language"
+            :key="index"
             class="app__workAndStudies__container__languages-items"
           >
             {{ language }}
@@ -76,8 +76,8 @@
 
     <div class="app__workAndStudies__container">
       <div
-        v-for="university in storeExperience.university"
-        :key="university.id"
+        v-for="(university, index) in storeExperience.university"
+        :key="index"
         class="app__workAndStudies__container-studies"
       >
         <h2>

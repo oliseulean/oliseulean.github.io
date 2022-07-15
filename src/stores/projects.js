@@ -1,7 +1,11 @@
+/*
+ * Imports
+ */
 import { defineStore } from 'pinia';
-import { v4 as uuidv4 } from 'uuid';
 
-// images
+/*
+ * Images
+ */
 import CalendarAppImg from '/images/projectsImages/calendarApp.webp';
 import GuessNumberImg from '/images/projectsImages/guessNumber.webp';
 import LightHouseReportImg from '/images/projectsImages/lightHouseReport.webp';
@@ -16,7 +20,6 @@ export const useProjectsStore = defineStore({
     return {
       projects: [
         {
-          id: uuidv4(),
           imgUrl: LightHouseReportImg,
           name: 'Use Python to Automate Google Lighthouse Reports',
           description:
@@ -25,7 +28,6 @@ export const useProjectsStore = defineStore({
           wordpress: false,
         },
         {
-          id: uuidv4(),
           imgUrl: RecognitionAppImg,
           name: 'Detection and Recognition Traffic Signs using Deep Learning',
           description:
@@ -34,7 +36,6 @@ export const useProjectsStore = defineStore({
           wordpress: false,
         },
         {
-          id: uuidv4(),
           imgUrl: TranslogImg,
           name: 'TRANSLOG T&C - company website',
           description:
@@ -43,7 +44,6 @@ export const useProjectsStore = defineStore({
           wordpress: true,
         },
         {
-          id: uuidv4(),
           imgUrl: JsChallengeImg,
           name: '100 Days of JS Coding Challenges',
           description:
@@ -52,7 +52,6 @@ export const useProjectsStore = defineStore({
           wordpress: false,
         },
         {
-          id: uuidv4(),
           imgUrl: CalendarAppImg,
           name: 'Calendar-App-Vue',
           description: 'A Calendar App in VueJS with Vuex & NodeJS.',
@@ -60,7 +59,6 @@ export const useProjectsStore = defineStore({
           wordpress: false,
         },
         {
-          id: uuidv4(),
           imgUrl: GuessNumberImg,
           name: 'Guess the number based on voice recognition',
           description:
@@ -69,7 +67,6 @@ export const useProjectsStore = defineStore({
           wordpress: false,
         },
         {
-          id: uuidv4(),
           imgUrl: QuizAppImg,
           name: 'Dog Quiz App',
           description:

@@ -8,8 +8,8 @@
     </PageTitle>
     <div
       class="app__projects__card"
-      v-for="project in visibleProjects"
-      :key="project.id"
+      v-for="(project, index) in visibleProjects"
+      :key="index"
     >
       <div class="app__projects__card__image">
         <img
@@ -43,7 +43,7 @@
       class="app__projects__showMoreButton"
       @click="handlerLoadMoreProjects"
     >
-      show more projects
+      SHOW MORE PROJECTS
     </button>
   </div>
 </template>

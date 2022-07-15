@@ -1,9 +1,9 @@
 <template>
   <div class="app__leftNavbar">
     <a
-      v-for="navItem in storeLeftNavbar.items"
+      v-for="(navItem, index) in storeLeftNavbar.items"
       :href="navItem.path"
-      :key="navItem.id"
+      :key="index"
       target="_blank"
       class="app__leftNavbar-link"
       @click="leftItemsGAEvent($event)"
