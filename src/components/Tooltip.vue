@@ -1,6 +1,10 @@
 <template>
   <div class="app__tooltip">
-    <div :class="`app__tooltip__container ${props.position}`">
+    <div
+      :class="`app__tooltip__container ${props.position}`"
+      @click="blurTooltip()"
+      ref="tooltipRef"
+    >
       <slot />
       <span class="app__tooltip__container--text">{{ props.content }}</span>
     </div>
@@ -8,6 +12,11 @@
 </template>
 
 <script setup>
+/*
+ * Imports
+ */
+import { ref } from 'vue';
+
 /*
  * Props
  */
@@ -21,6 +30,14 @@ const props = defineProps({
     default: '',
   },
 });
+
+const tooltipRef = ref(null);
+
+const blurTooltip = () => {
+  tooltipRef.value.blur();
+};
+
+defineExpose({ blurTooltip });
 </script>
 
 <style lang="scss">
