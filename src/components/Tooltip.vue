@@ -1,12 +1,10 @@
 <template>
   <div class="app__tooltip">
-    <div
-      :class="`app__tooltip__container ${props.position}`"
-      @click="blurTooltip()"
-      ref="tooltipRef"
-    >
+    <div :class="`app__tooltip__container ${props.position}`">
       <slot />
-      <span class="app__tooltip__container--text">{{ props.content }}</span>
+      <span class="app__tooltip__container--text" id="tooltip">
+        {{ props.content }}
+      </span>
     </div>
   </div>
 </template>
@@ -15,7 +13,7 @@
 /*
  * Imports
  */
-import { ref } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 /*
  * Props
@@ -31,13 +29,12 @@ const props = defineProps({
   },
 });
 
-const tooltipRef = ref(null);
+onMounted(() => window.addEventListener('touchmove', handleScroll));
+onUnmounted(() => window.addEventListener('touchmove', handleScroll));
 
-const blurTooltip = () => {
-  tooltipRef.value.blur();
+const handleScroll = () => {
+  return (document.getElementById('tooltip').style.display = 'none');
 };
-
-defineExpose({ blurTooltip });
 </script>
 
 <style lang="scss">
@@ -91,4 +88,9 @@ defineExpose({ blurTooltip });
   visibility: visible;
   opacity: 1;
 }
+
+//.app__tooltip__container:focus .app__tooltip__container--text {
+//  visibility: hidden;
+//  opacity: 0;
+//}
 </style>
