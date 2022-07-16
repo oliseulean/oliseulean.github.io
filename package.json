@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "vue": "^3.2.37",
-    "vue-router": "^4.1.2",
-    "sass": "^1.51.0"
+    "vue-router": "^4.1.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
     "vite": "^2.9.9",
     "pinia": "^2.0.16",
+    "sass": "^1.51.0",
     "eslint": "^8.19.0",
     "eslint-plugin-vue": "^9.2.0",
     "pre-commit": "^1.2.2"
