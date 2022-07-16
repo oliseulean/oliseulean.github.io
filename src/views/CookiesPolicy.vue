@@ -344,8 +344,9 @@ const globalStore = useGlobalStore();
 
 <style scoped lang="scss">
 .app__cookiesPolicy {
+  @include font-roboto-slab();
   margin: 3rem 3rem;
-  font-size: 1rem;
+  font-size: $font-size-normal;
 
   @include md {
     margin: 2rem 5.5rem;
@@ -353,7 +354,6 @@ const globalStore = useGlobalStore();
 
   @include lg {
     margin: 2rem 7rem;
-    font-size: 1.2rem;
   }
 
   &__inline {

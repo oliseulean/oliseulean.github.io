@@ -6,7 +6,9 @@
     <div class="cookie__floating__wrap">
       <div class="cookie__floating__content">
         I use cookies to ensure you get the best experience on my website.
-        <a href="/cookies-policy" class="cookies-link"> Cookies policy. </a>
+        <router-link to="/cookies-policy" class="cookies-link">
+          Cookies policy.
+        </router-link>
       </div>
       <div class="cookie__floating__buttons">
         <button
