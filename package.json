@@ -23,5 +23,10 @@
     "eslint-plugin-vue": "^9.2.0",
     "vue-cookie-accept-decline": "^6.0.3",
     "pre-commit": "^1.2.2"
+  },
+  "pre-commit": {
+    "run": [
+      "lint"
+    ]
   }
 }
