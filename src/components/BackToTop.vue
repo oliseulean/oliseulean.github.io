@@ -1,7 +1,7 @@
 <template>
   <div
     @click="handlerOnBtnClick()"
-    :class="['app__backToTopBtn', { 'go-top': hideElement }]"
+    :class="['app__backToTopBtn', goTopClassName]"
   >
     <ArrowIcon />
   </div>
@@ -11,13 +11,18 @@
 /*
  * Imports
  */
+import { computed } from 'vue';
 import ArrowIcon from '../assets/icons/Arrow.vue';
 import { useScrollPosition } from '../composable/useScrollPosition';
 
 /*
- * Handle hide element
+ * Handle hide button
  */
 const { hideElement } = useScrollPosition();
+
+const goTopClassName = computed(() => {
+  return hideElement.value ? 'app__goTop' : '';
+});
 
 /*
  * Handle @click event
@@ -44,7 +49,7 @@ const backToTopGAEvent = () => {
   background-color: $color-white;
   position: fixed;
   cursor: pointer;
-  right: 0rem;
+  right: 0;
   text-align: center;
   width: 38px;
   height: 38px;
@@ -52,7 +57,7 @@ const backToTopGAEvent = () => {
   transition: 0.6s;
   overflow: hidden;
   border: 1px $color-dark solid;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba($color-dark, 0.1);
 
   @include md {
     right: 0.5rem;
@@ -60,11 +65,10 @@ const backToTopGAEvent = () => {
 
   &:hover {
     transition: 0.6s;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     transform: translateY(-5px);
   }
 
-  &.go-top {
+  &.app__goTop {
     opacity: 1;
     visibility: visible;
     bottom: 0.5rem;
