@@ -39,7 +39,3 @@ const BackToTop = defineAsyncComponent(() =>
 
 const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
 </script>
-
-<style lang="scss">
-@import 'vue-cookie-accept-decline/dist/vue-cookie-accept-decline.css';
-</style>

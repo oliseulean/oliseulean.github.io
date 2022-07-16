@@ -1113,11 +1113,6 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
-tiny-cookie@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/tiny-cookie/-/tiny-cookie-2.3.2.tgz#3b5fb4e0888cfa0b4728d5f6b7be3d3a88e6a5f0"
-  integrity sha512-qbymkVh+6+Gc/c9sqnvbG+dOHH6bschjphK3SHgIfT6h/t+63GBL37JXNoXEc6u/+BcwU6XmaWUuf19ouLVtPg==
-
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/to-regex-range/-/to-regex-range-5.0.1.tgz#1648c44aae7c8d988a326018ed72f5b4dd0392e4"
@@ -1170,13 +1165,6 @@ vite@^3.0.0:
     rollup "^2.75.6"
   optionalDependencies:
     fsevents "~2.3.2"
-
-vue-cookie-accept-decline@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/vue-cookie-accept-decline/-/vue-cookie-accept-decline-6.0.3.tgz#a8d3e3a3b03c26dabee6d73a9ad9583cc5177a84"
-  integrity sha512-NDVpcsnPQoC44ysFscagiWK3L68+LdHIwR5zVWn/AWzwgjFfJIZcoOxhiuKlOhm+OIHClFXqFdeuelts2xm5uA==
-  dependencies:
-    tiny-cookie "^2.3.2"
 
 vue-demi@*:
   version "0.13.5"

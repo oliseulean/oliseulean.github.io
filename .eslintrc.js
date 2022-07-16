@@ -11,5 +11,6 @@ module.exports = {
     'vue/html-quotes': ['error', 'double'],
     'vue/multi-word-component-names': 0,
     'vue/no-extra-parens': 0,
+    'indent': ['error', 2],
   },
 };
