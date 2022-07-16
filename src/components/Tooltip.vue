@@ -2,7 +2,10 @@
   <div class="app__tooltip">
     <div :class="`app__tooltip__container ${props.position}`">
       <slot />
-      <span class="app__tooltip__container--text" ref="hideTooltipRef">
+      <span
+        ref="hideTooltipRef"
+        class="app__tooltip__container--text"
+      >
         {{ props.content }}
       </span>
     </div>
@@ -42,7 +45,7 @@ onUnmounted(() => {
 const hideTooltipRef = ref(null);
 
 const handleTouchMove = () => {
-  return (hideTooltipRef.value = true);
+  return hideTooltipRef.value = true;
 };
 </script>
 

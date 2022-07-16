@@ -7,9 +7,9 @@
       FEATURED PROJECTS
     </PageTitle>
     <div
-      class="app__projects__card"
       v-for="(project, index) in visibleProjects"
       :key="index"
+      class="app__projects__card"
     >
       <div class="app__projects__card__image">
         <img
@@ -18,7 +18,7 @@
           width="570"
           height="320"
           loading="lazy"
-        />
+        >
       </div>
       <div class="app__projects__card__content">
         <p class="app__projects__card__content--projectName">
@@ -35,7 +35,7 @@
         >
           {{ displayNameButton(project) }}
         </a>
-        <hr class="app__projects__card__content--spacer" />
+        <hr class="app__projects__card__content--spacer">
       </div>
     </div>
     <button

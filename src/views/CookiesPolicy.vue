@@ -3,7 +3,10 @@
   <Navbar />
   <div class="app__cookiesPolicy">
     <div class="app__cookiesPolicy__inline">
-      <button @click="$router.push('/')" class="app__cookiesPolicy__inline-btn">
+      <button
+        class="app__cookiesPolicy__inline-btn"
+        @click="$router.push('/')"
+      >
         🏠 Go Home
       </button>
       <PageTitle
@@ -16,11 +19,8 @@
     <p><strong>The policy of the use of cookies</strong></p>
     <p><strong>Please read the following information carefully:</strong></p>
     <p>
-      In order to comply with the requirements established in the&nbsp;<strong
-        >EU Directive of May 26, 2012&nbsp;</strong
-      >and the provisions of&nbsp;<strong
-        >Law no. 506 of November 17, 2004</strong
-      >
+      In order to comply with the requirements established in the&nbsp;<strong>EU Directive of May 26,
+      2012&nbsp;</strong>and the provisions of&nbsp;<strong>Law no. 506 of November 17, 2004</strong>
       regarding the processing of personal data and the protection of privacy in
       the electronic communications sector, all visitors to the website are
       required to consent before sending cookies to their computers.
@@ -72,10 +72,8 @@
       to the website associated with that webserver.
     </p>
     <p>
-      <strong
-        >Cookies themselves do not require personal information to be used and,
-        in most cases, do not personally identify Internet users.</strong
-      >
+      <strong>Cookies themselves do not require personal information to be used and,
+        in most cases, do not personally identify Internet users.</strong>
     </p>
     <p>There are 2 major categories of cookies:</p>
     <ol>
@@ -184,10 +182,8 @@
       button on a site, that social network will record your activity.
     </p>
     <p>
-      <strong
-        >&nbsp;What kind of information is stored and accessed through
-        cookies?</strong
-      >
+      <strong>&nbsp;What kind of information is stored and accessed through
+        cookies?</strong>
     </p>
     <p>
       Cookies store information in a small text file that allows a website to
@@ -277,10 +273,8 @@
     </p>
     <p><strong>How can I stop cookies?</strong></p>
     <p>
-      <strong
-        >Disabling and refusing to receive cookies can make certain websites
-        impractical or difficult to visit and use.</strong
-      >
+      <strong>Disabling and refusing to receive cookies can make certain websites
+        impractical or difficult to visit and use.</strong>
     </p>
     <p>
       It is possible to set it in the browser so that these cookies are no
@@ -298,18 +292,23 @@
     <p>
       <a
         href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&redirectslug=Cookies"
-        >Cookie settings in Firefox</a
       >
+        Cookie settings in Firefox
+      </a>
     </p>
     <p>
-      <a href="https://support.google.com/chrome/answer/95647?hl=en"
-        >Cookie settings in Chrome</a
+      <a
+        href="https://support.google.com/chrome/answer/95647?hl=en"
       >
+        Cookie settings in Chrome
+      </a>
     </p>
     <p>
-      <a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac"
-        >Cookie settings in Safari</a
+      <a
+        href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac"
       >
+        Cookie settings in Safari
+      </a>
     </p>
   </div>
   <Copyright />

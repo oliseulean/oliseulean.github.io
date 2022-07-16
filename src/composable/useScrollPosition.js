@@ -1,12 +1,11 @@
 /*
-  imports
-*/
-
+ * Imports
+ */
 import { ref, onMounted, onUnmounted } from 'vue';
 
 /*
-  handle hideElement btn
-*/
+ * Handle hideElement btn
+ */
 
 export const useScrollPosition = () => {
   const hideElement = ref(false);

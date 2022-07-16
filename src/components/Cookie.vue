@@ -1,22 +1,29 @@
 <template>
   <vue-cookie-accept-decline
-    @clicked-accept="enablePlugin"
-    elementId="cookies"
-    position="bottom-left"
     ref="cookies"
-    transitionName="slideFromBottom"
+    element-id="cookies"
+    position="bottom-left"
+    transition-name="slideFromBottom"
     type="floating"
+    @clicked-accept="enablePlugin"
   >
-    <template #postponeContent>&times;</template>
+    <template #postponeContent>
+      &times;
+    </template>
 
     <template #message>
       I use cookies to ensure you get the best experience on my website.
-      <router-link to="/cookies-policy" class="cookies-link">
+      <router-link
+        to="/cookies-policy"
+        class="cookies-link"
+      >
         Cookies policy.
       </router-link>
     </template>
 
-    <template #acceptContent>Accept</template>
+    <template #acceptContent>
+      Accept
+    </template>
   </vue-cookie-accept-decline>
 </template>
 

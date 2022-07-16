@@ -6,12 +6,17 @@
       width="500"
       height="300"
       class="app__fourOhFour-warningImg"
-    />
-    <h1 class="app__fourOhFour-warning">Opps!, something went wrong</h1>
+    >
+    <h1 class="app__fourOhFour-warning">
+      Opps!, something went wrong
+    </h1>
     <p class="app__fourOhFour-notFound">
       We could not find that page you were looking for
     </p>
-    <button @click="$router.push('/')" class="app__fourOhFour-btn">
+    <button
+      class="app__fourOhFour-btn"
+      @click="$router.push('/')"
+    >
       🏠 Go Home
     </button>
   </div>

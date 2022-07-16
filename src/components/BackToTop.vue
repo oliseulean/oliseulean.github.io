@@ -1,7 +1,7 @@
 <template>
   <div
-    @click="handlerOnBtnClick()"
     :class="['app__backToTopBtn', goTopClassName]"
+    @click="handlerOnBtnClick()"
   >
     <ArrowIcon />
   </div>

@@ -3,21 +3,27 @@
     <div class="app__land__title">
       <h1 class="app__land__title-name">
         hello! 👋🏽
-        <br />I'm Olimpiu Șeulean
+        <br>I'm Olimpiu Șeulean
       </h1>
       <div class="app__land__title-typewriter">
         <p>and this website, is about me.</p>
       </div>
     </div>
-    <div v-if="hideArrowButton" class="app__land__bottom">
-      <button @click="handlerOnBtnClick" class="app__land__bottom-btn">
+    <div
+      v-if="hideArrowButton"
+      class="app__land__bottom"
+    >
+      <button
+        class="app__land__bottom-btn"
+        @click="handlerOnBtnClick"
+      >
         <img
           :src="DownArrowIcon"
           class="app__land__bottom-downIcon"
           alt="Down_Icon_Image"
           width="50"
           height="50"
-        />
+        >
       </button>
     </div>
   </div>

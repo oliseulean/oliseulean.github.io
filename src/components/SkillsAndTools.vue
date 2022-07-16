@@ -1,9 +1,20 @@
 <template>
   <div class="app__skillsAndTools__container">
     <ul>
-      <li v-for="(tag, index) in props.tags" :key="index">
-        <Tooltip position="top" :content="tag.title">
-          <img :src="tag.source" alt="main" height="80" width="80" />
+      <li
+        v-for="(tag, index) in props.tags"
+        :key="index"
+      >
+        <Tooltip
+          position="top"
+          :content="tag.title"
+        >
+          <img
+            :src="tag.source"
+            alt="main"
+            height="80"
+            width="80"
+          >
         </Tooltip>
       </li>
     </ul>

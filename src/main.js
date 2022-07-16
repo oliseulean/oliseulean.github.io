@@ -11,6 +11,6 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(router);
 
-app.component('vue-cookie-accept-decline', VueCookieAcceptDecline);
+app.component('VueCookieAcceptDecline', VueCookieAcceptDecline);
 
 app.mount('#app');

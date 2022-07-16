@@ -107,8 +107,7 @@ export const useExperienceStore = defineStore({
       {
         uniName: 'UBB, Babeș-Bolyai University',
         city: 'Cluj-Napoca',
-        specialization:
-          "Master's degree, Decision Support Systems for Business, Scolarship (2019-2021)",
+        specialization: 'Master\'s degree, Decision Support Systems for Business, Scolarship (2019-2021)',
         thesis: 'Detection and recognition traffic sings using Deep Learning',
         grade: '100%',
         uniWebsite: 'https://www.ubbcluj.ro/ro/',
@@ -116,8 +115,7 @@ export const useExperienceStore = defineStore({
       {
         uniName: 'UBB, Babeș-Bolyai University',
         city: 'Cluj-Napoca',
-        specialization:
-          "Bachelor's degree, Computer Science and Economics (2016-2019)",
+        specialization: 'Bachelor\'s degree, Computer Science and Economics (2016-2019)',
         thesis: '',
         grade: '92.9%',
         uniWebsite: 'https://www.ubbcluj.ro/ro/',

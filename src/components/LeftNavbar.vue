@@ -2,8 +2,8 @@
   <div class="app__leftNavbar">
     <a
       v-for="(navItem, index) in storeLeftNavbar.items"
-      :href="navItem.path"
       :key="index"
+      :href="navItem.path"
       target="_blank"
       class="app__leftNavbar-link"
       @click="leftItemsGAEvent($event)"
@@ -20,7 +20,7 @@
           height="30"
           width="30"
           loading="lazy"
-        />
+        >
       </Tooltip>
     </a>
   </div>

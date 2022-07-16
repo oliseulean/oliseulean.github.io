@@ -17,7 +17,10 @@
           technologies.
         </p>
         <ul>
-          <li v-for="(button, index) in buttons" :key="index">
+          <li
+            v-for="(button, index) in buttons"
+            :key="index"
+          >
             <button
               class="app__technologies__container__buttonGroup--button"
               :class="button.class"

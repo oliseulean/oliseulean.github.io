@@ -1,8 +1,11 @@
 <template>
-  <div class="app__workAndStudies" id="experience">
+  <div
+    id="experience"
+    class="app__workAndStudies"
+  >
     <img
-      class="app__workAndStudies-profilePicture"
       ref="imgSrcRef"
+      class="app__workAndStudies-profilePicture"
       :src="avatarPath"
       width="200"
       height="200"
@@ -10,7 +13,7 @@
       loading="lazy"
       @mouseover="onOverAvatar"
       @mouseleave="onLeaveAvatar"
-    />
+    >
     <PageTitle :color="globalStore?.colors?.colorWhite">
       WORK & STUDIES
     </PageTitle>
@@ -38,7 +41,7 @@
             width="25"
             class="app__workAndStudies__container-icon"
             loading="lazy"
-          />
+          >
           {{ experience.duration }}
         </h3>
         <ul class="app__workAndStudies__container__work">
@@ -58,7 +61,7 @@
             alt="Down_Icon_Image"
             class="app__workAndStudies__container-icon"
             loading="lazy"
-          />
+          >
           Skills &amp; Languages
         </h3>
 
