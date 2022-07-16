@@ -1,0 +1,1 @@
+import{b as r,c as l,k as s,s as a}from"./oli.portfolio-v3.1.0.js";const _={__name:"PageTitle",props:{color:{type:String,required:!0}},setup(e){const t=e;return(o,c)=>(r(),l("h1",{style:a({color:t.color}),class:"app__title"},[s(o.$slots,"default")],4))}};export{_ as default};
