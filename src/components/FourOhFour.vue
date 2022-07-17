@@ -3,15 +3,15 @@
     <img
       src="/images/fourOhFour.webp"
       alt="404 Illustration"
-      width="500"
-      height="300"
+      width="943"
+      height="390"
       class="app__fourOhFour-warningImg"
     >
     <h1 class="app__fourOhFour-warning">
       Opps!, something went wrong
     </h1>
     <p class="app__fourOhFour-notFound">
-      We could not find that page you were looking for
+      We could not find that page you were looking for.
     </p>
     <button
       class="app__fourOhFour-btn"
@@ -35,9 +35,14 @@
     width: 350px;
     height: 250px;
 
+    @include md {
+      width: 750px;
+      height: 390px;
+    }
+
     @include lg {
-      width: 500px;
-      height: 300px;
+      width: 943px;
+      height: 390px;
     }
   }
 

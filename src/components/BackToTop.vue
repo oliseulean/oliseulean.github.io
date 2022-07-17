@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="['app__backToTopBtn', goTopClassName]"
+    :class="['app__backToTopBtn', goToTopComputedClass]"
     @click="handlerOnBtnClick()"
   >
-    <ArrowIcon />
+    <ArrowIcon/>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ import { useScrollPosition } from '../composable/useScrollPosition';
  */
 const { hideElement } = useScrollPosition();
 
-const goTopClassName = computed(() => {
+const goToTopComputedClass = computed(() => {
   return hideElement.value ? 'app__goTop' : '';
 });
 
