@@ -1,26 +1,26 @@
 <template>
-  <div class="app-leftNavbar">
+  <div class="app-left-navbar">
     <a
       v-for="(navItem, index) in storeLeftNavbar.items"
       :key="index"
       :href="navItem.path"
       target="_blank"
-      class="app__leftNavbar--link"
+      class="app-left-navbar__link"
       @click="leftItemsGAEvent($event)"
     >
       <Tooltip
         position="right"
         :content="navItem.title"
-        class="app__leftNavbar--tooltip"
+        class="app-left-navbar__tooltip"
       >
         <img
           :src="navItem.icon"
           :alt="navItem.alt"
-          class="app__leftNavbar-icon"
+          class="app-left-navbar__icon"
           height="30"
           width="30"
           loading="lazy"
-        >
+        />
       </Tooltip>
     </a>
   </div>
@@ -56,7 +56,7 @@ const leftItemsGAEvent = e => {
 </script>
 
 <style lang="scss" scoped>
-.app-leftNavbar {
+.app-left-navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,11 +75,11 @@ const leftItemsGAEvent = e => {
 
   @include keyframe-appear();
 
-  &--tooltip {
+  &__tooltip {
     font-size: 0.875rem;
   }
 
-  &-icon {
+  &__icon {
     background-color: transparent;
     margin: 1.5rem 0;
     animation: 2s appear;

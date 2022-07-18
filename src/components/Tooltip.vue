@@ -1,10 +1,10 @@
 <template>
-  <div class="app__tooltip">
-    <div :class="`app__tooltip__container ${props.position}`">
+  <div class="app-tooltip">
+    <div :class="`app-tooltip__position ${props.position}`">
       <slot />
       <span
         ref="hideTooltipRef"
-        class="app__tooltip__container--text"
+        class="app-tooltip__text"
       >
         {{ props.content }}
       </span>
@@ -50,36 +50,40 @@ const handleTouchMove = () => {
 </script>
 
 <style lang="scss">
-.app__tooltip {
+.app-tooltip {
 
-  &__container {
+  &__position {
     position: relative;
     display: inline-block;
+  }
 
-    &--text {
-      visibility: hidden;
-      width: 100px;
-      background-color: rgba($color-dark, 0.6);
-      color: $color-white;
-      text-align: center;
-      border-radius: 6px;
-      padding: 8px 0;
-      position: absolute;
-      z-index: 1;
-      transition: opacity 0.3s;
-    }
+  &__text {
+    visibility: hidden;
+    width: 100px;
+    background-color: rgba($color-dark, 0.6);
+    color: $color-white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 0.3s;
   }
 }
 
-/* Tooltip top content */
-.top .app__tooltip__container--text {
+/*
+ * Tooltip top content
+ */
+.top .app-tooltip__text {
   bottom: 105%;
   left: 50%;
-  margin-left: -50px; /* 120/2 = 60 */
+  margin-left: -50px;
 }
 
-/* Tooltip right content */
-.right .app__tooltip__container--text {
+/*
+ * Tooltip right content
+ */
+.right .app-tooltip__text {
   top: 1.2rem;
   left: 120%;
 
@@ -92,20 +96,7 @@ const handleTouchMove = () => {
   }
 }
 
-/* Tooltip bottom content */
-.bottom .app__tooltip__container--text {
-  top: 100%;
-  left: 50%;
-  margin-left: -60px; /* 120/2 = 60 */
-}
-
-/* Tooltip left content */
-.left .app__tooltip__container--text {
-  top: -5px;
-  right: 110%;
-}
-
-.app__tooltip__container:hover .app__tooltip__container--text {
+.app-tooltip__position:hover .app-tooltip__text {
   visibility: visible;
   opacity: 1;
 }

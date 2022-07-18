@@ -1,8 +1,8 @@
 <template>
-  <div class="app__title">
+  <div class="app-title">
     <h1
       :style="{ color: props.color }"
-      class="app__title--heading"
+      class="app-title__heading"
     >
       <slot />
     </h1>
@@ -22,9 +22,9 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-.app__title {
+.app-title {
 
-  &--heading {
+  &__heading {
     display: flex;
     flex-direction: column;
     align-items: center;

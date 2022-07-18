@@ -1,18 +1,16 @@
 <template>
   <nav
+    class="app-navigation-bar"
     v-if="hideElement"
-    class="app__navigationBar"
   >
-    <div class="app__navigationBar__content">
-      <a
-        :href="resumeURL"
-        target="_blank"
-        @click="resumeGAEvent()"
-        class="app__navigationBar__content--resume"
-      >
-        Resume.📎
-      </a>
-    </div>
+    <a
+      :href="resumeURL"
+      target="_blank"
+      @click="resumeGAEvent"
+      class="app-navigation-bar__link"
+    >
+      Resume.📎
+    </a>
   </nav>
 </template>
 
@@ -47,7 +45,7 @@ const resumeGAEvent = () => {
 </script>
 
 <style lang="scss" scoped>
-.app__navigationBar {
+.app-navigation-bar {
   position: fixed;
   top: 0;
   right: 0;
@@ -61,21 +59,18 @@ const resumeGAEvent = () => {
   z-index: 3;
   @include keyframe-appear();
 
-  &__content {
+  &__link {
+    display: flex;
+    justify-content: center;
+    color: $color-dark-blue;
+    font-size: $font-size-medium;
+    @include font-weight(bold);
+    @include font-monserrat();
+    background: transparent;
 
-    &--resume {
-      display: flex;
-      justify-content: center;
-      color: $color-dark-blue;
-      font-size: $font-size-medium;
-      @include font-weight(bold);
-      @include font-monserrat();
-      background: transparent;
-
-      &:hover,
-      &:active {
-        color: $color-orange-primary;
-      }
+    &:hover,
+    &:active {
+      color: $color-orange-primary;
     }
   }
 }

@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="['app__backToTopBtn', goToTopComputedClass]"
+    :class="['app-back-to-top-btn ', goToTopComputedClassName]"
     @click="handlerOnBtnClick()"
   >
-    <ArrowIcon/>
+    <ArrowIcon />
   </div>
 </template>
 
@@ -20,8 +20,8 @@ import { useScrollPosition } from '../composable/useScrollPosition';
  */
 const { hideElement } = useScrollPosition();
 
-const goToTopComputedClass = computed(() => {
-  return hideElement.value ? 'app__goTop' : '';
+const goToTopComputedClassName = computed(() => {
+  return hideElement.value ? 'go-to-top-btn' : '';
 });
 
 /*
@@ -45,7 +45,7 @@ const backToTopGAEvent = () => {
 </script>
 
 <style lang="scss" scoped>
-.app__backToTopBtn {
+.app-back-to-top-btn {
   background-color: $color-white;
   position: fixed;
   cursor: pointer;
@@ -68,7 +68,7 @@ const backToTopGAEvent = () => {
     transform: translateY(-5px);
   }
 
-  &.app__goTop {
+  &.go-to-top-btn {
     opacity: 1;
     visibility: visible;
     bottom: 0.5rem;

@@ -1,21 +1,21 @@
 <template>
-  <div class="app__fourOhFour">
+  <div class="app-four-oh-four">
     <img
       src="/images/fourOhFour.webp"
-      alt="404 Illustration"
+      alt="404 Image"
       width="943"
       height="390"
-      class="app__fourOhFour-warningImg"
+      class="app-four-oh-four__warning-img"
     >
-    <h1 class="app__fourOhFour-warning">
+    <h1 class="app-four-oh-four__wrong-text">
       Opps!, something went wrong
     </h1>
-    <p class="app__fourOhFour-notFound">
+    <p class="app-four-oh-four__not-found-text">
       We could not find that page you were looking for.
     </p>
     <button
-      class="app__fourOhFour-btn"
-      @click="$router.push('/')"
+      class="app-four-oh-four__go-home-btn"
+      @click.prevent="$router.push('/')"
     >
       🏠 Go Home
     </button>
@@ -23,7 +23,7 @@
 </template>
 
 <style lang="scss" scoped>
-.app__fourOhFour {
+.app-four-oh-four {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,13 +31,13 @@
   width: 100%;
   height: 100vh;
 
-  &-warningImg {
+  &__warning-img {
     width: 350px;
     height: 250px;
 
     @include md {
-      width: 750px;
-      height: 390px;
+      width: 600px;
+      height: 300px;
     }
 
     @include lg {
@@ -46,19 +46,19 @@
     }
   }
 
-  &-warning {
+  &__wrong-text {
     @include font-monserrat();
     text-align: center;
     display: block;
     margin: 0 auto;
   }
 
-  &-notFound {
+  &__not-found-text {
     @include font-roboto-slab();
     margin-top: 1rem;
   }
 
-  &-btn {
+  &__go-home-btn {
     @include black-button();
   }
 }

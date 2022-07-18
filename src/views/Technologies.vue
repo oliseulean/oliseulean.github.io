@@ -105,6 +105,7 @@ const technologiesGAEvent =  (e) => {
   if (!e) return;
   const getToogleValue = e?.target?.innerHTML;
 
+  /* eslint-disable-next-line no-undef */
   gtag('event', 'Technologies', {
     event_category: 'Olimpiu Seulean Portfolio',
     event_label: getToogleValue,

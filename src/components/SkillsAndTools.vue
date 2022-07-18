@@ -1,25 +1,26 @@
 <template>
-  <div class="app__skillsAndTools">
-    <div class="app__skillsAndTools__container">
-      <ul>
-        <li
-          v-for="(icon, index) in props.icons"
-          :key="index"
+  <div class="app-skills-and-tools">
+    <ul class="app-skills-and-tools__items">
+      <li
+        v-for="(icon, index) in props.icons"
+        :key="index"
+        class="app-skills-and-tools__item"
+      >
+        <Tooltip
+          position="top"
+          :content="icon.title"
+          class="app-skills-and-tools__tooltip"
         >
-          <Tooltip
-            position="top"
-            :content="icon.title"
-          >
-            <img
-              :src="icon.source"
-              :alt="icon.alt"
-              height="80"
-              width="80"
-            />
-          </Tooltip>
-        </li>
-      </ul>
-    </div>
+          <img
+            :src="icon.source"
+            :alt="icon.alt"
+            height="80"
+            width="80"
+            class="app-skills-and-tools__icon"
+          />
+        </Tooltip>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -43,11 +44,11 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.app__skillsAndTools__container {
+.app-skills-and-tools {
   position: relative;
   display: inline-block;
 
-  ul {
+  &__items {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -60,12 +61,12 @@ const props = defineProps({
     @include sm {
       justify-content: left;
     }
+  }
 
-    img {
-      border: 1px solid rgba($color-shadow-middle-gray, 0.5);
-      border-radius: 0.63rem;
-      padding: 0.875rem;
-    }
+  &__icon {
+    border: 1px solid rgba($color-shadow-middle-gray, 0.5);
+    border-radius: 0.63rem;
+    padding: 0.875rem;
   }
 }
 </style>
