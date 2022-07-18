@@ -1,33 +1,39 @@
 <template>
-  <div class="app__skillsAndTools__container">
-    <ul>
-      <li
-        v-for="(tag, index) in props.tags"
-        :key="index"
-      >
-        <Tooltip
-          position="top"
-          :content="tag.title"
+  <div class="app__skillsAndTools">
+    <div class="app__skillsAndTools__container">
+      <ul>
+        <li
+          v-for="(icon, index) in props.icons"
+          :key="index"
         >
-          <img
-            :src="tag.source"
-            alt="main"
-            height="80"
-            width="80"
+          <Tooltip
+            position="top"
+            :content="icon.title"
           >
-        </Tooltip>
-      </li>
-    </ul>
+            <img
+              :src="icon.source"
+              :alt="icon.alt"
+              height="80"
+              width="80"
+            />
+          </Tooltip>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup>
+/*
+ * Imports
+ */
 import Tooltip from '../components/Tooltip';
+
 /*
  * Props
  */
 const props = defineProps({
-  tags: {
+  icons: {
     type: Array,
     default() {
       return [];
@@ -36,7 +42,7 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app__skillsAndTools__container {
   position: relative;
   display: inline-block;
@@ -51,19 +57,13 @@ const props = defineProps({
     font-size: 0.85rem;
     justify-content: center;
 
-    @include md {
-      justify-content: left;
-    }
-
-    @include lg {
+    @include sm {
       justify-content: left;
     }
 
     img {
       border: 1px solid rgba($color-shadow-middle-gray, 0.5);
       border-radius: 0.63rem;
-      width: 80px;
-      height: 80px;
       padding: 0.875rem;
     }
   }

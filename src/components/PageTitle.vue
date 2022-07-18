@@ -1,10 +1,12 @@
 <template>
-  <h1
-    :style="{ color: props.color }"
-    class="app__title"
-  >
-    <slot />
-  </h1>
+  <div class="app__title">
+    <h1
+      :style="{ color: props.color }"
+      class="app__title--heading"
+    >
+      <slot />
+    </h1>
+  </div>
 </template>
 
 <script setup>
@@ -20,22 +22,23 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-h1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: transparent;
-  @include font-weight(bold);
-  @include font-roboto-slab();
-  font-size: $font-size-medium;
-  padding: 2.5rem 0;
+.app__title {
 
-  @include md {
-    font-size: $font-size-large;
-  }
+  &--heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include font-weight(bold);
+    @include font-roboto-slab();
+    font-size: $font-size-medium;
 
-  @include lg {
-    font-size: $font-size-large-l;
+    @include md {
+      font-size: $font-size-large;
+    }
+
+    @include lg {
+      font-size: $font-size-large-l;
+    }
   }
 }
 </style>

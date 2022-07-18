@@ -3,7 +3,8 @@
     <div class="app__land__title">
       <h1 class="app__land__title-name">
         hello! 👋🏽
-        <br>I'm Olimpiu Șeulean
+        <br />
+        I'm Olimpiu Șeulean
       </h1>
       <div class="app__land__title-typewriter">
         <p>and this website, is about me.</p>
@@ -15,7 +16,7 @@
     >
       <button
         class="app__land__bottom-btn"
-        @click="handlerOnBtnClick"
+        @click="handlerOnScrollDownBtn"
       >
         <img
           :src="DownArrowIcon"
@@ -33,7 +34,6 @@
 /*
  * Imports
  */
-
 import { ref, onMounted, onUnmounted } from 'vue';
 import DownArrowIcon from '/icons/down-arrow.webp';
 
@@ -49,8 +49,8 @@ onUnmounted(() => window.removeEventListener('scroll', hideArrow));
 const hideArrow = () => {
   const currentScrollValue = window?.pageYOffset;
   currentScrollValue > 100
-    ? (hideArrowButton.value = false)
-    : (hideArrowButton.value = true);
+    ? hideArrowButton.value = false
+    : hideArrowButton.value = true;
 };
 
 const scrollToExperienceSection = () => {
@@ -68,7 +68,7 @@ const scrollDownBtnGAEvent = () => {
   });
 };
 
-const handlerOnBtnClick = () => {
+const handlerOnScrollDownBtn = () => {
   scrollDownBtnGAEvent();
   scrollToExperienceSection();
 };
@@ -109,6 +109,7 @@ const handlerOnBtnClick = () => {
     }
 
     &-typewriter {
+
       p {
         font-size: $font-size-normal;
         font-weight: 200;

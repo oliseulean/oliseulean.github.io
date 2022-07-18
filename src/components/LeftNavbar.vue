@@ -1,11 +1,11 @@
 <template>
-  <div class="app__leftNavbar">
+  <div class="app-leftNavbar">
     <a
       v-for="(navItem, index) in storeLeftNavbar.items"
       :key="index"
       :href="navItem.path"
       target="_blank"
-      class="app__leftNavbar-link"
+      class="app__leftNavbar--link"
       @click="leftItemsGAEvent($event)"
     >
       <Tooltip
@@ -42,6 +42,7 @@ const storeLeftNavbar = useLeftNavbarStore();
  * LeftNavbar Google Analytics
  */
 const leftItemsGAEvent = e => {
+  if (!e) return;
   const getItemName = e?.target?.alt;
   const cleanUpItemName = getItemName.replace('webp', '');
 
@@ -55,7 +56,7 @@ const leftItemsGAEvent = e => {
 </script>
 
 <style lang="scss" scoped>
-.app__leftNavbar {
+.app-leftNavbar {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,18 +65,12 @@ const leftItemsGAEvent = e => {
   position: fixed;
   z-index: 1;
   background-color: transparent;
-  top: none;
-  left: none;
-  bottom: 0;
-  font-size: $font-size-normal;
+  top: 0;
+  left: 0;
   width: 2.8rem;
 
   @include sm {
     width: 7rem;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-    font-size: $font-size-large;
   }
 
   @include keyframe-appear();
@@ -91,7 +86,6 @@ const leftItemsGAEvent = e => {
     transition: 0.2s ease-in-out;
     width: 20px;
     height: 20px;
-    font-size: $font-size-normal;
 
     @include md {
       width: 25px;
@@ -104,8 +98,7 @@ const leftItemsGAEvent = e => {
     }
 
     &:hover {
-      filter: drop-shadow(2px 2px $color-shadow-gray);
-      transition: 0.2s ease-in-out;
+      transform: scale(1.5);
     }
   }
 }

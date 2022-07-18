@@ -18,31 +18,31 @@ export const useLeftNavbarStore = defineStore({
     items: [
       {
         path: 'https://www.linkedin.com/in/seulean-olimpiu',
-        alt: 'Linkedin webp',
+        alt: 'Linkedin icon',
         icon: LinkedinIcon,
         title: 'Linkedin',
       },
       {
         path: 'https://medium.com/@olimpiuseulean',
-        alt: 'Medium webp',
+        alt: 'Medium icon',
         icon: MediumIcon,
         title: 'Medium',
       },
       {
         path: 'https://github.com/oliseulean',
-        alt: 'Github webp',
+        alt: 'Github icon',
         icon: GithubIcon,
         title: 'Github',
       },
       {
         path: 'mailto:seulean.olimpiu@gmail.com',
-        alt: 'Mail webp',
+        alt: 'Mail icon',
         icon: GmailIcon,
         title: 'Mail',
       },
       {
         path: 'tel:0741547328',
-        alt: 'Telephone webp',
+        alt: 'Telephone icon',
         icon: PhoneIcon,
         title: 'Phone',
       },

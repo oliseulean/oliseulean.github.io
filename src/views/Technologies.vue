@@ -24,7 +24,7 @@
             <button
               class="app__technologies__container__buttonGroup--button"
               :class="button.class"
-              @click="setActiveClass(button.id)"
+              @click="setActiveClass(button.id), technologiesGAEvent($event)"
             >
               {{ button.text }}
             </button>
@@ -34,12 +34,12 @@
       <div class="app__technologies__container__skills">
         <SkillsAndTools
           v-if="displaySkillsList"
-          :tags="storeTechnologies.technologies"
+          :icons="storeTechnologies.technologies"
         />
 
         <SkillsAndTools
           v-if="displayToolsList"
-          :tags="storeTechnologies.tools"
+          :icons="storeTechnologies.tools"
         />
       </div>
     </div>
@@ -97,6 +97,20 @@ const setActiveClass = id => {
 const displaySkillsList = computed(() => previousActiveID.value === 0);
 
 const displayToolsList = computed(() => previousActiveID.value === 1);
+
+/*
+ * Set GA tags for the technologies toogle btn
+ */
+const technologiesGAEvent =  (e) => {
+  if (!e) return;
+  const getToogleValue = e?.target?.innerHTML;
+
+  gtag('event', 'Technologies', {
+    event_category: 'Olimpiu Seulean Portfolio',
+    event_label: getToogleValue,
+    value: 1,
+  });
+};
 </script>
 
 <style lang="scss" scoped>

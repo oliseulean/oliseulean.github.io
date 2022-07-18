@@ -4,14 +4,14 @@
   <div class="app__cookiesPolicy">
     <div class="app__cookiesPolicy__inline">
       <button
-        class="app__cookiesPolicy__inline-btn"
+        class="app__cookiesPolicy__inline--btn"
         @click="$router.push('/')"
       >
         🏠 Go Home
       </button>
       <PageTitle
         :color="globalStore?.colors?.colorDark"
-        class="app__cookiesPolicy__inline-title"
+        class="app__cookiesPolicy__inline--title"
       >
         COOKIES POLICY
       </PageTitle>
@@ -324,17 +324,13 @@ import { defineAsyncComponent } from 'vue';
 
 import LeftNavbar from '../components/LeftNavbar.vue';
 
-const PageTitle = defineAsyncComponent(() =>
-  import('../components/PageTitle.vue')
-);
+const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
 
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 
 const Copyright = defineAsyncComponent(() => import('../views/Copyright.vue'));
 
-const BackToTop = defineAsyncComponent(() =>
-  import('../components/BackToTop.vue')
-);
+const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
 
 /*
  * Store
@@ -372,12 +368,12 @@ const globalStore = useGlobalStore();
       margin-bottom: 3rem;
     }
 
-    &-title {
+    &--title {
       display: block;
       margin: auto;
     }
 
-    &-btn {
+    &--btn {
       background-color: $color-dark;
       margin-bottom: 1rem;
       color: $color-white;

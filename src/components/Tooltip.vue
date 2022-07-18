@@ -51,6 +51,7 @@ const handleTouchMove = () => {
 
 <style lang="scss">
 .app__tooltip {
+
   &__container {
     position: relative;
     display: inline-block;
