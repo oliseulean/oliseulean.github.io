@@ -122,6 +122,11 @@ const handlerOnScrollDownBtn = () => {
         text-align: left;
         padding-top: 0.7rem;
 
+        @include sm {
+          font-size: $font-size-medium;
+          line-height: 50px;
+        }
+
         @include lg {
           font-size: $font-size-large;
           line-height: 70px;

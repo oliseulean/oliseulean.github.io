@@ -51,7 +51,7 @@ export const useTechnologies = defineStore({
         {
           title: 'SASS',
           alt: 'Sass_icon',
-          source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1280px-Sass_Logo_Color.svg.png',
+          source: 'https://seeklogo.com/images/N/node-sass-logo-9CA9095D1A-seeklogo.com.png',
         },
         {
           title: 'MySQL',
