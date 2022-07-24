@@ -1,8 +1,10 @@
 <template>
   <div
-    class="app__footer"
+    class="app-footer"
     v-html="
-      `&copy; Copyright &copy; ${getCurrentYear()} | All rights reserved. <br /> Designed by Olimpiu Șeulean`
+      `&copy; Copyright &copy; ${getCurrentYear()} | All rights reserved.
+      <br />
+      Designed by Olimpiu Șeulean`
     "
   />
 </template>
@@ -15,7 +17,7 @@ import getCurrentYear from '../helpers/getCurrentYear';
 </script>
 
 <style lang="scss" scoped>
-.app__footer {
+.app-footer {
   display: block;
   margin: 0 auto;
   @include font-roboto-slab();

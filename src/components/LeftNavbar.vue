@@ -67,9 +67,13 @@ const leftItemsGAEvent = e => {
   background-color: transparent;
   top: 0;
   left: 0;
-  width: 2.8rem;
+  width: 3.5rem;
 
-  @include sm {
+  @include md {
+    width: 5.5rem;
+  }
+
+  @include lg {
     width: 7rem;
   }
 

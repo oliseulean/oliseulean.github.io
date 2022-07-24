@@ -1,6 +1,9 @@
 <template>
   <div class="app-tooltip">
-    <div :class="`app-tooltip__position ${props.position}`">
+    <div
+      :class="`app-tooltip__position ${props.position}`"
+      tabindex="0"
+    >
       <slot />
       <span
         ref="hideTooltipRef"

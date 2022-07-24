@@ -1,17 +1,16 @@
 <template>
   <LeftNavbar />
   <Navbar />
-  <div class="app__cookiesPolicy">
-    <div class="app__cookiesPolicy__inline">
+  <div class="app-cookiesPolicy">
+    <div class="app-cookiesPolicy__container">
       <button
-        class="app__cookiesPolicy__inline--btn"
+        class="app-cookiesPolicy__home-button"
         @click="$router.push('/')"
       >
         🏠 Go Home
       </button>
       <PageTitle
         :color="globalStore?.colors?.colorDark"
-        class="app__cookiesPolicy__inline--title"
       >
         COOKIES POLICY
       </PageTitle>
@@ -338,8 +337,8 @@ const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue
 const globalStore = useGlobalStore();
 </script>
 
-<style scoped lang="scss">
-.app__cookiesPolicy {
+<style lang="scss" scoped>
+.app-cookiesPolicy {
   @include font-roboto-slab();
   margin: 3rem 3rem;
   font-size: $font-size-normal;
@@ -352,11 +351,12 @@ const globalStore = useGlobalStore();
     margin: 2rem 7rem;
   }
 
-  &__inline {
+  &__container {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
     width: 100%;
+    align-items: center;
 
     @include md {
       flex-direction: row;
@@ -367,36 +367,18 @@ const globalStore = useGlobalStore();
       flex-direction: row;
       margin-bottom: 3rem;
     }
+  }
 
-    &--title {
-      display: block;
-      margin: auto;
+  &__home-button {
+    @include black-button();
+    width: 100%;
+
+    @include md {
+      width: auto;
     }
 
-    &--btn {
-      background-color: $color-dark;
-      margin-bottom: 1rem;
-      color: $color-white;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      padding: 0.5rem 1.2rem;
-      display: block;
-      width: fit-content;
-      font-size: 0.9rem;
-      border: 1px solid $color-dark;
-      margin-top: 1rem;
-      cursor: pointer;
-      @include font-roboto-slab();
-      width: 100%;
-
-      @include md {
-        width: auto;
-      }
-
-      @include lg {
-        width: auto;
-      }
+    @include lg {
+      width: auto;
     }
   }
 
@@ -420,13 +402,10 @@ const globalStore = useGlobalStore();
   li {
     padding-bottom: 0.5rem;
   }
+}
 
-  a {
-    color: $color-orange-primary;
-
-    &:hover {
-      color: $color-dark-blue;
-    }
-  }
+.app-title {
+  display: block;
+  margin: auto;
 }
 </style>

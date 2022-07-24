@@ -36,5 +36,10 @@ html {
 }
 
 a {
+  color: $color-orange-primary;
   text-decoration: none;
+
+  &:hover {
+    color: $color-dark-blue;
+  }
 }

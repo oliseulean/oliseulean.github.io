@@ -1,46 +1,44 @@
 <template>
-  <div class="app__technologies">
-    <PageTitle
-      :color="globalStore?.colors?.colorOrangePrimary"
-      class="app__technologies__title"
-    >
-      MY SKILLS
-    </PageTitle>
-    <div class="app__technologies__container">
-      <div class="app__technologies__container__buttonGroup">
-        <p class="app__technologies__container__buttonGroup--title">
-          What My Programming Skills Included?
-        </p>
-        <p class="app__technologies__container__buttonGroup--subtitle">
-          I develop simple, intuitive and responsive user interface that helps
-          users get things done with less effort and time with those
-          technologies.
-        </p>
-        <ul>
-          <li
-            v-for="(button, index) in buttons"
-            :key="index"
-          >
-            <button
-              class="app__technologies__container__buttonGroup--button"
-              :class="button.class"
-              @click="setActiveClass(button.id), technologiesGAEvent($event)"
-            >
-              {{ button.text }}
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="app__technologies__container__skills">
-        <SkillsAndTools
-          v-if="displaySkillsList"
-          :icons="storeTechnologies.technologies"
-        />
+  <div class="app-technologies">
+    <div class="app-technologies-section">
+      <PageTitle :color="globalStore?.colors?.colorOrangePrimary">
+        MY SKILLS
+      </PageTitle>
+      <div class="app-technologies-section-container">
+        <div class="app-technologies-section-container__button-group">
+          <p class="app-technologies-section-container__title">
+            What My Programming Skills Included?
+          </p>
 
-        <SkillsAndTools
-          v-if="displayToolsList"
-          :icons="storeTechnologies.tools"
-        />
+          <p class="app-technologies-section-container__subtitle">
+            I develop simple, intuitive and responsive user interface that helps
+            users get things done with less effort and time with those
+            technologies.
+          </p>
+
+          <ul class="app-technologies-section-container__items">
+            <li v-for="(button, index) in buttons" :key="index">
+              <button
+                class="app-technologies-section-container__button-group--button"
+                :class="button.class"
+                @click="setActiveClass(button.id), technologiesGAEvent($event)"
+              >
+                {{ button.text }}
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="app-technologies-section-container__skills">
+          <SkillsAndTools
+            v-if="displaySkillsList"
+            :icons="storeTechnologies.technologies"
+          />
+
+          <SkillsAndTools
+            v-if="displayToolsList"
+            :icons="storeTechnologies.tools"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -101,7 +99,7 @@ const displayToolsList = computed(() => previousActiveID.value === 1);
 /*
  * Set GA tags for the technologies toogle btn
  */
-const technologiesGAEvent =  (e) => {
+const technologiesGAEvent = e => {
   if (!e) return;
   const getToogleValue = e?.target?.innerHTML;
 
@@ -115,65 +113,41 @@ const technologiesGAEvent =  (e) => {
 </script>
 
 <style lang="scss" scoped>
-.app__technologies {
-  padding: 0 2rem 2rem 2rem;
+.app-technologies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include font-roboto-slab();
 
-  @include md {
-    padding: 0;
-  }
-
-  @include lg {
-    padding: 0 7rem 7rem 7rem;
-  }
-
-  &__title {
-    padding: 5rem 0 2rem 0;
+  &-section {
+    width: 70%;
 
     @include md {
-      padding: 5rem 0 2rem 0;
+      width: 75%;
     }
 
     @include lg {
-      padding: 5rem 0;
+      width: 85%;
     }
-  }
 
-  &__container {
-    display: flex;
-    @include font-roboto-slab();
-    flex-direction: column;
-
-    @include md {
+    &-container {
+      display: flex;
       flex-direction: column;
-    }
-
-    @include lg {
-      flex-direction: row;
-    }
-
-    &__buttonGroup {
-      width: 100%;
-      color: $color-white;
-      text-align: center;
-      padding: 0 1.25rem;
 
       @include md {
-        width: 100%;
-        padding: 0 6rem;
+        flex-direction: column;
       }
 
       @include lg {
-        width: 50%;
-        padding: 0;
+        flex-direction: row;
       }
 
-      &--title {
-        font-size: 1.5rem;
+      &__title {
+        font-size: $font-size-medium;
         letter-spacing: 1px;
         color: $color-dark;
         @include font-weight(bold);
-        margin-bottom: 1.25rem;
-        margin-top: 1rem;
+        margin: 1rem 0 1.25rem 0;
         padding-right: 0;
         text-align: left;
 
@@ -186,10 +160,10 @@ const technologiesGAEvent =  (e) => {
         }
       }
 
-      &--subtitle {
+      &__subtitle {
         color: $color-shadow-middle-gray;
         @include font-weight(thin);
-        font-size: 1rem;
+        font-size: $font-size-normal;
         margin: 1rem 0;
         padding-right: 0;
         text-align: left;
@@ -205,13 +179,45 @@ const technologiesGAEvent =  (e) => {
         }
       }
 
-      ul {
-        list-style-type: none;
+      &__button-group {
+        width: 100%;
+        color: $color-white;
+        text-align: center;
+
+        @include md {
+          width: 100%;
+        }
+
+        @include lg {
+          width: 50%;
+        }
+
+        &--button {
+          width: 80px;
+          height: 40px;
+          list-style-type: none;
+          cursor: pointer;
+          border: none;
+          background: $color-dark-blue;
+          color: $color-white;
+          border-radius: 30px;
+          @include font-weight(bold);
+
+          &.active {
+            background: $color-orange-primary;
+            border-radius: 30px;
+          }
+        }
+      }
+
+      &__items {
         display: flex;
+        list-style-type: none;
         margin: 2rem auto;
         width: 150px;
         background: $color-dark-blue;
         border-radius: 30px;
+        justify-content: left;
 
         @include md {
           width: 150px;
@@ -220,43 +226,37 @@ const technologiesGAEvent =  (e) => {
         @include lg {
           width: 150px;
           margin: 0 !important;
-          justify-content: left;
         }
       }
 
-      &--button {
-        width: 80px;
-        height: 40px;
-        list-style-type: none;
-        cursor: pointer; /* Pointer/hand icon */
-        border: none;
-        background: $color-dark-blue;
-        color: $color-white;
-        border-radius: 30px;
-        font-weight: bold;
-
-        &.active {
-          background: $color-orange-primary;
-          border-radius: 30px;
-        }
-      }
-    }
-
-    &__skills {
-      width: 100%;
-      color: $color-white;
-      padding: 0;
-
-      @include md {
+      &__skills {
         width: 100%;
-        padding: 0 6rem;
-      }
+        color: $color-white;
+        padding-bottom: 3.5rem;
 
-      @include lg {
-        width: 50%;
-        padding: 0;
+        @include md {
+          width: 100%;
+          padding-bottom: 0;
+        }
+
+        @include lg {
+          width: 50%;
+          padding-bottom: 6rem;
+        }
       }
     }
+  }
+}
+
+.app-title {
+  padding: 0;
+
+  @include md {
+    padding: 0;
+  }
+
+  @include lg {
+    padding: 2rem 0;
   }
 }
 </style>

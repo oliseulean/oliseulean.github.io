@@ -1,7 +1,10 @@
 <template>
   <div
     :class="['app-back-to-top-btn ', goToTopComputedClassName]"
+    tabindex="0"
     @click="handlerOnBtnClick()"
+    @keydown.enter="handlerOnBtnClick()"
+    @keydown.space="handlerOnBtnClick()"
   >
     <ArrowIcon />
   </div>

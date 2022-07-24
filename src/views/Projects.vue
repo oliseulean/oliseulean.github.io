@@ -1,50 +1,49 @@
 <template>
-  <div class="app__projects">
-    <PageTitle
-      :color="globalStore?.colors?.colorDark"
-      class="app__projects__title"
-    >
-      FEATURED PROJECTS
-    </PageTitle>
-    <div
-      v-for="(project, index) in visibleProjects"
-      :key="index"
-      class="app__projects__card"
-    >
-      <div class="app__projects__card__image">
-        <img
-          :src="project.imgUrl"
-          alt="Project Image"
-          width="570"
-          height="320"
-          loading="lazy"
-        >
+  <div class="app-projects">
+    <div class="app-projects-section">
+      <PageTitle :color="globalStore?.colors?.colorDark">
+        FEATURED PROJECTS
+      </PageTitle>
+      <div
+        v-for="(project, index) in visibleProjects"
+        :key="index"
+        class="app-projects-section-card"
+      >
+        <div class="app-projects-section-card__image">
+          <img
+            :src="project.imgUrl"
+            alt="Project Image"
+            width="570"
+            height="320"
+            loading="lazy"
+          />
+        </div>
+        <div class="app-projects-section-card__content">
+          <p class="app-projects-section-card__project-name">
+            {{ project.name }}
+          </p>
+          <p class="app-projects-section-card__project-description">
+            {{ project.description }}
+          </p>
+          <a
+            :href="project.link"
+            target="_blank"
+            class="app-projects-section-card__see-code-btn"
+            @click="projectsBtnGAEvent($event)"
+          >
+            {{ displayNameButton(project) }}
+          </a>
+          <hr class="app-projects-section-card__spacer" />
+        </div>
       </div>
-      <div class="app__projects__card__content">
-        <p class="app__projects__card__content--projectName">
-          {{ project.name }}
-        </p>
-        <p class="app__projects__card__content--projectDescription">
-          {{ project.description }}
-        </p>
-        <a
-          :href="project.link"
-          target="_blank"
-          class="app__projects__card__content-btn"
-          @click="projectsBtnGAEvent($event)"
-        >
-          {{ displayNameButton(project) }}
-        </a>
-        <hr class="app__projects__card__content--spacer">
-      </div>
+      <button
+        v-if="showMoreProjectsButton"
+        class="app-projects-section__show-more-button"
+        @click="handlerLoadMoreProjects"
+      >
+        SHOW MORE PROJECTS
+      </button>
     </div>
-    <button
-      v-if="showMoreProjectsButton"
-      class="app__projects__showMoreButton"
-      @click="handlerLoadMoreProjects"
-    >
-      SHOW MORE PROJECTS
-    </button>
   </div>
 </template>
 
@@ -118,108 +117,93 @@ const loadMoreProjectsBtnGAEvent = () => {
 </script>
 
 <style lang="scss" scoped>
-.app__projects {
-  &__title {
-    padding: 3rem 0 1rem 0;
+.app-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include font-roboto-slab();
+
+  &-section {
+    width: 70%;
 
     @include md {
-      padding: 5rem 0 2rem 0;
+      width: 75%;
     }
 
     @include lg {
-      padding: 2rem 0 5rem 0;
-    }
-  }
-
-  &__card {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding: 3.5rem 0;
-    @include font-roboto-slab();
-
-    @include md {
-      flex-direction: column;
-      align-items: center;
-      padding: 3.5rem 0;
+      width: 85%;
     }
 
-    @include lg {
-      flex-direction: row;
-      padding: 0 10rem 10rem 10rem;
-    }
-
-    &__image {
-      width: 100%;
-      margin: auto 0;
+    &-card {
       display: flex;
-      justify-content: center !important;
-
-      &:hover {
-        @include transition();
-      }
-
-      @include md {
-        width: 50%;
-      }
-
-      @include lg {
-        width: 50%;
-      }
-
-      img {
-        width: 325px;
-        height: 190px;
-
-        @include md {
-          width: 500px;
-          height: 275px;
-        }
-
-        @include lg {
-          width: 570px;
-          height: 320px;
-        }
-      }
-    }
-
-    &__content {
       width: 100%;
-      padding: 1rem 2.5rem 0 2.5rem;
-      text-align: center;
+      flex-direction: column;
+      padding: 2rem 0;
 
       @include md {
-        width: 100%;
-        padding: 2rem 6rem 0 6rem;
-        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 3.5rem 0;
       }
 
       @include lg {
-        width: 50%;
-        padding: 5rem;
-        text-align: left;
+        flex-direction: row;
+        padding: 0 0 10rem 0;
       }
 
-      &--spacer {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        width: 275px;
-        border: 0.2px solid $color-white-gray;
-        margin-top: 2rem;
+      &__image {
+        width: 100%;
+        margin: auto 0;
+        display: flex;
+        justify-content: center !important;
+
+        &:hover {
+          @include transition();
+        }
 
         @include md {
-          margin-top: -1rem;
+          width: 50%;
         }
 
         @include lg {
-          margin-top: 10rem;
+          width: 50%;
+        }
+
+        img {
+          width: 325px;
+          height: 190px;
+
+          @include md {
+            width: 500px;
+            height: 275px;
+          }
+
+          @include lg {
+            width: 570px;
+            height: 320px;
+          }
         }
       }
 
-      &--projectName {
+      &__content {
+        width: 100%;
+        padding: 3rem 0;
+        text-align: center;
+
+        @include md {
+          width: 100%;
+          padding: 2rem 6rem 0 6rem;
+          text-align: center;
+        }
+
+        @include lg {
+          width: 50%;
+          padding: 5rem;
+          text-align: left;
+        }
+      }
+
+      &__project-name {
         font-size: 1.25rem;
         color: $color-dark;
         @include font-weight(bold);
@@ -233,7 +217,7 @@ const loadMoreProjectsBtnGAEvent = () => {
         }
       }
 
-      &--projectDescription {
+      &__project-description {
         margin-top: 1rem;
         color: $color-shadow-middle-gray;
         @include font-weight(thin);
@@ -248,17 +232,11 @@ const loadMoreProjectsBtnGAEvent = () => {
         }
       }
 
-      &-btn {
+      &__see-code-btn {
         @include black-button();
-        text-align: center;
         margin: 2.5rem auto;
 
-        @include md {
-          text-align: center;
-        }
-
         @include lg {
-          text-align: left;
           margin: 2rem 0;
         }
 
@@ -266,25 +244,54 @@ const loadMoreProjectsBtnGAEvent = () => {
           @include transition();
         }
       }
+
+      &__spacer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 275px;
+        border: 0.2px solid $color-white-gray;
+        margin: 2rem auto 0 auto;
+
+        @include md {
+          margin-top: -1rem;
+        }
+
+        @include lg {
+          margin-top: 10rem;
+        }
+      }
+    }
+
+    &__show-more-button {
+      margin: 3rem auto 4rem auto !important;
+      text-align: center;
+      @include black-button();
+
+      @include md {
+        margin: 0 auto 5rem auto !important;
+      }
+
+      @include lg {
+        margin: 0 auto 5rem auto !important;
+      }
+
+      &:hover {
+        @include transition();
+      }
     }
   }
+}
 
-  &__showMoreButton {
-    margin: 3rem auto 4rem auto !important;
-    text-align: center;
-    @include black-button();
+.app-title {
+  padding-bottom: 0;
 
-    @include md {
-      margin: 0 auto 5rem auto !important;
-    }
+  @include md {
+    padding-bottom: 0;
+  }
 
-    @include lg {
-      margin: 0 auto 5rem auto !important;
-    }
-
-    &:hover {
-      @include transition();
-    }
+  @include lg {
+    padding-bottom: 2rem;
   }
 }
 

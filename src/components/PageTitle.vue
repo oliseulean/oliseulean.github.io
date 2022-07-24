@@ -1,8 +1,8 @@
 <template>
   <div class="app-title">
     <h1
-      :style="{ color: props.color }"
       class="app-title__heading"
+      :style="stylePageTitleObj"
     >
       <slot />
     </h1>
@@ -11,6 +11,11 @@
 
 <script setup>
 /*
+ * Imports
+ */
+import { reactive } from 'vue';
+
+/*
  * Props
  */
 const props = defineProps({
@@ -18,26 +23,41 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  alignItems: {
+    type: String,
+    default: 'center',
+  },
+  textAlign: {
+    type: String,
+    default: 'center',
+  },
+});
+
+const stylePageTitleObj = reactive({
+  color: props.color,
+  alignItems: props.alignItems,
+  textAlign: props.textAlign,
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-title {
-
   &__heading {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 2.5rem 0;
     @include font-weight(bold);
     @include font-roboto-slab();
-    font-size: $font-size-medium;
+    font-size: $font-size-large;
 
     @include md {
       font-size: $font-size-large;
+      padding: 5rem 0 2rem 0;
     }
 
     @include lg {
       font-size: $font-size-large-l;
+      padding: 3rem 0;
     }
   }
 }
