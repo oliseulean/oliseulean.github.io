@@ -160,7 +160,7 @@ const imgSrcRef = ref(null);
 const windowWidth = ref(window.innerWidth);
 
 const onWidthChange = () => {
-  return (windowWidth.value = window.innerWidth);
+  return windowWidth.value = window.innerWidth;
 };
 
 onMounted(() => window.addEventListener('resize', onWidthChange));
@@ -168,13 +168,13 @@ onUnmounted(() => window.removeEventListener('resize', onWidthChange));
 
 const onOverAvatar = () => {
   windowWidth.value >= breakpoints['screen-lg']
-    ? (imgSrcRef.value.src = avatarSecondPath.value)
+    ? imgSrcRef.value.src = avatarSecondPath.value
     : '';
 };
 
 const onLeaveAvatar = () => {
   windowWidth.value >= breakpoints['screen-lg']
-    ? (imgSrcRef.value.src = avatarPath.value)
+    ? imgSrcRef.value.src = avatarPath.value
     : '';
 };
 </script>

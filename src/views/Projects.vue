@@ -72,7 +72,7 @@ const visibleProjects = computed(() => {
 });
 
 const loadMoreProjects = () => {
-  return (maxProjectsShown.value += 3);
+  return maxProjectsShown.value += 3;
 };
 
 const handlerLoadMoreProjects = () => {
