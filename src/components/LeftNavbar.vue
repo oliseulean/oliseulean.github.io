@@ -102,7 +102,11 @@ const leftItemsGAEvent = e => {
     }
 
     &:hover {
-      transform: scale(1.5);
+      transform: none;
+
+      @include lg {
+        transform: scale(1.5);
+      }
     }
   }
 }

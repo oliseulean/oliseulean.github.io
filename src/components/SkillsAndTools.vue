@@ -53,13 +53,19 @@ const props = defineProps({
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 1rem;
+    gap: 0.35rem;
     flex-flow: row wrap;
     font-size: 0.85rem;
     justify-content: center;
 
-    @include sm {
+    @include md {
       justify-content: left;
+      gap: 0.75rem;
+    }
+
+    @include lg {
+      justify-content: left;
+      gap: 1rem;
     }
   }
 

@@ -232,7 +232,7 @@ const technologiesGAEvent = e => {
       &__skills {
         width: 100%;
         color: $color-white;
-        padding-bottom: 3.5rem;
+        padding-bottom: 1rem;
 
         @include md {
           width: 100%;
