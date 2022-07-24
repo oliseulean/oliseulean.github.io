@@ -49,6 +49,7 @@ const stylePageTitleObj = reactive({
     @include font-weight(bold);
     @include font-roboto-slab();
     font-size: $font-size-large;
+    line-height: 1.5;
 
     @include md {
       font-size: $font-size-large;
