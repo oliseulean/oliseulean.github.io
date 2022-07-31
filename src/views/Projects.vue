@@ -242,6 +242,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
         &:hover {
           @include transition();
+          color: $color-white;
         }
       }
 
@@ -278,6 +279,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       &:hover {
         @include transition();
+        color: $color-white;
       }
     }
   }

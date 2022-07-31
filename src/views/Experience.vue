@@ -235,6 +235,7 @@ const onLeaveAvatar = () => {
       margin-bottom: 1.5rem;
       font-size: 1.4rem;
       @include font-weight(thin);
+      line-height: 30px;
 
       &--bold {
         @include font-weight(bold);
@@ -281,7 +282,7 @@ const onLeaveAvatar = () => {
       @include line-hover();
 
       &:hover {
-        color: $color-orange-primary;
+        color: $color-yellow-primary;
       }
     }
 

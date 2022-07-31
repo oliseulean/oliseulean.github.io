@@ -3,12 +3,17 @@
   display: inline-block;
 
   &::after {
-    content: '';
-    display: block;
-    border-bottom: 1px solid #fff;
-    width: 0;
-    opacity: 0;
-    transition: 0.75s all ease;
+    border-bottom: 0;
+
+    @include sm {
+      content: '';
+      display: block;
+      border-bottom: 1px solid $color-white;
+      width: 0;
+      opacity: 0;
+      transition: 0.75s all ease;
+      height: 10px;
+    }
   }
 
   &:hover,
