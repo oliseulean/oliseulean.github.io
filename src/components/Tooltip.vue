@@ -16,14 +16,10 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { onMounted, onUnmounted, ref } from 'vue';
 
-/*
- * Props
- */
+/* Props */
 const props = defineProps({
   position: {
     type: String,
@@ -35,14 +31,12 @@ const props = defineProps({
   },
 });
 
-/*
- * Handle tooltip on mobile
- */
+/* Handle tooltip on mobile */
 onMounted(() => {
   return window.addEventListener('touchmove', handleTouchMove);
 });
 onUnmounted(() => {
-  return window.addEventListener('touchmove', handleTouchMove);
+  return window.removeEventListener('touchmove', handleTouchMove);
 });
 
 const hideTooltipRef = ref(null);

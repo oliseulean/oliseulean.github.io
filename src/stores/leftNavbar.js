@@ -1,11 +1,7 @@
-/*
- * Imports
- */
+/* Imports */
 import { defineStore } from 'pinia';
 
-/*
- * Icons
- */
+/* Icons */
 import LinkedinIcon from '/icons/linkedin.webp';
 import MediumIcon from '/icons/medium.webp';
 import GithubIcon from '/icons/github.webp';

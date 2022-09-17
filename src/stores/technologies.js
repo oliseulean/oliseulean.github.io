@@ -1,11 +1,7 @@
-/*
- * Imports
- */
+/* Imports */
 import { defineStore } from 'pinia';
 
-/*
- * Helper for constructing the url path
- */
+/* Helper for constructing the url path */
 const constructUrl = 'https://cdn-icons-png.flaticon.com/512/';
 
 export const useTechnologies = defineStore({

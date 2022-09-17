@@ -31,15 +31,11 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { ref, onMounted, onUnmounted } from 'vue';
 import DownArrowIcon from '/icons/down-arrow.webp';
 
-/*
- * Handle hideArrow btn
- */
+/* Handle hideArrow btn */
 const hideArrowButton = ref(true);
 
 onMounted(() => window.addEventListener('scroll', hideArrow));

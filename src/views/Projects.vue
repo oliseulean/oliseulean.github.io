@@ -48,23 +48,17 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import PageTitle from '../components/PageTitle.vue';
 import { useProjectsStore } from '../stores/projects';
 import { useGlobalStore } from '../stores/global';
 import { ref, computed } from 'vue';
 
-/*
- * Store
- */
+/* Store */
 const storeProjects = useProjectsStore();
 const globalStore = useGlobalStore();
 
-/*
- * Handle showMore projects
- */
+/* Handle showMore projects */
 const maxProjectsShown = ref(3);
 
 const visibleProjects = computed(() => {
@@ -85,15 +79,13 @@ const showMoreProjectsButton = computed(() => {
 });
 
 const displayNameButton = project => {
-  return project?.wordpress === true ? 'See Website' : 'See code';
+  return project?.wordpress ? 'See Website' : 'See code';
 };
 
-/*
- * Google Analytics
- */
+/* Google Analytics */
 const projectsBtnGAEvent = e => {
   if (!e) return;
-  const getProjectUrl = e?.target?.href;
+  const getProjectUrl = e.target.href;
   const cleanUpGithubUrl = getProjectUrl.replace(
     'https://github.com/oliseulean/',
     ''

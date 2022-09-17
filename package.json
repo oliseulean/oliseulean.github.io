@@ -1,6 +1,6 @@
 {
   "name": "oli.portfolio",
-  "version": "3.3.3",
+  "version": "4.0.0",
   "description": "Personal Website",
   "main": "index.js",
   "author": "Olimpiu Seulean",
@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 5050",
-    "lint": "eslint . --ext .vue,.js --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js --fix --ignore-path .gitignore .",
+    "lint:fix": "eslint . --ext .vue,.js --fix --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "vue": "^3.2.37",

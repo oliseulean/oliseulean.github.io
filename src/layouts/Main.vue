@@ -11,9 +11,7 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import Land from '../views/Land.vue';
 import LeftNavbar from '../components/LeftNavbar.vue';
 

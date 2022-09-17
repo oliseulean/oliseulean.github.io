@@ -131,9 +131,7 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { ref, onMounted, onUnmounted } from 'vue';
 
 import PageTitle from '../components/PageTitle.vue';
@@ -145,15 +143,11 @@ import CalendarIcon from '/icons/calendar.webp';
 import CodingIcon from '/icons/coding.webp';
 import breakpoints from '../helpers/breakpoints';
 
-/*
- * Store
- */
+/* Store */
 const storeExperience = useExperienceStore();
 const globalStore = useGlobalStore();
 
-/*
- * Handle avatar
- */
+/* Handle avatar */
 const avatarPath = ref('/profile.webp');
 const avatarSecondPath = ref('/profileSecond.webp');
 const imgSrcRef = ref(null);

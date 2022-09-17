@@ -315,9 +315,7 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { useGlobalStore } from '@/stores/global';
 import { defineAsyncComponent } from 'vue';
 
@@ -331,9 +329,7 @@ const Copyright = defineAsyncComponent(() => import('../views/Copyright.vue'));
 
 const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
 
-/*
- * Store
- */
+/* Store */
 const globalStore = useGlobalStore();
 </script>
 

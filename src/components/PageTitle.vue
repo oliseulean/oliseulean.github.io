@@ -10,14 +10,10 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { reactive } from 'vue';
 
-/*
- * Props
- */
+/* Props */
 const props = defineProps({
   color: {
     type: String,
@@ -33,6 +29,7 @@ const props = defineProps({
   },
 });
 
+/* StyleObj for the page title */
 const stylePageTitleObj = reactive({
   color: props.color,
   alignItems: props.alignItems,

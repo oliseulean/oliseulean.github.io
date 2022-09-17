@@ -1,11 +1,7 @@
-/*
- * Imports
- */
+/* Imports */
 import { defineStore } from 'pinia';
 
-/*
- * Images
- */
+/* Images */
 import CalendarAppImg from '/images/projectsImages/calendarApp.webp';
 import GuessNumberImg from '/images/projectsImages/guessNumber.webp';
 import LightHouseReportImg from '/images/projectsImages/lightHouseReport.webp';

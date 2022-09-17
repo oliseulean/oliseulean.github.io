@@ -1,6 +1,4 @@
-/*
- * Imports
- */
+/* Imports */
 import { defineStore } from 'pinia';
 import colorsHelper from '../helpers/colorsHelper';
 

@@ -25,14 +25,10 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import Tooltip from '../components/Tooltip';
 
-/*
- * Props
- */
+/* Props */
 const props = defineProps({
   icons: {
     type: Array,

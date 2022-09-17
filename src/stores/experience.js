@@ -1,6 +1,4 @@
-/*
- * Imports
- */
+/* Imports */
 import { defineStore } from 'pinia';
 
 export const useExperienceStore = defineStore({
@@ -13,8 +11,8 @@ export const useExperienceStore = defineStore({
         companyWebsite: 'https://www.garmin.com',
         duration: 'Jul 2022 - Present',
         work: [
-          'Mentoring and supporting the intern engineer of this year.',
-          'Implementing Vue3 front-end framework on the new applications.'
+          'Implementing Vue3 front-end framework on the new applications.',
+          'Mentoring and supporting the intern engineer of this year.'
         ],
         language: [
           'Vue', 'Vuetify', 'Vuex', 'Pinia', 'Vite', 'Vue.cli', 'Webpack', 'APIs', 'DOM', 'JavaScript', 'SASS', 'CSS3',

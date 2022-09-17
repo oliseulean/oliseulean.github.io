@@ -45,9 +45,7 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { ref, reactive, computed } from 'vue';
 
 import { useTechnologies } from '../stores/technologies';
@@ -56,15 +54,11 @@ import { useGlobalStore } from '../stores/global';
 import SkillsAndTools from '../components/SkillsAndTools';
 import PageTitle from '../components/PageTitle';
 
-/*
- * Store
- */
+/* Store */
 const storeTechnologies = useTechnologies();
 const globalStore = useGlobalStore();
 
-/*
- * Handle active class for the buttons
- */
+/* Handle active class for the buttons */
 const previousActiveID = ref(0);
 const buttons = reactive([
   {
@@ -89,19 +83,14 @@ const setActiveClass = id => {
   previousActiveID.value = id;
 };
 
-/*
- * Handle display list of the items
- */
+/* Handle display list of the items */
 const displaySkillsList = computed(() => previousActiveID.value === 0);
-
 const displayToolsList = computed(() => previousActiveID.value === 1);
 
-/*
- * Set GA tags for the technologies toogle btn
- */
+/* Set GA tags for the technologies toogle btn */
 const technologiesGAEvent = e => {
   if (!e) return;
-  const getToogleValue = e?.target?.innerHTML;
+  const getToogleValue = e.target.innerHTML;
 
   /* eslint-disable-next-line no-undef */
   gtag('event', 'Technologies', {

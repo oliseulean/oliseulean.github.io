@@ -11,25 +11,19 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { computed } from 'vue';
 import ArrowIcon from '../assets/icons/Arrow.vue';
 import { useScrollPosition } from '../composable/useScrollPosition';
 
-/*
- * Handle hide button
- */
+/* Handle hide button */
 const { hideElement } = useScrollPosition();
 
 const goToTopComputedClassName = computed(() => {
   return hideElement.value ? 'go-to-top-btn' : '';
 });
 
-/*
- * Handle @click event
- */
+/* Handle @click event */
 const handlerOnBtnClick = () => {
   backToTopGAEvent();
   scrollToTop();

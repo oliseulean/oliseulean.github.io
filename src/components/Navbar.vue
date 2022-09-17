@@ -15,25 +15,17 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { ref } from 'vue';
 import { useScrollPosition } from '../composable/useScrollPosition';
 
-/*
- * Handle hide navBar
- */
+/* Handle hide navBar */
 const { hideElement } = useScrollPosition();
 
-/*
- * Resume link
- */
+/* Resume link */
 const resumeURL = ref('https://drive.google.com/file/d/14-KbNK_ZJr-k9Txo9cGYpEYzYgJanXD7/view?usp=sharing');
 
-/*
- * Handle GA for the resume button
- */
+/* Handle GA for the resume button */
 const resumeGAEvent = () => {
   /* eslint-disable-next-line no-undef */
   gtag('event', 'Resume', {

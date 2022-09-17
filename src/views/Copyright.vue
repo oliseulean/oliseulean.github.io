@@ -10,9 +10,7 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import getCurrentYear from '../helpers/getCurrentYear';
 </script>
 

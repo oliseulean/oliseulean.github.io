@@ -26,21 +26,15 @@
 </template>
 
 <script setup>
-/*
- * Imports
- */
+/* Imports */
 import { onMounted, ref } from 'vue';
 
-/*
- * Track the user info only after it accepts the policy
- */
+/* Track the user info only after it accepts the policy */
 onMounted(() => {
   window['ga-disable-UA-232885625-1'] = !localStorage.getItem('GDPR');
 });
 
-/*
- * Handle cookie policy if the user press 'Accept'
- */
+/* Handle cookie policy if the user press 'Accept' */
 const enablePlugin = () => {
   return window['ga-disable-UA-232885625-1'] = false;
 };
