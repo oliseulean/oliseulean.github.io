@@ -23,7 +23,7 @@ import { useScrollPosition } from '../composable/useScrollPosition';
 const { hideElement } = useScrollPosition();
 
 /* Resume link */
-const resumeURL = ref('https://drive.google.com/file/d/14-KbNK_ZJr-k9Txo9cGYpEYzYgJanXD7/view?usp=sharing');
+const resumeURL = ref('https://drive.google.com/file/d/1yOtzmWAhhLQVi5MLOIcv_cnGthHC3ebP/view?usp=sharing');
 
 /* Handle GA for the resume button */
 const resumeGAEvent = () => {
