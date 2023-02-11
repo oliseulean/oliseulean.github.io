@@ -1,10 +1,10 @@
 <template>
   <LeftNavbar />
   <Navbar />
-  <div class="app-cookiesPolicy">
-    <div class="app-cookiesPolicy__container">
+  <div class="app-cookies-policy">
+    <div class="app-cookies-policy__container">
       <button
-        class="app-cookiesPolicy__home-button"
+        class="app-cookies-policy__home-button"
         @click="$router.push('/')"
       >
         🏠 Go Home
@@ -325,7 +325,7 @@ const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue
 
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 
-const Copyright = defineAsyncComponent(() => import('../views/Copyright.vue'));
+const Copyright = defineAsyncComponent(() => import('./Copyright/Copyright.vue'));
 
 const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
 
@@ -334,9 +334,10 @@ const globalStore = useGlobalStore();
 </script>
 
 <style lang="scss" scoped>
-.app-cookiesPolicy {
+.app-cookies-policy {
   @include font-roboto-slab();
-  margin: 3rem 3rem;
+
+  margin: 3rem;
   font-size: $font-size-normal;
 
   @include md {
@@ -367,6 +368,7 @@ const globalStore = useGlobalStore();
 
   &__home-button {
     @include black-button();
+
     width: 100%;
 
     @include md {

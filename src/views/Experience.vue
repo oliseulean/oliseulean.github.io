@@ -208,7 +208,9 @@ const onLeaveAvatar = () => {
     &__experience,
     &__studies {
       @include font-roboto-slab();
+
       color: $color-white;
+
       @include font-weight(thin);
 
       &:not(:last-of-type) {
@@ -228,7 +230,9 @@ const onLeaveAvatar = () => {
       color: $color-white;
       margin-bottom: 1.5rem;
       font-size: 1.4rem;
+
       @include font-weight(thin);
+
       line-height: 30px;
 
       &--bold {
@@ -260,6 +264,7 @@ const onLeaveAvatar = () => {
 
       &--color {
         color: $color-orange-primary;
+
         @include font-weight(bold);
       }
     }
@@ -272,6 +277,7 @@ const onLeaveAvatar = () => {
     &__university-title--bold,
     &__grade-title--color {
       color: $color-orange-primary;
+
       @include font-weight(bold);
       @include line-hover();
 
@@ -307,6 +313,7 @@ const onLeaveAvatar = () => {
       margin: 1rem 0 0;
       flex-flow: row wrap;
       font-size: 0.85rem;
+
       @include font-weight(medium);
     }
 

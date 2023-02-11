@@ -1,26 +1,26 @@
 <template>
-  <div class="app__land">
-    <div class="app__land__title">
-      <h1 class="app__land__title-name">
+  <div class="app-land">
+    <div class="app-land__title">
+      <h1 class="app-land__title-name">
         hello! 👋🏽
         <br />
         I'm Olimpiu Șeulean
       </h1>
-      <div class="app__land__title-typewriter">
+      <div class="app-land__title-typewriter">
         <p>and this website, is about me.</p>
       </div>
     </div>
     <div
       v-if="hideArrowButton"
-      class="app__land__bottom"
+      class="app-land__bottom"
     >
       <button
-        class="app__land__bottom-btn"
+        class="app-land__bottom-btn"
         @click="handlerOnScrollDownBtn"
       >
         <img
           :src="DownArrowIcon"
-          class="app__land__bottom-downIcon"
+          class="app-land__bottom-downIcon"
           alt="Down_Icon_Image"
           width="50"
           height="50"
@@ -71,7 +71,7 @@ const handlerOnScrollDownBtn = () => {
 </script>
 
 <style lang="scss" scoped>
-.app__land {
+.app-land {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,6 +90,7 @@ const handlerOnScrollDownBtn = () => {
       animation: 3s appear;
       background-color: transparent;
       line-height: 40px;
+
       @include font-weight(normal);
       @include font-monserrat();
 
@@ -105,11 +106,12 @@ const handlerOnScrollDownBtn = () => {
     }
 
     &-typewriter {
-
       p {
         font-size: $font-size-normal;
         font-weight: 200;
+
         @include font-monserrat();
+
         color: $color-dark-blue;
         overflow: hidden;
         white-space: nowrap;

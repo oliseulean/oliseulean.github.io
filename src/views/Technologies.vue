@@ -106,6 +106,7 @@ const technologiesGAEvent = e => {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @include font-roboto-slab();
 
   &-section {
@@ -135,8 +136,10 @@ const technologiesGAEvent = e => {
         font-size: $font-size-medium;
         letter-spacing: 1px;
         color: $color-dark;
+
         @include font-weight(bold);
-        margin: 1rem 0 1.25rem 0;
+
+        margin: 1rem 0 1.25rem;
         padding-right: 0;
         text-align: left;
 
@@ -151,7 +154,9 @@ const technologiesGAEvent = e => {
 
       &__subtitle {
         color: $color-shadow-middle-gray;
+
         @include font-weight(thin);
+
         font-size: $font-size-normal;
         margin: 1rem 0;
         padding-right: 0;
@@ -164,7 +169,7 @@ const technologiesGAEvent = e => {
 
         @include lg {
           padding-right: 5rem;
-          margin: 1rem 0 3.5rem 0;
+          margin: 1rem 0 3.5rem;
         }
       }
 
@@ -190,6 +195,7 @@ const technologiesGAEvent = e => {
           background: $color-dark-blue;
           color: $color-white;
           border-radius: 30px;
+
           @include font-weight(bold);
 
           &.active {

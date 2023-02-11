@@ -84,6 +84,7 @@ onMounted(() => {
     left: 0;
     right: 0;
     margin: 0 auto;
+
     @include font-roboto-slab();
 
     @include md {
@@ -93,7 +94,7 @@ onMounted(() => {
         bottom: 20px;
         left: 20px;
         right: auto;
-        margin: 0 0;
+        margin: 0;
       }
     }
   }
@@ -118,8 +119,10 @@ onMounted(() => {
   &__buttons {
     cursor: pointer;
     color: $color-green-normal;
+
     @include font-roboto-slab();
     @include font-weight(bold);
+
     background-color: $color-white-light;
     font-size: 0.875rem;
     width: 100%;

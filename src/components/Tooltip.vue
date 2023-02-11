@@ -46,9 +46,8 @@ const handleTouchMove = () => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .app-tooltip {
-
   &__position {
     position: relative;
     display: inline-block;
@@ -71,6 +70,7 @@ const handleTouchMove = () => {
 /*
  * Tooltip top content
  */
+// stylelint-disable-next-line selector-class-pattern
 .top .app-tooltip__text {
   bottom: 105%;
   left: 50%;
@@ -80,6 +80,7 @@ const handleTouchMove = () => {
 /*
  * Tooltip right content
  */
+// stylelint-disable-next-line selector-class-pattern
 .right .app-tooltip__text {
   top: 1.2rem;
   left: 120%;
@@ -93,6 +94,7 @@ const handleTouchMove = () => {
   }
 }
 
+// stylelint-disable-next-line selector-class-pattern
 .app-tooltip__position:hover .app-tooltip__text {
   visibility: visible;
   opacity: 1;

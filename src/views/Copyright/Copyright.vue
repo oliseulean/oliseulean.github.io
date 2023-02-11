@@ -11,14 +11,16 @@
 
 <script setup>
 /* Imports */
-import getCurrentYear from '../helpers/getCurrentYear';
+import getCurrentYear from '../../helpers/getCurrentYear';
 </script>
 
 <style lang="scss" scoped>
 .app-footer {
   display: block;
   margin: 0 auto;
+
   @include font-roboto-slab();
+
   color: $color-light;
   background: $color-dark-blue;
   bottom: 0;

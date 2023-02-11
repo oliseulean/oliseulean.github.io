@@ -29,7 +29,7 @@ const Technologies = defineAsyncComponent(() =>
 
 const Projects = defineAsyncComponent(() => import('../views/Projects.vue'));
 
-const Copyright = defineAsyncComponent(() => import('../views/Copyright.vue'));
+const Copyright = defineAsyncComponent(() => import('../../src/views/Copyright/Copyright.vue'));
 
 const BackToTop = defineAsyncComponent(() =>
   import('../components/BackToTop.vue')

@@ -113,6 +113,7 @@ const loadMoreProjectsBtnGAEvent = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @include font-roboto-slab();
 
   &-section {
@@ -140,7 +141,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       @include lg {
         flex-direction: row;
-        padding: 0 0 10rem 0;
+        padding: 0 0 10rem;
       }
 
       &__image {
@@ -184,7 +185,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
         @include md {
           width: 100%;
-          padding: 2rem 6rem 0 6rem;
+          padding: 2rem 6rem 0;
           text-align: center;
         }
 
@@ -198,6 +199,7 @@ const loadMoreProjectsBtnGAEvent = () => {
       &__project-name {
         font-size: 1.25rem;
         color: $color-dark;
+
         @include font-weight(bold);
 
         @include md {
@@ -212,7 +214,9 @@ const loadMoreProjectsBtnGAEvent = () => {
       &__project-description {
         margin-top: 1rem;
         color: $color-shadow-middle-gray;
+
         @include font-weight(thin);
+
         font-size: 0.875rem;
 
         @include md {
@@ -226,6 +230,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       &__see-code-btn {
         @include black-button();
+
         margin: 2.5rem auto;
 
         @include lg {
@@ -234,6 +239,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
         &:hover {
           @include transition();
+
           color: $color-white;
         }
       }
@@ -244,7 +250,7 @@ const loadMoreProjectsBtnGAEvent = () => {
         right: 0;
         width: 275px;
         border: 0.2px solid $color-white-gray;
-        margin: 2rem auto 0 auto;
+        margin: 2rem auto 0;
 
         @include md {
           margin-top: -1rem;
@@ -257,20 +263,22 @@ const loadMoreProjectsBtnGAEvent = () => {
     }
 
     &__show-more-button {
-      margin: 3rem auto 4rem auto !important;
+      margin: 3rem auto 4rem !important;
       text-align: center;
+
       @include black-button();
 
       @include md {
-        margin: 0 auto 5rem auto !important;
+        margin: 0 auto 5rem !important;
       }
 
       @include lg {
-        margin: 0 auto 5rem auto !important;
+        margin: 0 auto 5rem !important;
       }
 
       &:hover {
         @include transition();
+
         color: $color-white;
       }
     }

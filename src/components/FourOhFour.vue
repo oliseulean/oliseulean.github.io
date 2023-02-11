@@ -48,6 +48,7 @@
 
   &__wrong-text {
     @include font-monserrat();
+
     text-align: center;
     display: block;
     margin: 0 auto;
@@ -55,6 +56,7 @@
 
   &__not-found-text {
     @include font-roboto-slab();
+
     margin-top: 1rem;
   }
 

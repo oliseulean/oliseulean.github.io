@@ -49,6 +49,7 @@ const resumeGAEvent = () => {
   transition: 0.4s ease-in-out;
   animation: 0.4s appear;
   z-index: 3;
+
   @include keyframe-appear();
 
   &__link {
@@ -56,8 +57,10 @@ const resumeGAEvent = () => {
     justify-content: center;
     color: $color-dark-blue;
     font-size: $font-size-medium;
+
     @include font-weight(bold);
     @include font-monserrat();
+
     background: transparent;
 
     &:hover,
