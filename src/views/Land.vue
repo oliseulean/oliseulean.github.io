@@ -1,35 +1,3 @@
-<template>
-  <div class="app-land">
-    <div class="app-land__title">
-      <h1 class="app-land__title-name">
-        hello! 👋🏽
-        <br />
-        I'm Olimpiu Șeulean
-      </h1>
-      <div class="app-land__title-typewriter">
-        <p>and this website, is about me.</p>
-      </div>
-    </div>
-    <div
-      v-if="state.hideArrowButton"
-      class="app-land__bottom"
-    >
-      <button
-        class="app-land__bottom-btn"
-        @click="handlerOnScrollDownBtn"
-      >
-        <img
-          :src="DownArrowIcon"
-          class="app-land__bottom-downIcon"
-          alt="Down_Icon_Image"
-          width="50"
-          height="50"
-        >
-      </button>
-    </div>
-  </div>
-</template>
-
 <script setup>
 /* Imports */
 import { reactive, onMounted, onUnmounted } from 'vue';
@@ -71,6 +39,38 @@ const handlerOnScrollDownBtn = () => {
   scrollToExperienceSection();
 };
 </script>
+
+<template>
+  <div class="app-land">
+    <div class="app-land__title">
+      <h1 class="app-land__title-name">
+        hello! 👋🏽
+        <br />
+        I'm Olimpiu Șeulean
+      </h1>
+      <div class="app-land__title-typewriter">
+        <p>and this website, is about me.</p>
+      </div>
+    </div>
+    <div
+      v-if="state.hideArrowButton"
+      class="app-land__bottom"
+    >
+      <button
+        class="app-land__bottom-btn"
+        @click="handlerOnScrollDownBtn"
+      >
+        <img
+          :src="DownArrowIcon"
+          class="app-land__bottom-downIcon"
+          alt="Down_Icon_Image"
+          width="50"
+          height="50"
+        >
+      </button>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .app-land {

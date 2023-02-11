@@ -1,3 +1,51 @@
+<script setup>
+/* Imports */
+import { ref, onMounted, onUnmounted, reactive } from 'vue';
+
+import PageTitle from '../components/PageTitle.vue';
+
+import { useExperienceStore } from '../stores/experience';
+import { useGlobalStore } from '../stores/global';
+
+import CalendarIcon from '/icons/calendar.webp';
+import CodingIcon from '/icons/coding.webp';
+import breakpoints from '../helpers/breakpoints';
+
+/* Store */
+const storeExperience = useExperienceStore();
+const globalStore = useGlobalStore();
+
+/* State */
+const state = reactive({
+  avatarPath: '/profile.webp',
+  avatarSecondPath: '/profileSecond.webp',
+  imgSrcRef: null,
+  windowWidth: window.innerWidth,
+});
+
+/* Handle avatar */
+const imgSrcRef = ref(null);
+
+const onWidthChange = () => {
+  return state.windowWidth = window.innerWidth;
+};
+
+onMounted(() => window.addEventListener('resize', onWidthChange));
+onUnmounted(() => window.removeEventListener('resize', onWidthChange));
+
+const onOverAvatar = () => {
+  state.windowWidth >= breakpoints['screen-lg']
+    ? imgSrcRef.value.src = state.avatarSecondPath
+    : '';
+};
+
+const onLeaveAvatar = () => {
+  state.windowWidth >= breakpoints['screen-lg']
+    ? imgSrcRef.value.src = state.avatarPath
+    : '';
+};
+</script>
+
 <template>
   <div
     id="experience"
@@ -129,54 +177,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-/* Imports */
-import { ref, onMounted, onUnmounted, reactive } from 'vue';
-
-import PageTitle from '../components/PageTitle.vue';
-
-import { useExperienceStore } from '../stores/experience';
-import { useGlobalStore } from '../stores/global';
-
-import CalendarIcon from '/icons/calendar.webp';
-import CodingIcon from '/icons/coding.webp';
-import breakpoints from '../helpers/breakpoints';
-
-/* Store */
-const storeExperience = useExperienceStore();
-const globalStore = useGlobalStore();
-
-/* State */
-const state = reactive({
-  avatarPath: '/profile.webp',
-  avatarSecondPath: '/profileSecond.webp',
-  imgSrcRef: null,
-  windowWidth: window.innerWidth,
-});
-
-/* Handle avatar */
-const imgSrcRef = ref(null);
-
-const onWidthChange = () => {
-  return state.windowWidth = window.innerWidth;
-};
-
-onMounted(() => window.addEventListener('resize', onWidthChange));
-onUnmounted(() => window.removeEventListener('resize', onWidthChange));
-
-const onOverAvatar = () => {
-  state.windowWidth >= breakpoints['screen-lg']
-    ? imgSrcRef.value.src = state.avatarSecondPath
-    : '';
-};
-
-const onLeaveAvatar = () => {
-  state.windowWidth >= breakpoints['screen-lg']
-    ? imgSrcRef.value.src = state.avatarPath
-    : '';
-};
-</script>
 
 <style lang="scss" scoped>
 .app-work-and-studies {

@@ -1,49 +1,3 @@
-<template>
-  <div class="app-technologies">
-    <div class="app-technologies-section">
-      <PageTitle :color="globalStore?.colors?.colorOrangePrimary">
-        MY SKILLS
-      </PageTitle>
-      <div class="app-technologies-section-container">
-        <div class="app-technologies-section-container__button-group">
-          <p class="app-technologies-section-container__title">
-            What My Programming Skills Included?
-          </p>
-
-          <p class="app-technologies-section-container__subtitle">
-            I develop simple, intuitive and responsive user interface that helps
-            users get things done with less effort and time with those
-            technologies.
-          </p>
-
-          <ul class="app-technologies-section-container__items">
-            <li v-for="(button, index) in state.buttons" :key="index">
-              <button
-                class="app-technologies-section-container__button-group--button"
-                :class="button.class"
-                @click="setActiveClass(button.id), technologiesGAEvent($event)"
-              >
-                {{ button.text }}
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div class="app-technologies-section-container__skills">
-          <SkillsAndTools
-            v-if="displaySkillsList"
-            :icons="storeTechnologies.technologies"
-          />
-
-          <SkillsAndTools
-            v-if="displayToolsList"
-            :icons="storeTechnologies.tools"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 /* Imports */
 import { reactive, computed } from 'vue';
@@ -102,6 +56,52 @@ const technologiesGAEvent = e => {
   });
 };
 </script>
+
+<template>
+  <div class="app-technologies">
+    <div class="app-technologies-section">
+      <PageTitle :color="globalStore?.colors?.colorOrangePrimary">
+        MY SKILLS
+      </PageTitle>
+      <div class="app-technologies-section-container">
+        <div class="app-technologies-section-container__button-group">
+          <p class="app-technologies-section-container__title">
+            What My Programming Skills Included?
+          </p>
+
+          <p class="app-technologies-section-container__subtitle">
+            I develop simple, intuitive and responsive user interface that helps
+            users get things done with less effort and time with those
+            technologies.
+          </p>
+
+          <ul class="app-technologies-section-container__items">
+            <li v-for="(button, index) in state.buttons" :key="index">
+              <button
+                class="app-technologies-section-container__button-group--button"
+                :class="button.class"
+                @click="setActiveClass(button.id), technologiesGAEvent($event)"
+              >
+                {{ button.text }}
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="app-technologies-section-container__skills">
+          <SkillsAndTools
+            v-if="displaySkillsList"
+            :icons="storeTechnologies.technologies"
+          />
+
+          <SkillsAndTools
+            v-if="displayToolsList"
+            :icons="storeTechnologies.tools"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .app-technologies {

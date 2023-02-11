@@ -1,15 +1,3 @@
-<template>
-  <div
-    :class="['app-back-to-top-btn ', goToTopComputedClassName]"
-    tabindex="0"
-    @click="handlerOnBtnClick()"
-    @keydown.enter="handlerOnBtnClick()"
-    @keydown.space="handlerOnBtnClick()"
-  >
-    <ArrowIcon />
-  </div>
-</template>
-
 <script setup>
 /* Imports */
 import { computed } from 'vue';
@@ -40,6 +28,18 @@ const backToTopGAEvent = () => {
   });
 };
 </script>
+
+<template>
+  <div
+    :class="['app-back-to-top-btn ', goToTopComputedClassName]"
+    tabindex="0"
+    @click="handlerOnBtnClick()"
+    @keydown.enter="handlerOnBtnClick()"
+    @keydown.space="handlerOnBtnClick()"
+  >
+    <ArrowIcon />
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .app-back-to-top-btn {

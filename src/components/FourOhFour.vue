@@ -1,3 +1,9 @@
+<script setup>
+const goToTheHomePage = () => {
+  window.location.href = '/';
+};
+</script>
+
 <template>
   <div class="app-four-oh-four">
     <img
@@ -21,12 +27,6 @@
     </button>
   </div>
 </template>
-
-<script setup>
-const goToTheHomePage = () => {
-  window.location.href = '/';
-};
-</script>
 
 <style lang="scss" scoped>
 .app-four-oh-four {

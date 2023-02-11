@@ -1,3 +1,8 @@
+<script setup>
+/* Imports */
+import getCurrentYear from '../../helpers/getCurrentYear';
+</script>
+
 <template>
   <div
     class="app-footer"
@@ -8,11 +13,6 @@
     "
   />
 </template>
-
-<script setup>
-/* Imports */
-import getCurrentYear from '../../helpers/getCurrentYear';
-</script>
 
 <style lang="scss" scoped>
 .app-footer {

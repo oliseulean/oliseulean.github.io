@@ -1,52 +1,3 @@
-<template>
-  <div class="app-projects">
-    <div class="app-projects-section">
-      <PageTitle :color="globalStore?.colors?.colorDark">
-        FEATURED PROJECTS
-      </PageTitle>
-      <div
-        v-for="(project, index) in visibleProjects"
-        :key="index"
-        class="app-projects-section-card"
-      >
-        <div class="app-projects-section-card__image">
-          <img
-            :src="project.imgUrl"
-            alt="Project Image"
-            width="570"
-            height="320"
-            loading="lazy"
-          />
-        </div>
-        <div class="app-projects-section-card__content">
-          <p class="app-projects-section-card__project-name">
-            {{ project.name }}
-          </p>
-          <p class="app-projects-section-card__project-description">
-            {{ project.description }}
-          </p>
-          <a
-            :href="project.link"
-            target="_blank"
-            class="app-projects-section-card__see-code-btn"
-            @click="projectsBtnGAEvent($event)"
-          >
-            {{ displayNameButton(project) }}
-          </a>
-          <hr class="app-projects-section-card__spacer" />
-        </div>
-      </div>
-      <button
-        v-if="showMoreProjectsButton"
-        class="app-projects-section__show-more-button"
-        @click="handlerLoadMoreProjects"
-      >
-        SHOW MORE PROJECTS
-      </button>
-    </div>
-  </div>
-</template>
-
 <script setup>
 /* Imports */
 import PageTitle from '../components/PageTitle.vue';
@@ -110,6 +61,55 @@ const loadMoreProjectsBtnGAEvent = () => {
   });
 };
 </script>
+
+<template>
+  <div class="app-projects">
+    <div class="app-projects-section">
+      <PageTitle :color="globalStore?.colors?.colorDark">
+        FEATURED PROJECTS
+      </PageTitle>
+      <div
+        v-for="(project, index) in visibleProjects"
+        :key="index"
+        class="app-projects-section-card"
+      >
+        <div class="app-projects-section-card__image">
+          <img
+            :src="project.imgUrl"
+            alt="Project Image"
+            width="570"
+            height="320"
+            loading="lazy"
+          />
+        </div>
+        <div class="app-projects-section-card__content">
+          <p class="app-projects-section-card__project-name">
+            {{ project.name }}
+          </p>
+          <p class="app-projects-section-card__project-description">
+            {{ project.description }}
+          </p>
+          <a
+            :href="project.link"
+            target="_blank"
+            class="app-projects-section-card__see-code-btn"
+            @click="projectsBtnGAEvent($event)"
+          >
+            {{ displayNameButton(project) }}
+          </a>
+          <hr class="app-projects-section-card__spacer" />
+        </div>
+      </div>
+      <button
+        v-if="showMoreProjectsButton"
+        class="app-projects-section__show-more-button"
+        @click="handlerLoadMoreProjects"
+      >
+        SHOW MORE PROJECTS
+      </button>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .app-projects {

@@ -1,30 +1,3 @@
-<template>
-  <div
-    class="app-cookie"
-    v-if="state.showCookiePopUp"
-  >
-    <div class="app-cookie__floating app-cookie__floating--bottom-left">
-      <div class="app-cookie__content">
-        I use cookies to ensure you get the best experience on my website.
-        <router-link
-          to="/cookies-policy"
-          class="app-cookie__content--link"
-        >
-          Cookies policy.
-        </router-link>
-      </div>
-      <div class="app-cookie__buttons">
-        <button
-          class="app-cookie__buttons app-cookie__buttons--accept"
-          @click="handlerGDPR"
-        >
-          Accept
-        </button>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 /* Imports */
 import { onMounted, reactive } from 'vue';
@@ -66,6 +39,33 @@ onMounted(() => {
   return localStorage.getItem('GDPR') ? state.showCookiePopUp = false : '';
 });
 </script>
+
+<template>
+  <div
+    class="app-cookie"
+    v-if="state.showCookiePopUp"
+  >
+    <div class="app-cookie__floating app-cookie__floating--bottom-left">
+      <div class="app-cookie__content">
+        I use cookies to ensure you get the best experience on my website.
+        <router-link
+          to="/cookies-policy"
+          class="app-cookie__content--link"
+        >
+          Cookies policy.
+        </router-link>
+      </div>
+      <div class="app-cookie__buttons">
+        <button
+          class="app-cookie__buttons app-cookie__buttons--accept"
+          @click="handlerGDPR"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .app-cookie {

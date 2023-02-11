@@ -1,20 +1,3 @@
-<template>
-  <div class="app-tooltip">
-    <div
-      :class="`app-tooltip__position ${props.position}`"
-      tabindex="0"
-    >
-      <slot />
-      <span
-        ref="hideTooltipRef"
-        class="app-tooltip__text"
-      >
-        {{ props.content }}
-      </span>
-    </div>
-  </div>
-</template>
-
 <script setup>
 /* Imports */
 import { onMounted, onUnmounted, reactive } from 'vue';
@@ -48,6 +31,23 @@ const handleTouchMove = () => {
   return state.hideTooltip = true;
 };
 </script>
+
+<template>
+  <div class="app-tooltip">
+    <div
+      :class="`app-tooltip__position ${props.position}`"
+      tabindex="0"
+    >
+      <slot />
+      <span
+        ref="hideTooltipRef"
+        class="app-tooltip__text"
+      >
+        {{ props.content }}
+      </span>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .app-tooltip {

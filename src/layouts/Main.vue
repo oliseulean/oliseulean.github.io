@@ -1,15 +1,3 @@
-<template>
-  <Land />
-  <LeftNavbar />
-  <Cookie />
-  <Navbar />
-  <Experience />
-  <Technologies />
-  <Projects />
-  <Copyright />
-  <BackToTop />
-</template>
-
 <script setup>
 /* Imports */
 import Land from '../views/Land.vue';
@@ -37,3 +25,15 @@ const BackToTop = defineAsyncComponent(() =>
 
 const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
 </script>
+
+<template>
+  <Land />
+  <LeftNavbar />
+  <Cookie />
+  <Navbar />
+  <Experience />
+  <Technologies />
+  <Projects />
+  <Copyright />
+  <BackToTop />
+</template>

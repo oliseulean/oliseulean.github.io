@@ -1,19 +1,3 @@
-<template>
-  <nav
-    class="app-navigation-bar"
-    v-if="hideElement"
-  >
-    <a
-      :href="state.resumeURL"
-      target="_blank"
-      @click="resumeGAEvent"
-      class="app-navigation-bar__link"
-    >
-      Resume.📎
-    </a>
-  </nav>
-</template>
-
 <script setup>
 /* Imports */
 import { reactive } from 'vue';
@@ -37,6 +21,22 @@ const resumeGAEvent = () => {
   });
 };
 </script>
+
+<template>
+  <nav
+    class="app-navigation-bar"
+    v-if="hideElement"
+  >
+    <a
+      :href="state.resumeURL"
+      target="_blank"
+      @click="resumeGAEvent"
+      class="app-navigation-bar__link"
+    >
+      Resume.📎
+    </a>
+  </nav>
+</template>
 
 <style lang="scss" scoped>
 .app-navigation-bar {

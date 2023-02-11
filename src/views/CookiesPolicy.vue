@@ -1,3 +1,22 @@
+<script setup>
+/* Imports */
+import { useGlobalStore } from '@/stores/global';
+import { defineAsyncComponent } from 'vue';
+
+import LeftNavbar from '../components/LeftNavbar.vue';
+
+const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
+
+const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
+
+const Copyright = defineAsyncComponent(() => import('./Copyright/Copyright.vue'));
+
+const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
+
+/* Store */
+const globalStore = useGlobalStore();
+</script>
+
 <template>
   <LeftNavbar />
   <Navbar />
@@ -313,25 +332,6 @@
   <Copyright />
   <BackToTop />
 </template>
-
-<script setup>
-/* Imports */
-import { useGlobalStore } from '@/stores/global';
-import { defineAsyncComponent } from 'vue';
-
-import LeftNavbar from '../components/LeftNavbar.vue';
-
-const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
-
-const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
-
-const Copyright = defineAsyncComponent(() => import('./Copyright/Copyright.vue'));
-
-const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
-
-/* Store */
-const globalStore = useGlobalStore();
-</script>
 
 <style lang="scss" scoped>
 .app-cookies-policy {

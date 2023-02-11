@@ -1,3 +1,18 @@
+<script setup>
+/* Imports */
+import Tooltip from '../components/Tooltip';
+
+/* Props */
+const props = defineProps({
+  icons: {
+    type: Array,
+    default() {
+      return [];
+    },
+  },
+});
+</script>
+
 <template>
   <div class="app-skills-and-tools">
     <ul class="app-skills-and-tools__items">
@@ -23,21 +38,6 @@
     </ul>
   </div>
 </template>
-
-<script setup>
-/* Imports */
-import Tooltip from '../components/Tooltip';
-
-/* Props */
-const props = defineProps({
-  icons: {
-    type: Array,
-    default() {
-      return [];
-    },
-  },
-});
-</script>
 
 <style lang="scss" scoped>
 .app-skills-and-tools {

@@ -1,14 +1,3 @@
-<template>
-  <div class="app-title">
-    <h1
-      class="app-title__heading"
-      :style="stylePageTitleObj"
-    >
-      <slot />
-    </h1>
-  </div>
-</template>
-
 <script setup>
 /* Imports */
 import { reactive } from 'vue';
@@ -36,6 +25,17 @@ const stylePageTitleObj = reactive({
   textAlign: props.textAlign,
 });
 </script>
+
+<template>
+  <div class="app-title">
+    <h1
+      class="app-title__heading"
+      :style="stylePageTitleObj"
+    >
+      <slot />
+    </h1>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 .app-title {
