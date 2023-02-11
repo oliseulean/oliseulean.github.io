@@ -31,7 +31,7 @@ const router = createRouter({
 });
 
 const title = 'Olimpiu Seulean - Frontend Engineer';
-router.beforeEach((toRoute, next) => {
+router.beforeEach((toRoute, fromRoute, next) => {
   const getMetaTitle = toRoute?.meta?.title;
   window.document.title = getMetaTitle ? `${getMetaTitle} | ${title}` : title;
 
