@@ -2,8 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
-const appName = process.env.npm_package_name;
-const appVersion = process.env.npm_package_version;
+const { npm_package_name: appName, npm_package_version: appVersion } = process.env;
 
 export default defineConfig({
   server: {
@@ -16,11 +15,12 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
+    extensions: ['.js', '.json', '.vue'],
   },
   css: {
     preprocessorOptions: {
       scss: {
+        // import global scss styles/variables
         additionalData: '@import "@/assets/styles/base.scss";',
       },
     },
