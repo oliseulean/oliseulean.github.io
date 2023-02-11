@@ -17,7 +17,7 @@
           </p>
 
           <ul class="app-technologies-section-container__items">
-            <li v-for="(button, index) in buttons" :key="index">
+            <li v-for="(button, index) in state.buttons" :key="index">
               <button
                 class="app-technologies-section-container__button-group--button"
                 :class="button.class"
@@ -46,7 +46,7 @@
 
 <script setup>
 /* Imports */
-import { ref, reactive, computed } from 'vue';
+import { reactive, computed } from 'vue';
 
 import { useTechnologies } from '../stores/technologies';
 import { useGlobalStore } from '../stores/global';
@@ -58,34 +58,36 @@ import PageTitle from '../components/PageTitle';
 const storeTechnologies = useTechnologies();
 const globalStore = useGlobalStore();
 
-/* Handle active class for the buttons */
-const previousActiveID = ref(0);
-const buttons = reactive([
-  {
-    id: 0,
-    text: 'Skills',
-    class: 'active',
-  },
-  {
-    id: 1,
-    text: 'Tools',
-    class: '',
-  },
-]);
+/* State */
+const state = reactive({
+  previousActiveID: 0,
+  buttons: [
+    {
+      id: 0,
+      text: 'Skills',
+      class: 'active',
+    },
+    {
+      id: 1,
+      text: 'Tools',
+      class: '',
+    },
+  ],
+});
 
 const setActiveClass = id => {
-  if (previousActiveID.value === id) return;
+  if (state.previousActiveID === id) return;
   /* remove the active class from old active li */
-  buttons.find(item => item.id === previousActiveID.value).class = '';
+  state.buttons.find(item => item.id === state.previousActiveID).class = '';
   /* set active class to new li */
-  buttons.find(item => item.id === id).class = 'active';
+  state.buttons.find(item => item.id === id).class = 'active';
   /* store the new active li id */
-  previousActiveID.value = id;
+  state.previousActiveID = id;
 };
 
 /* Handle display list of the items */
-const displaySkillsList = computed(() => previousActiveID.value === 0);
-const displayToolsList = computed(() => previousActiveID.value === 1);
+const displaySkillsList = computed(() => state.previousActiveID === 0);
+const displayToolsList = computed(() => state.previousActiveID === 1);
 
 /* Set GA tags for the technologies toogle btn */
 const technologiesGAEvent = e => {

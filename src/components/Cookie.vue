@@ -1,7 +1,7 @@
 <template>
   <div
     class="app-cookie"
-    v-if="showCookiePopUp"
+    v-if="state.showCookiePopUp"
   >
     <div class="app-cookie__floating app-cookie__floating--bottom-left">
       <div class="app-cookie__content">
@@ -27,7 +27,12 @@
 
 <script setup>
 /* Imports */
-import { onMounted, ref } from 'vue';
+import { onMounted, reactive } from 'vue';
+
+/* State */
+const state = reactive({
+  showCookiePopUp: true,
+});
 
 /* Track the user info only after it accepts the policy */
 onMounted(() => {
@@ -43,10 +48,8 @@ const acceptGDPR = () => {
   return window.localStorage.setItem('GDPR', true);
 };
 
-const showCookiePopUp = ref(true);
-
 const hideCookiePopup = () => {
-  return showCookiePopUp.value = false;
+  return state.showCookiePopUp = false;
 };
 
 const handlerGDPR = () => {
@@ -60,7 +63,7 @@ const handlerGDPR = () => {
  * page do not show again the cookie pop-up.
  */
 onMounted(() => {
-  return localStorage.getItem('GDPR') ? showCookiePopUp.value = false : '';
+  return localStorage.getItem('GDPR') ? state.showCookiePopUp = false : '';
 });
 </script>
 

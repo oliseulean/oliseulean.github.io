@@ -15,12 +15,18 @@
     </p>
     <button
       class="app-four-oh-four__go-home-btn"
-      @click.prevent="$router.push('/')"
+      @click.prevent="goToTheHomePage()"
     >
       🏠 Go Home
     </button>
   </div>
 </template>
+
+<script setup>
+const goToTheHomePage = () => {
+  window.location.href = '/';
+};
+</script>
 
 <style lang="scss" scoped>
 .app-four-oh-four {

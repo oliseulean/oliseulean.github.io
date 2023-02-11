@@ -6,7 +6,7 @@
     <img
       ref="imgSrcRef"
       class="app-work-and-studies__profile-picture"
-      :src="avatarPath"
+      :src="state.avatarPath"
       width="200"
       height="200"
       alt="Profile_Image"
@@ -132,7 +132,7 @@
 
 <script setup>
 /* Imports */
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, reactive } from 'vue';
 
 import PageTitle from '../components/PageTitle.vue';
 
@@ -147,28 +147,33 @@ import breakpoints from '../helpers/breakpoints';
 const storeExperience = useExperienceStore();
 const globalStore = useGlobalStore();
 
+/* State */
+const state = reactive({
+  avatarPath: '/profile.webp',
+  avatarSecondPath: '/profileSecond.webp',
+  imgSrcRef: null,
+  windowWidth: window.innerWidth,
+});
+
 /* Handle avatar */
-const avatarPath = ref('/profile.webp');
-const avatarSecondPath = ref('/profileSecond.webp');
 const imgSrcRef = ref(null);
-const windowWidth = ref(window.innerWidth);
 
 const onWidthChange = () => {
-  return windowWidth.value = window.innerWidth;
+  return state.windowWidth = window.innerWidth;
 };
 
 onMounted(() => window.addEventListener('resize', onWidthChange));
 onUnmounted(() => window.removeEventListener('resize', onWidthChange));
 
 const onOverAvatar = () => {
-  windowWidth.value >= breakpoints['screen-lg']
-    ? imgSrcRef.value.src = avatarSecondPath.value
+  state.windowWidth >= breakpoints['screen-lg']
+    ? imgSrcRef.value.src = state.avatarSecondPath
     : '';
 };
 
 const onLeaveAvatar = () => {
-  windowWidth.value >= breakpoints['screen-lg']
-    ? imgSrcRef.value.src = avatarPath.value
+  state.windowWidth >= breakpoints['screen-lg']
+    ? imgSrcRef.value.src = state.avatarPath
     : '';
 };
 </script>

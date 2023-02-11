@@ -4,7 +4,7 @@
     v-if="hideElement"
   >
     <a
-      :href="resumeURL"
+      :href="state.resumeURL"
       target="_blank"
       @click="resumeGAEvent"
       class="app-navigation-bar__link"
@@ -16,14 +16,16 @@
 
 <script setup>
 /* Imports */
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import { useScrollPosition } from '../composable/useScrollPosition';
 
 /* Handle hide navBar */
 const { hideElement } = useScrollPosition();
 
-/* Resume link */
-const resumeURL = ref('https://drive.google.com/file/d/1yOtzmWAhhLQVi5MLOIcv_cnGthHC3ebP/view?usp=sharing');
+/* State */
+const state = reactive({
+  resumeURL: 'https://drive.google.com/file/d/1yOtzmWAhhLQVi5MLOIcv_cnGthHC3ebP/view?usp=sharing',
+});
 
 /* Handle GA for the resume button */
 const resumeGAEvent = () => {

@@ -11,7 +11,7 @@
       </div>
     </div>
     <div
-      v-if="hideArrowButton"
+      v-if="state.hideArrowButton"
       class="app-land__bottom"
     >
       <button
@@ -32,11 +32,13 @@
 
 <script setup>
 /* Imports */
-import { ref, onMounted, onUnmounted } from 'vue';
+import { reactive, onMounted, onUnmounted } from 'vue';
 import DownArrowIcon from '/icons/down-arrow.webp';
 
-/* Handle hideArrow btn */
-const hideArrowButton = ref(true);
+/* State */
+const state = reactive({
+  hideArrowButton: true,
+});
 
 onMounted(() => window.addEventListener('scroll', hideArrow));
 
@@ -45,8 +47,8 @@ onUnmounted(() => window.removeEventListener('scroll', hideArrow));
 const hideArrow = () => {
   const currentScrollValue = window?.pageYOffset;
   currentScrollValue > 100
-    ? hideArrowButton.value = false
-    : hideArrowButton.value = true;
+    ? state.hideArrowButton = false
+    : state.hideArrowButton = true;
 };
 
 const scrollToExperienceSection = () => {

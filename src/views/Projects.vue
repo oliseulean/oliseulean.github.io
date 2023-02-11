@@ -52,21 +52,24 @@
 import PageTitle from '../components/PageTitle.vue';
 import { useProjectsStore } from '../stores/projects';
 import { useGlobalStore } from '../stores/global';
-import { ref, computed } from 'vue';
+import { reactive, computed } from 'vue';
 
 /* Store */
 const storeProjects = useProjectsStore();
 const globalStore = useGlobalStore();
 
-/* Handle showMore projects */
-const maxProjectsShown = ref(3);
+/* State */
+const state = reactive({
+  maxProjectsShown: 3,
+});
 
+/* Handle showMore projects */
 const visibleProjects = computed(() => {
-  return storeProjects?.projects?.slice(0, maxProjectsShown.value);
+  return storeProjects?.projects?.slice(0, state.maxProjectsShown);
 });
 
 const loadMoreProjects = () => {
-  return maxProjectsShown.value += 3;
+  return state.maxProjectsShown += 3;
 };
 
 const handlerLoadMoreProjects = () => {
@@ -75,7 +78,7 @@ const handlerLoadMoreProjects = () => {
 };
 
 const showMoreProjectsButton = computed(() => {
-  return maxProjectsShown.value < storeProjects?.projects?.length;
+  return state.maxProjectsShown < storeProjects?.projects?.length;
 });
 
 const displayNameButton = project => {

@@ -17,7 +17,7 @@
 
 <script setup>
 /* Imports */
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, reactive } from 'vue';
 
 /* Props */
 const props = defineProps({
@@ -31,6 +31,11 @@ const props = defineProps({
   },
 });
 
+/* State */
+const state = reactive({
+  hideTooltip: false,
+})
+
 /* Handle tooltip on mobile */
 onMounted(() => {
   return window.addEventListener('touchmove', handleTouchMove);
@@ -39,10 +44,8 @@ onUnmounted(() => {
   return window.removeEventListener('touchmove', handleTouchMove);
 });
 
-const hideTooltipRef = ref(null);
-
 const handleTouchMove = () => {
-  return hideTooltipRef.value = true;
+  return state.hideTooltip = true;
 };
 </script>
 
