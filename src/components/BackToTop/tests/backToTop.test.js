@@ -1,7 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import { it, describe, expect, beforeEach, vi } from 'vitest';
 import ArrowIcon from '../../../assets/icons/Arrow.vue';
-import { useScrollPosition } from '../../../composable/useScrollPosition';
 import BackToTop from '../BackToTop.vue';
 
 describe('Back To Top Button', () => {
