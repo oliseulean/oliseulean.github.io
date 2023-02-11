@@ -43,5 +43,9 @@ export default defineConfig({
   },
   test: {
     environment: 'happy-dom',
+    coverage: {
+      // enable all when having more tests
+      // all: true,
+    },
   },
 });

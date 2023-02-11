@@ -16,6 +16,7 @@
     "stylelint:fix": "stylelint \"**/*.{scss,vue}\" --fix",
     "test:unit": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:coverage:summary": "vitest run --coverage.enabled --coverage.reporter='text-summary'",
     "prepare": "husky install"
   },
   "dependencies": {
