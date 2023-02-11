@@ -20,7 +20,7 @@ const Projects = defineAsyncComponent(() => import('../views/Projects.vue'));
 const Copyright = defineAsyncComponent(() => import('../../src/views/Copyright/Copyright.vue'));
 
 const BackToTop = defineAsyncComponent(() =>
-  import('../components/BackToTop.vue')
+  import('../components/BackToTop/BackToTop.vue')
 );
 
 const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));

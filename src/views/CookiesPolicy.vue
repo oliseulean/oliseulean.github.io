@@ -11,7 +11,7 @@ const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 
 const Copyright = defineAsyncComponent(() => import('./Copyright/Copyright.vue'));
 
-const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
+const BackToTop = defineAsyncComponent(() => import('../components/BackToTop/BackToTop.vue'));
 
 /* Store */
 const globalStore = useGlobalStore();

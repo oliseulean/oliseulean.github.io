@@ -1,8 +1,8 @@
 <script setup>
 /* Imports */
 import { computed } from 'vue';
-import ArrowIcon from '../assets/icons/Arrow.vue';
-import { useScrollPosition } from '../composable/useScrollPosition';
+import ArrowIcon from '../../assets/icons/Arrow.vue';
+import { useScrollPosition } from '../../composable/useScrollPosition';
 
 /* Handle hide button */
 const { hideElement } = useScrollPosition();
@@ -31,7 +31,7 @@ const backToTopGAEvent = () => {
 
 <template>
   <div
-    :class="['app-back-to-top-btn ', goToTopComputedClassName]"
+    :class="['app-back-to-top-btn', goToTopComputedClassName]"
     tabindex="0"
     @click="handlerOnBtnClick()"
     @keydown.enter="handlerOnBtnClick()"
