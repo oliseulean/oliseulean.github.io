@@ -1,7 +1,7 @@
 // Vitest Snapshot v1
 
 exports[`Copyright > component renders correctly 1`] = `
-"<div class=\\"app-footer\\" data-v-591b5195=\\"\\">© Copyright © 2023 | All rights reserved.
+"<div data-v-b586d947=\\"\\" class=\\"app-footer\\">© Copyright © 2023 | All rights reserved.
   <br>
   Designed by Olimpiu Șeulean
 </div>"

@@ -15,6 +15,7 @@
     "stylelint": "stylelint \"**/*.{scss,vue}\"",
     "stylelint:fix": "stylelint \"**/*.{scss,vue}\" --fix",
     "test:unit": "vitest",
+    "test:coverage": "vitest run --coverage",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/coverage-c8": "^0.28.4",
     "@vue/test-utils": "^2.0.0-rc.18",
     "eslint": "^8.19.0",
     "eslint-plugin-vue": "^9.2.0",
