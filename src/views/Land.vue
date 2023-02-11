@@ -87,7 +87,7 @@ const handlerOnScrollDownBtn = () => {
     @include keyframe-appear();
 
     &-name {
-      color: $color-orange-primary;
+      color: $color-web-orange;
       font-size: $font-size-medium;
       animation: 3s appear;
       background-color: transparent;
@@ -114,7 +114,7 @@ const handlerOnScrollDownBtn = () => {
 
         @include font-monserrat();
 
-        color: $color-dark-blue;
+        color: $color-black-pearl;
         overflow: hidden;
         white-space: nowrap;
         margin: 0;
@@ -149,7 +149,7 @@ const handlerOnScrollDownBtn = () => {
     }
 
     &-downIcon {
-      color: $color-white-gray;
+      color: $color-bombay;
       animation: 2s appear infinite;
       background-color: transparent;
       width: 30px;

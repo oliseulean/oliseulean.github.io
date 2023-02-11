@@ -1,5 +1,5 @@
 @mixin black-button {
-  background-color: $color-dark;
+  background-color: $color-black;
   margin-bottom: 1rem;
   color: $color-white;
   text-decoration: none;
@@ -8,7 +8,7 @@
   padding: 0.5rem 1.2rem;
   display: block;
   width: fit-content;
-  border: 1px solid $color-dark;
+  border: 1px solid $color-black;
   margin-top: 2rem;
   cursor: pointer;
 

@@ -21,8 +21,8 @@ import getCurrentYear from '../../helpers/getCurrentYear';
 
   @include font-roboto-slab();
 
-  color: $color-light;
-  background: $color-dark-blue;
+  color: $color-catskill-white;
+  background: $color-black-pearl;
   bottom: 0;
   left: 0;
   width: 100%;

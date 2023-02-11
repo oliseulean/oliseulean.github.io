@@ -31,19 +31,19 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $color-dark-blue;
+  background: $color-black-pearl;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $color-dark-blue;
+  background: $color-black-pearl;
 }
 
 a {
-  color: $color-orange-primary;
+  color: $color-web-orange;
   text-decoration: none;
 
   &:hover {
-    color: $color-dark-blue;
+    color: $color-black-pearl;
   }
 }

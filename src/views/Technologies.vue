@@ -60,7 +60,7 @@ const technologiesGAEvent = e => {
 <template>
   <div class="app-technologies">
     <div class="app-technologies-section">
-      <PageTitle :color="globalStore?.colors?.colorOrangePrimary">
+      <PageTitle :color="globalStore?.colors?.colorWebOrange">
         MY SKILLS
       </PageTitle>
       <div class="app-technologies-section-container">
@@ -137,7 +137,7 @@ const technologiesGAEvent = e => {
       &__title {
         font-size: $font-size-medium;
         letter-spacing: 1px;
-        color: $color-dark;
+        color: $color-black;
 
         @include font-weight(bold);
 
@@ -155,7 +155,7 @@ const technologiesGAEvent = e => {
       }
 
       &__subtitle {
-        color: $color-shadow-middle-gray;
+        color: $color-gray;
 
         @include font-weight(thin);
 
@@ -194,14 +194,14 @@ const technologiesGAEvent = e => {
           list-style-type: none;
           cursor: pointer;
           border: none;
-          background: $color-dark-blue;
+          background: $color-black-pearl;
           color: $color-white;
           border-radius: 30px;
 
           @include font-weight(bold);
 
           &.active {
-            background: $color-orange-primary;
+            background: $color-web-orange;
             border-radius: 30px;
           }
         }
@@ -212,7 +212,7 @@ const technologiesGAEvent = e => {
         list-style-type: none;
         margin: 2rem auto;
         width: 150px;
-        background: $color-dark-blue;
+        background: $color-black-pearl;
         border-radius: 30px;
         justify-content: left;
 

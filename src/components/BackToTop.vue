@@ -53,8 +53,8 @@ const backToTopGAEvent = () => {
   border-radius: 50%;
   transition: 0.6s;
   overflow: hidden;
-  border: 1px $color-dark solid;
-  box-shadow: 0 3px 10px rgba($color-dark, 0.1);
+  border: 1px $color-black solid;
+  box-shadow: 0 3px 10px rgba($color-black, 0.1);
 
   @include md {
     right: 0.5rem;

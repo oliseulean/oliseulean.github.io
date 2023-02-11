@@ -66,7 +66,7 @@ const props = defineProps({
   }
 
   &__icon {
-    border: 1px solid rgba($color-shadow-middle-gray, 0.5);
+    border: 1px solid rgba($color-gray, 0.5);
     border-radius: 0.63rem;
     padding: 0.875rem;
   }

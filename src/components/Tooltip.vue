@@ -59,7 +59,7 @@ const handleTouchMove = () => {
   &__text {
     visibility: hidden;
     width: 100px;
-    background-color: rgba($color-dark, 0.6);
+    background-color: rgba($color-black, 0.6);
     color: $color-white;
     text-align: center;
     border-radius: 6px;

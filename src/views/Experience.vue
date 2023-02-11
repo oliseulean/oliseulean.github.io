@@ -184,7 +184,7 @@ const onLeaveAvatar = () => {
   flex-direction: column;
   align-items: center;
   padding-bottom: 5rem;
-  background-color: $color-dark-blue;
+  background-color: $color-black-pearl;
 
   &__profile-picture {
     border-radius: 50%;
@@ -268,7 +268,7 @@ const onLeaveAvatar = () => {
       margin-top: 1rem;
 
       &--color {
-        color: $color-orange-primary;
+        color: $color-web-orange;
 
         @include font-weight(bold);
       }
@@ -281,20 +281,20 @@ const onLeaveAvatar = () => {
     &__company-history-title--bold,
     &__university-title--bold,
     &__grade-title--color {
-      color: $color-orange-primary;
+      color: $color-web-orange;
 
       @include font-weight(bold);
       @include line-hover();
 
       &:hover {
-        color: $color-yellow-primary;
+        color: $color-amber;
       }
     }
 
     &__list-competencies,
     &__list-tools {
       font-size: $font-size-normal;
-      color: $color-light;
+      color: $color-catskill-white;
       margin-left: 1.4rem;
       padding: 1.25rem 0;
 
@@ -326,7 +326,7 @@ const onLeaveAvatar = () => {
       display: inline-flex;
       margin: 0;
       padding: 0.5rem 1rem;
-      border: 1px solid rgba($color-orange-primary, 0.5);
+      border: 1px solid rgba($color-web-orange, 0.5);
     }
 
     &__competencies {

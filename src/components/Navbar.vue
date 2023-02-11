@@ -47,7 +47,7 @@ const resumeGAEvent = () => {
   height: auto;
   padding: 1rem 0;
   background: $color-white;
-  box-shadow: 0 2px 3px rgba($color-dark, 0.25);
+  box-shadow: 0 2px 3px rgba($color-black, 0.25);
   transition: 0.4s ease-in-out;
   animation: 0.4s appear;
   z-index: 3;
@@ -57,7 +57,7 @@ const resumeGAEvent = () => {
   &__link {
     display: flex;
     justify-content: center;
-    color: $color-dark-blue;
+    color: $color-black-pearl;
     font-size: $font-size-medium;
 
     @include font-weight(bold);
@@ -67,7 +67,7 @@ const resumeGAEvent = () => {
 
     &:hover,
     &:active {
-      color: $color-orange-primary;
+      color: $color-web-orange;
     }
   }
 }

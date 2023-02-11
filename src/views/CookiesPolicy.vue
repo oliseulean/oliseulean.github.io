@@ -29,7 +29,7 @@ const globalStore = useGlobalStore();
         🏠 Go Home
       </button>
       <PageTitle
-        :color="globalStore?.colors?.colorDark"
+        :color="globalStore?.colors?.colorMirage"
       >
         COOKIES POLICY
       </PageTitle>

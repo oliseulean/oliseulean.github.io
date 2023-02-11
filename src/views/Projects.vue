@@ -65,7 +65,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 <template>
   <div class="app-projects">
     <div class="app-projects-section">
-      <PageTitle :color="globalStore?.colors?.colorDark">
+      <PageTitle :color="globalStore?.colors?.colorMirage">
         FEATURED PROJECTS
       </PageTitle>
       <div
@@ -201,7 +201,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       &__project-name {
         font-size: 1.25rem;
-        color: $color-dark;
+        color: $color-black;
 
         @include font-weight(bold);
 
@@ -216,7 +216,7 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       &__project-description {
         margin-top: 1rem;
-        color: $color-shadow-middle-gray;
+        color: $color-gray;
 
         @include font-weight(thin);
 
@@ -252,7 +252,7 @@ const loadMoreProjectsBtnGAEvent = () => {
         left: 0;
         right: 0;
         width: 275px;
-        border: 0.2px solid $color-white-gray;
+        border: 0.2px solid $color-bombay;
         margin: 2rem auto 0;
 
         @include md {

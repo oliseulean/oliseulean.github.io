@@ -78,9 +78,9 @@ onMounted(() => {
     position: fixed;
     overflow: hidden;
     z-index: 9999;
-    background: $color-white-middle;
-    box-shadow: 0 4px 8px rgba($color-shadow-gray, 0.3);
-    border: 1px solid $color-shadow-gray;
+    background: $color-alabaster;
+    box-shadow: 0 4px 8px rgba($color-alto, 0.3);
+    border: 1px solid $color-alto;
     line-height: 1.5;
     border-radius: 6px;
     bottom: 10px;
@@ -114,32 +114,32 @@ onMounted(() => {
     }
 
     &--link {
-      color: $color-orange-primary;
+      color: $color-web-orange;
       text-decoration: underline;
     }
   }
 
   &__buttons {
     cursor: pointer;
-    color: $color-green-normal;
+    color: $color-fruit-salad;
 
     @include font-roboto-slab();
     @include font-weight(bold);
 
-    background-color: $color-white-light;
+    background-color: $color-gallery;
     font-size: 0.875rem;
     width: 100%;
     min-height: 40px;
     white-space: nowrap;
     user-select: none;
-    border-bottom: 0.1px solid $color-gray-shadow;
-    border-top: 0.1px solid $color-gray-shadow;
+    border-bottom: 0.1px solid $color-alto;
+    border-top: 0.1px solid $color-alto;
     border-left: none;
     border-right: none;
 
     &--accept {
       &:hover {
-        background: $color-green-dark;
+        background: $color-goblin;
         color: $color-white;
       }
     }
