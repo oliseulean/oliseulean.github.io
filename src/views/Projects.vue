@@ -2,22 +2,26 @@
 /* Imports */
 import PageTitle from '../components/PageTitle.vue';
 import Image from '../components/Image.vue';
-import { useProjectsStore } from '../stores/projects';
-import { useGlobalStore } from '../stores/global';
+
 import { reactive, computed } from 'vue';
 
-/* Store */
-const storeProjects = useProjectsStore();
-const globalStore = useGlobalStore();
+/* Props */
+const props = defineProps({
+  globalStore: {
+    type: Object,
+    required: true,
+  },
+  projectsStore: {
+    type: Object,
+    required: true,
+  },
+});
 
 /* State */
 const state = reactive({
   maxProjectsShown: 3,
-});
-
-/* Handle showMore projects */
-const visibleProjects = computed(() => {
-  return storeProjects?.projects?.slice(0, state.maxProjectsShown);
+  visibleProjects: computed(() => props.projectsStore?.projects?.slice(0, state.maxProjectsShown)),
+  showMoreProjectsButton: computed(() => state.maxProjectsShown < props.projectsStore?.projects?.length),
 });
 
 const loadMoreProjects = () => {
@@ -28,10 +32,6 @@ const handlerLoadMoreProjects = () => {
   loadMoreProjectsBtnGAEvent();
   loadMoreProjects();
 };
-
-const showMoreProjectsButton = computed(() => {
-  return state.maxProjectsShown < storeProjects?.projects?.length;
-});
 
 const displayNameButton = project => {
   return project?.wordpress ? 'See Website' : 'See code';
@@ -66,11 +66,11 @@ const loadMoreProjectsBtnGAEvent = () => {
 <template>
   <div class="app-projects">
     <div class="app-projects-section">
-      <PageTitle :color="globalStore?.colors?.colorMirage">
+      <PageTitle :color="props.globalStore?.colors?.colorMirage">
         FEATURED PROJECTS
       </PageTitle>
       <div
-        v-for="(project, index) in visibleProjects"
+        v-for="(project, index) in state.visibleProjects"
         :key="index"
         class="app-projects-section-card"
       >
@@ -103,7 +103,7 @@ const loadMoreProjectsBtnGAEvent = () => {
         </div>
       </div>
       <button
-        v-if="showMoreProjectsButton"
+        v-if="state.showMoreProjectsButton"
         class="app-projects-section__show-more-button"
         @click="handlerLoadMoreProjects"
       >

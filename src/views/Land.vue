@@ -1,8 +1,10 @@
 <script setup>
 /* Imports */
 import { reactive, onMounted, onUnmounted } from 'vue';
-import DownArrowIcon from '/icons/down-arrow.webp';
+
 import Image from '../components/Image.vue';
+
+import DownArrowIcon from '/icons/down-arrow.webp';
 
 /* State */
 const state = reactive({
@@ -15,15 +17,13 @@ onUnmounted(() => window.removeEventListener('scroll', hideArrow));
 
 const hideArrow = () => {
   const currentScrollValue = window?.pageYOffset;
-  currentScrollValue > 100
-    ? state.hideArrowButton = false
-    : state.hideArrowButton = true;
+  state.hideArrowButton = currentScrollValue <= 100;
 };
 
 const scrollToExperienceSection = () => {
-  const el = document.getElementById('experience');
-  if (!el) return;
-  el.scrollIntoView({ behavior: 'smooth' });
+  const experienceEl = document.getElementById('experience');
+  if (!experienceEl) return;
+  experienceEl.scrollIntoView({ behavior: 'smooth' });
 };
 
 const scrollDownBtnGAEvent = () => {

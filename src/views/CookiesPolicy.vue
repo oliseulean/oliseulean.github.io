@@ -1,20 +1,21 @@
 <script setup>
 /* Imports */
-import { useGlobalStore } from '@/stores/global';
 import { defineAsyncComponent } from 'vue';
 
 import LeftNavbar from '../components/LeftNavbar.vue';
 
 const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
-
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
-
 const Copyright = defineAsyncComponent(() => import('./Copyright/Copyright.vue'));
-
 const BackToTop = defineAsyncComponent(() => import('../components/BackToTop/BackToTop.vue'));
 
-/* Store */
-const globalStore = useGlobalStore();
+/* Props */
+const props = defineProps({
+  globalStore: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
@@ -29,7 +30,7 @@ const globalStore = useGlobalStore();
         🏠 Go Home
       </button>
       <PageTitle
-        :color="globalStore?.colors?.colorMirage"
+        :color="props.globalStore?.colors?.colorMirage"
       >
         COOKIES POLICY
       </PageTitle>

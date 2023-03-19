@@ -37,7 +37,7 @@ export const useTechnologies = defineStore({
         {
           title: 'Nuxt',
           alt: 'Nuxt_icon',
-          source: 'https://nuxtjs.ir/logos/nuxt-icon-white.png',
+          source: 'https://seeklogo.com/images/N/nuxt-logo-5EF50E1ABD-seeklogo.com.png',
         },
         {
           title: 'Node',
@@ -99,8 +99,7 @@ export const useTechnologies = defineStore({
         {
           title: 'Vue Cli',
           alt: 'VueCli_icon',
-          source:
-            'https://camo.githubusercontent.com/9923c06abf0bafa26439e1aa4d1b1c713e28160180817b426e006aae46ea1a4b/68747470733a2f2f73332e65752d776573742d322e616d617a6f6e6177732e636f6d2f79616261622f757675652d3531322e706e67',
+          source: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQelbyj0Tf0FWAHkti_4Itw860z1ep0KPljn0__WvGFZQ&s',
         },
         {
           title: 'Github',

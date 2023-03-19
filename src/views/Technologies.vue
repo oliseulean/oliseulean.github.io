@@ -32,6 +32,8 @@ const state = reactive({
       class: '',
     },
   ],
+  displaySkillsList: computed(() => state.previousActiveID === 0),
+  displayToolsList: computed(() => state.previousActiveID === 1),
 });
 
 const setActiveClass = id => {
@@ -43,10 +45,6 @@ const setActiveClass = id => {
   /* store the new active li id */
   state.previousActiveID = id;
 };
-
-/* Handle display list of the items */
-const displaySkillsList = computed(() => state.previousActiveID === 0);
-const displayToolsList = computed(() => state.previousActiveID === 1);
 
 /* Set GA tags for the technologies toogle btn */
 const technologiesGAEvent = e => {
@@ -94,12 +92,12 @@ const technologiesGAEvent = e => {
         </div>
         <div class="app-technologies-section-container__skills">
           <SkillsAndTools
-            v-if="displaySkillsList"
+            v-if="state.displaySkillsList"
             :icons="props.technologiesStore.technologies"
           />
 
           <SkillsAndTools
-            v-if="displayToolsList"
+            v-if="state.displayToolsList"
             :icons="props.technologiesStore.tools"
           />
         </div>
