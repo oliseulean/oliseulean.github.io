@@ -11,6 +11,7 @@ module.exports = {
     'at-rule-empty-line-before': null,
     'declaration-empty-line-before': null,
     'selector-max-empty-lines': [1],
+    'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['deep'] }],
   },
   overrides: [{
     files: ['**/*.vue'],

@@ -160,14 +160,14 @@ const loadMoreProjectsBtnGAEvent = () => {
         }
 
         img {
-          width: 1440px;
-          height: 285px;
+          height: 260px;
 
           @include md {
             height: 400px;
           }
 
           @include lg {
+            width: 1440px;
             height: 600px;
           }
         }
@@ -175,12 +175,12 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       &__content {
         width: 100%;
-        padding: 3rem 0;
+        padding: 0.5rem 0;
         text-align: center;
 
         @include md {
           width: 100%;
-          padding: 2rem 6rem 0;
+          padding: 0 6rem;
           text-align: center;
         }
 
@@ -278,5 +278,10 @@ const loadMoreProjectsBtnGAEvent = () => {
  */
 div > div:last-child > div > hr {
   border: none !important;
+}
+
+// stylelint-disable-next-line selector-class-pattern
+:deep(.app-title__heading) {
+  padding-bottom: 0;
 }
 </style>
