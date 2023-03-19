@@ -48,12 +48,15 @@ const projectsBtnGAEvent = e => {
 const loadMoreProjectsBtnGAEvent = () => {
   sendGAEvent('Olimpiu Seulean Portfolio', 'Projects click', 'Show More Projects', 1);
 };
+
 </script>
 
 <template>
   <div class="app-projects">
     <div class="app-projects-section">
-      <PageTitle :color="props.globalStore?.colors?.colorMirage">
+      <PageTitle
+        :color="props.globalStore?.colors?.colorMirage"
+      >
         FEATURED PROJECTS
       </PageTitle>
       <div
@@ -62,14 +65,20 @@ const loadMoreProjectsBtnGAEvent = () => {
         class="app-projects-section-card"
       >
         <div class="app-projects-section-card__image">
-          <Image
-            :altText="project.name"
-            :src="project.imgUrl"
-            :height="320"
-            :width="570"
-            :class="'app-projects-section-card__image'"
-            :loading="'lazy'"
-          />
+          <a
+            :href="project.link"
+            target="_blank"
+            @click="projectsBtnGAEvent($event)"
+            class="app-projects-section-card__image"
+          >
+            <Image
+              :altText="project.name"
+              :src="project.imgUrl"
+              :height="600"
+              :width="1440"
+              :loading="'lazy'"
+            />
+          </a>
         </div>
         <div class="app-projects-section-card__content">
           <p class="app-projects-section-card__project-name">
@@ -105,7 +114,6 @@ const loadMoreProjectsBtnGAEvent = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   @include font-roboto-slab();
 
   &-section {
@@ -123,17 +131,14 @@ const loadMoreProjectsBtnGAEvent = () => {
       display: flex;
       width: 100%;
       flex-direction: column;
-      padding: 2rem 0;
 
       @include md {
         flex-direction: column;
         align-items: center;
-        padding: 3.5rem 0;
       }
 
       @include lg {
         flex-direction: row;
-        padding: 0 0 10rem;
       }
 
       &__image {
@@ -155,17 +160,15 @@ const loadMoreProjectsBtnGAEvent = () => {
         }
 
         img {
-          width: 325px;
-          height: 190px;
+          width: 1440px;
+          height: 285px;
 
           @include md {
-            width: 500px;
-            height: 275px;
+            height: 400px;
           }
 
           @include lg {
-            width: 570px;
-            height: 320px;
+            height: 600px;
           }
         }
       }
@@ -244,7 +247,7 @@ const loadMoreProjectsBtnGAEvent = () => {
         }
 
         @include lg {
-          margin-top: 10rem;
+          margin-top: 12rem;
         }
       }
     }
@@ -267,18 +270,6 @@ const loadMoreProjectsBtnGAEvent = () => {
         color: $color-white;
       }
     }
-  }
-}
-
-.app-title {
-  padding-bottom: 0;
-
-  @include md {
-    padding-bottom: 0;
-  }
-
-  @include lg {
-    padding-bottom: 2rem;
   }
 }
 

@@ -5,16 +5,31 @@ import { defineStore } from 'pinia';
 import CalendarAppImg from '/images/projectsImages/calendarApp.webp';
 import GuessNumberImg from '/images/projectsImages/guessNumber.webp';
 import LightHouseReportImg from '/images/projectsImages/lightHouseReport.webp';
-import QuizAppImg from '/images/projectsImages/quizApp.webp';
 import RecognitionAppImg from '/images/projectsImages/recognition.webp';
 import TranslogImg from '/images/projectsImages/translogCompany.webp';
 import JsChallengeImg from '/images/projectsImages/jsChallenges.webp';
+import CarausulImg from '/images/projectsImages/carausul.webp';
+import HanulDinPadureImg from '/images/projectsImages/hanulDinPadure.webp';
 
 export const useProjectsStore = defineStore({
   id: 'projects',
   state: () => {
     return {
       projects: [
+        {
+          imgUrl: HanulDinPadureImg,
+          name: 'Hanul din Pădure - Hotel/Restaurant Website',
+          description: 'A presentation website for Hanul din Pădure which is a restaurant/hotel from Sighișoara, Transylvania.',
+          link: 'https://hanuldinpadure.ro',
+          wordpress: true,
+        },
+        {
+          imgUrl: CarausulImg,
+          name: 'Cărăușul - Estate Company Website',
+          description: 'A presentation website for Cărăusul which is a real estate company from Florești, Cluj-Napoca.',
+          link: 'https://carausul.ro',
+          wordpress: true,
+        },
         {
           imgUrl: LightHouseReportImg,
           name: 'Use Python to Automate Google Lighthouse Reports',
@@ -33,17 +48,15 @@ export const useProjectsStore = defineStore({
         },
         {
           imgUrl: TranslogImg,
-          name: 'TRANSLOG T&C - company website',
-          description:
-            'A personal presentation website for Translog T&C company using Wordpress.',
+          name: 'TRANSLOG T&C - Freight Company Website',
+          description: 'A presentation website for Translog T&C which is a freight company from Sighișoara, România.',
           link: 'https://translogtc.ro',
           wordpress: true,
         },
         {
           imgUrl: JsChallengeImg,
           name: '100 Days of JS Coding Challenges',
-          description:
-            'A repo for resolving multiple problems in JS programming language',
+          description: 'A repo for resolving multiple problems in JS programming language.',
           link: 'https://github.com/oliseulean/100-coding-js-challenges',
           wordpress: false,
         },
@@ -57,17 +70,8 @@ export const useProjectsStore = defineStore({
         {
           imgUrl: GuessNumberImg,
           name: 'Guess the number based on voice recognition',
-          description:
-            'A basic VanillaJs application which is using an API for guessing a number between 1 - 100 based on voice recognition.',
+          description: 'A basic VanillaJs application which is using an API for guessing a number between 1 - 100 based on voice recognition.',
           link: 'https://github.com/oliseulean/guess-the-number-based-on-voice-recognition',
-          wordpress: false,
-        },
-        {
-          imgUrl: QuizAppImg,
-          name: 'Dog Quiz App',
-          description:
-            'I created a Dog Quiz App. There are 10 questions with only one correct answer. I fetch a breed API call to generate random pictures foreach dog breed.',
-          link: 'https://github.com/oliseulean/dog-quiz-app',
           wordpress: false,
         },
       ],

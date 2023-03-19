@@ -6,6 +6,30 @@ export const useExperienceStore = defineStore({
   state: () => ({
     experience: [
       {
+        title: 'Teaching Assistant',
+        companyName: 'Babes-Bolyai University',
+        companyWebsite: 'https://econ.ubbcluj.ro/cv.php?id=958',
+        duration: 'Oct 2022 - Mar 2023',
+        work: [
+          'The main responsibility of this position was to teach the students the basics of programming in Python and introduce them to Machine Learning.',
+          'How to create a Neural Network from scratch using Numpy and how to use the Keras library.',
+          'How to create a Decision Tree using the Scikit-learn library.',
+          'How to use the Pandas library to manipulate data and how to use the Matplotlib and Seaborn libraries to visualize data.',
+          'How to use the Scikit-learn library to create machine learning models.',
+          'How to use the Google Colab || Jupyter Notebook platform to run Python code on the cloud.',
+          'How to use the Google Drive platform to store and share data.',
+          'How to create a GitHub account and how to use the GitHub platform to store and share code.',
+          'How to use the Google Search Engine, Stack Overflow, to find solutions to problems.',
+        ],
+        language: [
+          'Python', 'Google Colab', 'Jupyter Notebook', 'Pandas', 'Numpy', 'Matplotlib', 'Scikit-learn', 'Machine Learning',
+          'Neural Network', 'Decision Tree', 'GitHub', 'Google Drive', 'Google Search Engine', 'Stack Overflow', 'Teamwork',
+          'Communication', 'Problem Solving', 'Time Management', 'Leadership', 'Creativity', 'Critical Thinking', 'Self-Management',
+        ],
+        shouldAddExtraStyling: true,
+        isTheSameCompany: false,
+      },
+      {
         companyName: 'Garmin',
         companyWebsite: 'https://www.garmin.com/en-US/',
         title: 'Front-end Engineer II',
