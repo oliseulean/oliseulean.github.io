@@ -1,10 +1,11 @@
 <script setup>
 /* Imports */
+import { reactive, computed } from 'vue';
+
 import PageTitle from '../components/PageTitle.vue';
 import Image from '../components/Image.vue';
 
-import { reactive, computed } from 'vue';
-
+import sendGAEvent from '../helpers/sendAnalyticsEvent';
 /* Props */
 const props = defineProps({
   globalStore: {
@@ -39,27 +40,13 @@ const displayNameButton = project => {
 
 /* Google Analytics */
 const projectsBtnGAEvent = e => {
-  if (!e) return;
-  const getProjectUrl = e.target.href;
-  const cleanUpGithubUrl = getProjectUrl.replace(
-    'https://github.com/oliseulean/',
-    ''
-  );
-  /* eslint-disable-next-line no-undef */
-  gtag('event', 'Projects click', {
-    event_category: 'Olimpiu Seulean Portfolio',
-    event_label: cleanUpGithubUrl,
-    value: 1,
-  });
+  const getProjectUrl = e?.target?.href;
+  const cleanUpGithubUrl = getProjectUrl.replace('https://github.com/oliseulean/', '');
+  sendGAEvent('Olimpiu Seulean Portfolio', 'Projects click', cleanUpGithubUrl, 1);
 };
 
 const loadMoreProjectsBtnGAEvent = () => {
-  /* eslint-disable-next-line no-undef */
-  gtag('event', 'Projects click', {
-    event_category: 'Olimpiu Seulean Portfolio',
-    event_label: 'Show More Projects',
-    value: 1,
-  });
+  sendGAEvent('Olimpiu Seulean Portfolio', 'Projects click', 'Show More Projects', 1);
 };
 </script>
 

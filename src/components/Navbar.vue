@@ -1,7 +1,9 @@
 <script setup>
 /* Imports */
 import { reactive } from 'vue';
+
 import { useScrollPosition } from '../composable/useScrollPosition';
+import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
 /* Handle hide navBar */
 const { hideElement } = useScrollPosition();
@@ -13,12 +15,7 @@ const state = reactive({
 
 /* Handle GA for the resume button */
 const resumeGAEvent = () => {
-  /* eslint-disable-next-line no-undef */
-  gtag('event', 'Resume', {
-    event_category: 'Olimpiu Seulean Portfolio',
-    event_label: 'Resume btn',
-    value: 1,
-  });
+  sendGAEvent('Olimpiu Seulean Portfolio', 'Resume', 'Resume btn', 1);
 };
 </script>
 

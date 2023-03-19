@@ -1,8 +1,11 @@
 <script setup>
 /* Imports */
 import { computed } from 'vue';
-import ArrowIcon from '../../assets/icons/Arrow.vue';
+
 import { useScrollPosition } from '../../composable/useScrollPosition';
+import sendGAEvent from '../../helpers/sendAnalyticsEvent';
+
+import ArrowIcon from '../../assets/icons/Arrow.vue';
 
 /* Handle hide button */
 const { hideElement } = useScrollPosition();
@@ -13,20 +16,11 @@ const goToTopComputedClassName = computed(() => {
 
 /* Handle @click event */
 const handlerOnBtnClick = () => {
-  backToTopGAEvent();
+  sendGAEvent('Olimpiu Seulean Portfolio', 'Back Btn', 'Back To Top Button', 1);
   scrollToTop();
 };
 
-const scrollToTop = () => window.scrollTo(0, 0);
-
-const backToTopGAEvent = () => {
-  /* eslint-disable-next-line no-undef */
-  gtag('event', 'Back Btn', {
-    event_category: 'Olimpiu Seulean Portfolio',
-    event_label: 'Back To Top Button',
-    value: 1,
-  });
-};
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 </script>
 
 <template>

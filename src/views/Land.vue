@@ -6,6 +6,8 @@ import Image from '../components/Image.vue';
 
 import DownArrowIcon from '/icons/down-arrow.webp';
 
+import sendGAEvent from '../helpers/sendAnalyticsEvent';
+
 /* State */
 const state = reactive({
   hideArrowButton: true,
@@ -26,17 +28,8 @@ const scrollToExperienceSection = () => {
   experienceEl.scrollIntoView({ behavior: 'smooth' });
 };
 
-const scrollDownBtnGAEvent = () => {
-  // eslint-disable-next-line no-undef
-  gtag('event', 'Scroll Btn', {
-    event_category: 'Olimpiu Seulean Portfolio',
-    event_label: 'Scroll Down Button',
-    value: 1,
-  });
-};
-
 const handlerOnScrollDownBtn = () => {
-  scrollDownBtnGAEvent();
+  sendGAEvent('Olimpiu Seulean Portfolio', 'Scroll Btn', 'Scroll Down Button', 1);
   scrollToExperienceSection();
 };
 </script>

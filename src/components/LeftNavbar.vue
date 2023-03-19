@@ -2,23 +2,18 @@
 /* Imports */
 import Tooltip from '../components/Tooltip';
 import Image from '../components/Image';
+
 import { useLeftNavbarStore } from '../stores/leftNavbar';
+import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
 /* Store */
 const storeLeftNavbar = useLeftNavbarStore();
 
 /* LeftNavbar Google Analytics */
 const leftItemsGAEvent = e => {
-  if (!e) return;
-  const getItemName = e.target.alt;
+  const getItemName = e?.target?.alt;
   const cleanUpItemName = getItemName.replace('webp', '');
-
-  /* eslint-disable-next-line no-undef */
-  gtag('event', `${cleanUpItemName}`, {
-    event_category: 'Olimpiu Seulean Portfolio',
-    event_label: `${cleanUpItemName} - social`,
-    value: 1,
-  });
+  sendGAEvent('Olimpiu Seulean Portfolio', `${cleanUpItemName}`, `${cleanUpItemName} - social`, 1);
 };
 </script>
 

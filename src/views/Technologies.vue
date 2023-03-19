@@ -5,6 +5,8 @@ import { reactive, computed } from 'vue';
 import SkillsAndTools from '../components/SkillsAndTools';
 import PageTitle from '../components/PageTitle';
 
+import sendGAEvent from '../helpers/sendAnalyticsEvent';
+
 /* Props */
 const props = defineProps({
   globalStore: {
@@ -48,15 +50,8 @@ const setActiveClass = id => {
 
 /* Set GA tags for the technologies toogle btn */
 const technologiesGAEvent = e => {
-  if (!e) return;
-  const getToogleValue = e.target.innerHTML;
-
-  /* eslint-disable-next-line no-undef */
-  gtag('event', 'Technologies', {
-    event_category: 'Olimpiu Seulean Portfolio',
-    event_label: getToogleValue,
-    value: 1,
-  });
+  const getToogleValue = e?.target?.innerHTML;
+  sendGAEvent('Olimpiu Seulean Portfolio', 'Technologies click', getToogleValue, 1);
 };
 </script>
 
