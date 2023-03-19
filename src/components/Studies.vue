@@ -1,7 +1,13 @@
 <script setup>
+/* Imports */
+import PageTitle from '../components/PageTitle.vue';
 /* Props */
 const props = defineProps({
   studies: {
+    type: Object,
+    required: true,
+  },
+  globalStore: {
     type: Object,
     required: true,
   },
@@ -10,6 +16,13 @@ const props = defineProps({
 
 <template>
   <div class="app-studies">
+    <PageTitle
+      :color="props.globalStore?.colors?.colorWhite"
+      align-items="left"
+      text-align="left"
+    >
+      STUDIES
+    </PageTitle>
     <div
       v-for="(university, index) in props.studies"
       :key="index"

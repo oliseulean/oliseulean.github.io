@@ -1,9 +1,10 @@
 <script setup>
 /* Imports */
 import Image from './Image.vue';
+import PageTitle from './PageTitle.vue';
 /* Props */
 const props = defineProps({
-  experience: {
+  experienceStore: {
     type: Object,
     required: true,
   },
@@ -15,6 +16,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  globalStore: {
+    type: Object,
+    required: true,
+  },
 });
 
 /* Handle extraStyling */
@@ -24,8 +29,15 @@ const setExperienceClassName = experience => {
 </script>
 
 <template>
+  <PageTitle
+    :color="props.globalStore?.colors?.colorWhite"
+    align-items="left"
+    text-align="left"
+  >
+    WORK EXPERIENCE
+  </PageTitle>
   <div
-    v-for="(experience, index) in props.experience"
+    v-for="(experience, index) in props.experienceStore"
     :key="index"
     :class="['app-work__experience', setExperienceClassName(experience)]"
   >

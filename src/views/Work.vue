@@ -1,7 +1,6 @@
 <script setup>
 /* Imports */
-import PageTitle from '../components/PageTitle.vue';
-import Exp from '../components/Experience.vue';
+import Experience from '../components/Experience.vue';
 import Studies from '../components/Studies.vue';
 import ProfilePicture from '../components/ProfilePicture.vue';
 
@@ -25,30 +24,18 @@ const props = defineProps({
   <div id="experience" class="app-work-and-studies">
     <ProfilePicture />
     <div class="app-work-and-studies__section">
-      <PageTitle
-        :color="props.globalStore?.colors?.colorWhite"
-        align-items="left"
-        text-align="left"
-      >
-        WORK EXPERIENCE
-      </PageTitle>
-
-      <Exp
-        :experience="props.experienceStore?.experience"
+      <Experience
+        :experience-store="props.experienceStore?.experience"
+        :global-store="props.globalStore"
         :calendar-icon="CalendarIcon"
         :coding-icon="CodingIcon"
       />
     </div>
     <div class="app-work-and-studies__section">
-      <PageTitle
-        :color="props.globalStore?.colors?.colorWhite"
-        align-items="left"
-        text-align="left"
-      >
-        STUDIES
-      </PageTitle>
-
-      <Studies :studies="props.experienceStore?.university" />
+      <Studies
+        :studies="props.experienceStore?.university"
+        :global-store="props.globalStore"
+      />
     </div>
   </div>
 </template>
