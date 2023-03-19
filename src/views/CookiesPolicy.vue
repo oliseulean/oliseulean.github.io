@@ -336,7 +336,6 @@ const globalStore = useGlobalStore();
 <style lang="scss" scoped>
 .app-cookies-policy {
   @include font-roboto-slab();
-
   margin: 3rem;
   font-size: $font-size-normal;
 
@@ -368,7 +367,6 @@ const globalStore = useGlobalStore();
 
   &__home-button {
     @include black-button();
-
     width: 100%;
 
     @include md {

@@ -1,4 +1,8 @@
 <script setup>
+/* Imports */
+import Image from './Image.vue';
+
+/* handle go to home page */
 const goToTheHomePage = () => {
   window.location.href = '/';
 };
@@ -6,13 +10,13 @@ const goToTheHomePage = () => {
 
 <template>
   <div class="app-four-oh-four">
-    <img
-      src="/images/fourOhFour.webp"
-      alt="404 Image"
-      width="943"
-      height="390"
-      class="app-four-oh-four__warning-img"
-    >
+    <Image
+      :src="'/images/fourOhFour.webp'"
+      :altText="'404_image'"
+      :width="943"
+      :height="390"
+      :class="'app-four-oh-four__warning-img'"
+    />
     <h1 class="app-four-oh-four__wrong-text">
       Opps!, something went wrong
     </h1>
@@ -54,7 +58,6 @@ const goToTheHomePage = () => {
 
   &__wrong-text {
     @include font-monserrat();
-
     text-align: center;
     display: block;
     margin: 0 auto;
@@ -62,7 +65,6 @@ const goToTheHomePage = () => {
 
   &__not-found-text {
     @include font-roboto-slab();
-
     margin-top: 1rem;
   }
 

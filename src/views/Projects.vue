@@ -1,6 +1,7 @@
 <script setup>
 /* Imports */
 import PageTitle from '../components/PageTitle.vue';
+import Image from '../components/Image.vue';
 import { useProjectsStore } from '../stores/projects';
 import { useGlobalStore } from '../stores/global';
 import { reactive, computed } from 'vue';
@@ -74,12 +75,13 @@ const loadMoreProjectsBtnGAEvent = () => {
         class="app-projects-section-card"
       >
         <div class="app-projects-section-card__image">
-          <img
+          <Image
+            :altText="project.name"
             :src="project.imgUrl"
-            alt="Project Image"
-            width="570"
-            height="320"
-            loading="lazy"
+            :height="320"
+            :width="570"
+            :class="'app-projects-section-card__image'"
+            :loading="'lazy'"
           />
         </div>
         <div class="app-projects-section-card__content">
@@ -202,7 +204,6 @@ const loadMoreProjectsBtnGAEvent = () => {
       &__project-name {
         font-size: 1.25rem;
         color: $color-black;
-
         @include font-weight(bold);
 
         @include md {
@@ -217,9 +218,7 @@ const loadMoreProjectsBtnGAEvent = () => {
       &__project-description {
         margin-top: 1rem;
         color: $color-gray;
-
         @include font-weight(thin);
-
         font-size: 0.875rem;
 
         @include md {
@@ -233,7 +232,6 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       &__see-code-btn {
         @include black-button();
-
         margin: 2.5rem auto;
 
         @include lg {
@@ -242,7 +240,6 @@ const loadMoreProjectsBtnGAEvent = () => {
 
         &:hover {
           @include transition();
-
           color: $color-white;
         }
       }
@@ -268,7 +265,6 @@ const loadMoreProjectsBtnGAEvent = () => {
     &__show-more-button {
       margin: 3rem auto 4rem !important;
       text-align: center;
-
       @include black-button();
 
       @include md {
@@ -281,7 +277,6 @@ const loadMoreProjectsBtnGAEvent = () => {
 
       &:hover {
         @include transition();
-
         color: $color-white;
       }
     }

@@ -1,6 +1,7 @@
 <script setup>
 /* Imports */
 import Tooltip from '../components/Tooltip';
+import Image from '../components/Image';
 
 /* Props */
 const props = defineProps({
@@ -26,13 +27,14 @@ const props = defineProps({
           :content="icon.title"
           class="app-skills-and-tools__tooltip"
         >
-          <img
+          <Image
+            :altText="icon.alt"
             :src="icon.source"
-            :alt="icon.alt"
-            height="80"
-            width="80"
-            class="app-skills-and-tools__icon"
-          />
+            :height="80"
+            :width="80"
+            :class="'app-skills-and-tools__icon'"
+            :loading="'lazy'"
+            />
         </Tooltip>
       </li>
     </ul>

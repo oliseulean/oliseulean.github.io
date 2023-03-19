@@ -6,24 +6,19 @@ export const useExperienceStore = defineStore({
   state: () => ({
     experience: [
       {
-        title: 'Front-end Engineer II',
         companyName: 'Garmin',
-        companyWebsite: 'https://www.garmin.com',
+        companyWebsite: 'https://www.garmin.com/en-US/',
+        title: 'Front-end Engineer II',
         duration: 'Jul 2022 - Present',
         work: [
           'Implementing Vue3 front-end framework on the new applications.',
           'Mentoring and supporting the intern engineer of this year.'
         ],
-        language: [
-          'Vue', 'Vuetify', 'Vuex', 'Pinia', 'Vite', 'Vue.cli', 'Webpack', 'APIs', 'DOM', 'JavaScript', 'SASS', 'CSS3',
-          'HTML5', 'Jest', 'Cypress', 'Wordpress', 'SEO', 'Accessibility', 'Contentful', 'Git', 'Pagely',
-          'Jenkins', 'AppDynamics', 'Sentry', 'UpTrends', 'Nuxt', 'Express', 'Node.js', 'Basic-Workers(Cloudflare)',
-        ],
+        shouldAddExtraStyling: false,
+        isTheSameCompany: true,
       },
       {
         title: 'Front-end Engineer I',
-        companyName: 'Garmin',
-        companyWebsite: 'https://www.garmin.com',
         duration: 'Jul 2020 - Jun 2022',
         work: [
           'Use of Vue2 framework to create modular, reusable components.',
@@ -46,6 +41,8 @@ export const useExperienceStore = defineStore({
           'HTML5', 'Jest', 'Cypress', 'Wordpress', 'SEO', 'Accessibility', 'Contentful', 'Git', 'Pagely',
           'Jenkins', 'AppDynamics', 'Sentry', 'UpTrends', 'Nuxt', 'Express', 'Node.js', 'Basic-Workers(Cloudflare)',
         ],
+        shouldAddExtraStyling: true,
+        isTheSameCompany: true,
       },
       {
         title: 'Web Developer / Designer',
@@ -59,6 +56,8 @@ export const useExperienceStore = defineStore({
         language: [
           'Elementor', 'Wordpress', 'JavaScript', 'SEO', 'MySQL', 'HTML', 'CSS', 'PHP', 'Accessibility',
         ],
+        shouldAddExtraStyling: true,
+        isTheSameCompany: false,
       },
       {
         title: 'C# Remote Learning',
@@ -73,6 +72,8 @@ export const useExperienceStore = defineStore({
           'Implemented a VendorMachine (CRUD Operations) within the C# programming language.',
         ],
         language: ['C#', 'MySQL', 'SQL Server'],
+        shouldAddExtraStyling: true,
+        isTheSameCompany: false,
       },
       {
         title: 'QA Engineer Intern',
@@ -85,6 +86,8 @@ export const useExperienceStore = defineStore({
           'Knowledge of Agile software development (ability to plan, design and execute test cases).',
         ],
         language: ['Jira', 'Testing'],
+        shouldAddExtraStyling: true,
+        isTheSameCompany: false,
       },
     ],
     university: [

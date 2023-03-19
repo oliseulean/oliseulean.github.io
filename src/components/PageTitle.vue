@@ -43,10 +43,8 @@ const stylePageTitleObj = reactive({
     display: flex;
     flex-direction: column;
     padding: 2.5rem 0;
-
     @include font-weight(bold);
     @include font-roboto-slab();
-
     font-size: $font-size-large;
     line-height: 1.5;
 

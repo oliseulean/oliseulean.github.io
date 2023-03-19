@@ -59,10 +59,8 @@ const resumeGAEvent = () => {
     justify-content: center;
     color: $color-black-pearl;
     font-size: $font-size-medium;
-
     @include font-weight(bold);
     @include font-monserrat();
-
     background: transparent;
 
     &:hover,

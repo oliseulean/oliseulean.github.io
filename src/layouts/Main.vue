@@ -2,13 +2,17 @@
 /* Imports */
 import Land from '../views/Land.vue';
 import LeftNavbar from '../components/LeftNavbar.vue';
+import { useGlobalStore } from '../stores/global';
+import { useExperienceStore } from '../stores/experience';
+import { useTechnologies } from '../stores/technologies';
+import { useProjectsStore } from '../stores/projects';
 
 import { defineAsyncComponent } from 'vue';
 
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 
-const Experience = defineAsyncComponent(() =>
-  import('../views/Experience.vue')
+const Work = defineAsyncComponent(() =>
+  import('../views/Work.vue')
 );
 
 const Technologies = defineAsyncComponent(() =>
@@ -24,6 +28,12 @@ const BackToTop = defineAsyncComponent(() =>
 );
 
 const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
+
+/* Store */
+const globalStore = useGlobalStore();
+const experienceStore = useExperienceStore();
+const technologiesStore = useTechnologies();
+const projectsStore = useProjectsStore();
 </script>
 
 <template>
@@ -31,9 +41,18 @@ const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
   <LeftNavbar />
   <Cookie />
   <Navbar />
-  <Experience />
-  <Technologies />
-  <Projects />
+  <Work
+    :global-store="globalStore"
+    :experience-store="experienceStore"
+  />
+  <Technologies
+    :global-store="globalStore"
+    :technologies-store="technologiesStore"
+  />
+  <Projects
+    :global-store="globalStore"
+    :projects-store="projectsStore"
+  />
   <Copyright />
   <BackToTop />
 </template>

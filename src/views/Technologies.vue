@@ -2,15 +2,20 @@
 /* Imports */
 import { reactive, computed } from 'vue';
 
-import { useTechnologies } from '../stores/technologies';
-import { useGlobalStore } from '../stores/global';
-
 import SkillsAndTools from '../components/SkillsAndTools';
 import PageTitle from '../components/PageTitle';
 
-/* Store */
-const storeTechnologies = useTechnologies();
-const globalStore = useGlobalStore();
+/* Props */
+const props = defineProps({
+  globalStore: {
+    type: Object,
+    required: true,
+  },
+  technologiesStore: {
+    type: Object,
+    required: true,
+  },
+});
 
 /* State */
 const state = reactive({
@@ -90,12 +95,12 @@ const technologiesGAEvent = e => {
         <div class="app-technologies-section-container__skills">
           <SkillsAndTools
             v-if="displaySkillsList"
-            :icons="storeTechnologies.technologies"
+            :icons="props.technologiesStore.technologies"
           />
 
           <SkillsAndTools
             v-if="displayToolsList"
-            :icons="storeTechnologies.tools"
+            :icons="props.technologiesStore.tools"
           />
         </div>
       </div>
@@ -108,7 +113,6 @@ const technologiesGAEvent = e => {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   @include font-roboto-slab();
 
   &-section {
@@ -138,9 +142,7 @@ const technologiesGAEvent = e => {
         font-size: $font-size-medium;
         letter-spacing: 1px;
         color: $color-black;
-
         @include font-weight(bold);
-
         margin: 1rem 0 1.25rem;
         padding-right: 0;
         text-align: left;
@@ -156,9 +158,7 @@ const technologiesGAEvent = e => {
 
       &__subtitle {
         color: $color-gray;
-
         @include font-weight(thin);
-
         font-size: $font-size-normal;
         margin: 1rem 0;
         padding-right: 0;

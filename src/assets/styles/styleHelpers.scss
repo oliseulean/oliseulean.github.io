@@ -26,6 +26,7 @@
 }
 
 @mixin keyframe-appear {
+
   @keyframes appear {
     to {
       opacity: 1;
@@ -38,6 +39,7 @@
 }
 
 @mixin keyframe-typing {
+
   @keyframes typing {
     from {
       width: 0;
@@ -46,5 +48,14 @@
     to {
       width: 100%;
     }
+  }
+}
+
+@mixin color-web-orange-style {
+  color: $color-web-orange;
+  @include font-weight(bold);
+
+  &:hover {
+    color: $color-amber;
   }
 }

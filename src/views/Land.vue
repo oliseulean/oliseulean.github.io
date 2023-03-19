@@ -2,6 +2,7 @@
 /* Imports */
 import { reactive, onMounted, onUnmounted } from 'vue';
 import DownArrowIcon from '/icons/down-arrow.webp';
+import Image from '../components/Image.vue';
 
 /* State */
 const state = reactive({
@@ -60,13 +61,14 @@ const handlerOnScrollDownBtn = () => {
         class="app-land__bottom-btn"
         @click="handlerOnScrollDownBtn"
       >
-        <img
+        <Image
+          :altText="'down_icon_image'"
           :src="DownArrowIcon"
-          class="app-land__bottom-downIcon"
-          alt="Down_Icon_Image"
-          width="50"
-          height="50"
-        >
+          :height="50"
+          :width="50"
+          :class="'app-land__bottom-downIcon'"
+          :loading="'lazy'"
+        />
       </button>
     </div>
   </div>
@@ -92,12 +94,12 @@ const handlerOnScrollDownBtn = () => {
       animation: 3s appear;
       background-color: transparent;
       line-height: 40px;
-
       @include font-weight(normal);
       @include font-monserrat();
 
       @include sm {
         font-size: $font-size-large-xl;
+
         line-height: 50px;
       }
 
@@ -111,9 +113,7 @@ const handlerOnScrollDownBtn = () => {
       p {
         font-size: $font-size-normal;
         font-weight: 200;
-
         @include font-monserrat();
-
         color: $color-black-pearl;
         overflow: hidden;
         white-space: nowrap;

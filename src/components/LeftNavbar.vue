@@ -1,6 +1,7 @@
 <script setup>
 /* Imports */
 import Tooltip from '../components/Tooltip';
+import Image from '../components/Image';
 import { useLeftNavbarStore } from '../stores/leftNavbar';
 
 /* Store */
@@ -36,13 +37,13 @@ const leftItemsGAEvent = e => {
         :content="navItem.title"
         class="app-left-navbar__tooltip"
       >
-        <img
+        <Image
+          :altText="navItem.alt"
           :src="navItem.icon"
-          :alt="navItem.alt"
-          class="app-left-navbar__icon"
-          height="30"
-          width="30"
-          loading="lazy"
+          :height="30"
+          :width="30"
+          :class="'app-left-navbar__icon'"
+          :loading="'lazy'"
         />
       </Tooltip>
     </a>

@@ -122,10 +122,8 @@ onMounted(() => {
   &__buttons {
     cursor: pointer;
     color: $color-fruit-salad;
-
     @include font-roboto-slab();
     @include font-weight(bold);
-
     background-color: $color-gallery;
     font-size: 0.875rem;
     width: 100%;

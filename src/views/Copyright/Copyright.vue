@@ -18,9 +18,7 @@ import getCurrentYear from '../../helpers/getCurrentYear';
 .app-footer {
   display: block;
   margin: 0 auto;
-
   @include font-roboto-slab();
-
   color: $color-catskill-white;
   background: $color-black-pearl;
   bottom: 0;
