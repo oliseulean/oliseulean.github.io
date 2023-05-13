@@ -13,15 +13,13 @@ Personal website portfolio.
 
 ## Running Locally
 
-1. Set Node version using nvm: <strong>`nvm use 18.2.0`</strong>.
-2. Run yarn to install packages: <strong>`yarn`</strong>.
-3. Run Vite dev server: <strong>`yarn dev`.</strong> Server will run at http://localhost:5000.
-4. Build js and css for release: <strong>`yarn build`.</strong>
-5. After you run <strong>`yarn build`</strong> and your assets were created, you can run: <strong>`yarn preview`</strong>, to locally preview production build.
+1. Run yarn to install packages: <strong>`yarn`</strong>.
+2. Run Vite dev server: <strong>`yarn dev`.</strong> Server will run at http://localhost:5000.
+3. Build js and css for release: <strong>`yarn build`.</strong>
+4. After you run <strong>`yarn build`</strong> and your assets were created, you can run: <strong>`yarn preview`</strong>, to locally preview production build.
 
 ## Frameworks/Tools
 
-<strong>Node.js</strong> (local dev server): https://nodejs.org <br />
 <strong>Vite</strong> (build tool): https://vitejs.dev/ <br />
 <strong>Pinia</strong> (state management): https://pinia.vuejs.org/ <br />
 <strong>Vue 3</strong> (front-end framework) https://vuejs.org/ <br />

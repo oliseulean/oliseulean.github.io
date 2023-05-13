@@ -79,9 +79,8 @@ const setExperienceClassName = experience => {
         v-for="(experience, index) in experience.work"
         :key="index"
         class="app-work__competencies"
-      >
-        {{ experience }}
-      </li>
+        v-html="experience"
+      />
     </ul>
 
     <p

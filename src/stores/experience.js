@@ -6,6 +6,34 @@ export const useExperienceStore = defineStore({
   state: () => ({
     experience: [
       {
+        companyName: 'Garmin',
+        companyWebsite: 'https://www.garmin.com/en-US/',
+        title: 'Front-end Engineer II',
+        duration: 'Jul 2022 - Present',
+        work: [
+          'Use of Vue3/Vue2, CSS3/SASS, HTML5, and ES6 Javascript in day to day work.',
+          'Initiated and implemented the migration from Vue2 to Vue3 for most of the projects where I am involved.',
+          'Initiated new projects from scratch by configuring the project structure, setting up the environment, and creating the first components.',
+          'Use of Git, Terminal, SourceTree and Jenkins for deployment and version control.',
+          'Providing peer code reviews and contributing to team sprint planning/grooming.',
+          'Migrating big artifacts from Vue2 to Vue3 - 100% success rate.',
+          'Front-End development with cross-browser compatibility and responsive design.',
+          'Mentoring and supporting the intern engineer of this year.',
+          'Proficiency Test-driven Development including Jest for unit testing, and Cypress for end-to-end testing.',
+          'Automated testing with Cypress and added integration with Jenkins.',
+          'Deploying code changes to production through Jenkins builder.',
+          'Debugging and fixing bugs in production when needed.',
+          'Check experience from <strong>Front-end Engineer I</strong> section since it is the same company and the above are the new responsibilities + Skills & Languages section.',
+        ],
+        language: [
+          'Vue 2', 'Vue 3', 'Vuetify 2', 'Vuetify 3', 'Vuex', 'Pinia', 'Vite', 'Vue.cli', 'Webpack', 'APIs', 'DOM', 'JavaScript', 'SASS', 'CSS3',
+          'HTML5', 'Jest', 'Cypress', 'Wordpress', 'SEO', 'Accessibility', 'Contentful', 'Git', 'Pagely',
+          'Jenkins', 'AppDynamics', 'Sentry', 'UpTrends', 'Nuxt', 'Express', 'Node.js', 'Basic-Workers(Cloudflare)',
+        ],
+        shouldAddExtraStyling: false,
+        isTheSameCompany: false,
+      },
+      {
         title: 'Teaching Assistant',
         companyName: 'Babes-Bolyai University',
         companyWebsite: 'https://econ.ubbcluj.ro/cv.php?id=958',
@@ -30,19 +58,9 @@ export const useExperienceStore = defineStore({
         isTheSameCompany: false,
       },
       {
+        title: 'Front-end Engineer I',
         companyName: 'Garmin',
         companyWebsite: 'https://www.garmin.com/en-US/',
-        title: 'Front-end Engineer II',
-        duration: 'Jul 2022 - Present',
-        work: [
-          'Implementing Vue3 front-end framework on the new applications.',
-          'Mentoring and supporting the intern engineer of this year.'
-        ],
-        shouldAddExtraStyling: false,
-        isTheSameCompany: true,
-      },
-      {
-        title: 'Front-end Engineer I',
         duration: 'Jul 2020 - Jun 2022',
         work: [
           'Use of Vue2 framework to create modular, reusable components.',
@@ -60,13 +78,8 @@ export const useExperienceStore = defineStore({
           'Collaborating with a team in a fast-paced environment to solve problems under tight deadlines.',
           'Proxy in Node.js.',
         ],
-        language: [
-          'Vue', 'Vuetify', 'Vuex', 'Pinia', 'Vite', 'Vue.cli', 'Webpack', 'APIs', 'DOM', 'JavaScript', 'SASS', 'CSS3',
-          'HTML5', 'Jest', 'Cypress', 'Wordpress', 'SEO', 'Accessibility', 'Contentful', 'Git', 'Pagely',
-          'Jenkins', 'AppDynamics', 'Sentry', 'UpTrends', 'Nuxt', 'Express', 'Node.js', 'Basic-Workers(Cloudflare)',
-        ],
-        shouldAddExtraStyling: true,
-        isTheSameCompany: true,
+        shouldAddExtraStyling: false,
+        isTheSameCompany: false,
       },
       {
         title: 'Web Developer / Designer',
