@@ -7,7 +7,7 @@ import LeftNavbar from '../components/LeftNavbar.vue';
 const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 const Copyright = defineAsyncComponent(() => import('./Copyright/Copyright.vue'));
-const BackToTop = defineAsyncComponent(() => import('../components/BackToTop/BackToTop.vue'));
+const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
 
 /* Props */
 const props = defineProps({
