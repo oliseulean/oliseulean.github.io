@@ -10,7 +10,7 @@ const { hideElement } = useScrollPosition();
 
 /* State */
 const state = reactive({
-  resumeURL: 'https://drive.google.com/file/d/1yOtzmWAhhLQVi5MLOIcv_cnGthHC3ebP/view?usp=sharing',
+  resumeURL: 'https://drive.google.com/file/d/1FB8DOQORG_3ug05Ctprp-zR27cn6vBRj/view?usp=sharing',
 });
 
 /* Handle GA for the resume button */
