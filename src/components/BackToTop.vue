@@ -2,10 +2,10 @@
 /* Imports */
 import { computed } from 'vue';
 
-import { useScrollPosition } from '../../composable/useScrollPosition';
-import sendGAEvent from '../../helpers/sendAnalyticsEvent';
+import { useScrollPosition } from '../composable/useScrollPosition';
+import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
-import ArrowIcon from '../../assets/icons/Arrow.vue';
+import ArrowIcon from '../assets/icons/Arrow.vue';
 
 /* Handle hide button */
 const { hideElement } = useScrollPosition();
