@@ -1,7 +1,6 @@
 <script setup>
 /* Imports */
 import Land from '../views/Land.vue';
-import LeftNavbar from '../components/LeftNavbar.vue';
 import { useGlobalStore } from '../stores/global';
 import { useExperienceStore } from '../stores/experience';
 import { useTechnologies } from '../stores/technologies';
@@ -13,7 +12,7 @@ const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 const Work = defineAsyncComponent(() => import('../views/Work.vue'));
 const Technologies = defineAsyncComponent(() => import('../views/Technologies'));
 const Projects = defineAsyncComponent(() => import('../views/Projects.vue'));
-const Copyright = defineAsyncComponent(() => import('../../src/views/Copyright/Copyright.vue'));
+const Footer = defineAsyncComponent(() => import('../../src/views/Footer.vue'));
 const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
 const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
 
@@ -26,7 +25,6 @@ const projectsStore = useProjectsStore();
 
 <template>
   <Land />
-  <LeftNavbar />
   <Cookie
     :global-store="globalStore"
   />
@@ -43,6 +41,6 @@ const projectsStore = useProjectsStore();
     :global-store="globalStore"
     :projects-store="projectsStore"
   />
-  <Copyright />
+  <Footer />
   <BackToTop />
 </template>

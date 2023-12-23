@@ -141,6 +141,10 @@ const loadMoreProjectsBtnGAEvent = () => {
         flex-direction: row;
       }
 
+      &:last-child {
+        padding-bottom: 4rem;
+      }
+
       &__image {
         width: 100%;
         margin: auto 0;
@@ -188,6 +192,10 @@ const loadMoreProjectsBtnGAEvent = () => {
           width: 50%;
           padding: 5rem;
           text-align: left;
+        }
+
+        &:last-child {
+          // margin-bottom: 5rem;
         }
       }
 
@@ -253,16 +261,16 @@ const loadMoreProjectsBtnGAEvent = () => {
     }
 
     &__show-more-button {
-      margin: 3rem auto 4rem !important;
+      margin: 3rem auto 6rem !important;
       text-align: center;
       @include black-button();
 
       @include md {
-        margin: 0 auto 5rem !important;
+        margin: 1.5rem auto 5rem !important;
       }
 
       @include lg {
-        margin: 0 auto 5rem !important;
+        margin: 1.5rem auto 5rem !important;
       }
 
       &:hover {

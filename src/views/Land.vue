@@ -1,15 +1,16 @@
 <script setup>
 /* Imports */
-import { reactive, onMounted, onUnmounted } from 'vue';
-
+import {
+  ref,
+  onMounted,
+  onUnmounted,
+} from 'vue';
 import Image from '../components/Image.vue';
-
 import DownArrowIcon from '/icons/down-arrow.webp';
-
 import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
 /* State */
-const state = reactive({
+const state = ref({
   hideArrowButton: true,
 });
 
@@ -19,7 +20,7 @@ onUnmounted(() => window.removeEventListener('scroll', hideArrow));
 
 const hideArrow = () => {
   const currentScrollValue = window?.pageYOffset;
-  state.hideArrowButton = currentScrollValue <= 100;
+  state.value.hideArrowButton = currentScrollValue <= 100;
 };
 
 const scrollToExperienceSection = () => {
@@ -42,8 +43,16 @@ const handlerOnScrollDownBtn = () => {
         <br />
         I'm Olimpiu Șeulean
       </h1>
-      <div class="app-land__title-typewriter">
-        <p>and this website, is about me.</p>
+      <div class="app-land__title-linkedin">
+        <p>Nice to meet you!
+          Here is my 
+          <a
+            href="https://www.linkedin.com/in/seulean-olimpiu/"
+            target="_blank"
+          >
+            Linkedin profile.
+          </a>
+        </p>
       </div>
     </div>
     <div
@@ -126,11 +135,36 @@ const handlerOnScrollDownBtn = () => {
         }
       }
     }
+
+    &-linkedin {
+      p {
+        font-size: $font-size-normal;
+        font-weight: 200;
+        @include font-monserrat();
+        color: $color-black-pearl;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0;
+        animation: typing 2.5s steps(40, end);
+        text-align: left;
+        padding-top: 0.7rem;
+
+        @include sm {
+          font-size: $font-size-medium;
+          line-height: 50px;
+        }
+
+        @include lg {
+          font-size: $font-size-large;
+          line-height: 70px;
+        }
+      }
+    }
   }
 
   &__bottom {
     position: absolute;
-    bottom: 10px;
+    bottom: 3.5rem;
 
     &-btn {
       background-color: transparent;

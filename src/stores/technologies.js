@@ -52,7 +52,7 @@ export const useTechnologies = defineStore({
         {
           title: 'MySQL',
           alt: 'MySQL_icon',
-          source: 'https://icon-library.com/images/mysql-icon/mysql-icon-23.jpg',
+          source: 'https://cdn-icons-png.flaticon.com/512/5968/5968313.png',
         },
         {
           title: 'Wordpress',
@@ -159,7 +159,7 @@ export const useTechnologies = defineStore({
         {
           title: 'Uptrends',
           alt: 'Uptrends_icon',
-          source: 'https://cdn.techjockey.com/web/assets/images/techjockey/products/13252_Uptrends-logo.jpg?d=300',
+          source: 'https://static.thenounproject.com/png/1959567-200.png',
         },
         {
           title: 'Jira',

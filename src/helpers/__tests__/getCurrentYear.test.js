@@ -1,4 +1,4 @@
-import getCurrentYear from '../getCurrentYear';
+import { getCurrentYear} from '../getCurrentYear';
 import { describe, expect, it } from 'vitest';
 
 describe('getCurrentYear', () => {

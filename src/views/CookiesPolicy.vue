@@ -2,11 +2,9 @@
 /* Imports */
 import { defineAsyncComponent } from 'vue';
 
-import LeftNavbar from '../components/LeftNavbar.vue';
-
 const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
-const Copyright = defineAsyncComponent(() => import('./Copyright/Copyright.vue'));
+const Footer = defineAsyncComponent(() => import('../views/Footer.vue'));
 const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
 
 /* Props */
@@ -19,7 +17,6 @@ const props = defineProps({
 </script>
 
 <template>
-  <LeftNavbar />
   <Navbar />
   <div class="app-cookies-policy">
     <div class="app-cookies-policy__container">
@@ -330,7 +327,7 @@ const props = defineProps({
       </a>
     </p>
   </div>
-  <Copyright />
+  <Footer />
   <BackToTop />
 </template>
 

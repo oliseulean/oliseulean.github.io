@@ -8,8 +8,22 @@ export const useExperienceStore = defineStore({
       {
         companyName: 'Garmin',
         companyWebsite: 'https://www.garmin.com/en-US/',
-        title: 'Front-end Engineer II',
-        duration: 'Jul 2022 - Present',
+        title: 'Senior Frontend Engineer',
+        duration: 'Dec 2023 - Present',
+        work: ['In progress...'],
+        language: [
+          'Vue 2', 'Vue 3', 'Vuetify 2', 'Vuetify 3', 'Vuex', 'Pinia', 'Vite', 'Vue.cli', 'Webpack', 'APIs', 'DOM', 'JavaScript', 'SASS', 'CSS3',
+          'HTML5', 'Jest', 'Cypress', 'Wordpress', 'SEO', 'Accessibility', 'Contentful', 'Git', 'Pagely',
+          'Jenkins', 'AppDynamics', 'Sentry', 'UpTrends', 'Nuxt', 'Express', 'Node.js', 'Basic-Workers (Cloudflare)',
+        ],
+        shouldAddExtraStyling: false,
+        isTheSameCompany: true,
+      },
+      {
+        companyName: 'Garmin',
+        companyWebsite: 'https://www.garmin.com/en-US/',
+        title: 'Mid Frontend Engineer',
+        duration: 'Jul 2022 - Dec 2023',
         work: [
           'Use of Vue3/Vue2, CSS3/SASS, HTML5, and ES6 Javascript in day to day work.',
           'Initiated and implemented the migration from Vue2 to Vue3 for most of the projects where I am involved.',
@@ -25,13 +39,8 @@ export const useExperienceStore = defineStore({
           'Debugging and fixing bugs in production when needed.',
           'Check experience from <strong>Front-end Engineer I</strong> section since it is the same company and the above are the new responsibilities + Skills & Languages section.',
         ],
-        language: [
-          'Vue 2', 'Vue 3', 'Vuetify 2', 'Vuetify 3', 'Vuex', 'Pinia', 'Vite', 'Vue.cli', 'Webpack', 'APIs', 'DOM', 'JavaScript', 'SASS', 'CSS3',
-          'HTML5', 'Jest', 'Cypress', 'Wordpress', 'SEO', 'Accessibility', 'Contentful', 'Git', 'Pagely',
-          'Jenkins', 'AppDynamics', 'Sentry', 'UpTrends', 'Nuxt', 'Express', 'Node.js', 'Basic-Workers(Cloudflare)',
-        ],
         shouldAddExtraStyling: false,
-        isTheSameCompany: false,
+        isTheSameCompany: true,
       },
       {
         title: 'Teaching Assistant',
@@ -58,7 +67,7 @@ export const useExperienceStore = defineStore({
         isTheSameCompany: false,
       },
       {
-        title: 'Front-end Engineer I',
+        title: 'Junior Frontend Engineer',
         companyName: 'Garmin',
         companyWebsite: 'https://www.garmin.com/en-US/',
         duration: 'Jul 2020 - Jun 2022',
@@ -79,7 +88,7 @@ export const useExperienceStore = defineStore({
           'Proxy in Node.js.',
         ],
         shouldAddExtraStyling: false,
-        isTheSameCompany: false,
+        isTheSameCompany: true,
       },
       {
         title: 'Web Developer / Designer',
