@@ -1,17 +1,11 @@
 <script setup>
-/* Imports */
-import { reactive } from 'vue';
-
+/* Helpers */
 import { useScrollPosition } from '../composable/useScrollPosition';
+import pdfResume from '/Olimpiu_Seulean_Resume_December_2023.pdf'
 import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
 /* Handle hide navBar */
 const { hideElement } = useScrollPosition();
-
-/* State */
-const state = reactive({
-  resumeURL: 'https://drive.google.com/file/d/1FB8DOQORG_3ug05Ctprp-zR27cn6vBRj/view?usp=sharing',
-});
 
 /* Handle GA for the resume button */
 const resumeGAEvent = () => {
@@ -21,11 +15,11 @@ const resumeGAEvent = () => {
 
 <template>
   <nav
-    class="app-navigation-bar"
     v-if="hideElement"
+    class="app-navigation-bar"
   >
     <a
-      :href="state.resumeURL"
+      :href="pdfResume"
       target="_blank"
       @click="resumeGAEvent"
       class="app-navigation-bar__link"
