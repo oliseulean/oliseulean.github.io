@@ -2,9 +2,10 @@
 import { defineStore } from 'pinia';
 
 /* Images */
-import CalendarAppImg from '/images/projectsImages/calendarApp.webp';
-import GuessNumberImg from '/images/projectsImages/guessNumber.webp';
 import LightHouseReportImg from '/images/projectsImages/lightHouseReport.webp';
+import SiteromImg from '/images/projectsImages/siterom.webp';
+import ReactVsVueImg from '/images/projectsImages/reactVsVue.webp';
+import DraculaImg from '/images/projectsImages/dracula.webp';
 import RecognitionAppImg from '/images/projectsImages/recognition.webp';
 import TranslogImg from '/images/projectsImages/translogCompany.webp';
 import JsChallengeImg from '/images/projectsImages/jsChallenges.webp';
@@ -17,9 +18,30 @@ export const useProjectsStore = defineStore({
     return {
       projects: [
         {
+          imgUrl: ReactVsVueImg,
+          name: 'Exploring React as a Vue.js Developer',
+          description: 'In this repository, my goal is to delve into React technology, starting from the basics, and thoroughly understand its behavior in comparison to Vue. I intend to learn every intricate detail, progressing step by step in order to gain a comprehensive understanding of React.',
+          link: 'https://github.com/oliseulean/learning_react_as_a_vue_developer',
+          wordpress: false,
+        },
+        {
+          imgUrl: SiteromImg,
+          name: 'Siterom - Security Company Website',
+          description: 'A presentation website for Siterom which is a security company from Târnăveni, Transylvania.',
+          link: 'https://siterom.ro',
+          wordpress: true,
+        },
+        {
+          imgUrl: DraculaImg,
+          name: 'Dracula - Hotel/Restaurant/Pension Website',
+          description: 'A presentation website for Dracula which is a hotel/restaurant/pension from Daneș, Transylvania.',
+          link: 'https://dracul.ro',
+          wordpress: true,
+        },
+        {
           imgUrl: HanulDinPadureImg,
           name: 'Hanul din Pădure - Hotel/Restaurant Website',
-          description: 'A presentation website for Hanul din Pădure which is a restaurant/hotel from Sighișoara, Transylvania.',
+          description: 'A presentation website for Hanul din Pădure which is a restaurant/hotel from Daneș, Transylvania.',
           link: 'https://hanuldinpadure.ro',
           wordpress: true,
         },
@@ -58,20 +80,6 @@ export const useProjectsStore = defineStore({
           name: '100 Days of JS Coding Challenges',
           description: 'A repo for resolving multiple problems in JS programming language.',
           link: 'https://github.com/oliseulean/100-coding-js-challenges',
-          wordpress: false,
-        },
-        {
-          imgUrl: CalendarAppImg,
-          name: 'Calendar-App-Vue',
-          description: 'A Calendar App in VueJS with Vuex & NodeJS.',
-          link: 'https://github.com/oliseulean/Calendar-App-Vue-Node',
-          wordpress: false,
-        },
-        {
-          imgUrl: GuessNumberImg,
-          name: 'Guess the number based on voice recognition',
-          description: 'A basic VanillaJs application which is using an API for guessing a number between 1 - 100 based on voice recognition.',
-          link: 'https://github.com/oliseulean/guess-the-number-based-on-voice-recognition',
           wordpress: false,
         },
       ],
