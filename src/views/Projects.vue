@@ -6,6 +6,7 @@ import PageTitle from '../components/PageTitle.vue';
 import Image from '../components/Image.vue';
 
 import sendGAEvent from '../helpers/sendAnalyticsEvent';
+
 /* Props */
 const props = defineProps({
   globalStore: {
@@ -25,18 +26,14 @@ const state = reactive({
   showMoreProjectsButton: computed(() => state.maxProjectsShown < props.projectsStore?.projects?.length),
 });
 
-const loadMoreProjects = () => {
-  return state.maxProjectsShown += 3;
-};
+const loadMoreProjects = () => state.maxProjectsShown += 3;
 
 const handlerLoadMoreProjects = () => {
   loadMoreProjectsBtnGAEvent();
   loadMoreProjects();
 };
 
-const displayNameButton = project => {
-  return project?.wordpress ? 'See Website' : 'See code';
-};
+const displayNameButton = project => project?.wordpress ? 'See Website' : 'See code';
 
 /* Google Analytics */
 const projectsBtnGAEvent = e => {
@@ -45,10 +42,7 @@ const projectsBtnGAEvent = e => {
   sendGAEvent('Olimpiu Seulean Portfolio', 'Projects click', cleanUpGithubUrl, 1);
 };
 
-const loadMoreProjectsBtnGAEvent = () => {
-  sendGAEvent('Olimpiu Seulean Portfolio', 'Projects click', 'Show More Projects', 1);
-};
-
+const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio', 'Projects click', 'Show More Projects', 1);
 </script>
 
 <template>

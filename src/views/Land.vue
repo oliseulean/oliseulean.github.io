@@ -164,7 +164,11 @@ const handlerOnScrollDownBtn = () => {
 
   &__bottom {
     position: absolute;
-    bottom: 3.5rem;
+    bottom: 6.5rem;
+
+    @include sm {
+      bottom: 3.5rem;
+    }
 
     &-btn {
       background-color: transparent;

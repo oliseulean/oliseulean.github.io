@@ -1,24 +1,36 @@
 <script setup>
 /* Imports */
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+
+/* Helpers */
+import { useScrollPosition } from '../composable/useScrollPosition';
 import { getCurrentYear } from '../helpers/getCurrentYear';
+import pdfResume from '/Olimpiu_Seulean_Resume_December_2023.pdf';
 
-const verbiage = `Olimpiu Seulean &copy; ${getCurrentYear()} | All rights reserved.`;
-
+/* State */
 const state = ref({
   links: [
     { text: 'Linkedin | ', href: 'https://www.linkedin.com/in/seulean-olimpiu/' },
     { text: 'Github |', href: 'https://github.com/oliseulean' },
     { text: 'Contact Me |', href: 'mailto:seulean.olimpiu@gmai.com' },
-    { text: 'Resume |', href: 'https://drive.google.com/file/d/1FB8DOQORG_3ug05Ctprp-zR27cn6vBRj/view?usp=sharing' },
+    { text: 'Resume |', href: pdfResume },
   ],
 });
+
+const footerVerbiage = `Olimpiu Seulean &copy; ${getCurrentYear()} | All rights reserved.`;
+
+/* Handle hide - show Footer */
+const { hideElement } = useScrollPosition();
+const dynamicPositionClass = computed(() => hideElement.value ? 'fixed' : 'relative');
 </script>
 
 <template>
-  <div class="app-footer">
+  <div :class="['app-footer', dynamicPositionClass]">
     <div class="app-footer-left">
-      <p class="app-footer-left__copyright" v-html="verbiage" />
+      <p
+        class="app-footer-left__copyright"
+        v-html="footerVerbiage"
+      />
     </div>
 
     <div class="app-footer-right">
@@ -47,12 +59,19 @@ const state = ref({
   justify-content: space-between;
   width: 100%;
   padding: 1rem 2rem;
-  position: fixed;
   bottom: 0;
   background: $color-black-pearl;
   border-top: 1px solid $color-black-pearl;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
   flex-direction: column;
+
+  &.relative {
+    position: relative;
+  }
+
+  &.fixed {
+    position: fixed;
+  }
 
   @include sm {
     flex-direction: row;
@@ -74,7 +93,6 @@ const state = ref({
         padding-right: 1.5rem;
       }
 
-
       &-item {
         margin: 0.2rem;
 
@@ -95,4 +113,3 @@ const state = ref({
   }
 }
 </style>
-

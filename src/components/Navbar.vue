@@ -1,7 +1,7 @@
 <script setup>
 /* Helpers */
 import { useScrollPosition } from '../composable/useScrollPosition';
-import pdfResume from '/Olimpiu_Seulean_Resume_December_2023.pdf'
+import pdfResume from '/Olimpiu_Seulean_Resume_December_2023.pdf';
 import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
 /* Handle hide navBar */
