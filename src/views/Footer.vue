@@ -5,7 +5,7 @@ import { ref, computed } from 'vue';
 /* Helpers */
 import { useScrollPosition } from '../composable/useScrollPosition';
 import { getCurrentYear } from '../helpers/getCurrentYear';
-import pdfResume from '/Olimpiu_Seulean_Resume_December_2023.pdf';
+import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
 
 /* State */
 const state = ref({
