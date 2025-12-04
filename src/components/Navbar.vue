@@ -21,8 +21,8 @@ const resumeGAEvent = () => {
     <a
       :href="pdfResume"
       target="_blank"
-      @click="resumeGAEvent"
       class="navigation-bar__link"
+      @click="resumeGAEvent"
     >
       Resume.📎
     </a>
@@ -42,8 +42,7 @@ const resumeGAEvent = () => {
   transition: 0.4s ease-in-out;
   animation: 0.4s appear;
   z-index: 3;
-
-  @include keyframe-appear();
+  @include keyframe-appear;
 
   &__link {
     display: flex;
@@ -51,7 +50,7 @@ const resumeGAEvent = () => {
     color: $color-black-pearl;
     font-size: $font-size-medium;
     @include font-weight(bold);
-    @include font-monserrat();
+    @include font-monserrat;
     background: transparent;
 
     &:hover,

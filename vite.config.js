@@ -1,15 +1,18 @@
+/* Imports */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
-
-const { npm_package_name: appName, npm_package_version: appVersion } = process.env;
+import {
+  name as appName,
+  version as appVersion,
+} from './package.json';
 
 export default defineConfig({
+  base: '/',
   server: {
     port: 5000,
     host: true,
   },
-  base: '/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -20,7 +23,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/assets/styles/base.scss";',
+        additionalData: `
+          @use '@/styles/base.scss' as *;
+        `,
       },
     },
   },

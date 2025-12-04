@@ -1,3 +1,5 @@
+@use 'breakpoints.scss' as *;
+
 /**
  * Global breakpoints variables
  */
@@ -31,7 +33,7 @@
 }
 
 // Custom devices
-@mixin customBreakpoint($screen) {
+@mixin custom-breakpoint($screen) {
   @media (min-width: #{$screen + 'px'}) {
     @content;
   }

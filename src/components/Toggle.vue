@@ -22,11 +22,17 @@ const props = defineProps({
 
 <template>
   <div class="toggle">
-    <p v-if="props.title" class="toggle__title">
+    <p
+      v-if="props.title"
+      class="toggle__title"
+    >
       {{ props.title }}
     </p>
 
-    <p v-if="props.subtitle" class="toggle__subtitle">
+    <p
+      v-if="props.subtitle"
+      class="toggle__subtitle"
+    >
       {{ props.subtitle }}
     </p>
 

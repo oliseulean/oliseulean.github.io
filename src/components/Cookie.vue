@@ -45,8 +45,8 @@ onMounted(() => {
 
 <template>
   <div
-    class="cookie"
     v-if="state.showCookiePopUp"
+    class="cookie"
   >
     <div class="cookie__floating cookie__floating--bottom-left">
       <div class="cookie__content">
@@ -90,8 +90,7 @@ onMounted(() => {
     left: 0;
     right: 0;
     margin: 0 auto;
-
-    @include font-roboto-slab();
+    @include font-roboto-slab;
 
     @include md {
       max-width: 18.75rem;
@@ -125,7 +124,7 @@ onMounted(() => {
   &__buttons {
     cursor: pointer;
     color: $color-fruit-salad;
-    @include font-roboto-slab();
+    @include font-roboto-slab;
     @include font-weight(bold);
     background-color: $color-gallery;
     font-size: 0.875rem;

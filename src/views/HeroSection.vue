@@ -44,7 +44,7 @@ const handleScrollDownClick = () => {
     <div class="hero-section__content">
       <h1 class="hero-section__content__title">
         hello! 👋🏽
-        <br />
+        <br>
         I'm Olimpiu Șeulean
       </h1>
 
@@ -77,7 +77,7 @@ const handleScrollDownClick = () => {
           width="50"
           class="hero-section__scroll-indicator__scroll-icon"
           loading="lazy"
-        />
+        >
       </button>
     </div>
   </div>
@@ -90,11 +90,11 @@ const handleScrollDownClick = () => {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 
   &__content {
-    @include keyframe-typing();
-    @include keyframe-appear();
+    @include keyframe-typing;
+    @include keyframe-appear;
 
     &__title {
       color: $color-web-orange;
@@ -103,7 +103,7 @@ const handleScrollDownClick = () => {
       background-color: transparent;
       line-height: 2.5rem;
       @include font-weight(normal);
-      @include font-monserrat();
+      @include font-monserrat;
 
       @include sm {
         font-size: $font-size-large-xl;
@@ -118,9 +118,13 @@ const handleScrollDownClick = () => {
   }
 
   &__linkedin {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
     &-text {
       font-size: $font-size-normal;
-      @include font-monserrat();
+      @include font-monserrat;
       color: $color-black-pearl;
       overflow: hidden;
       white-space: nowrap;

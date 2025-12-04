@@ -35,10 +35,12 @@ const footerVerbiage = `Olimpiu Seulean &copy; ${getCurrentYear()} | All rights 
 <template>
   <div :class="footerClasses">
     <div class="footer-left">
+      <!-- eslint-disable vue/no-v-html -->
       <p
         class="footer-left__copyright"
         v-html="footerVerbiage"
       />
+      <!-- eslint-enable vue/no-v-html -->
     </div>
 
     <div class="footer-right">
@@ -48,12 +50,15 @@ const footerVerbiage = `Olimpiu Seulean &copy; ${getCurrentYear()} | All rights 
           :key="index"
           class="footer-right__list-item"
         >
+          <!-- eslint-disable vue/no-v-html -->
           <a
             :href="link.href"
             target="_blank"
+            rel="noopener noreferrer"
             class="footer-right__list-item-link"
             v-html="link.text"
           />
+          <!-- eslint-enable vue/no-v-html -->
         </li>
       </ul>
     </div>

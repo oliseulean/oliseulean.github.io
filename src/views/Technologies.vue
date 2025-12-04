@@ -70,9 +70,9 @@ const technologiesGAEvent = e => {
         <Toggle
           :buttons="state.buttons"
           :set-active-class="setActiveClass"
-          @click="technologiesGAEvent($event)"
           title="What My Programming Skills Included?"
           subtitle="I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies."
+          @click="technologiesGAEvent($event)"
         />
         <div class="technologies-section-container__skills">
           <SkillsAndTools
@@ -95,7 +95,7 @@ const technologiesGAEvent = e => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include font-roboto-slab();
+  @include font-roboto-slab;
 
   &-section {
     width: 70%;

@@ -72,17 +72,19 @@ const dynamicExperienceClasses = experience => {
         width="25"
         class="work__icon"
         loading="lazy"
-      />
+      >
       {{ experience.duration }}
     </p>
 
     <ul class="work__list-competencies">
+      <!-- eslint-disable vue/no-v-html -->
       <li
-        v-for="(experience, index) in experience.work"
-        :key="index"
+        v-for="(workExperience, workExperienceIndex) in experience.work"
+        :key="workExperienceIndex"
         class="work__competencies"
-        v-html="experience"
+        v-html="workExperience"
       />
+      <!-- eslint-enable vue/no-v-html -->
     </ul>
 
     <p
@@ -96,7 +98,7 @@ const dynamicExperienceClasses = experience => {
         width="25"
         class="work__icon"
         loading="lazy"
-      />
+      >
       Skills &amp; Languages
     </p>
 
@@ -105,8 +107,8 @@ const dynamicExperienceClasses = experience => {
       class="work__list-tools"
     >
       <li
-        v-for="(language, index) in experience.language"
-        :key="index"
+        v-for="(language, languageIndex) in experience.language"
+        :key="languageIndex"
         class="work__tools"
       >
         {{ language }}
@@ -119,7 +121,7 @@ const dynamicExperienceClasses = experience => {
 .work {
   &__experience {
     color: $color-white;
-    @include font-roboto-slab();
+    @include font-roboto-slab;
     @include font-weight(thin);
 
     &:not(:last-of-type) {
@@ -142,11 +144,11 @@ const dynamicExperienceClasses = experience => {
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     @include font-weight(thin);
-    line-height: 30px;
+    line-height: 1.875rem;
 
     &--color {
-      @include line-hover();
-      @include color-web-orange-style();
+      @include line-hover;
+      @include color-web-orange-style;
     }
 
     @include md {

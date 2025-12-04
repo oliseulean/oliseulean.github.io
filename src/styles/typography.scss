@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 /**
  * Global Typography Variables
  */
@@ -34,11 +36,10 @@ $font-size-large-xxl: 4rem;
     bold: 700,
     black: 900,
   );
-
   $output: $weight;
 
-  @if map-has-key($weights, $weight) {
-    $output: map-get($weights, $weight);
+  @if map.has-key($weights, $weight) {
+    $output: map.get($weights, $weight);
   }
 
   font-weight: $output;

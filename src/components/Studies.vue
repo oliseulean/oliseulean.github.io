@@ -65,7 +65,7 @@ const props = defineProps({
 .studies {
   &__entry {
     color: $color-white;
-    @include font-roboto-slab();
+    @include font-roboto-slab;
     @include font-weight(thin);
 
     &:not(:last-of-type) {
@@ -80,11 +80,11 @@ const props = defineProps({
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     @include font-weight(thin);
-    line-height: 30px;
+    line-height: 1.875rem;
 
     &-link {
-      @include line-hover();
-      @include color-web-orange-style();
+      @include line-hover;
+      @include color-web-orange-style;
     }
 
     @include md {
@@ -114,7 +114,7 @@ const props = defineProps({
   }
 
   &__grade-value {
-    @include color-web-orange-style();
+    @include color-web-orange-style;
   }
 
   &__thesis {

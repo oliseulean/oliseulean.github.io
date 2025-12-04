@@ -19,9 +19,11 @@ const props = defineProps({
   <Navbar />
   <div class="cookies-policy">
     <div class="cookies-policy__container">
-    <RouterLink to="/">
-      <button class="cookies-policy__home-button">🏠 Go Home</button>
-    </RouterLink>
+      <RouterLink to="/">
+        <button class="cookies-policy__home-button">
+          🏠 Go Home
+        </button>
+      </RouterLink>
       <PageTitle :color="props.globalStore?.colors?.colorMirage">
         COOKIES POLICY
       </PageTitle>
@@ -30,7 +32,7 @@ const props = defineProps({
     <p><strong>Please read the following information carefully:</strong></p>
     <p>
       In order to comply with the requirements established in the&nbsp;<strong>EU Directive of May 26,
-      2012&nbsp;</strong>and the provisions of&nbsp;<strong>Law no. 506 of November 17, 2004</strong>
+        2012&nbsp;</strong>and the provisions of&nbsp;<strong>Law no. 506 of November 17, 2004</strong>
       regarding the processing of personal data and the protection of privacy in
       the electronic communications sector, all visitors to the website are
       required to consent before sending cookies to their computers.
@@ -327,7 +329,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .cookies-policy {
-  @include font-roboto-slab();
+  @include font-roboto-slab;
   margin: 3rem;
   font-size: $font-size-normal;
 
@@ -358,7 +360,7 @@ const props = defineProps({
   }
 
   &__home-button {
-    @include black-button();
+    @include black-button;
     width: 100%;
 
     @include md {

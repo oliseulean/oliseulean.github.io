@@ -1,6 +1,6 @@
-@import 'typography';
-@import 'colors';
-@import 'breakpoints';
+@use 'typography.scss' as *;
+@use 'colors.scss' as *;
+@use 'breakpoints.scss' as *;
 
 html {
   box-sizing: border-box;

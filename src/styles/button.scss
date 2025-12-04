@@ -1,3 +1,7 @@
+@use 'colors.scss' as *;
+@use 'typography.scss' as *;
+@use 'breakpoints.scss' as *;
+
 @mixin black-button {
   background-color: $color-black;
   margin-bottom: 1rem;
@@ -11,7 +15,8 @@
   border: 1px solid $color-black;
   margin-top: 2rem;
   cursor: pointer;
-  @include font-roboto-slab();
+
+  @include font-roboto-slab;
 }
 
 @mixin transition {

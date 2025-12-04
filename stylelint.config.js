@@ -1,16 +1,26 @@
-module.exports = {
+export default {
   customSyntax: 'postcss-scss',
+  ignoreFiles: [
+    'node_modules/**',
+    'dist/**',
+  ],
+  plugins: [
+    'stylelint-scss',
+    '@stylistic/stylelint-plugin',
+  ],
   extends: [
     'stylelint-config-standard',
+    'stylelint-config-standard-scss',
   ],
   rules: {
-    'at-rule-no-unknown': null,
-    'function-no-unknown': null,
-    'string-quotes': 'single',
-    'import-notation': null,
     'at-rule-empty-line-before': null,
     'declaration-empty-line-before': null,
-    'selector-max-empty-lines': [1],
+    'comment-empty-line-before': null,
+    '@stylistic/indentation': 2,
+    'rule-empty-line-before': ['always-multi-line', {
+      except: ['first-nested'],
+      ignore: ['after-comment'],
+    }],
     'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['deep'] }],
   },
   overrides: [{

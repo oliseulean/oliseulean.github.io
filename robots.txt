@@ -1,7 +1,2 @@
-User-agent: Googlebot
-Disallow: /
-
 User-agent: *
-Allow: /
-
-Sitemap: https://olimpiuseulean.surge.sh/sitemap.xml
+Disallow:

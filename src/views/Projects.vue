@@ -64,8 +64,8 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
           <a
             :href="project.link"
             target="_blank"
-            @click="projectsBtnGAEvent($event)"
             class="projects-section-card__image"
+            @click="projectsBtnGAEvent($event)"
           >
             <img
               :alt="project.name"
@@ -73,7 +73,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
               height="600"
               width="1440"
               loading="lazy"
-            />
+            >
           </a>
         </div>
         <div class="projects-section-card__content">
@@ -91,7 +91,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
           >
             {{ displayNameButton(project) }}
           </a>
-          <hr class="projects-section-card__spacer" />
+          <hr class="projects-section-card__spacer">
         </div>
       </div>
       <button
@@ -110,7 +110,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include font-roboto-slab();
+  @include font-roboto-slab;
 
   &-section {
     width: 70%;
@@ -148,7 +148,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
         justify-content: center !important;
 
         &:hover {
-          @include transition();
+          @include transition;
         }
 
         @include md {
@@ -221,7 +221,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
       }
 
       &__see-code-btn {
-        @include black-button();
+        @include black-button;
         margin: 2.5rem auto;
 
         @include lg {
@@ -229,7 +229,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
         }
 
         &:hover {
-          @include transition();
+          @include transition;
           color: $color-white;
         }
       }
@@ -255,7 +255,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
     &__show-more-button {
       margin: 3rem auto 6rem !important;
       text-align: center;
-      @include black-button();
+      @include black-button;
 
       @include md {
         margin: 1.5rem auto 5rem !important;
@@ -266,7 +266,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
       }
 
       &:hover {
-        @include transition();
+        @include transition;
         color: $color-white;
       }
     }

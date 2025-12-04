@@ -4,31 +4,43 @@
   "description": "Personal Website",
   "main": "src/main.js",
   "author": "Olimpiu Seulean",
+  "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js --fix --ignore-path .gitignore .",
-    "lint:fix": "eslint . --ext .vue,.js --fix --ignore-path .gitignore . --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "stylelint": "stylelint \"**/*.{scss,vue}\"",
     "stylelint:fix": "stylelint \"**/*.{scss,vue}\" --fix",
-    "prepare": "husky install"
+    "security:check": "audit-ci --critical --high --report-type summary",
+    "prepare": "husky"
   },
   "dependencies": {
     "vue": "^3.2.37",
     "vue-router": "^4.1.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.1.0",
-    "eslint": "^8.36.0",
-    "eslint-plugin-vue": "^9.2.0",
-    "husky": "^8.0.3",
-    "pinia": "^2.0.33",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.1",
+    "@stylistic/stylelint-plugin": "^4.0.0",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "audit-ci": "^7.1.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-html": "^8.1.3",
+    "eslint-plugin-vue": "^10.6.2",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "pinia": "^3.0.4",
     "postcss-html": "^1.5.0",
     "postcss-scss": "^4.0.6",
     "sass": "^1.59.3",
-    "stylelint": "^15.3.0",
-    "stylelint-config-standard": "^31.0.0",
-    "vite": "^4.2.0"
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-scss": "^6.13.0",
+    "vite": "^7.2.6",
+    "vue-eslint-parser": "^10.2.0"
   }
 }

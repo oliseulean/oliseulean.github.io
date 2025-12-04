@@ -1,7 +1,5 @@
 /* Imports */
 import { defineStore } from 'pinia';
-
-/* Images */
 import LightHouseReportImg from '/images/projectsImages/lightHouseReport.webp';
 import SiteromImg from '/images/projectsImages/siterom.webp';
 import ReactVsVueImg from '/images/projectsImages/reactVsVue.webp';
@@ -12,8 +10,7 @@ import JsChallengeImg from '/images/projectsImages/jsChallenges.webp';
 import CarausulImg from '/images/projectsImages/carausul.webp';
 import HanulDinPadureImg from '/images/projectsImages/hanulDinPadure.webp';
 
-export const useProjectsStore = defineStore({
-  id: 'projects',
+export const useProjectsStore = defineStore('projects', {
   state: () => {
     return {
       projects: [

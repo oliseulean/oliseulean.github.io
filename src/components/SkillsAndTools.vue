@@ -31,7 +31,7 @@ const props = defineProps({
             width="80"
             class="skills-and-tools__icon"
             loading="lazy"
-          />
+          >
         </Tooltip>
       </li>
     </ul>

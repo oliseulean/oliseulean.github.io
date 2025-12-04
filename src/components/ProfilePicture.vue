@@ -45,7 +45,7 @@ const onLeaveAvatar = () => {
     loading="lazy"
     @mouseover="onHoverAvatar"
     @mouseleave="onLeaveAvatar"
-  />
+  >
 </template>
 
 <style lang="scss" scoped>

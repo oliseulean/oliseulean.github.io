@@ -1,8 +1,7 @@
 /* Imports */
 import { defineStore } from 'pinia';
 
-export const useExperienceStore = defineStore({
-  id: 'experience',
+export const useExperienceStore = defineStore('experience', {
   state: () => ({
     experience: [
       {

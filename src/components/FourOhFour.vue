@@ -6,13 +6,17 @@
       width="943"
       height="390"
       class="four-oh-four__warning-img"
-    />
-    <h1 class="four-oh-four__wrong-text">Opps!, something went wrong</h1>
+    >
+    <h1 class="four-oh-four__wrong-text">
+      Opps!, something went wrong
+    </h1>
     <p class="four-oh-four__not-found-text">
       We could not find that page you were looking for.
     </p>
     <RouterLink to="/">
-      <button class="four-oh-four__go-home-btn">🏠 Go Home</button>
+      <button class="four-oh-four__go-home-btn">
+        🏠 Go Home
+      </button>
     </RouterLink>
   </div>
 </template>
@@ -42,19 +46,19 @@
   }
 
   &__wrong-text {
-    @include font-monserrat();
+    @include font-monserrat;
     text-align: center;
     display: block;
     margin: 0 auto;
   }
 
   &__not-found-text {
-    @include font-roboto-slab();
+    @include font-roboto-slab;
     margin-top: 1rem;
   }
 
   &__go-home-btn {
-    @include black-button();
+    @include black-button;
   }
 }
 </style>

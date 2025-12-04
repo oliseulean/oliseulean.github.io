@@ -4,8 +4,7 @@ import { defineStore } from 'pinia';
 /* Helper for constructing the url path */
 const constructUrl = 'https://cdn-icons-png.flaticon.com/512/';
 
-export const useTechnologies = defineStore({
-  id: 'technologies',
+export const useTechnologies = defineStore('technologies', {
   state: () => {
     return {
       technologies: [
