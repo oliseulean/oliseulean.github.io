@@ -1,24 +1,30 @@
 /* Imports */
-import { ref, onMounted, onUnmounted } from 'vue';
+import {
+  ref,
+  onMounted,
+  onUnmounted,
+} from 'vue';
 
-/* Handle hideElement btn */
+/* Handle show/hide based on scroll */
 export const useScrollPosition = () => {
-  const hideElement = ref(false);
+  const shouldShow = ref(true);
+
+  const updateShouldShowBasedOnScroll = () => {
+    const currentScrollValue = window.pageYOffset ?? 0;
+    // Show when scroll is <= 600, hide when > 600
+    shouldShow.value = currentScrollValue <= 600;
+  };
 
   onMounted(() =>
-    window.addEventListener('scroll', toggleElementVisiblityBasedOnScroll)
+    window.addEventListener('scroll', updateShouldShowBasedOnScroll)
   );
 
   onUnmounted(() =>
-    window.removeEventListener('scroll', toggleElementVisiblityBasedOnScroll)
+    window.removeEventListener('scroll', updateShouldShowBasedOnScroll)
   );
 
-  const toggleElementVisiblityBasedOnScroll = () => {
-    const currentScrollValue = window?.pageYOffset;
-    currentScrollValue > 600
-      ? (hideElement.value = true)
-      : (hideElement.value = false);
+  return {
+    updateShouldShowBasedOnScroll,
+    shouldShow,
   };
-
-  return { toggleElementVisiblityBasedOnScroll, hideElement };
 };

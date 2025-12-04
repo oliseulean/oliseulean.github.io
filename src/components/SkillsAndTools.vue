@@ -1,39 +1,36 @@
 <script setup>
 /* Imports */
-import Tooltip from '../components/Tooltip';
-import Image from '../components/Image';
+import Tooltip from '../components/Tooltip.vue';
 
 /* Props */
 const props = defineProps({
   icons: {
     type: Array,
-    default() {
-      return [];
-    },
+    default: () => [],
   },
 });
 </script>
 
 <template>
-  <div class="app-skills-and-tools">
-    <ul class="app-skills-and-tools__items">
+  <div class="skills-and-tools">
+    <ul class="skills-and-tools__items">
       <li
         v-for="(icon, index) in props.icons"
         :key="index"
-        class="app-skills-and-tools__item"
+        class="skills-and-tools__item"
       >
         <Tooltip
           position="top"
           :content="icon.title"
-          class="app-skills-and-tools__tooltip"
+          class="skills-and-tools__tooltip"
         >
-          <Image
-            :altText="icon.alt"
+          <img
+            :alt="icon.alt"
             :src="icon.source"
-            :height="80"
-            :width="80"
-            :class="'app-skills-and-tools__icon'"
-            :loading="'lazy'"
+            height="80"
+            width="80"
+            class="skills-and-tools__icon"
+            loading="lazy"
           />
         </Tooltip>
       </li>
@@ -42,7 +39,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-.app-skills-and-tools {
+.skills-and-tools {
   position: relative;
   display: inline-block;
 

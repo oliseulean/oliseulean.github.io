@@ -1,34 +1,28 @@
 <script setup>
 /* Imports */
 import { defineAsyncComponent } from 'vue';
-
 const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 const Footer = defineAsyncComponent(() => import('../views/Footer.vue'));
-const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
+const BackToTopBtn = defineAsyncComponent(() => import('../components/BackToTopBtn.vue'));
 
 /* Props */
 const props = defineProps({
   globalStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
 });
 </script>
 
 <template>
   <Navbar />
-  <div class="app-cookies-policy">
-    <div class="app-cookies-policy__container">
-      <button
-        class="app-cookies-policy__home-button"
-        @click="$router.push('/')"
-      >
-        🏠 Go Home
-      </button>
-      <PageTitle
-        :color="props.globalStore?.colors?.colorMirage"
-      >
+  <div class="cookies-policy">
+    <div class="cookies-policy__container">
+    <RouterLink to="/">
+      <button class="cookies-policy__home-button">🏠 Go Home</button>
+    </RouterLink>
+      <PageTitle :color="props.globalStore?.colors?.colorMirage">
         COOKIES POLICY
       </PageTitle>
     </div>
@@ -328,11 +322,11 @@ const props = defineProps({
     </p>
   </div>
   <Footer />
-  <BackToTop />
+  <BackToTopBtn />
 </template>
 
 <style lang="scss" scoped>
-.app-cookies-policy {
+.cookies-policy {
   @include font-roboto-slab();
   margin: 3rem;
   font-size: $font-size-normal;
@@ -398,7 +392,7 @@ const props = defineProps({
   }
 }
 
-.app-title {
+.page-title {
   display: block;
   margin: auto;
 }

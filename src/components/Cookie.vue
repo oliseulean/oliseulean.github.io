@@ -1,9 +1,12 @@
 <script setup>
 /* Imports */
-import { onMounted, reactive } from 'vue';
+import {
+  onMounted,
+  ref,
+} from 'vue';
 
 /* State */
-const state = reactive({
+const state = ref({
   showCookiePopUp: true,
 });
 
@@ -22,7 +25,7 @@ const acceptGDPR = () => {
 };
 
 const hideCookiePopup = () => {
-  return state.showCookiePopUp = false;
+  return state.value.showCookiePopUp = false;
 };
 
 const handlerGDPR = () => {
@@ -36,28 +39,28 @@ const handlerGDPR = () => {
  * page do not show again the cookie pop-up.
  */
 onMounted(() => {
-  return localStorage.getItem('GDPR') ? state.showCookiePopUp = false : '';
+  return localStorage.getItem('GDPR') ? state.value.showCookiePopUp = false : '';
 });
 </script>
 
 <template>
   <div
-    class="app-cookie"
+    class="cookie"
     v-if="state.showCookiePopUp"
   >
-    <div class="app-cookie__floating app-cookie__floating--bottom-left">
-      <div class="app-cookie__content">
+    <div class="cookie__floating cookie__floating--bottom-left">
+      <div class="cookie__content">
         I use cookies to ensure you get the best experience on my website.
         <router-link
           to="/cookies-policy"
-          class="app-cookie__content--link"
+          class="cookie__content--link"
         >
           Cookies policy.
         </router-link>
       </div>
-      <div class="app-cookie__buttons">
+      <div class="cookie__buttons">
         <button
-          class="app-cookie__buttons app-cookie__buttons--accept"
+          class="cookie__buttons cookie__buttons--accept"
           @click="handlerGDPR"
         >
           Accept
@@ -68,7 +71,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.app-cookie {
+.cookie {
   &__floating {
     display: flex;
     justify-content: space-between;
@@ -91,11 +94,11 @@ onMounted(() => {
     @include font-roboto-slab();
 
     @include md {
-      max-width: 300px;
+      max-width: 18.75rem;
 
       &--bottom-left {
-        bottom: 20px;
-        left: 20px;
+        bottom: 1.25rem;
+        left: 1.25rem;
         right: auto;
         margin: 0;
       }
@@ -104,13 +107,13 @@ onMounted(() => {
 
   &__content {
     font-size: 0.875rem;
-    margin-bottom: 5px;
-    padding: 15px 20px;
-    max-height: 105px;
+    margin-bottom: 0.3125rem;
+    padding: 0.9375rem 1.25rem;
+    max-height: 6.5625rem;
     overflow: auto;
 
     @include md {
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
 
     &--link {
@@ -127,7 +130,7 @@ onMounted(() => {
     background-color: $color-gallery;
     font-size: 0.875rem;
     width: 100%;
-    min-height: 40px;
+    min-height: 2.5rem;
     white-space: nowrap;
     user-select: none;
     border-bottom: 0.1px solid $color-alto;

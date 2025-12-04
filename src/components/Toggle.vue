@@ -1,48 +1,46 @@
 <script setup>
+/* Props */
 const props = defineProps({
   buttons: {
     type: Array,
-    required: true,
+    default: () => [],
   },
   setActiveClass: {
     type: Function,
-    required: false,
+    default: () => {},
   },
   title: {
     type: String,
-    required: false,
+    default: undefined,
   },
   subtitle: {
     type: String,
-    required: false,
+    default: undefined,
   },
 });
 </script>
 
 <template>
-  <div :class="['app-toggle', 'app-toggle__button-group']">
-    <p
-      v-if="props.title"
-      class="app-toggle__title"
-    >
+  <div class="toggle">
+    <p v-if="props.title" class="toggle__title">
       {{ props.title }}
     </p>
 
-    <p
-      v-if="props.subtitle"
-      class="app-toggle__subtitle"
-    >
+    <p v-if="props.subtitle" class="toggle__subtitle">
       {{ props.subtitle }}
     </p>
 
-    <ul class="app-toggle__items">
+    <ul class="toggle__list">
       <li
         v-for="(button, index) in props.buttons"
         :key="index"
+        class="toggle__item"
       >
         <button
-          class="app-toggle__button-group--button"
-          :class="button.class"
+          class="toggle__button"
+          :class="{
+            'toggle__button--active': button.class === 'active',
+          }"
           @click="props.setActiveClass(button.id)"
         >
           {{ button.text }}
@@ -53,7 +51,19 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-.app-toggle {
+.toggle {
+  width: 100%;
+  color: $color-white;
+  text-align: center;
+
+  @include md {
+    width: 100%;
+  }
+
+  @include lg {
+    width: 50%;
+  }
+
   &__title {
     font-size: $font-size-medium;
     letter-spacing: 1px;
@@ -91,54 +101,36 @@ const props = defineProps({
     }
   }
 
-  &__button-group {
-    width: 100%;
-    color: $color-white;
-    text-align: center;
-
-    @include md {
-      width: 100%;
-    }
-
-    @include lg {
-      width: 50%;
-    }
-
-    &--button {
-      width: 80px;
-      height: 40px;
-      list-style-type: none;
-      cursor: pointer;
-      border: none;
-      background: $color-black-pearl;
-      color: $color-white;
-      border-radius: 30px;
-
-      @include font-weight(bold);
-
-      &.active {
-        background: $color-web-orange;
-        border-radius: 30px;
-      }
-    }
-  }
-
-  &__items {
+  &__list {
     display: flex;
     list-style-type: none;
     margin: 2rem auto;
-    width: 150px;
+    width: 9.375rem;
     background: $color-black-pearl;
-    border-radius: 30px;
+    border-radius: 3rem;
     justify-content: left;
 
-    @include md {
-      width: 150px;
-    }
-
     @include lg {
-      width: 150px;
-      margin: 0 !important;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__button {
+    width: 5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    background: $color-black-pearl;
+    color: $color-white;
+    border-radius: 30px;
+    @include font-weight(bold);
+
+    &--active {
+      background: $color-web-orange;
     }
   }
 }

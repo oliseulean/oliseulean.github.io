@@ -1,6 +1,10 @@
 <script setup>
 /* Imports */
-import { onMounted, onUnmounted, reactive } from 'vue';
+import {
+  onMounted,
+  onUnmounted,
+  ref,
+} from 'vue';
 
 /* Props */
 const props = defineProps({
@@ -15,7 +19,7 @@ const props = defineProps({
 });
 
 /* State */
-const state = reactive({
+const state = ref({
   hideTooltip: false,
 })
 
@@ -23,25 +27,26 @@ const state = reactive({
 onMounted(() => {
   return window.addEventListener('touchmove', handleTouchMove);
 });
+
 onUnmounted(() => {
   return window.removeEventListener('touchmove', handleTouchMove);
 });
 
 const handleTouchMove = () => {
-  return state.hideTooltip = true;
+  return state.value.hideTooltip = true;
 };
 </script>
 
 <template>
-  <div class="app-tooltip">
+  <div class="tooltip">
     <div
-      :class="`app-tooltip__position ${props.position}`"
+      :class="`tooltip__position ${props.position}`"
       tabindex="0"
     >
       <slot />
       <span
         ref="hideTooltipRef"
-        class="app-tooltip__text"
+        class="tooltip__text"
       >
         {{ props.content }}
       </span>
@@ -50,7 +55,7 @@ const handleTouchMove = () => {
 </template>
 
 <style lang="scss" scoped>
-.app-tooltip {
+.tooltip {
   &__position {
     position: relative;
     display: inline-block;
@@ -58,12 +63,12 @@ const handleTouchMove = () => {
 
   &__text {
     visibility: hidden;
-    width: 100px;
+    width: 6.25rem;
     background-color: rgba($color-black, 0.6);
     color: $color-white;
     text-align: center;
     border-radius: 6px;
-    padding: 8px 0;
+    padding: 0.5rem 0;
     position: absolute;
     z-index: 1;
     transition: opacity 0.3s;
@@ -74,17 +79,17 @@ const handleTouchMove = () => {
  * Tooltip top content
  */
 // stylelint-disable-next-line selector-class-pattern
-.top .app-tooltip__text {
+.top .tooltip__text {
   bottom: 105%;
   left: 50%;
-  margin-left: -50px;
+  margin-left: -3.125rem;
 }
 
 /*
  * Tooltip right content
  */
 // stylelint-disable-next-line selector-class-pattern
-.right .app-tooltip__text {
+.right .tooltip__text {
   top: 1.2rem;
   left: 120%;
 
@@ -98,7 +103,7 @@ const handleTouchMove = () => {
 }
 
 // stylelint-disable-next-line selector-class-pattern
-.app-tooltip__position:hover .app-tooltip__text {
+.tooltip__position:hover .tooltip__text {
   visibility: visible;
   opacity: 1;
 }

@@ -1,19 +1,19 @@
 <script setup>
 /* Imports */
-import Land from '../views/Land.vue';
+import HeroSection from '../views/HeroSection.vue';
 import { useGlobalStore } from '../stores/global';
 import { useExperienceStore } from '../stores/experience';
 import { useTechnologies } from '../stores/technologies';
 import { useProjectsStore } from '../stores/projects';
-
 import { defineAsyncComponent } from 'vue';
 
+/* Async Components */
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 const Work = defineAsyncComponent(() => import('../views/Work.vue'));
 const Technologies = defineAsyncComponent(() => import('../views/Technologies'));
 const Projects = defineAsyncComponent(() => import('../views/Projects.vue'));
 const Footer = defineAsyncComponent(() => import('../../src/views/Footer.vue'));
-const BackToTop = defineAsyncComponent(() => import('../components/BackToTop.vue'));
+const BackToTopBtn = defineAsyncComponent(() => import('../components/BackToTopBtn.vue'));
 const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
 
 /* Store */
@@ -24,7 +24,7 @@ const projectsStore = useProjectsStore();
 </script>
 
 <template>
-  <Land />
+  <HeroSection />
   <Cookie
     :global-store="globalStore"
   />
@@ -42,5 +42,5 @@ const projectsStore = useProjectsStore();
     :projects-store="projectsStore"
   />
   <Footer />
-  <BackToTop />
+  <BackToTopBtn />
 </template>

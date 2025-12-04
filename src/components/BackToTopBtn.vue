@@ -1,17 +1,18 @@
 <script setup>
 /* Imports */
 import { computed } from 'vue';
-
-import { useScrollPosition } from '../composable/useScrollPosition';
-import sendGAEvent from '../helpers/sendAnalyticsEvent';
-
+import { useScrollPosition } from '../composable/useScrollPosition.js';
+import sendGAEvent from '../helpers/sendAnalyticsEvent.js';
 import ArrowIcon from '../assets/icons/Arrow.vue';
 
-/* Handle hide button */
-const { hideElement } = useScrollPosition();
+/* Composable */
+const { shouldShow } = useScrollPosition();
 
-const goToTopComputedClassName = computed(() => {
-  return hideElement.value ? 'go-to-top-btn' : '';
+const backToTopBtnClasses = computed(() => {
+  return {
+    'back-to-top-btn': true,
+    'back-to-top-btn--shown': !shouldShow.value,
+  };
 });
 
 /* Handle @click event */
@@ -20,12 +21,16 @@ const handlerOnBtnClick = () => {
   scrollToTop();
 };
 
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+const scrollToTop = () =>
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 </script>
 
 <template>
   <div
-    :class="['app-back-to-top-btn', goToTopComputedClassName]"
+    :class="backToTopBtnClasses"
     tabindex="0"
     @click="handlerOnBtnClick()"
     @keydown.enter="handlerOnBtnClick()"
@@ -36,14 +41,14 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 </template>
 
 <style lang="scss" scoped>
-.app-back-to-top-btn {
+.back-to-top-btn {
   background-color: $color-white;
   position: fixed;
   cursor: pointer;
   right: 0;
   text-align: center;
-  width: 38px;
-  height: 38px;
+  width: 2.375rem;
+  height: 2.375rem;
   border-radius: 50%;
   transition: 0.6s;
   overflow: hidden;
@@ -59,7 +64,7 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
     transform: translateY(-5px);
   }
 
-  &.go-to-top-btn {
+  &--shown {
     opacity: 1;
     visibility: visible;
     bottom: 0.5rem;

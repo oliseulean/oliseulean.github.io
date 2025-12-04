@@ -11,19 +11,22 @@ import CodingIcon from '/icons/coding.webp';
 const props = defineProps({
   globalStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
   experienceStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
 });
 </script>
 
 <template>
-  <div id="experience" class="app-work-and-studies">
+  <div
+    id="experience"
+    class="work-and-studies"
+  >
     <ProfilePicture />
-    <div class="app-work-and-studies__section">
+    <div class="work-and-studies__section">
       <Experience
         :experience-store="props.experienceStore?.experience"
         :global-store="props.globalStore"
@@ -31,7 +34,8 @@ const props = defineProps({
         :coding-icon="CodingIcon"
       />
     </div>
-    <div class="app-work-and-studies__section">
+
+    <div class="work-and-studies__section">
       <Studies
         :studies="props.experienceStore?.university"
         :global-store="props.globalStore"
@@ -41,7 +45,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-.app-work-and-studies {
+.work-and-studies {
   display: flex;
   flex-direction: column;
   align-items: center;

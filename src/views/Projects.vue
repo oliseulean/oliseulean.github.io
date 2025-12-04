@@ -1,32 +1,34 @@
 <script setup>
 /* Imports */
-import { reactive, computed } from 'vue';
-
+import {
+  ref,
+  computed,
+} from 'vue';
 import PageTitle from '../components/PageTitle.vue';
-import Image from '../components/Image.vue';
-
 import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
 /* Props */
 const props = defineProps({
   globalStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
   projectsStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
 });
 
 /* State */
-const state = reactive({
+const state = ref({
   maxProjectsShown: 3,
-  visibleProjects: computed(() => props.projectsStore?.projects?.slice(0, state.maxProjectsShown)),
-  showMoreProjectsButton: computed(() => state.maxProjectsShown < props.projectsStore?.projects?.length),
 });
 
-const loadMoreProjects = () => state.maxProjectsShown += 3;
+const visibleProjects = computed(() => props.projectsStore?.projects?.slice(0, state.value.maxProjectsShown));
+
+const showMoreProjectsButton = computed(() => state.value.maxProjectsShown < props.projectsStore?.projects?.length);
+
+const loadMoreProjects = () => state.value.maxProjectsShown += 3;
 
 const handlerLoadMoreProjects = () => {
   loadMoreProjectsBtnGAEvent();
@@ -46,55 +48,55 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
 </script>
 
 <template>
-  <div class="app-projects">
-    <div class="app-projects-section">
+  <div class="projects">
+    <div class="projects-section">
       <PageTitle
         :color="props.globalStore?.colors?.colorMirage"
       >
         FEATURED PROJECTS
       </PageTitle>
       <div
-        v-for="(project, index) in state.visibleProjects"
+        v-for="(project, index) in visibleProjects"
         :key="index"
-        class="app-projects-section-card"
+        class="projects-section-card"
       >
-        <div class="app-projects-section-card__image">
+        <div class="projects-section-card__image">
           <a
             :href="project.link"
             target="_blank"
             @click="projectsBtnGAEvent($event)"
-            class="app-projects-section-card__image"
+            class="projects-section-card__image"
           >
-            <Image
-              :altText="project.name"
+            <img
+              :alt="project.name"
               :src="project.imgUrl"
-              :height="600"
-              :width="1440"
-              :loading="'lazy'"
+              height="600"
+              width="1440"
+              loading="lazy"
             />
           </a>
         </div>
-        <div class="app-projects-section-card__content">
-          <p class="app-projects-section-card__project-name">
+        <div class="projects-section-card__content">
+          <p class="projects-section-card__project-name">
             {{ project.name }}
           </p>
-          <p class="app-projects-section-card__project-description">
+          <p class="projects-section-card__project-description">
             {{ project.description }}
           </p>
           <a
             :href="project.link"
             target="_blank"
-            class="app-projects-section-card__see-code-btn"
+            class="projects-section-card__see-code-btn"
             @click="projectsBtnGAEvent($event)"
           >
             {{ displayNameButton(project) }}
           </a>
-          <hr class="app-projects-section-card__spacer" />
+          <hr class="projects-section-card__spacer" />
         </div>
       </div>
       <button
-        v-if="state.showMoreProjectsButton"
-        class="app-projects-section__show-more-button"
+        v-if="showMoreProjectsButton"
+        class="projects-section__show-more-button"
         @click="handlerLoadMoreProjects"
       >
         SHOW MORE PROJECTS
@@ -104,7 +106,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
 </template>
 
 <style lang="scss" scoped>
-.app-projects {
+.projects {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,10 +188,6 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
           width: 50%;
           padding: 5rem;
           text-align: left;
-        }
-
-        &:last-child {
-          // margin-bottom: 5rem;
         }
       }
 
@@ -283,7 +281,7 @@ div > div:last-child > div > hr {
 }
 
 // stylelint-disable-next-line selector-class-pattern
-:deep(.app-title__heading) {
+:deep(.page-title__heading) {
   padding-bottom: 0;
 }
 </style>

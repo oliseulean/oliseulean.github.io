@@ -1,39 +1,24 @@
-<script setup>
-/* Imports */
-import Image from './Image.vue';
-
-/* handle go to home page */
-const goToTheHomePage = () => {
-  window.location.href = '/';
-};
-</script>
-
 <template>
-  <div class="app-four-oh-four">
-    <Image
-      :src="'/images/fourOhFour.webp'"
-      :altText="'404_image'"
-      :width="943"
-      :height="390"
-      :class="'app-four-oh-four__warning-img'"
+  <div class="four-oh-four">
+    <img
+      src="/images/fourOhFour.webp"
+      alt="404 Image"
+      width="943"
+      height="390"
+      class="four-oh-four__warning-img"
     />
-    <h1 class="app-four-oh-four__wrong-text">
-      Opps!, something went wrong
-    </h1>
-    <p class="app-four-oh-four__not-found-text">
+    <h1 class="four-oh-four__wrong-text">Opps!, something went wrong</h1>
+    <p class="four-oh-four__not-found-text">
       We could not find that page you were looking for.
     </p>
-    <button
-      class="app-four-oh-four__go-home-btn"
-      @click.prevent="goToTheHomePage()"
-    >
-      🏠 Go Home
-    </button>
+    <RouterLink to="/">
+      <button class="four-oh-four__go-home-btn">🏠 Go Home</button>
+    </RouterLink>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.app-four-oh-four {
+.four-oh-four {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,17 +27,17 @@ const goToTheHomePage = () => {
   height: 100vh;
 
   &__warning-img {
-    width: 350px;
-    height: 250px;
+    width: 21.875rem;
+    height: 15.625rem;
 
     @include md {
-      width: 600px;
-      height: 300px;
+      width: 37.5rem;
+      height: 18.75rem;
     }
 
     @include lg {
-      width: 943px;
-      height: 390px;
+      width: 58.9375rem;
+      height: 24.375rem;
     }
   }
 

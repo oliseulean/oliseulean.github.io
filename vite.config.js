@@ -20,7 +20,6 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // import global scss styles/variables
         additionalData: '@import "@/assets/styles/base.scss";',
       },
     },
@@ -39,13 +38,6 @@ export default defineConfig({
         assetFileNames: `${appName}-v${appVersion}.[ext]`,
         manualChunks: undefined,
       },
-    },
-  },
-  test: {
-    environment: 'happy-dom',
-    coverage: {
-      // enable all when having more tests
-      // all: true,
     },
   },
 });

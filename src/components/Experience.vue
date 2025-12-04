@@ -1,30 +1,32 @@
 <script setup>
 /* Imports */
-import Image from './Image.vue';
 import PageTitle from './PageTitle.vue';
+
 /* Props */
 const props = defineProps({
   experienceStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
   calendarIcon: {
     type: String,
-    required: true,
+    default: '',
   },
   codingIcon: {
     type: String,
-    required: true,
+    default: '',
   },
   globalStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
 });
 
-/* Handle extraStyling */
-const setExperienceClassName = experience => {
-  return experience.shouldAddExtraStyling ? 'app-work__experience--extra-styling' : null;
+const dynamicExperienceClasses = experience => {
+  return [
+    'work__experience',
+    { 'work__experience--extra-styling': experience.shouldAddExtraStyling },
+  ];
 };
 </script>
 
@@ -39,14 +41,14 @@ const setExperienceClassName = experience => {
   <div
     v-for="(experience, index) in props.experienceStore"
     :key="index"
-    :class="['app-work__experience', setExperienceClassName(experience)]"
+    :class="dynamicExperienceClasses(experience)"
   >
-    <p class="app-work__company-title">
+    <p class="work__company-title">
       <a
         v-if="experience.companyWebsite"
         :href="experience.companyWebsite"
         target="_blank"
-        class="app-work__company-title--color"
+        class="work__company-title--color"
       >
         {{ experience.companyName }}
       </a>
@@ -57,55 +59,55 @@ const setExperienceClassName = experience => {
 
     <p
       v-if="experience.isTheSameCompany"
-      class="app-work__company-title"
+      class="work__company-title"
     >
       {{ experience.title }}
     </p>
 
-    <p class="app-work__experience-duration-title">
-      <Image
-        :altText="'calendar_icon'"
+    <p class="work__experience-duration-title">
+      <img
+        alt="Calendar Icon"
         :src="props.calendarIcon"
-        :height="25"
-        :width="25"
-        :class="'app-work__icon'"
-        :loading="'lazy'"
+        height="25"
+        width="25"
+        class="work__icon"
+        loading="lazy"
       />
       {{ experience.duration }}
     </p>
 
-    <ul class="app-work__list-competencies">
+    <ul class="work__list-competencies">
       <li
         v-for="(experience, index) in experience.work"
         :key="index"
-        class="app-work__competencies"
+        class="work__competencies"
         v-html="experience"
       />
     </ul>
 
     <p
       v-if="experience.language"
-      class="app-work__skills-title"
+      class="work__skills-title"
     >
-      <Image
-        :altText="'coding_icon'"
+      <img
+        alt="Coding Icon"
         :src="props.codingIcon"
-        :height="25"
-        :width="25"
-        :class="'app-work__icon'"
-        :loading="'lazy'"
+        height="25"
+        width="25"
+        class="work__icon"
+        loading="lazy"
       />
       Skills &amp; Languages
     </p>
 
     <ul
       v-if="experience.language"
-      class="app-work__list-tools"
+      class="work__list-tools"
     >
       <li
         v-for="(language, index) in experience.language"
         :key="index"
-        class="app-work__tools"
+        class="work__tools"
       >
         {{ language }}
       </li>
@@ -114,7 +116,7 @@ const setExperienceClassName = experience => {
 </template>
 
 <style lang="scss" scoped>
-.app-work {
+.work {
   &__experience {
     color: $color-white;
     @include font-roboto-slab();

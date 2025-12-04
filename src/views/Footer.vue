@@ -1,8 +1,9 @@
 <script setup>
 /* Imports */
-import { ref, computed } from 'vue';
-
-/* Helpers */
+import {
+  ref,
+  computed,
+} from 'vue';
 import { useScrollPosition } from '../composable/useScrollPosition';
 import { getCurrentYear } from '../helpers/getCurrentYear';
 import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
@@ -17,33 +18,40 @@ const state = ref({
   ],
 });
 
-const footerVerbiage = `Olimpiu Seulean &copy; ${getCurrentYear()} | All rights reserved.`;
+/* Composable */
+const { shouldShow } = useScrollPosition();
 
-/* Handle hide - show Footer */
-const { hideElement } = useScrollPosition();
-const dynamicPositionClass = computed(() => hideElement.value ? 'fixed' : 'relative');
+const footerClasses = computed(() =>{
+  return {
+    'footer': true,
+    'footer--fixed': !shouldShow.value,
+    'footer--relative': shouldShow.value,
+  }
+});
+
+const footerVerbiage = `Olimpiu Seulean &copy; ${getCurrentYear()} | All rights reserved.`;
 </script>
 
 <template>
-  <div :class="['app-footer', dynamicPositionClass]">
-    <div class="app-footer-left">
+  <div :class="footerClasses">
+    <div class="footer-left">
       <p
-        class="app-footer-left__copyright"
+        class="footer-left__copyright"
         v-html="footerVerbiage"
       />
     </div>
 
-    <div class="app-footer-right">
-      <ul class="app-footer-right__list">
+    <div class="footer-right">
+      <ul class="footer-right__list">
         <li
           v-for="(link, index) in state.links"
           :key="index"
-          class="app-footer-right__list-item"
+          class="footer-right__list-item"
         >
           <a
             :href="link.href"
             target="_blank"
-            class="app-footer-right__list-item-link"
+            class="footer-right__list-item-link"
             v-html="link.text"
           />
         </li>
@@ -53,7 +61,7 @@ const dynamicPositionClass = computed(() => hideElement.value ? 'fixed' : 'relat
 </template>
 
 <style lang="scss" scoped>
-.app-footer {
+.footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,11 +73,11 @@ const dynamicPositionClass = computed(() => hideElement.value ? 'fixed' : 'relat
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
   flex-direction: column;
 
-  &.relative {
+  &--relative {
     position: relative;
   }
 
-  &.fixed {
+  &--fixed {
     position: fixed;
   }
 

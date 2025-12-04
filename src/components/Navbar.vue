@@ -4,8 +4,8 @@ import { useScrollPosition } from '../composable/useScrollPosition';
 import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
 import sendGAEvent from '../helpers/sendAnalyticsEvent';
 
-/* Handle hide navBar */
-const { hideElement } = useScrollPosition();
+/* Composable */
+const { shouldShow } = useScrollPosition();
 
 /* Handle GA for the resume button */
 const resumeGAEvent = () => {
@@ -15,14 +15,14 @@ const resumeGAEvent = () => {
 
 <template>
   <nav
-    v-if="hideElement"
-    class="app-navigation-bar"
+    v-if="!shouldShow"
+    class="navigation-bar"
   >
     <a
       :href="pdfResume"
       target="_blank"
       @click="resumeGAEvent"
-      class="app-navigation-bar__link"
+      class="navigation-bar__link"
     >
       Resume.📎
     </a>
@@ -30,7 +30,7 @@ const resumeGAEvent = () => {
 </template>
 
 <style lang="scss" scoped>
-.app-navigation-bar {
+.navigation-bar {
   position: fixed;
   top: 0;
   right: 0;

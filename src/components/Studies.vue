@@ -1,21 +1,22 @@
 <script setup>
 /* Imports */
 import PageTitle from '../components/PageTitle.vue';
+
 /* Props */
 const props = defineProps({
   studies: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
   globalStore: {
     type: Object,
-    required: true,
+    default: () => ({}),
   },
 });
 </script>
 
 <template>
-  <div class="app-studies">
+  <div class="studies">
     <PageTitle
       :color="props.globalStore?.colors?.colorWhite"
       align-items="left"
@@ -23,34 +24,37 @@ const props = defineProps({
     >
       STUDIES
     </PageTitle>
+
     <div
       v-for="(university, index) in props.studies"
       :key="index"
-      class="app-studies__studies"
+      class="studies__entry"
     >
-      <p class="app-studies__university-title">
+      <p class="studies__university-name">
         <a
           :href="university.uniWebsite"
           target="_blank"
-          class="app-studies__university-title--color"
+          class="studies__university-name-link"
         >
           {{ university.uniName }}
         </a>
-        - {{ university.city }}
+        <span class="studies__university-location">
+          - {{ university.city }}
+        </span>
       </p>
 
-      <p class="app-studies__specialization-title">
+      <p class="studies__specialization">
         {{ university.specialization }}
       </p>
 
-      <p class="app-studies__grade-title">
+      <p class="studies__grade">
         Grade:
-        <span class="app-studies__grade-title--color">
+        <span class="studies__grade-value">
           {{ university.grade }}
         </span>
       </p>
 
-      <p class="app-studies__university-thesis">
+      <p class="studies__thesis">
         {{ university.thesis }}
       </p>
     </div>
@@ -58,8 +62,8 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-.app-studies {
-  &__studies {
+.studies {
+  &__entry {
     color: $color-white;
     @include font-roboto-slab();
     @include font-weight(thin);
@@ -71,14 +75,14 @@ const props = defineProps({
     }
   }
 
-  &__university-title {
+  &__university-name {
     color: $color-white;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     @include font-weight(thin);
     line-height: 30px;
 
-    &--color {
+    &-link {
       @include line-hover();
       @include color-web-orange-style();
     }
@@ -92,25 +96,30 @@ const props = defineProps({
     }
   }
 
-  &__specialization-title {
+  &__university-location {
+    color: $color-white;
+  }
+
+  &__specialization {
     display: flex;
     align-items: center;
     font-size: 1.1rem;
   }
 
-  &__grade-title,
-  &__university-thesis {
+  &__grade,
+  &__thesis {
     font-size: 1.2rem;
     font-style: italic;
     margin-top: 1rem;
-
-    &--color {
-      @include color-web-orange-style();
-    }
   }
 
-  &__university-thesis {
+  &__grade-value {
+    @include color-web-orange-style();
+  }
+
+  &__thesis {
     font-size: $font-size-normal;
+    font-style: normal;
   }
 }
 </style>

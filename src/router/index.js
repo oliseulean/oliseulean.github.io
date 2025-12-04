@@ -1,4 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+} from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -31,6 +34,7 @@ const router = createRouter({
 });
 
 const title = 'Olimpiu Seulean - Frontend Engineer';
+
 router.beforeEach((toRoute, fromRoute, next) => {
   const getMetaTitle = toRoute?.meta?.title;
   window.document.title = getMetaTitle ? `${getMetaTitle} | ${title}` : title;
