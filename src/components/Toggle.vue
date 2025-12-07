@@ -3,7 +3,7 @@
 const props = defineProps({
   buttons: {
     type: Array,
-    default: () => [],
+    default: () => ([]),
   },
   setActiveClass: {
     type: Function,

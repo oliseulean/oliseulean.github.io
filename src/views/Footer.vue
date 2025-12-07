@@ -4,8 +4,8 @@ import {
   ref,
   computed,
 } from 'vue';
-import { useScrollPosition } from '../composable/useScrollPosition';
-import { getCurrentYear } from '../helpers/getCurrentYear';
+import { useScrollPosition } from '../composable/useScrollPosition.js';
+import { getCurrentYear } from '../helpers/getCurrentYear.js';
 import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
 
 /* State */

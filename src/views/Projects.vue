@@ -5,17 +5,14 @@ import {
   computed,
 } from 'vue';
 import PageTitle from '../components/PageTitle.vue';
-import sendGAEvent from '../helpers/sendAnalyticsEvent';
+import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
+import { colors } from '../helpers/colorsHelper.js';
 
 /* Props */
 const props = defineProps({
-  globalStore: {
-    type: Object,
-    default: () => ({}),
-  },
-  projectsStore: {
-    type: Object,
-    default: () => ({}),
+  projects: {
+    type: Array,
+    default: () => ([]),
   },
 });
 
@@ -24,9 +21,9 @@ const state = ref({
   maxProjectsShown: 3,
 });
 
-const visibleProjects = computed(() => props.projectsStore?.projects?.slice(0, state.value.maxProjectsShown));
+const visibleProjects = computed(() => props.projects.slice(0, state.value.maxProjectsShown));
 
-const showMoreProjectsButton = computed(() => state.value.maxProjectsShown < props.projectsStore?.projects?.length);
+const showMoreProjectsButton = computed(() => state.value.maxProjectsShown < props.projects.length);
 
 const loadMoreProjects = () => state.value.maxProjectsShown += 3;
 
@@ -51,7 +48,7 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
   <div class="projects">
     <div class="projects-section">
       <PageTitle
-        :color="props.globalStore?.colors?.colorMirage"
+        :color="colors.colorMirage"
       >
         FEATURED PROJECTS
       </PageTitle>

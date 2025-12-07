@@ -1,16 +1,13 @@
 <script setup>
 /* Imports */
 import PageTitle from '../components/PageTitle.vue';
+import { colors } from '../helpers/colorsHelper.js';
 
 /* Props */
 const props = defineProps({
   studies: {
-    type: Object,
-    default: () => ({}),
-  },
-  globalStore: {
-    type: Object,
-    default: () => ({}),
+    type: Array,
+    default: () => ([]),
   },
 });
 </script>
@@ -18,7 +15,7 @@ const props = defineProps({
 <template>
   <div class="studies">
     <PageTitle
-      :color="props.globalStore?.colors?.colorWhite"
+      :color="colors.colorWhite"
       align-items="left"
       text-align="left"
     >

@@ -6,7 +6,7 @@ import {
   onUnmounted,
   useTemplateRef,
 } from 'vue';
-import breakpoints from '../helpers/breakpoints';
+import { breakpoints } from '../helpers/breakpoints.js';
 
 /* State */
 const state = ref({

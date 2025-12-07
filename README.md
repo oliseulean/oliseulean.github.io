@@ -21,7 +21,6 @@ Personal website portfolio.
 ## Frameworks/Tools
 
 <strong>Vite</strong> (build tool): https://vitejs.dev/ <br />
-<strong>Pinia</strong> (state management): https://pinia.vuejs.org/ <br />
 <strong>Vue 3</strong> (front-end framework) https://vuejs.org/ <br />
 <strong>Routing</strong> (routes): https://vuejs.org/guide/scaling-up/routing.html <br />
 <strong>Yarn</strong> (package manager): https://yarnpkg.com/ <br />

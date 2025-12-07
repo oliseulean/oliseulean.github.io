@@ -1,8 +1,8 @@
 <script setup>
 /* Helpers */
-import { useScrollPosition } from '../composable/useScrollPosition';
+import { useScrollPosition } from '../composable/useScrollPosition.js';
 import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
-import sendGAEvent from '../helpers/sendAnalyticsEvent';
+import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
 
 /* Composable */
 const { shouldShow } = useScrollPosition();

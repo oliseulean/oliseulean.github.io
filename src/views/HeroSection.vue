@@ -6,7 +6,7 @@ import {
   onUnmounted,
 } from 'vue';
 import DownArrowIcon from '/icons/down-arrow.webp';
-import sendGAEvent from '../helpers/sendAnalyticsEvent';
+import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
 
 /* State */
 const state = ref({

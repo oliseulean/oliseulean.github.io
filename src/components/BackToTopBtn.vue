@@ -2,8 +2,8 @@
 /* Imports */
 import { computed } from 'vue';
 import { useScrollPosition } from '../composable/useScrollPosition.js';
-import sendGAEvent from '../helpers/sendAnalyticsEvent.js';
-import ArrowIcon from '../assets/icons/Arrow.vue';
+import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
+import ArrowIcon from '../components/icons/Arrow.vue';
 
 /* Composable */
 const { shouldShow } = useScrollPosition();

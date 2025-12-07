@@ -4,20 +4,21 @@ import {
   ref,
   computed,
 } from 'vue';
-import SkillsAndTools from '../components/SkillsAndTools';
-import PageTitle from '../components/PageTitle';
-import Toggle from '../components/Toggle';
-import sendGAEvent from '../helpers/sendAnalyticsEvent';
+import SkillsAndTools from '../components/SkillsAndTools.vue';
+import PageTitle from '../components/PageTitle.vue';
+import Toggle from '../components/Toggle.vue';
+import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
+import { colors } from '../helpers/colorsHelper.js';
 
 /* Props */
 const props = defineProps({
-  globalStore: {
-    type: Object,
-    default: () => ({}),
+  technologies: {
+    type: Array,
+    default: () => ([]),
   },
-  technologiesStore: {
-    type: Object,
-    default: () => ({}),
+  tools: {
+    type: Array,
+    default: () => ([]),
   },
 });
 
@@ -62,7 +63,7 @@ const technologiesGAEvent = e => {
   <div class="technologies">
     <div class="technologies-section">
       <PageTitle
-        :color="globalStore?.colors?.colorWebOrange"
+        :color="colors.colorWebOrange"
       >
         MY SKILLS
       </PageTitle>
@@ -77,12 +78,12 @@ const technologiesGAEvent = e => {
         <div class="technologies-section-container__skills">
           <SkillsAndTools
             v-if="state.displaySkillsList"
-            :icons="props.technologiesStore.technologies"
+            :icons="props.technologies"
           />
 
           <SkillsAndTools
             v-if="state.displayToolsList"
-            :icons="props.technologiesStore.tools"
+            :icons="props.tools"
           />
         </div>
       </div>

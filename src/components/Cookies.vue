@@ -71,7 +71,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.cookie {
+.cookies {
   &__floating {
     display: flex;
     justify-content: space-between;

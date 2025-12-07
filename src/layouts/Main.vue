@@ -1,46 +1,38 @@
 <script setup>
 /* Imports */
 import HeroSection from '../views/HeroSection.vue';
-import { useGlobalStore } from '../stores/global';
-import { useExperienceStore } from '../stores/experience';
-import { useTechnologies } from '../stores/technologies';
-import { useProjectsStore } from '../stores/projects';
+import {
+  experience,
+  studies,
+  technologies,
+  tools,
+  projects,
+} from '../data/main.js';
 import { defineAsyncComponent } from 'vue';
 
 /* Async Components */
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 const Work = defineAsyncComponent(() => import('../views/Work.vue'));
-const Technologies = defineAsyncComponent(() => import('../views/Technologies'));
+const Technologies = defineAsyncComponent(() => import('../views/Technologies.vue'));
 const Projects = defineAsyncComponent(() => import('../views/Projects.vue'));
 const Footer = defineAsyncComponent(() => import('../../src/views/Footer.vue'));
 const BackToTopBtn = defineAsyncComponent(() => import('../components/BackToTopBtn.vue'));
-const Cookie = defineAsyncComponent(() => import('../components/Cookie.vue'));
-
-/* Store */
-const globalStore = useGlobalStore();
-const experienceStore = useExperienceStore();
-const technologiesStore = useTechnologies();
-const projectsStore = useProjectsStore();
+const Cookies = defineAsyncComponent(() => import('../components/Cookies.vue'));
 </script>
 
 <template>
   <HeroSection />
-  <Cookie
-    :global-store="globalStore"
-  />
+  <Cookies />
   <Navbar />
   <Work
-    :global-store="globalStore"
-    :experience-store="experienceStore"
+    :experience="experience"
+    :studies="studies"
   />
   <Technologies
-    :global-store="globalStore"
-    :technologies-store="technologiesStore"
+    :technologies="technologies"
+    :tools="tools"
   />
-  <Projects
-    :global-store="globalStore"
-    :projects-store="projectsStore"
-  />
+  <Projects :projects="projects" />
   <Footer />
   <BackToTopBtn />
 </template>

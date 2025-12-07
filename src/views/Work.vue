@@ -9,14 +9,14 @@ import CodingIcon from '/icons/coding.webp';
 
 /* Props */
 const props = defineProps({
-  globalStore: {
-    type: Object,
-    default: () => ({}),
+  experience: {
+    type: Array,
+    default: () => ([]),
   },
-  experienceStore: {
-    type: Object,
-    default: () => ({}),
-  },
+  studies: {
+    type: Array,
+    default: () => ([]),
+  }
 });
 </script>
 
@@ -28,8 +28,7 @@ const props = defineProps({
     <ProfilePicture />
     <div class="work-and-studies__section">
       <Experience
-        :experience-store="props.experienceStore?.experience"
-        :global-store="props.globalStore"
+        :experience="props.experience"
         :calendar-icon="CalendarIcon"
         :coding-icon="CodingIcon"
       />
@@ -37,8 +36,7 @@ const props = defineProps({
 
     <div class="work-and-studies__section">
       <Studies
-        :studies="props.experienceStore?.university"
-        :global-store="props.globalStore"
+        :studies="props.studies"
       />
     </div>
   </div>

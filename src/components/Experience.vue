@@ -1,12 +1,13 @@
 <script setup>
 /* Imports */
 import PageTitle from './PageTitle.vue';
+import { colors } from '../helpers/colorsHelper.js';
 
 /* Props */
 const props = defineProps({
-  experienceStore: {
-    type: Object,
-    default: () => ({}),
+  experience: {
+    type: Array,
+    default: () => ([]),
   },
   calendarIcon: {
     type: String,
@@ -15,10 +16,6 @@ const props = defineProps({
   codingIcon: {
     type: String,
     default: '',
-  },
-  globalStore: {
-    type: Object,
-    default: () => ({}),
   },
 });
 
@@ -32,36 +29,36 @@ const dynamicExperienceClasses = experience => {
 
 <template>
   <PageTitle
-    :color="props.globalStore?.colors?.colorWhite"
+    :color="colors.colorWhite"
     align-items="left"
     text-align="left"
   >
     WORK EXPERIENCE
   </PageTitle>
   <div
-    v-for="(experience, index) in props.experienceStore"
+    v-for="(exp, index) in props.experience"
     :key="index"
-    :class="dynamicExperienceClasses(experience)"
+    :class="dynamicExperienceClasses(exp)"
   >
     <p class="work__company-title">
       <a
-        v-if="experience.companyWebsite"
-        :href="experience.companyWebsite"
+        v-if="exp.companyWebsite"
+        :href="exp.companyWebsite"
         target="_blank"
         class="work__company-title--color"
       >
-        {{ experience.companyName }}
+        {{ exp.companyName }}
       </a>
-      <span v-if="!experience.isTheSameCompany">
-        - {{ experience.title }}
+      <span v-if="!exp.isTheSameCompany">
+        - {{ exp.title }}
       </span>
     </p>
 
     <p
-      v-if="experience.isTheSameCompany"
+      v-if="exp.isTheSameCompany"
       class="work__company-title"
     >
-      {{ experience.title }}
+      {{ exp.title }}
     </p>
 
     <p class="work__experience-duration-title">
@@ -73,13 +70,13 @@ const dynamicExperienceClasses = experience => {
         class="work__icon"
         loading="lazy"
       >
-      {{ experience.duration }}
+      {{ exp.duration }}
     </p>
 
     <ul class="work__list-competencies">
       <!-- eslint-disable vue/no-v-html -->
       <li
-        v-for="(workExperience, workExperienceIndex) in experience.work"
+        v-for="(workExperience, workExperienceIndex) in exp.work"
         :key="workExperienceIndex"
         class="work__competencies"
         v-html="workExperience"
@@ -88,7 +85,7 @@ const dynamicExperienceClasses = experience => {
     </ul>
 
     <p
-      v-if="experience.language"
+      v-if="exp.language"
       class="work__skills-title"
     >
       <img
@@ -103,11 +100,11 @@ const dynamicExperienceClasses = experience => {
     </p>
 
     <ul
-      v-if="experience.language"
+      v-if="exp.language"
       class="work__list-tools"
     >
       <li
-        v-for="(language, languageIndex) in experience.language"
+        v-for="(language, languageIndex) in exp.language"
         :key="languageIndex"
         class="work__tools"
       >

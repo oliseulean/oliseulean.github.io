@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
 import pluginVue from 'eslint-plugin-vue';
+import pluginImport from 'eslint-plugin-import';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,10 +36,21 @@ export default [
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
+    plugins: {
+      import: pluginImport,
+    },
     rules: {
       // Global rules applying to all files
       'no-console': 'error',
       'vue/multi-word-component-names': 'off',
+      'import/extensions': [
+        'error',
+        'ignorePackages',
+        {
+          js: 'always',
+          vue: 'always',
+        },
+      ],
     },
   },
 

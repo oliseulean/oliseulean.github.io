@@ -6,7 +6,7 @@ import Tooltip from '../components/Tooltip.vue';
 const props = defineProps({
   icons: {
     type: Array,
-    default: () => [],
+    default: () => ([]),
   },
 });
 </script>

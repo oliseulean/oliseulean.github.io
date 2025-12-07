@@ -1,18 +1,11 @@
 <script setup>
 /* Imports */
 import { defineAsyncComponent } from 'vue';
+import { colors } from '../helpers/colorsHelper.js';
 const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 const Footer = defineAsyncComponent(() => import('../views/Footer.vue'));
 const BackToTopBtn = defineAsyncComponent(() => import('../components/BackToTopBtn.vue'));
-
-/* Props */
-const props = defineProps({
-  globalStore: {
-    type: Object,
-    default: () => ({}),
-  },
-});
 </script>
 
 <template>
@@ -24,7 +17,7 @@ const props = defineProps({
           🏠 Go Home
         </button>
       </RouterLink>
-      <PageTitle :color="props.globalStore?.colors?.colorMirage">
+      <PageTitle :color="colors.colorMirage">
         COOKIES POLICY
       </PageTitle>
     </div>
