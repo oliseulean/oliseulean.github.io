@@ -1,1 +1,0 @@
-var e=`/Olimpiu-Seulean-Resume.pdf`;export{e as t};
