@@ -3,14 +3,19 @@
 /**
  * Global Typography Variables
  */
-$font-size-normal: 1rem;
-$font-size-medium: 1.5rem;
-$font-size-large: 2rem;
-$font-size-large-l: 2.5rem;
-$font-size-large-xl: 3rem;
-$font-size-large-xxl: 4rem;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 1.75rem;
+$font-size-3xl: 2rem;
+$font-size-4xl: 2.5rem;
+$font-size-5xl: 3rem;
+$font-size-6xl: 4rem;
 
-@mixin font-roboto-slab() {
+@mixin font-primary() {
   font-family:
     Roboto,
     'Noto Sans TC',
@@ -22,7 +27,7 @@ $font-size-large-xxl: 4rem;
     'Microsoft JhengHei';
 }
 
-@mixin font-monserrat {
+@mixin font-montserrat() {
   font-family: Montserrat, sans-serif;
 }
 

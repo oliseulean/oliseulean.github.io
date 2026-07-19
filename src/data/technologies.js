@@ -13,12 +13,12 @@ export const technologies = [
     source: `${constructUrl}5968/5968242.png`,
   },
   {
-    title: 'Javascript',
-    alt: 'Javascript Icon',
+    title: 'JavaScript',
+    alt: 'JavaScript icon',
     source: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
   },
   {
-    title: 'VueJs',
+    title: 'Vue.js',
     alt: 'Vue Icon',
     source: 'https://iconape.com/wp-content/png_logo_vector/vue-js.png',
   },
@@ -48,8 +48,8 @@ export const technologies = [
     source: `${constructUrl}5968/5968313.png`,
   },
   {
-    title: 'Wordpress',
-    alt: 'Wordpress Icon',
+    title: 'WordPress',
+    alt: 'WordPress icon',
     source: `${constructUrl}/1/1177.png`,
   },
   {
@@ -91,18 +91,13 @@ export const tools = [
     source: 'https://img.icons8.com/fluent/1200/vite.jpg',
   },
   {
-    title: 'Vue Cli',
-    alt: 'Vue Cli Icon',
-    source: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQelbyj0Tf0FWAHkti_4Itw860z1ep0KPljn0__WvGFZQ&s',
-  },
-  {
-    title: 'Github',
-    alt: 'Github Icon',
+    title: 'GitHub',
+    alt: 'GitHub icon',
     source: `${constructUrl}25/25231.png`,
   },
   {
-    title: 'Npm',
-    alt: 'Npm Icon',
+    title: 'npm',
+    alt: 'npm icon',
     source: 'https://e7.pngegg.com/pngimages/828/432/png-clipart-npm-node-js-computer-icons-computer-software-installation-others-text-rectangle.png',
   },
   {
@@ -126,8 +121,8 @@ export const tools = [
     source: 'https://www.svgrepo.com/show/354332/sentry-icon.svg',
   },
   {
-    title: 'Pager Duty',
-    alt: 'Pager Duty Icon',
+    title: 'PagerDuty',
+    alt: 'PagerDuty icon',
     source: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrsxhcC7whJDWkS7ohbTZt7aE3yWh0eSy6gg&s',
   },
   {

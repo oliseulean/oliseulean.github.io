@@ -1,7 +1,7 @@
 // Main data export file for the /data directory
 export {
   experience,
-  studies,
+  education,
 } from './experience.js';
 export {
   technologies,

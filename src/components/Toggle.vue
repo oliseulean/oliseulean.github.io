@@ -5,9 +5,9 @@ const props = defineProps({
     type: Array,
     default: () => ([]),
   },
-  setActiveClass: {
-    type: Function,
-    default: () => {},
+  activeId: {
+    type: [Number, String],
+    default: 0,
   },
   title: {
     type: String,
@@ -18,6 +18,22 @@ const props = defineProps({
     default: undefined,
   },
 });
+
+/* Emits */
+const emit = defineEmits(['update:activeId']);
+
+const isButtonActive = (buttonId) => {
+  return buttonId === props.activeId;
+};
+
+const getButtonClass = (buttonId) => ({
+  'toggle__button': true,
+  'toggle__button--active': isButtonActive(buttonId),
+});
+
+const handleButtonClick = (buttonId) => {
+  emit('update:activeId', buttonId);
+};
 </script>
 
 <template>
@@ -38,16 +54,16 @@ const props = defineProps({
 
     <ul class="toggle__list">
       <li
-        v-for="(button, index) in props.buttons"
-        :key="index"
+        v-for="button in props.buttons"
+        :key="button.id"
         class="toggle__item"
       >
         <button
+          type="button"
           class="toggle__button"
-          :class="{
-            'toggle__button--active': button.class === 'active',
-          }"
-          @click="props.setActiveClass(button.id)"
+          :class="getButtonClass(button.id)"
+          :aria-pressed="isButtonActive(button.id)"
+          @click="handleButtonClick(button.id)"
         >
           {{ button.text }}
         </button>
@@ -60,65 +76,35 @@ const props = defineProps({
 .toggle {
   width: 100%;
   color: $color-white;
-  text-align: center;
-
-  @include md {
-    width: 100%;
-  }
-
-  @include lg {
-    width: 50%;
-  }
+  text-align: left;
 
   &__title {
-    font-size: $font-size-medium;
-    letter-spacing: 1px;
-    color: $color-black;
+    margin: 0;
+    color: $color-white;
     @include font-weight(bold);
-    margin: 1rem 0 1.25rem;
-    padding-right: 0;
-    text-align: left;
-
-    @include md {
-      padding-right: 0;
-    }
-
-    @include lg {
-      padding-right: 9rem;
-    }
+    font-size: $font-size-lg;
+    line-height: 1.5;
   }
 
   &__subtitle {
-    color: $color-gray;
-    @include font-weight(thin);
-    font-size: $font-size-normal;
-    margin: 1rem 0;
-    padding-right: 0;
-    text-align: left;
-
-    @include md {
-      padding-right: 0;
-      margin: 1rem 0;
-    }
-
-    @include lg {
-      padding-right: 5rem;
-      margin: 1rem 0 3.5rem;
-    }
+    max-width: 31rem;
+    margin: 0.75rem 0 0;
+    color: $color-bombay;
+    @include font-weight(normal);
+    font-size: $font-size-base;
+    line-height: 1.65;
   }
 
   &__list {
-    display: flex;
+    display: inline-flex;
+    gap: 0.25rem;
+    width: fit-content;
+    margin: 1.5rem 0 0;
+    padding: 0.25rem;
+    border: 1px solid rgba($color-white, 0.12);
+    border-radius: 999px;
+    background-color: rgba($color-black, 0.2);
     list-style-type: none;
-    margin: 2rem auto;
-    width: 9.375rem;
-    background: $color-black-pearl;
-    border-radius: 3rem;
-    justify-content: left;
-
-    @include lg {
-      margin: 0;
-    }
   }
 
   &__item {
@@ -126,17 +112,43 @@ const props = defineProps({
   }
 
   &__button {
-    width: 5rem;
-    height: 2.5rem;
-    cursor: pointer;
+    min-width: 5.5rem;
+    min-height: 2.5rem;
+    padding: 0.55rem 1rem;
     border: none;
-    background: $color-black-pearl;
-    color: $color-white;
-    border-radius: 30px;
+    border-radius: 999px;
+    background-color: transparent;
+    color: $color-bombay;
     @include font-weight(bold);
+    font-size: $font-size-sm;
+    cursor: pointer;
+    transition:
+      background-color $motion-duration-base $motion-ease-standard,
+      box-shadow $motion-duration-base $motion-ease-standard,
+      color $motion-duration-base $motion-ease-standard,
+      transform $motion-duration-base $motion-ease-emphasized;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: $color-white;
+        transform: translateY(-1px);
+      }
+    }
+
+    &:focus-visible {
+      @include focus-ring(2px);
+    }
 
     &--active {
-      background: $color-web-orange;
+      background-color: $color-web-orange;
+      box-shadow: 0 0.5rem 1.25rem rgba($color-web-orange, 0.2);
+      color: $color-black-pearl;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: $color-black-pearl;
+        }
+      }
     }
   }
 }

@@ -5,19 +5,23 @@ import { colors } from '../helpers/colorsHelper.js';
 const PageTitle = defineAsyncComponent(() => import('../components/PageTitle.vue'));
 const Navbar = defineAsyncComponent(() => import('../components/Navbar.vue'));
 const Footer = defineAsyncComponent(() => import('../views/Footer.vue'));
-const BackToTopBtn = defineAsyncComponent(() => import('../components/BackToTopBtn.vue'));
 </script>
 
 <template>
   <Navbar />
-  <div class="cookies-policy">
+  <main class="cookies-policy">
     <div class="cookies-policy__container">
-      <RouterLink to="/">
-        <button class="cookies-policy__home-button">
-          🏠 Go Home
-        </button>
+      <RouterLink
+        to="/"
+        class="cookies-policy__home-button"
+      >
+        <span aria-hidden="true">←</span>
+        Back to portfolio
       </RouterLink>
-      <PageTitle :color="colors.colorMirage">
+      <PageTitle
+        :color="colors.colorWhite"
+        tag="h1"
+      >
         COOKIES POLICY
       </PageTitle>
     </div>
@@ -315,58 +319,70 @@ const BackToTopBtn = defineAsyncComponent(() => import('../components/BackToTopB
         Cookie settings in Safari
       </a>
     </p>
-  </div>
+  </main>
   <Footer />
-  <BackToTopBtn />
 </template>
 
 <style lang="scss" scoped>
 .cookies-policy {
-  @include font-roboto-slab;
-  margin: 3rem;
-  font-size: $font-size-normal;
+  width: 85%;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 7rem 0 4rem;
+  color: $color-catskill-white;
+  @include font-primary;
+  font-size: $font-size-base;
+  line-height: 1.75;
 
   @include md {
-    margin: 2rem 5.5rem;
-  }
-
-  @include lg {
-    margin: 2rem 7rem;
+    width: 75%;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    align-items: flex-start;
     width: 100%;
-    align-items: center;
-
-    @include md {
-      flex-direction: row;
-      margin-bottom: 3rem;
-    }
-
-    @include lg {
-      flex-direction: row;
-      margin-bottom: 3rem;
-    }
+    margin-bottom: 2.5rem;
   }
 
   &__home-button {
-    @include black-button;
-    width: 100%;
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid rgba($color-web-orange, 0.4);
+    border-radius: 999px;
+    background-color: rgba($color-web-orange, 0.08);
+    color: $color-amber;
+    @include font-weight(bold);
+    font-size: $font-size-sm;
+    transition:
+      background-color $motion-duration-base $motion-ease-standard,
+      color $motion-duration-base $motion-ease-standard,
+      transform $motion-duration-base $motion-ease-emphasized;
 
-    @include md {
-      width: auto;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $color-web-orange;
+        color: $color-black-pearl;
+        transform: translateY(-1px);
+      }
     }
 
-    @include lg {
-      width: auto;
+    &:focus-visible {
+      @include focus-ring(2px);
     }
   }
 
   p {
     margin: 1rem 0;
+
+    strong {
+      color: $color-white;
+    }
   }
 
   ul,
@@ -385,10 +401,18 @@ const BackToTopBtn = defineAsyncComponent(() => import('../components/BackToTopB
   li {
     padding-bottom: 0.5rem;
   }
+
+  p a {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+
+    &:focus-visible {
+      @include focus-ring(2px);
+    }
+  }
 }
 
 .page-title {
-  display: block;
-  margin: auto;
+  width: 100%;
 }
 </style>

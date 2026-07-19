@@ -24,71 +24,68 @@ const props = defineProps({
 
 /* State */
 const state = ref({
-  previousActiveID: 0,
-  buttons: [
-    {
-      id: 0,
-      text: 'Skills',
-      class: 'active',
-    },
-    {
-      id: 1,
-      text: 'Tools',
-      class: '',
-    },
-  ],
-  displaySkillsList: computed(() => state.value.previousActiveID === 0),
-  displayToolsList: computed(() => state.value.previousActiveID === 1),
+  activeCategoryId: 0,
 });
 
-/* Set active class to the clicked btn */
-const setActiveClass = id => {
-  if (state.value.previousActiveID === id) return;
-  /* remove the active class from old active li */
-  state.value.buttons.find(item => item.id === state.value.previousActiveID).class = '';
-  /* set active class to new li */
-  state.value.buttons.find(item => item.id === id).class = 'active';
-  /* store the new active li id */
-  state.value.previousActiveID = id;
-};
+const buttons = [
+  {
+    id: 0,
+    text: 'Skills',
+  },
+  {
+    id: 1,
+    text: 'Tools',
+  },
+];
 
-/* Set GA tags for the technologies toogle btn */
-const technologiesGAEvent = e => {
-  const getToogleValue = e?.target?.innerHTML;
-  sendGAEvent('Olimpiu Seulean Portfolio', 'Technologies click', getToogleValue, 1);
+const activeIcons = computed(() => state.value.activeCategoryId === 0 ? props.technologies : props.tools);
+
+const handleCategoryChange = id => {
+  state.value.activeCategoryId = id;
+  const selectedCategory = buttons.find(button => button.id === id)?.text;
+
+  if (selectedCategory) {
+    sendGAEvent('Olimpiu Seulean Portfolio', 'Technologies click', selectedCategory, 1);
+  }
 };
 </script>
 
 <template>
-  <div class="technologies">
-    <div class="technologies-section">
+  <section
+    id="skills"
+    class="technologies"
+  >
+    <div class="technologies__section">
       <PageTitle
-        :color="colors.colorWebOrange"
+        :color="colors.colorWhite"
+        align="left"
       >
         MY SKILLS
       </PageTitle>
-      <div class="technologies-section-container">
+
+      <div class="technologies__panel">
         <Toggle
-          :buttons="state.buttons"
-          :set-active-class="setActiveClass"
+          :buttons="buttons"
+          :active-id="state.activeCategoryId"
           title="What My Programming Skills Included?"
           subtitle="I develop simple, intuitive and responsive user interface that helps users get things done with less effort and time with those technologies."
-          @click="technologiesGAEvent($event)"
+          @update:active-id="handleCategoryChange"
         />
-        <div class="technologies-section-container__skills">
-          <SkillsAndTools
-            v-if="state.displaySkillsList"
-            :icons="props.technologies"
-          />
 
-          <SkillsAndTools
-            v-if="state.displayToolsList"
-            :icons="props.tools"
-          />
+        <div class="technologies__skills">
+          <Transition
+            name="skills-grid"
+            mode="out-in"
+          >
+            <SkillsAndTools
+              :key="state.activeCategoryId"
+              :icons="activeIcons"
+            />
+          </Transition>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -96,59 +93,53 @@ const technologiesGAEvent = e => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include font-roboto-slab;
+  @include section-spacing;
+  @include section-divider;
+  background:
+    radial-gradient(circle at 0 40%, rgba($color-web-orange, 0.06), transparent 30rem),
+    $color-black-pearl;
+  @include font-primary;
 
-  &-section {
-    width: 70%;
+  &__section {
+    @include content-section;
+  }
+
+  &__panel {
+    display: grid;
+    gap: 2rem;
+    padding: 1.5rem;
+    @include surface-card;
+    @include interactive-card(0);
 
     @include md {
-      width: 75%;
+      padding: 2rem;
     }
 
     @include lg {
-      width: 85%;
+      grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+      gap: 3rem;
+      align-items: center;
     }
+  }
 
-    &-container {
-      display: flex;
-      flex-direction: column;
-
-      @include md {
-        flex-direction: column;
-      }
-
-      @include lg {
-        flex-direction: row;
-      }
-
-      &__skills {
-        width: 100%;
-        color: $color-white;
-        padding-bottom: 1rem;
-
-        @include md {
-          width: 100%;
-          padding-bottom: 0;
-        }
-
-        @include lg {
-          width: 50%;
-          padding-bottom: 6rem;
-        }
-      }
-    }
+  &__skills {
+    min-width: 0;
+    color: $color-white;
   }
 }
 
-.page-title {
-  padding: 0;
+.skills-grid-enter-active,
+.skills-grid-leave-active {
+  transition: opacity $motion-duration-base $motion-ease-standard, transform $motion-duration-base $motion-ease-emphasized;
+}
 
-  @include md {
-    padding: 0;
-  }
+.skills-grid-enter-from {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
 
-  @include lg {
-    padding: 2rem 0;
-  }
+.skills-grid-leave-to {
+  opacity: 0;
+  transform: translateY(-0.35rem);
 }
 </style>

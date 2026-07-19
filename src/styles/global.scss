@@ -1,14 +1,24 @@
 @use 'typography.scss' as *;
 @use 'colors.scss' as *;
 @use 'breakpoints.scss' as *;
+@use 'styleHelpers.scss' as helpers;
 
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
+:where(section, div, footer)[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 body {
+  min-width: 20rem;
   margin: 0 !important;
+  background-color: $color-black-pearl;
+  color: $color-catskill-white;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 *,
@@ -26,24 +36,56 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $color-alabaster;
+  background: $color-black-pearl;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $color-black-pearl;
+  border-radius: 999px;
+  background: rgba($color-white, 0.24);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $color-black-pearl;
+  background: $color-web-orange;
 }
 
 a {
   color: $color-web-orange;
   text-decoration: none;
+  transition: color helpers.$motion-duration-fast helpers.$motion-ease-standard;
 
   &:hover {
-    color: $color-black-pearl;
+    color: $color-amber;
+  }
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus-visible {
+    outline: 2px solid $color-amber;
+    outline-offset: 3px;
+  }
+}
+
+::selection {
+  background-color: rgba($color-web-orange, 0.28);
+  color: $color-white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

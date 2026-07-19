@@ -2,54 +2,45 @@
 @use './typography.scss' as *;
 @use './colors.scss' as *;
 
+$section-space-mobile: 2rem;
+$section-space-tablet: 2.25rem;
+$section-space-desktop: 2.5rem;
+$section-heading-space-mobile: 1.5rem;
+$section-heading-space-desktop: 2rem;
+$motion-duration-fast: 160ms;
+$motion-duration-base: 220ms;
+$motion-duration-slow: 360ms;
+$motion-ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+$motion-ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+
 @mixin line-hover {
   position: relative;
   display: inline-block;
 
   &::after {
-    border-bottom: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: currentcolor;
+    content: '';
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: opacity $motion-duration-base $motion-ease-standard, transform $motion-duration-base $motion-ease-standard;
+  }
 
-    @include sm {
-      content: '';
-      display: block;
-      border-bottom: 1px solid $color-white;
-      width: 0;
-      opacity: 0;
-      transition: 0.75s all ease;
-      height: 10px;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover::after {
+      opacity: 0.75;
+      transform: scaleX(1);
     }
   }
 
-  &:hover,
-  &:focus {
-    &::after {
-      width: 100%;
-      opacity: 1;
-    }
-  }
-}
-
-@mixin keyframe-appear {
-  @keyframes appear {
-    to {
-      opacity: 1;
-    }
-
-    from {
-      opacity: 0;
-    }
-  }
-}
-
-@mixin keyframe-typing {
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-
-    to {
-      width: 100%;
-    }
+  &:focus-visible::after {
+    opacity: 0.75;
+    transform: scaleX(1);
   }
 }
 
@@ -61,4 +52,74 @@
   &:hover {
     color: $color-amber;
   }
+}
+
+@mixin content-section {
+  width: 85%;
+  max-width: 76rem;
+
+  @include md {
+    width: 75%;
+  }
+
+  @include lg {
+    width: 85%;
+  }
+}
+
+@mixin section-spacing {
+  padding-block: $section-space-mobile;
+
+  @include md {
+    padding-block: $section-space-tablet;
+  }
+
+  @include lg {
+    padding-block: $section-space-desktop;
+  }
+}
+
+@mixin section-heading-spacing {
+  margin-bottom: $section-heading-space-mobile;
+
+  @include md {
+    margin-bottom: $section-heading-space-desktop;
+  }
+}
+
+@mixin section-divider {
+  border-top: 1px solid rgba($color-white, 0.08);
+}
+
+@mixin focus-ring($offset: 3px) {
+  outline: 2px solid $color-amber;
+  outline-offset: $offset;
+}
+
+@mixin interactive-card($lift: -0.1875rem) {
+  transition:
+    border-color $motion-duration-base $motion-ease-standard,
+    background-color $motion-duration-base $motion-ease-standard,
+    box-shadow $motion-duration-base $motion-ease-standard,
+    transform $motion-duration-base $motion-ease-emphasized;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: rgba($color-web-orange, 0.38);
+      box-shadow: 0 1.5rem 3.5rem rgba($color-black, 0.2);
+      transform: translateY($lift);
+    }
+  }
+
+  &:focus-within {
+    border-color: rgba($color-web-orange, 0.48);
+    box-shadow: 0 1.5rem 3.5rem rgba($color-black, 0.2);
+  }
+}
+
+@mixin surface-card {
+  border: 1px solid rgba($color-white, 0.12);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba($color-white, 0.055), rgba($color-white, 0.018));
+  box-shadow: 0 1.25rem 3rem rgba($color-black, 0.12);
 }

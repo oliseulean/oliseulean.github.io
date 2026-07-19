@@ -7,7 +7,7 @@ import {
 
 /* State */
 const state = ref({
-  showCookiePopUp: true,
+  showCookiePopup: !(typeof window !== 'undefined' && window.localStorage.getItem('GDPR')),
 });
 
 /* Track the user info only after it accepts the policy */
@@ -25,7 +25,7 @@ const acceptGDPR = () => {
 };
 
 const hideCookiePopup = () => {
-  return state.value.showCookiePopUp = false;
+  return state.value.showCookiePopup = false;
 };
 
 const handlerGDPR = () => {
@@ -39,110 +39,141 @@ const handlerGDPR = () => {
  * page do not show again the cookie pop-up.
  */
 onMounted(() => {
-  return localStorage.getItem('GDPR') ? state.value.showCookiePopUp = false : '';
+  return localStorage.getItem('GDPR') ? state.value.showCookiePopup = false : '';
 });
 </script>
 
 <template>
-  <div
-    v-if="state.showCookiePopUp"
-    class="cookies"
-  >
-    <div class="cookies__floating cookies__floating--bottom-left">
-      <div class="cookies__content">
-        I use cookies to ensure you get the best experience on my website.
-        <router-link
-          to="/cookies-policy"
-          class="cookies__content--link"
-        >
-          Cookies policy.
-        </router-link>
-      </div>
-      <div class="cookies__buttons">
+  <Transition name="cookie-notice">
+    <aside
+      v-if="state.showCookiePopup"
+      class="cookies"
+      role="dialog"
+      aria-label="Cookie notice"
+    >
+      <div class="cookies__floating">
+        <div class="cookies__content">
+          <p class="cookies__eyebrow">
+            Privacy
+          </p>
+          <p>
+            I use analytics cookies to understand how this portfolio is used.
+            <RouterLink
+              to="/cookies-policy"
+              class="cookies__policy-link"
+            >
+              Read the policy
+            </RouterLink>
+          </p>
+        </div>
         <button
-          class="cookies__buttons cookies__buttons--accept"
+          type="button"
+          class="cookies__accept-button"
           @click="handlerGDPR"
         >
           Accept
         </button>
       </div>
-    </div>
-  </div>
+    </aside>
+  </Transition>
 </template>
 
 <style lang="scss" scoped>
 .cookies {
+  position: fixed;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  z-index: 9999;
+  @include font-primary;
+
+  @include md {
+    right: auto;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    width: min(22rem, calc(100% - 2.5rem));
+  }
+
   &__floating {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 90%;
-    position: fixed;
-    overflow: hidden;
-    z-index: 9999;
-    background: $color-alabaster;
-    box-shadow: 0 4px 8px rgba($color-alto, 0.3);
-    border: 1px solid $color-alto;
-    line-height: 1.5;
-    border-radius: 6px;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    @include font-roboto-slab;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba($color-white, 0.16);
+    border-radius: 1rem;
+    background-color: rgba($color-black-pearl, 0.94);
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.32);
+    color: $color-catskill-white;
+    backdrop-filter: blur(18px);
 
-    @include md {
-      max-width: 18.75rem;
-
-      &--bottom-left {
-        bottom: 1.25rem;
-        left: 1.25rem;
-        right: auto;
-        margin: 0;
-      }
+    @include sm {
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      padding: 1.15rem;
     }
   }
 
   &__content {
-    font-size: 0.875rem;
-    margin-bottom: 0.3125rem;
-    padding: 0.9375rem 1.25rem;
-    max-height: 6.5625rem;
-    overflow: auto;
-
-    @include md {
-      margin-bottom: 0.625rem;
-    }
-
-    &--link {
-      color: $color-web-orange;
-      text-decoration: underline;
-    }
+    display: grid;
+    gap: 0.45rem;
+    font-size: $font-size-sm;
+    line-height: 1.55;
   }
 
-  &__buttons {
-    cursor: pointer;
-    color: $color-fruit-salad;
-    @include font-roboto-slab;
+  &__eyebrow {
+    color: $color-web-orange;
     @include font-weight(bold);
-    background-color: $color-gallery;
-    font-size: 0.875rem;
-    width: 100%;
-    min-height: 2.5rem;
-    white-space: nowrap;
-    user-select: none;
-    border-bottom: 0.1px solid $color-alto;
-    border-top: 0.1px solid $color-alto;
-    border-left: none;
-    border-right: none;
+    font-size: $font-size-xs;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
 
-    &--accept {
+  &__policy-link {
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+
+  &__accept-button {
+    min-height: 2.5rem;
+    padding: 0.55rem 1rem;
+    border: 1px solid $color-web-orange;
+    border-radius: 999px;
+    background-color: $color-web-orange;
+    color: $color-black-pearl;
+    @include font-primary;
+    @include font-weight(bold);
+    font-size: $font-size-sm;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+      background-color $motion-duration-base $motion-ease-standard,
+      border-color $motion-duration-base $motion-ease-standard,
+      box-shadow $motion-duration-base $motion-ease-standard,
+      transform $motion-duration-base $motion-ease-emphasized;
+
+    @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background: $color-goblin;
-        color: $color-white;
+        border-color: $color-amber;
+        background-color: $color-amber;
+        box-shadow: 0 0.65rem 1.5rem rgba($color-web-orange, 0.18);
+        transform: translateY(-1px);
       }
     }
+
+    &:focus-visible {
+      @include focus-ring(2px);
+    }
   }
+}
+
+.cookie-notice-enter-active,
+.cookie-notice-leave-active {
+  transition: opacity $motion-duration-base $motion-ease-standard, transform $motion-duration-base $motion-ease-emphasized;
+}
+
+.cookie-notice-enter-from,
+.cookie-notice-leave-to {
+  opacity: 0;
+  transform: translateY(0.75rem) scale(0.98);
 }
 </style>

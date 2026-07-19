@@ -1,8 +1,7 @@
 <script setup>
 /* Imports */
 import Experience from '../components/Experience.vue';
-import Studies from '../components/Studies.vue';
-import ProfilePicture from '../components/ProfilePicture.vue';
+import Education from '../components/Education.vue';
 
 import CalendarIcon from '/icons/calendar.webp';
 import CodingIcon from '/icons/coding.webp';
@@ -13,7 +12,7 @@ const props = defineProps({
     type: Array,
     default: () => ([]),
   },
-  studies: {
+  education: {
     type: Array,
     default: () => ([]),
   }
@@ -23,43 +22,51 @@ const props = defineProps({
 <template>
   <div
     id="experience"
-    class="work-and-studies"
+    class="work-and-education"
   >
-    <ProfilePicture />
-    <div class="work-and-studies__section">
-      <Experience
-        :experience="props.experience"
-        :calendar-icon="CalendarIcon"
-        :coding-icon="CodingIcon"
-      />
-    </div>
+    <section class="work-and-education__section">
+      <div class="work-and-education__inner">
+        <Experience
+          :experience="props.experience"
+          :calendar-icon="CalendarIcon"
+          :coding-icon="CodingIcon"
+        />
+      </div>
+    </section>
 
-    <div class="work-and-studies__section">
-      <Studies
-        :studies="props.studies"
-      />
-    </div>
+    <section
+      id="education"
+      class="work-and-education__section work-and-education__section--divided"
+    >
+      <div class="work-and-education__inner">
+        <Education
+          :education="props.education"
+        />
+      </div>
+    </section>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.work-and-studies {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 5rem;
-  background-color: $color-black-pearl;
+.work-and-education {
+  position: relative;
+  background:
+    radial-gradient(circle at 100% 0, rgba($color-web-orange, 0.075), transparent 32rem),
+    $color-black-pearl;
 
   &__section {
-    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include section-spacing;
 
-    @include md {
-      width: 75%;
+    &--divided {
+      @include section-divider;
     }
+  }
 
-    @include lg {
-      width: 85%;
-    }
+  &__inner {
+    @include content-section;
   }
 }
 </style>
