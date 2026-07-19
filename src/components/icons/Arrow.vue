@@ -1,13 +1,6 @@
 <template>
   <svg
-    class="svg-icon"
-    style="
-      width: 25px;
-      height: 30px;
-      fill: black;
-      overflow: hidden;
-      margin-top: 2px;
-"
+    class="arrow-icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -17,3 +10,13 @@
     />
   </svg>
 </template>
+
+<style lang="scss" scoped>
+.arrow-icon {
+  width: 1.5625rem;
+  height: 1.875rem;
+  fill: $color-black;
+  overflow: hidden;
+  margin-top: 0.125rem;
+}
+</style>

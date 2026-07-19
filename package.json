@@ -5,7 +5,6 @@
   "main": "src/main.js",
   "author": "Olimpiu Seulean",
   "type": "module",
-  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,34 +13,33 @@
     "lint:fix": "eslint --fix",
     "stylelint": "stylelint \"**/*.{scss,vue}\"",
     "stylelint:fix": "stylelint \"**/*.{scss,vue}\" --fix",
-    "security:check": "audit-ci --critical --high --report-type summary",
+    "security:check": "yarn npm audit --severity high",
     "prepare": "husky"
   },
   "dependencies": {
-    "vue": "^3.2.37",
-    "vue-router": "^4.1.2"
+    "vue": "^3.5.40",
+    "vue-router": "^5.2.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.1",
-    "@stylistic/stylelint-plugin": "^4.0.0",
-    "@vitejs/plugin-vue": "^6.0.2",
-    "audit-ci": "^7.1.0",
-    "eslint": "^9.39.1",
-    "eslint-plugin-html": "^8.1.3",
+    "@eslint/eslintrc": "^3.3.6",
+    "@eslint/js": "^10.0.1",
+    "@stylistic/stylelint-plugin": "^5.2.1",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "eslint": "^10.7.0",
+    "eslint-plugin-html": "^8.1.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-vue": "^10.6.2",
-    "globals": "^16.5.0",
+    "eslint-plugin-vue": "^10.9.2",
+    "globals": "^17.7.0",
     "husky": "^9.1.7",
-    "postcss-html": "^1.5.0",
-    "postcss-scss": "^4.0.6",
-    "sass": "^1.59.3",
-    "stylelint": "^16.26.1",
-    "stylelint-config-standard": "^39.0.1",
-    "stylelint-config-standard-scss": "^16.0.0",
-    "stylelint-scss": "^6.13.0",
-    "vite": "^7.2.6",
-    "vue-eslint-parser": "^10.2.0"
+    "postcss-html": "^1.8.1",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.101.0",
+    "stylelint": "^17.14.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.2.0",
+    "vite": "^8.1.5",
+    "vue-eslint-parser": "^10.4.1"
   },
   "engines": {
     "node": ">=22.0.0"

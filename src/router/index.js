@@ -35,11 +35,9 @@ const router = createRouter({
 
 const title = 'Olimpiu Seulean - Frontend Engineer';
 
-router.beforeEach((toRoute, fromRoute, next) => {
+router.beforeEach((toRoute) => {
   const getMetaTitle = toRoute?.meta?.title;
   window.document.title = getMetaTitle ? `${getMetaTitle} | ${title}` : title;
-
-  next();
 });
 
 export default router;

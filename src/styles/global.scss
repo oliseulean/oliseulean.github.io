@@ -21,12 +21,12 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 0.4375rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: $color-alabaster;
 }
 
 /* Handle */

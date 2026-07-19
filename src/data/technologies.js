@@ -15,7 +15,7 @@ export const technologies = [
   {
     title: 'Javascript',
     alt: 'Javascript Icon',
-    source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png',
+    source: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
   },
   {
     title: 'VueJs',
@@ -118,7 +118,7 @@ export const tools = [
   {
     title: 'Cloudflare',
     alt: 'Cloudflare Icon',
-    source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Cloudflare_Logo.png/480px-Cloudflare_Logo.png',
+    source: 'https://www.svgrepo.com/show/353564/cloudflare.svg',
   },
   {
     title: 'Sentry',

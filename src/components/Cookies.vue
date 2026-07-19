@@ -46,21 +46,21 @@ onMounted(() => {
 <template>
   <div
     v-if="state.showCookiePopUp"
-    class="cookie"
+    class="cookies"
   >
-    <div class="cookie__floating cookie__floating--bottom-left">
-      <div class="cookie__content">
+    <div class="cookies__floating cookies__floating--bottom-left">
+      <div class="cookies__content">
         I use cookies to ensure you get the best experience on my website.
         <router-link
           to="/cookies-policy"
-          class="cookie__content--link"
+          class="cookies__content--link"
         >
           Cookies policy.
         </router-link>
       </div>
-      <div class="cookie__buttons">
+      <div class="cookies__buttons">
         <button
-          class="cookie__buttons cookie__buttons--accept"
+          class="cookies__buttons cookies__buttons--accept"
           @click="handlerGDPR"
         >
           Accept
