@@ -7,6 +7,7 @@ import {
   computed,
 } from 'vue';
 import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
+import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
 import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
 
 /* State */
@@ -117,7 +118,7 @@ const getLinkClass = (sectionId) => ({
         @click="resumeGAEvent"
       >
         Resume
-        <span aria-hidden="true">↗</span>
+        <ExternalLinkIcon />
       </a>
     </div>
   </nav>

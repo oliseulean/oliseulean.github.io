@@ -1,6 +1,8 @@
 <script setup>
 /* Imports */
 import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
+import DownArrowIcon from '../components/icons/DownArrowIcon.vue';
+import ExternalLinkIcon from '../components/icons/ExternalLinkIcon.vue';
 import ProfilePicture from '../components/ProfilePicture.vue';
 import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
 
@@ -38,10 +40,9 @@ const handleExperienceLinkClick = () => {
             @click="handleExperienceLinkClick"
           >
             Explore my experience
-            <span
+            <DownArrowIcon
               class="hero-section__action-icon"
-              aria-hidden="true"
-            >↓</span>
+            />
           </a>
           <a
             :href="pdfResume"
@@ -50,10 +51,9 @@ const handleExperienceLinkClick = () => {
             class="hero-section__action hero-section__action--secondary"
           >
             View resume
-            <span
+            <ExternalLinkIcon
               class="hero-section__action-icon"
-              aria-hidden="true"
-            >↗</span>
+            />
           </a>
         </div>
       </div>
@@ -85,10 +85,9 @@ const handleExperienceLinkClick = () => {
           class="hero-section__profile-link"
         >
           Open LinkedIn profile
-          <span
+          <ExternalLinkIcon
             class="hero-section__profile-link-icon"
-            aria-hidden="true"
-          >↗</span>
+          />
         </a>
       </aside>
     </div>

@@ -2,6 +2,8 @@
 /* Imports */
 import { getCurrentYear } from '../helpers/getCurrentYear.js';
 import pdfResume from '/Olimpiu-Seulean-Resume.pdf';
+import ExternalLinkIcon from '../components/icons/ExternalLinkIcon.vue';
+import UpArrowIcon from '../components/icons/UpArrowIcon.vue';
 
 const links = [
   { text: 'LinkedIn', href: 'https://www.linkedin.com/in/seulean-olimpiu/' },
@@ -35,10 +37,9 @@ const links = [
             class="footer__contact"
           >
             Email me
-            <span
+            <ExternalLinkIcon
               class="footer__link-icon"
-              aria-hidden="true"
-            >↗</span>
+            />
           </a>
 
           <nav aria-label="Professional profiles">
@@ -53,10 +54,9 @@ const links = [
                   rel="noopener noreferrer"
                 >
                   {{ link.text }}
-                  <span
+                  <ExternalLinkIcon
                     class="footer__link-icon"
-                    aria-hidden="true"
-                  >↗</span>
+                  />
                 </a>
               </li>
             </ul>
@@ -70,10 +70,9 @@ const links = [
         </p>
         <a href="#home">
           Back to top
-          <span
+          <UpArrowIcon
             class="footer__back-icon"
-            aria-hidden="true"
-          >↑</span>
+          />
         </a>
       </div>
     </div>

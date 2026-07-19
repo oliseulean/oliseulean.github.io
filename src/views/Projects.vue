@@ -4,6 +4,8 @@ import {
   ref,
   computed,
 } from 'vue';
+import ExternalLinkIcon from '../components/icons/ExternalLinkIcon.vue';
+import PlusIcon from '../components/icons/PlusIcon.vue';
 import PageTitle from '../components/PageTitle.vue';
 import { sendGAEvent } from '../helpers/sendAnalyticsEvent.js';
 import { colors } from '../helpers/colorsHelper.js';
@@ -90,7 +92,9 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
             <span
               class="projects__media-action"
               aria-hidden="true"
-            >↗</span>
+            >
+              <ExternalLinkIcon />
+            </span>
           </a>
 
           <div class="projects__content">
@@ -111,10 +115,9 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
               @click="projectsBtnGAEvent"
             >
               {{ getProjectActionLabel(project) }}
-              <span
+              <ExternalLinkIcon
                 class="projects__link-icon"
-                aria-hidden="true"
-              >↗</span>
+              />
             </a>
           </div>
         </article>
@@ -128,10 +131,9 @@ const loadMoreProjectsBtnGAEvent = () => sendGAEvent('Olimpiu Seulean Portfolio'
         @click="handlerLoadMoreProjects"
       >
         Show more projects
-        <span
+        <PlusIcon
           class="projects__show-more-icon"
-          aria-hidden="true"
-        >+</span>
+        />
       </button>
     </div>
   </section>
